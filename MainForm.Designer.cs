@@ -77,6 +77,7 @@ namespace Hasher
 			// 
 			// textBoxMD5String
 			// 
+			this.textBoxMD5String.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textBoxMD5String.Location = new System.Drawing.Point(53, 36);
 			this.textBoxMD5String.Name = "textBoxMD5String";
 			this.textBoxMD5String.ReadOnly = true;
