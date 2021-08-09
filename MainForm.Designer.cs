@@ -72,7 +72,7 @@ namespace Hasher
 			this.labelMD5String.Location = new System.Drawing.Point(12, 39);
 			this.labelMD5String.Name = "labelMD5String";
 			this.labelMD5String.Size = new System.Drawing.Size(33, 13);
-			this.labelMD5String.TabIndex = 3;
+			this.labelMD5String.TabIndex = 4;
 			this.labelMD5String.Text = "MD5:";
 			// 
 			// textBoxMD5String
@@ -81,7 +81,7 @@ namespace Hasher
 			this.textBoxMD5String.Name = "textBoxMD5String";
 			this.textBoxMD5String.ReadOnly = true;
 			this.textBoxMD5String.Size = new System.Drawing.Size(390, 20);
-			this.textBoxMD5String.TabIndex = 4;
+			this.textBoxMD5String.TabIndex = 5;
 			// 
 			// openFileDialog
 			// 
@@ -93,7 +93,7 @@ namespace Hasher
 			this.buttonCopyMD5String.Location = new System.Drawing.Point(450, 36);
 			this.buttonCopyMD5String.Name = "buttonCopyMD5String";
 			this.buttonCopyMD5String.Size = new System.Drawing.Size(75, 20);
-			this.buttonCopyMD5String.TabIndex = 5;
+			this.buttonCopyMD5String.TabIndex = 6;
 			this.buttonCopyMD5String.Text = "Kopieren";
 			this.buttonCopyMD5String.UseVisualStyleBackColor = true;
 			this.buttonCopyMD5String.Click += new System.EventHandler(this.ButtonCopyMD5String_Click);
@@ -103,7 +103,7 @@ namespace Hasher
 			this.buttonCalculateFile.Location = new System.Drawing.Point(530, 5);
 			this.buttonCalculateFile.Name = "buttonCalculateFile";
 			this.buttonCalculateFile.Size = new System.Drawing.Size(75, 21);
-			this.buttonCalculateFile.TabIndex = 6;
+			this.buttonCalculateFile.TabIndex = 3;
 			this.buttonCalculateFile.Text = "Berechnen";
 			this.buttonCalculateFile.UseVisualStyleBackColor = true;
 			this.buttonCalculateFile.Click += new System.EventHandler(this.ButtonCalculateFile_Click);
