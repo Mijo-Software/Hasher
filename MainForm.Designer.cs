@@ -37,6 +37,9 @@ namespace Hasher
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.buttonCopyMD5String = new System.Windows.Forms.Button();
 			this.buttonCalculateFile = new System.Windows.Forms.Button();
+			this.buttonCopyRIPEMD160String = new System.Windows.Forms.Button();
+			this.textBoxRIPEMD160String = new System.Windows.Forms.TextBox();
+			this.labelRIPEMD160String = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// labelFileName
@@ -78,10 +81,10 @@ namespace Hasher
 			// textBoxMD5String
 			// 
 			this.textBoxMD5String.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBoxMD5String.Location = new System.Drawing.Point(53, 36);
+			this.textBoxMD5String.Location = new System.Drawing.Point(88, 36);
 			this.textBoxMD5String.Name = "textBoxMD5String";
 			this.textBoxMD5String.ReadOnly = true;
-			this.textBoxMD5String.Size = new System.Drawing.Size(390, 20);
+			this.textBoxMD5String.Size = new System.Drawing.Size(355, 20);
 			this.textBoxMD5String.TabIndex = 5;
 			// 
 			// openFileDialog
@@ -109,11 +112,42 @@ namespace Hasher
 			this.buttonCalculateFile.UseVisualStyleBackColor = true;
 			this.buttonCalculateFile.Click += new System.EventHandler(this.ButtonCalculateFile_Click);
 			// 
+			// buttonCopyRIPEMD160String
+			// 
+			this.buttonCopyRIPEMD160String.Location = new System.Drawing.Point(450, 62);
+			this.buttonCopyRIPEMD160String.Name = "buttonCopyRIPEMD160String";
+			this.buttonCopyRIPEMD160String.Size = new System.Drawing.Size(75, 20);
+			this.buttonCopyRIPEMD160String.TabIndex = 9;
+			this.buttonCopyRIPEMD160String.Text = "Kopieren";
+			this.buttonCopyRIPEMD160String.UseVisualStyleBackColor = true;
+			this.buttonCopyRIPEMD160String.Click += new System.EventHandler(this.ButtonCopyRIPEMD160String_Click);
+			// 
+			// textBoxRIPEMD160String
+			// 
+			this.textBoxRIPEMD160String.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBoxRIPEMD160String.Location = new System.Drawing.Point(88, 62);
+			this.textBoxRIPEMD160String.Name = "textBoxRIPEMD160String";
+			this.textBoxRIPEMD160String.ReadOnly = true;
+			this.textBoxRIPEMD160String.Size = new System.Drawing.Size(355, 20);
+			this.textBoxRIPEMD160String.TabIndex = 8;
+			// 
+			// labelRIPEMD160String
+			// 
+			this.labelRIPEMD160String.AutoSize = true;
+			this.labelRIPEMD160String.Location = new System.Drawing.Point(12, 65);
+			this.labelRIPEMD160String.Name = "labelRIPEMD160String";
+			this.labelRIPEMD160String.Size = new System.Drawing.Size(70, 13);
+			this.labelRIPEMD160String.TabIndex = 7;
+			this.labelRIPEMD160String.Text = "RIPEMD160:";
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(622, 75);
+			this.ClientSize = new System.Drawing.Size(622, 97);
+			this.Controls.Add(this.buttonCopyRIPEMD160String);
+			this.Controls.Add(this.textBoxRIPEMD160String);
+			this.Controls.Add(this.labelRIPEMD160String);
 			this.Controls.Add(this.buttonCalculateFile);
 			this.Controls.Add(this.buttonCopyMD5String);
 			this.Controls.Add(this.textBoxMD5String);
@@ -140,6 +174,9 @@ namespace Hasher
 		private System.Windows.Forms.OpenFileDialog openFileDialog;
 		private System.Windows.Forms.Button buttonCopyMD5String;
 		private System.Windows.Forms.Button buttonCalculateFile;
+		private System.Windows.Forms.Button buttonCopyRIPEMD160String;
+		private System.Windows.Forms.TextBox textBoxRIPEMD160String;
+		private System.Windows.Forms.Label labelRIPEMD160String;
 	}
 }
 

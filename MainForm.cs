@@ -34,12 +34,32 @@ namespace Hasher
 			}
 		}
 
+		private static string GetRIPEMD160HashFromFile(string fileName)
+		{
+			using (RIPEMD160 ripemd160 = RIPEMD160.Create())
+			{
+				using (FileStream fileStream = File.OpenRead(path: fileName))
+				{
+					using (FileStream stream = fileStream)
+					{
+						return BitConverter.ToString(value: ripemd160.ComputeHash(inputStream: stream)).Replace(oldValue: "-", newValue: string.Empty);
+					}
+				}
+			}
+		}
+
 		private void ButtonCalculateFile_Click(object sender, EventArgs e)
 		{
 			textBoxMD5String.Text = GetMD5HashFromFile(fileName: textBoxFileName.Text);
+			textBoxRIPEMD160String.Text = GetRIPEMD160HashFromFile(fileName: textBoxFileName.Text);
 		}
 
 		private void ButtonCopyMD5String_Click(object sender, EventArgs e)
+		{
+			Clipboard.SetText(text: textBoxMD5String.Text);
+		}
+
+		private void ButtonCopyRIPEMD160String_Click(object sender, EventArgs e)
 		{
 			Clipboard.SetText(text: textBoxMD5String.Text);
 		}
