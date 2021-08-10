@@ -155,6 +155,7 @@ namespace Hasher
 			this.Controls.Add(this.buttonOpenFile);
 			this.Controls.Add(this.textBoxFileName);
 			this.Controls.Add(this.labelFileName);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.MaximizeBox = false;
 			this.Name = "MainForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
