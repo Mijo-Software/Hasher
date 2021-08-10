@@ -31,12 +31,11 @@ namespace Hasher
 		{
 			this.labelFileName = new System.Windows.Forms.Label();
 			this.textBoxFileName = new System.Windows.Forms.TextBox();
-			this.buttonOpenFile = new System.Windows.Forms.Button();
+			this.buttonOpenAndCalculateFile = new System.Windows.Forms.Button();
 			this.labelMD5String = new System.Windows.Forms.Label();
 			this.textBoxMD5String = new System.Windows.Forms.TextBox();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.buttonCopyMD5String = new System.Windows.Forms.Button();
-			this.buttonCalculateFile = new System.Windows.Forms.Button();
 			this.buttonCopyRIPEMD160String = new System.Windows.Forms.Button();
 			this.textBoxRIPEMD160String = new System.Windows.Forms.TextBox();
 			this.labelRIPEMD160String = new System.Windows.Forms.Label();
@@ -71,15 +70,15 @@ namespace Hasher
 			this.textBoxFileName.Size = new System.Drawing.Size(390, 20);
 			this.textBoxFileName.TabIndex = 1;
 			// 
-			// buttonOpenFile
+			// buttonOpenAndCalculateFile
 			// 
-			this.buttonOpenFile.Location = new System.Drawing.Point(449, 5);
-			this.buttonOpenFile.Name = "buttonOpenFile";
-			this.buttonOpenFile.Size = new System.Drawing.Size(75, 21);
-			this.buttonOpenFile.TabIndex = 2;
-			this.buttonOpenFile.Text = "Open";
-			this.buttonOpenFile.UseVisualStyleBackColor = true;
-			this.buttonOpenFile.Click += new System.EventHandler(this.OpenFile_Click);
+			this.buttonOpenAndCalculateFile.Location = new System.Drawing.Point(449, 5);
+			this.buttonOpenAndCalculateFile.Name = "buttonOpenAndCalculateFile";
+			this.buttonOpenAndCalculateFile.Size = new System.Drawing.Size(99, 21);
+			this.buttonOpenAndCalculateFile.TabIndex = 2;
+			this.buttonOpenAndCalculateFile.Text = "Open && Calculate";
+			this.buttonOpenAndCalculateFile.UseVisualStyleBackColor = true;
+			this.buttonOpenAndCalculateFile.Click += new System.EventHandler(this.OpenAndCalculateFile_Click);
 			// 
 			// labelMD5String
 			// 
@@ -87,7 +86,7 @@ namespace Hasher
 			this.labelMD5String.Location = new System.Drawing.Point(12, 39);
 			this.labelMD5String.Name = "labelMD5String";
 			this.labelMD5String.Size = new System.Drawing.Size(33, 13);
-			this.labelMD5String.TabIndex = 4;
+			this.labelMD5String.TabIndex = 3;
 			this.labelMD5String.Text = "MD5:";
 			// 
 			// textBoxMD5String
@@ -97,7 +96,7 @@ namespace Hasher
 			this.textBoxMD5String.Name = "textBoxMD5String";
 			this.textBoxMD5String.ReadOnly = true;
 			this.textBoxMD5String.Size = new System.Drawing.Size(355, 20);
-			this.textBoxMD5String.TabIndex = 5;
+			this.textBoxMD5String.TabIndex = 4;
 			// 
 			// openFileDialog
 			// 
@@ -109,27 +108,17 @@ namespace Hasher
 			this.buttonCopyMD5String.Location = new System.Drawing.Point(450, 36);
 			this.buttonCopyMD5String.Name = "buttonCopyMD5String";
 			this.buttonCopyMD5String.Size = new System.Drawing.Size(98, 20);
-			this.buttonCopyMD5String.TabIndex = 6;
+			this.buttonCopyMD5String.TabIndex = 5;
 			this.buttonCopyMD5String.Text = "Copy to Clipboard";
 			this.buttonCopyMD5String.UseVisualStyleBackColor = true;
 			this.buttonCopyMD5String.Click += new System.EventHandler(this.ButtonCopyMD5String_Click);
-			// 
-			// buttonCalculateFile
-			// 
-			this.buttonCalculateFile.Location = new System.Drawing.Point(530, 5);
-			this.buttonCalculateFile.Name = "buttonCalculateFile";
-			this.buttonCalculateFile.Size = new System.Drawing.Size(75, 21);
-			this.buttonCalculateFile.TabIndex = 3;
-			this.buttonCalculateFile.Text = "Calculate";
-			this.buttonCalculateFile.UseVisualStyleBackColor = true;
-			this.buttonCalculateFile.Click += new System.EventHandler(this.ButtonCalculateFile_Click);
 			// 
 			// buttonCopyRIPEMD160String
 			// 
 			this.buttonCopyRIPEMD160String.Location = new System.Drawing.Point(450, 62);
 			this.buttonCopyRIPEMD160String.Name = "buttonCopyRIPEMD160String";
 			this.buttonCopyRIPEMD160String.Size = new System.Drawing.Size(98, 20);
-			this.buttonCopyRIPEMD160String.TabIndex = 9;
+			this.buttonCopyRIPEMD160String.TabIndex = 8;
 			this.buttonCopyRIPEMD160String.Text = "Copy to Clipboard";
 			this.buttonCopyRIPEMD160String.UseVisualStyleBackColor = true;
 			this.buttonCopyRIPEMD160String.Click += new System.EventHandler(this.ButtonCopyRIPEMD160String_Click);
@@ -141,7 +130,7 @@ namespace Hasher
 			this.textBoxRIPEMD160String.Name = "textBoxRIPEMD160String";
 			this.textBoxRIPEMD160String.ReadOnly = true;
 			this.textBoxRIPEMD160String.Size = new System.Drawing.Size(355, 20);
-			this.textBoxRIPEMD160String.TabIndex = 8;
+			this.textBoxRIPEMD160String.TabIndex = 7;
 			// 
 			// labelRIPEMD160String
 			// 
@@ -149,7 +138,7 @@ namespace Hasher
 			this.labelRIPEMD160String.Location = new System.Drawing.Point(12, 65);
 			this.labelRIPEMD160String.Name = "labelRIPEMD160String";
 			this.labelRIPEMD160String.Size = new System.Drawing.Size(70, 13);
-			this.labelRIPEMD160String.TabIndex = 7;
+			this.labelRIPEMD160String.TabIndex = 6;
 			this.labelRIPEMD160String.Text = "RIPEMD160:";
 			// 
 			// buttonCopySHA1String
@@ -157,7 +146,7 @@ namespace Hasher
 			this.buttonCopySHA1String.Location = new System.Drawing.Point(450, 88);
 			this.buttonCopySHA1String.Name = "buttonCopySHA1String";
 			this.buttonCopySHA1String.Size = new System.Drawing.Size(98, 20);
-			this.buttonCopySHA1String.TabIndex = 12;
+			this.buttonCopySHA1String.TabIndex = 11;
 			this.buttonCopySHA1String.Text = "Copy to Clipboard";
 			this.buttonCopySHA1String.UseVisualStyleBackColor = true;
 			this.buttonCopySHA1String.Click += new System.EventHandler(this.ButtonCopySHA1String_Click);
@@ -169,7 +158,7 @@ namespace Hasher
 			this.textBoxSHA1String.Name = "textBoxSHA1String";
 			this.textBoxSHA1String.ReadOnly = true;
 			this.textBoxSHA1String.Size = new System.Drawing.Size(355, 20);
-			this.textBoxSHA1String.TabIndex = 11;
+			this.textBoxSHA1String.TabIndex = 10;
 			// 
 			// labelSHA1String
 			// 
@@ -177,7 +166,7 @@ namespace Hasher
 			this.labelSHA1String.Location = new System.Drawing.Point(12, 91);
 			this.labelSHA1String.Name = "labelSHA1String";
 			this.labelSHA1String.Size = new System.Drawing.Size(38, 13);
-			this.labelSHA1String.TabIndex = 10;
+			this.labelSHA1String.TabIndex = 9;
 			this.labelSHA1String.Text = "SHA1:";
 			// 
 			// buttonCopySHA256String
@@ -185,7 +174,7 @@ namespace Hasher
 			this.buttonCopySHA256String.Location = new System.Drawing.Point(450, 114);
 			this.buttonCopySHA256String.Name = "buttonCopySHA256String";
 			this.buttonCopySHA256String.Size = new System.Drawing.Size(98, 20);
-			this.buttonCopySHA256String.TabIndex = 15;
+			this.buttonCopySHA256String.TabIndex = 14;
 			this.buttonCopySHA256String.Text = "Copy to Clipboard";
 			this.buttonCopySHA256String.UseVisualStyleBackColor = true;
 			this.buttonCopySHA256String.Click += new System.EventHandler(this.ButtonCopySHA256String_Click);
@@ -197,7 +186,7 @@ namespace Hasher
 			this.textBoxSHA256String.Name = "textBoxSHA256String";
 			this.textBoxSHA256String.ReadOnly = true;
 			this.textBoxSHA256String.Size = new System.Drawing.Size(355, 20);
-			this.textBoxSHA256String.TabIndex = 14;
+			this.textBoxSHA256String.TabIndex = 13;
 			// 
 			// labelSHA256String
 			// 
@@ -205,7 +194,7 @@ namespace Hasher
 			this.labelSHA256String.Location = new System.Drawing.Point(12, 117);
 			this.labelSHA256String.Name = "labelSHA256String";
 			this.labelSHA256String.Size = new System.Drawing.Size(50, 13);
-			this.labelSHA256String.TabIndex = 13;
+			this.labelSHA256String.TabIndex = 12;
 			this.labelSHA256String.Text = "SHA256:";
 			// 
 			// buttonCopySHA384String
@@ -213,7 +202,7 @@ namespace Hasher
 			this.buttonCopySHA384String.Location = new System.Drawing.Point(450, 140);
 			this.buttonCopySHA384String.Name = "buttonCopySHA384String";
 			this.buttonCopySHA384String.Size = new System.Drawing.Size(98, 20);
-			this.buttonCopySHA384String.TabIndex = 18;
+			this.buttonCopySHA384String.TabIndex = 17;
 			this.buttonCopySHA384String.Text = "Copy to Clipboard";
 			this.buttonCopySHA384String.UseVisualStyleBackColor = true;
 			this.buttonCopySHA384String.Click += new System.EventHandler(this.ButtonCopySHA384String_Click);
@@ -225,7 +214,7 @@ namespace Hasher
 			this.textBoxSHA384String.Name = "textBoxSHA384String";
 			this.textBoxSHA384String.ReadOnly = true;
 			this.textBoxSHA384String.Size = new System.Drawing.Size(355, 20);
-			this.textBoxSHA384String.TabIndex = 17;
+			this.textBoxSHA384String.TabIndex = 16;
 			// 
 			// labelSHA384
 			// 
@@ -233,7 +222,7 @@ namespace Hasher
 			this.labelSHA384.Location = new System.Drawing.Point(12, 143);
 			this.labelSHA384.Name = "labelSHA384";
 			this.labelSHA384.Size = new System.Drawing.Size(50, 13);
-			this.labelSHA384.TabIndex = 16;
+			this.labelSHA384.TabIndex = 15;
 			this.labelSHA384.Text = "SHA384:";
 			// 
 			// buttonbuttonCopySHA512String
@@ -241,7 +230,7 @@ namespace Hasher
 			this.buttonbuttonCopySHA512String.Location = new System.Drawing.Point(450, 166);
 			this.buttonbuttonCopySHA512String.Name = "buttonbuttonCopySHA512String";
 			this.buttonbuttonCopySHA512String.Size = new System.Drawing.Size(98, 20);
-			this.buttonbuttonCopySHA512String.TabIndex = 21;
+			this.buttonbuttonCopySHA512String.TabIndex = 20;
 			this.buttonbuttonCopySHA512String.Text = "Copy to Clipboard";
 			this.buttonbuttonCopySHA512String.UseVisualStyleBackColor = true;
 			this.buttonbuttonCopySHA512String.Click += new System.EventHandler(this.ButtonbuttonCopySHA512String_Click);
@@ -253,7 +242,7 @@ namespace Hasher
 			this.textBoxSHA512String.Name = "textBoxSHA512String";
 			this.textBoxSHA512String.ReadOnly = true;
 			this.textBoxSHA512String.Size = new System.Drawing.Size(355, 20);
-			this.textBoxSHA512String.TabIndex = 20;
+			this.textBoxSHA512String.TabIndex = 19;
 			// 
 			// labelSHA512String
 			// 
@@ -261,14 +250,14 @@ namespace Hasher
 			this.labelSHA512String.Location = new System.Drawing.Point(12, 169);
 			this.labelSHA512String.Name = "labelSHA512String";
 			this.labelSHA512String.Size = new System.Drawing.Size(50, 13);
-			this.labelSHA512String.TabIndex = 19;
+			this.labelSHA512String.TabIndex = 18;
 			this.labelSHA512String.Text = "SHA512:";
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(622, 201);
+			this.ClientSize = new System.Drawing.Size(562, 201);
 			this.Controls.Add(this.buttonbuttonCopySHA512String);
 			this.Controls.Add(this.textBoxSHA512String);
 			this.Controls.Add(this.labelSHA512String);
@@ -284,11 +273,10 @@ namespace Hasher
 			this.Controls.Add(this.buttonCopyRIPEMD160String);
 			this.Controls.Add(this.textBoxRIPEMD160String);
 			this.Controls.Add(this.labelRIPEMD160String);
-			this.Controls.Add(this.buttonCalculateFile);
 			this.Controls.Add(this.buttonCopyMD5String);
 			this.Controls.Add(this.textBoxMD5String);
 			this.Controls.Add(this.labelMD5String);
-			this.Controls.Add(this.buttonOpenFile);
+			this.Controls.Add(this.buttonOpenAndCalculateFile);
 			this.Controls.Add(this.textBoxFileName);
 			this.Controls.Add(this.labelFileName);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -305,12 +293,11 @@ namespace Hasher
 
 		private System.Windows.Forms.Label labelFileName;
 		private System.Windows.Forms.TextBox textBoxFileName;
-		private System.Windows.Forms.Button buttonOpenFile;
+		private System.Windows.Forms.Button buttonOpenAndCalculateFile;
 		private System.Windows.Forms.Label labelMD5String;
 		private System.Windows.Forms.TextBox textBoxMD5String;
 		private System.Windows.Forms.OpenFileDialog openFileDialog;
 		private System.Windows.Forms.Button buttonCopyMD5String;
-		private System.Windows.Forms.Button buttonCalculateFile;
 		private System.Windows.Forms.Button buttonCopyRIPEMD160String;
 		private System.Windows.Forms.TextBox textBoxRIPEMD160String;
 		private System.Windows.Forms.Label labelRIPEMD160String;

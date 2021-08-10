@@ -12,11 +12,22 @@ namespace Hasher
 			InitializeComponent();
 		}
 
-		private void OpenFile_Click(object sender, EventArgs e)
+		private void CalculateHashesFromFile()
+		{
+			textBoxMD5String.Text = GetMD5HashFromFile(fileName: textBoxFileName.Text);
+			textBoxRIPEMD160String.Text = GetRIPEMD160HashFromFile(fileName: textBoxFileName.Text);
+			textBoxSHA1String.Text = GetSHA1HashFromFile(fileName: textBoxFileName.Text);
+			textBoxSHA256String.Text = GetSHA256HashFromFile(fileName: textBoxFileName.Text);
+			textBoxSHA384String.Text = GetSHA384HashFromFile(fileName: textBoxFileName.Text);
+			textBoxSHA512String.Text = GetSHA512HashFromFile(fileName: textBoxFileName.Text);
+		}
+
+		private void OpenAndCalculateFile_Click(object sender, EventArgs e)
 		{
 			if (openFileDialog.ShowDialog() == DialogResult.OK)
 			{
 				textBoxFileName.Text = openFileDialog.FileName;
+				CalculateHashesFromFile();
 			}
 		}
 
@@ -102,16 +113,6 @@ namespace Hasher
 					}
 				}
 			}
-		}
-
-		private void ButtonCalculateFile_Click(object sender, EventArgs e)
-		{
-			textBoxMD5String.Text = GetMD5HashFromFile(fileName: textBoxFileName.Text);
-			textBoxRIPEMD160String.Text = GetRIPEMD160HashFromFile(fileName: textBoxFileName.Text);
-			textBoxSHA1String.Text = GetSHA1HashFromFile(fileName: textBoxFileName.Text);
-			textBoxSHA256String.Text = GetSHA256HashFromFile(fileName: textBoxFileName.Text);
-			textBoxSHA384String.Text = GetSHA384HashFromFile(fileName: textBoxFileName.Text);
-			textBoxSHA512String.Text = GetSHA512HashFromFile(fileName: textBoxFileName.Text);
 		}
 
 		private void ButtonCopyMD5String_Click(object sender, EventArgs e)
