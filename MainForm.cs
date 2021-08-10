@@ -33,85 +33,49 @@ namespace Hasher
 
 		private static string GetMD5HashFromFile(string fileName)
 		{
-			using (MD5 md5 = MD5.Create())
+			using (FileStream fileStream = File.OpenRead(path: fileName))
 			{
-				using (FileStream fileStream = File.OpenRead(path: fileName))
-				{
-					using (FileStream stream = fileStream)
-					{
-						return BitConverter.ToString(value: md5.ComputeHash(inputStream: stream)).Replace(oldValue: "-", newValue: string.Empty);
-					}
-				}
+				return BitConverter.ToString(value: MD5.Create().ComputeHash(inputStream: fileStream)).Replace(oldValue: "-", newValue: string.Empty);
 			}
 		}
 
 		private static string GetRIPEMD160HashFromFile(string fileName)
 		{
-			using (RIPEMD160 ripemd160 = RIPEMD160.Create())
+			using (FileStream fileStream = File.OpenRead(path: fileName))
 			{
-				using (FileStream fileStream = File.OpenRead(path: fileName))
-				{
-					using (FileStream stream = fileStream)
-					{
-						return BitConverter.ToString(value: ripemd160.ComputeHash(inputStream: stream)).Replace(oldValue: "-", newValue: string.Empty);
-					}
-				}
+				return BitConverter.ToString(value: RIPEMD160.Create().ComputeHash(inputStream: fileStream)).Replace(oldValue: "-", newValue: string.Empty);
 			}
 		}
 
 		private static string GetSHA1HashFromFile(string fileName)
 		{
-			using (SHA1 sha1 = SHA1.Create())
+			using (FileStream fileStream = File.OpenRead(path: fileName))
 			{
-				using (FileStream fileStream = File.OpenRead(path: fileName))
-				{
-					using (FileStream stream = fileStream)
-					{
-						return BitConverter.ToString(value: sha1.ComputeHash(inputStream: stream)).Replace(oldValue: "-", newValue: string.Empty);
-					}
-				}
+				return BitConverter.ToString(value: SHA1.Create().ComputeHash(inputStream: fileStream)).Replace(oldValue: "-", newValue: string.Empty);
 			}
 		}
 
 		private static string GetSHA256HashFromFile(string fileName)
 		{
-			using (SHA256 sha256 = SHA256.Create())
+			using (FileStream fileStream = File.OpenRead(path: fileName))
 			{
-				using (FileStream fileStream = File.OpenRead(path: fileName))
-				{
-					using (FileStream stream = fileStream)
-					{
-						return BitConverter.ToString(value: sha256.ComputeHash(inputStream: stream)).Replace(oldValue: "-", newValue: string.Empty);
-					}
-				}
+				return BitConverter.ToString(value: SHA256.Create().ComputeHash(inputStream: fileStream)).Replace(oldValue: "-", newValue: string.Empty);
 			}
 		}
 
 		private static string GetSHA384HashFromFile(string fileName)
 		{
-			using (SHA384 sha384 = SHA384.Create())
+			using (FileStream fileStream = File.OpenRead(path: fileName))
 			{
-				using (FileStream fileStream = File.OpenRead(path: fileName))
-				{
-					using (FileStream stream = fileStream)
-					{
-						return BitConverter.ToString(value: sha384.ComputeHash(inputStream: stream)).Replace(oldValue: "-", newValue: string.Empty);
-					}
-				}
+				return BitConverter.ToString(value: SHA384.Create().ComputeHash(inputStream: fileStream)).Replace(oldValue: "-", newValue: string.Empty);
 			}
 		}
 
 		private static string GetSHA512HashFromFile(string fileName)
 		{
-			using (SHA512 sha512 = SHA512.Create())
+			using (FileStream fileStream = File.OpenRead(path: fileName))
 			{
-				using (FileStream fileStream = File.OpenRead(path: fileName))
-				{
-					using (FileStream stream = fileStream)
-					{
-						return BitConverter.ToString(value: sha512.ComputeHash(inputStream: stream)).Replace(oldValue: "-", newValue: string.Empty);
-					}
-				}
+				return BitConverter.ToString(value: SHA512.Create().ComputeHash(inputStream: fileStream)).Replace(oldValue: "-", newValue: string.Empty);
 			}
 		}
 
@@ -143,6 +107,28 @@ namespace Hasher
 		private void ButtonbuttonCopySHA512String_Click(object sender, EventArgs e)
 		{
 			Clipboard.SetText(text: textBoxSHA512String.Text);
+		}
+
+		private void MainForm_DragDrop(object sender, DragEventArgs e)
+		{
+			if (e.Data.GetDataPresent(format: DataFormats.FileDrop))
+			{
+				string[] files = e.Data.GetData(DataFormats.FileDrop) as string[];
+				if (files.Length > 1)
+				{
+					MessageBox.Show(text: "Only the first file of multiple files is accepted.", caption: "Warning", buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Warning);
+				}
+				textBoxFileName.Text = files[0];
+				CalculateHashesFromFile();
+			}
+		}
+
+		private void MainForm_DragEnter(object sender, DragEventArgs e)
+		{
+			if (e.Data.GetDataPresent(format: DataFormats.FileDrop))
+			{
+				e.Effect = DragDropEffects.Copy;
+			}
 		}
 	}
 }
