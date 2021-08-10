@@ -32,33 +32,33 @@ namespace Hasher
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.labelFileName = new System.Windows.Forms.Label();
 			this.textBoxFileName = new System.Windows.Forms.TextBox();
-			this.buttonOpenAndCalculateFile = new System.Windows.Forms.Button();
 			this.labelMD5String = new System.Windows.Forms.Label();
 			this.textBoxMD5String = new System.Windows.Forms.TextBox();
 			this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-			this.buttonCopyMD5StringToClipboard = new System.Windows.Forms.Button();
-			this.buttonCopyRIPEMD160StringToClipboard = new System.Windows.Forms.Button();
 			this.textBoxRIPEMD160String = new System.Windows.Forms.TextBox();
 			this.labelRIPEMD160String = new System.Windows.Forms.Label();
-			this.buttonCopySHA1StringToClipboard = new System.Windows.Forms.Button();
 			this.textBoxSHA1String = new System.Windows.Forms.TextBox();
 			this.labelSHA1String = new System.Windows.Forms.Label();
-			this.buttonCopySHA256StringToClipboard = new System.Windows.Forms.Button();
 			this.textBoxSHA256String = new System.Windows.Forms.TextBox();
 			this.labelSHA256String = new System.Windows.Forms.Label();
-			this.buttonCopySHA384StringToClipboard = new System.Windows.Forms.Button();
 			this.textBoxSHA384String = new System.Windows.Forms.TextBox();
 			this.labelSHA384 = new System.Windows.Forms.Label();
-			this.buttonCopySHA512StringToClipboard = new System.Windows.Forms.Button();
 			this.textBoxSHA512String = new System.Windows.Forms.TextBox();
 			this.labelSHA512String = new System.Windows.Forms.Label();
+			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
 			this.buttonSaveSHA512StringToFile = new System.Windows.Forms.Button();
 			this.buttonSaveSHA384StringToFile = new System.Windows.Forms.Button();
 			this.buttonSaveSHA256StringToFile = new System.Windows.Forms.Button();
 			this.buttonSaveSHA1StringToFile = new System.Windows.Forms.Button();
 			this.buttonSaveRIPEMD160ToFile = new System.Windows.Forms.Button();
 			this.buttonSaveMD5StringToFile = new System.Windows.Forms.Button();
-			this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+			this.buttonCopySHA512StringToClipboard = new System.Windows.Forms.Button();
+			this.buttonCopySHA384StringToClipboard = new System.Windows.Forms.Button();
+			this.buttonCopySHA256StringToClipboard = new System.Windows.Forms.Button();
+			this.buttonCopySHA1StringToClipboard = new System.Windows.Forms.Button();
+			this.buttonCopyRIPEMD160StringToClipboard = new System.Windows.Forms.Button();
+			this.buttonCopyMD5StringToClipboard = new System.Windows.Forms.Button();
+			this.buttonOpenAndCalculateFile = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// labelFileName
@@ -75,18 +75,8 @@ namespace Hasher
 			this.textBoxFileName.Location = new System.Drawing.Point(53, 6);
 			this.textBoxFileName.Name = "textBoxFileName";
 			this.textBoxFileName.ReadOnly = true;
-			this.textBoxFileName.Size = new System.Drawing.Size(390, 20);
+			this.textBoxFileName.Size = new System.Drawing.Size(323, 20);
 			this.textBoxFileName.TabIndex = 1;
-			// 
-			// buttonOpenAndCalculateFile
-			// 
-			this.buttonOpenAndCalculateFile.Location = new System.Drawing.Point(449, 6);
-			this.buttonOpenAndCalculateFile.Name = "buttonOpenAndCalculateFile";
-			this.buttonOpenAndCalculateFile.Size = new System.Drawing.Size(99, 21);
-			this.buttonOpenAndCalculateFile.TabIndex = 2;
-			this.buttonOpenAndCalculateFile.Text = "Open && Calculate";
-			this.buttonOpenAndCalculateFile.UseVisualStyleBackColor = true;
-			this.buttonOpenAndCalculateFile.Click += new System.EventHandler(this.OpenAndCalculateFile_Click);
 			// 
 			// labelMD5String
 			// 
@@ -109,30 +99,7 @@ namespace Hasher
 			// openFileDialog
 			// 
 			this.openFileDialog.SupportMultiDottedExtensions = true;
-			// 
-			// buttonCopyMD5StringToClipboard
-			// 
-			this.buttonCopyMD5StringToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyMD5StringToClipboard.Image")));
-			this.buttonCopyMD5StringToClipboard.Location = new System.Drawing.Point(449, 33);
-			this.buttonCopyMD5StringToClipboard.Margin = new System.Windows.Forms.Padding(0);
-			this.buttonCopyMD5StringToClipboard.Name = "buttonCopyMD5StringToClipboard";
-			this.buttonCopyMD5StringToClipboard.Size = new System.Drawing.Size(24, 24);
-			this.buttonCopyMD5StringToClipboard.TabIndex = 5;
-			this.buttonCopyMD5StringToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.buttonCopyMD5StringToClipboard.UseVisualStyleBackColor = true;
-			this.buttonCopyMD5StringToClipboard.Click += new System.EventHandler(this.ButtonCopyMD5StringToClipboard_Click);
-			// 
-			// buttonCopyRIPEMD160StringToClipboard
-			// 
-			this.buttonCopyRIPEMD160StringToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyRIPEMD160StringToClipboard.Image")));
-			this.buttonCopyRIPEMD160StringToClipboard.Location = new System.Drawing.Point(449, 59);
-			this.buttonCopyRIPEMD160StringToClipboard.Margin = new System.Windows.Forms.Padding(0);
-			this.buttonCopyRIPEMD160StringToClipboard.Name = "buttonCopyRIPEMD160StringToClipboard";
-			this.buttonCopyRIPEMD160StringToClipboard.Size = new System.Drawing.Size(24, 24);
-			this.buttonCopyRIPEMD160StringToClipboard.TabIndex = 9;
-			this.buttonCopyRIPEMD160StringToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.buttonCopyRIPEMD160StringToClipboard.UseVisualStyleBackColor = true;
-			this.buttonCopyRIPEMD160StringToClipboard.Click += new System.EventHandler(this.ButtonCopyRIPEMD160StringToClipboard_Click);
+			this.openFileDialog.Title = "Load file";
 			// 
 			// textBoxRIPEMD160String
 			// 
@@ -152,18 +119,6 @@ namespace Hasher
 			this.labelRIPEMD160String.TabIndex = 7;
 			this.labelRIPEMD160String.Text = "RIPEMD160:";
 			// 
-			// buttonCopySHA1StringToClipboard
-			// 
-			this.buttonCopySHA1StringToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA1StringToClipboard.Image")));
-			this.buttonCopySHA1StringToClipboard.Location = new System.Drawing.Point(449, 85);
-			this.buttonCopySHA1StringToClipboard.Margin = new System.Windows.Forms.Padding(0);
-			this.buttonCopySHA1StringToClipboard.Name = "buttonCopySHA1StringToClipboard";
-			this.buttonCopySHA1StringToClipboard.Size = new System.Drawing.Size(24, 24);
-			this.buttonCopySHA1StringToClipboard.TabIndex = 13;
-			this.buttonCopySHA1StringToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.buttonCopySHA1StringToClipboard.UseVisualStyleBackColor = true;
-			this.buttonCopySHA1StringToClipboard.Click += new System.EventHandler(this.ButtonCopySHA1StringToClipboard_Click);
-			// 
 			// textBoxSHA1String
 			// 
 			this.textBoxSHA1String.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -181,18 +136,6 @@ namespace Hasher
 			this.labelSHA1String.Size = new System.Drawing.Size(38, 13);
 			this.labelSHA1String.TabIndex = 11;
 			this.labelSHA1String.Text = "SHA1:";
-			// 
-			// buttonCopySHA256StringToClipboard
-			// 
-			this.buttonCopySHA256StringToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA256StringToClipboard.Image")));
-			this.buttonCopySHA256StringToClipboard.Location = new System.Drawing.Point(449, 111);
-			this.buttonCopySHA256StringToClipboard.Margin = new System.Windows.Forms.Padding(0);
-			this.buttonCopySHA256StringToClipboard.Name = "buttonCopySHA256StringToClipboard";
-			this.buttonCopySHA256StringToClipboard.Size = new System.Drawing.Size(24, 24);
-			this.buttonCopySHA256StringToClipboard.TabIndex = 17;
-			this.buttonCopySHA256StringToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.buttonCopySHA256StringToClipboard.UseVisualStyleBackColor = true;
-			this.buttonCopySHA256StringToClipboard.Click += new System.EventHandler(this.ButtonCopySHA256StringToClipboard_Click);
 			// 
 			// textBoxSHA256String
 			// 
@@ -212,18 +155,6 @@ namespace Hasher
 			this.labelSHA256String.TabIndex = 15;
 			this.labelSHA256String.Text = "SHA256:";
 			// 
-			// buttonCopySHA384StringToClipboard
-			// 
-			this.buttonCopySHA384StringToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA384StringToClipboard.Image")));
-			this.buttonCopySHA384StringToClipboard.Location = new System.Drawing.Point(449, 137);
-			this.buttonCopySHA384StringToClipboard.Margin = new System.Windows.Forms.Padding(0);
-			this.buttonCopySHA384StringToClipboard.Name = "buttonCopySHA384StringToClipboard";
-			this.buttonCopySHA384StringToClipboard.Size = new System.Drawing.Size(24, 24);
-			this.buttonCopySHA384StringToClipboard.TabIndex = 21;
-			this.buttonCopySHA384StringToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.buttonCopySHA384StringToClipboard.UseVisualStyleBackColor = true;
-			this.buttonCopySHA384StringToClipboard.Click += new System.EventHandler(this.ButtonCopySHA384StringToClipboard_Click);
-			// 
 			// textBoxSHA384String
 			// 
 			this.textBoxSHA384String.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -241,18 +172,6 @@ namespace Hasher
 			this.labelSHA384.Size = new System.Drawing.Size(50, 13);
 			this.labelSHA384.TabIndex = 19;
 			this.labelSHA384.Text = "SHA384:";
-			// 
-			// buttonCopySHA512StringToClipboard
-			// 
-			this.buttonCopySHA512StringToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA512StringToClipboard.Image")));
-			this.buttonCopySHA512StringToClipboard.Location = new System.Drawing.Point(449, 163);
-			this.buttonCopySHA512StringToClipboard.Margin = new System.Windows.Forms.Padding(0);
-			this.buttonCopySHA512StringToClipboard.Name = "buttonCopySHA512StringToClipboard";
-			this.buttonCopySHA512StringToClipboard.Size = new System.Drawing.Size(24, 24);
-			this.buttonCopySHA512StringToClipboard.TabIndex = 25;
-			this.buttonCopySHA512StringToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.buttonCopySHA512StringToClipboard.UseVisualStyleBackColor = true;
-			this.buttonCopySHA512StringToClipboard.Click += new System.EventHandler(this.ButtonCopySHA512StringToClipboard_Click);
 			// 
 			// textBoxSHA512String
 			// 
@@ -272,11 +191,15 @@ namespace Hasher
 			this.labelSHA512String.TabIndex = 23;
 			this.labelSHA512String.Text = "SHA512:";
 			// 
+			// saveFileDialog
+			// 
+			this.saveFileDialog.SupportMultiDottedExtensions = true;
+			this.saveFileDialog.Title = "Save hash value to file";
+			// 
 			// buttonSaveSHA512StringToFile
 			// 
 			this.buttonSaveSHA512StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA512StringToFile.Image")));
 			this.buttonSaveSHA512StringToFile.Location = new System.Drawing.Point(473, 163);
-			this.buttonSaveSHA512StringToFile.Margin = new System.Windows.Forms.Padding(0);
 			this.buttonSaveSHA512StringToFile.Name = "buttonSaveSHA512StringToFile";
 			this.buttonSaveSHA512StringToFile.Size = new System.Drawing.Size(24, 24);
 			this.buttonSaveSHA512StringToFile.TabIndex = 26;
@@ -288,7 +211,6 @@ namespace Hasher
 			// 
 			this.buttonSaveSHA384StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA384StringToFile.Image")));
 			this.buttonSaveSHA384StringToFile.Location = new System.Drawing.Point(473, 137);
-			this.buttonSaveSHA384StringToFile.Margin = new System.Windows.Forms.Padding(0);
 			this.buttonSaveSHA384StringToFile.Name = "buttonSaveSHA384StringToFile";
 			this.buttonSaveSHA384StringToFile.Size = new System.Drawing.Size(24, 24);
 			this.buttonSaveSHA384StringToFile.TabIndex = 22;
@@ -300,7 +222,6 @@ namespace Hasher
 			// 
 			this.buttonSaveSHA256StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA256StringToFile.Image")));
 			this.buttonSaveSHA256StringToFile.Location = new System.Drawing.Point(473, 111);
-			this.buttonSaveSHA256StringToFile.Margin = new System.Windows.Forms.Padding(0);
 			this.buttonSaveSHA256StringToFile.Name = "buttonSaveSHA256StringToFile";
 			this.buttonSaveSHA256StringToFile.Size = new System.Drawing.Size(24, 24);
 			this.buttonSaveSHA256StringToFile.TabIndex = 18;
@@ -312,7 +233,6 @@ namespace Hasher
 			// 
 			this.buttonSaveSHA1StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA1StringToFile.Image")));
 			this.buttonSaveSHA1StringToFile.Location = new System.Drawing.Point(473, 85);
-			this.buttonSaveSHA1StringToFile.Margin = new System.Windows.Forms.Padding(0);
 			this.buttonSaveSHA1StringToFile.Name = "buttonSaveSHA1StringToFile";
 			this.buttonSaveSHA1StringToFile.Size = new System.Drawing.Size(24, 24);
 			this.buttonSaveSHA1StringToFile.TabIndex = 14;
@@ -324,7 +244,6 @@ namespace Hasher
 			// 
 			this.buttonSaveRIPEMD160ToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveRIPEMD160ToFile.Image")));
 			this.buttonSaveRIPEMD160ToFile.Location = new System.Drawing.Point(473, 59);
-			this.buttonSaveRIPEMD160ToFile.Margin = new System.Windows.Forms.Padding(0);
 			this.buttonSaveRIPEMD160ToFile.Name = "buttonSaveRIPEMD160ToFile";
 			this.buttonSaveRIPEMD160ToFile.Size = new System.Drawing.Size(24, 24);
 			this.buttonSaveRIPEMD160ToFile.TabIndex = 10;
@@ -336,7 +255,6 @@ namespace Hasher
 			// 
 			this.buttonSaveMD5StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveMD5StringToFile.Image")));
 			this.buttonSaveMD5StringToFile.Location = new System.Drawing.Point(473, 33);
-			this.buttonSaveMD5StringToFile.Margin = new System.Windows.Forms.Padding(0);
 			this.buttonSaveMD5StringToFile.Name = "buttonSaveMD5StringToFile";
 			this.buttonSaveMD5StringToFile.Size = new System.Drawing.Size(24, 24);
 			this.buttonSaveMD5StringToFile.TabIndex = 6;
@@ -344,17 +262,91 @@ namespace Hasher
 			this.buttonSaveMD5StringToFile.UseVisualStyleBackColor = true;
 			this.buttonSaveMD5StringToFile.Click += new System.EventHandler(this.ButtonSaveMD5StringToFile_Click);
 			// 
-			// saveFileDialog
+			// buttonCopySHA512StringToClipboard
 			// 
-			this.saveFileDialog.CheckFileExists = true;
-			this.saveFileDialog.SupportMultiDottedExtensions = true;
+			this.buttonCopySHA512StringToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA512StringToClipboard.Image")));
+			this.buttonCopySHA512StringToClipboard.Location = new System.Drawing.Point(449, 163);
+			this.buttonCopySHA512StringToClipboard.Name = "buttonCopySHA512StringToClipboard";
+			this.buttonCopySHA512StringToClipboard.Size = new System.Drawing.Size(24, 24);
+			this.buttonCopySHA512StringToClipboard.TabIndex = 25;
+			this.buttonCopySHA512StringToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.buttonCopySHA512StringToClipboard.UseVisualStyleBackColor = true;
+			this.buttonCopySHA512StringToClipboard.Click += new System.EventHandler(this.ButtonCopySHA512StringToClipboard_Click);
+			// 
+			// buttonCopySHA384StringToClipboard
+			// 
+			this.buttonCopySHA384StringToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA384StringToClipboard.Image")));
+			this.buttonCopySHA384StringToClipboard.Location = new System.Drawing.Point(449, 137);
+			this.buttonCopySHA384StringToClipboard.Name = "buttonCopySHA384StringToClipboard";
+			this.buttonCopySHA384StringToClipboard.Size = new System.Drawing.Size(24, 24);
+			this.buttonCopySHA384StringToClipboard.TabIndex = 21;
+			this.buttonCopySHA384StringToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.buttonCopySHA384StringToClipboard.UseVisualStyleBackColor = true;
+			this.buttonCopySHA384StringToClipboard.Click += new System.EventHandler(this.ButtonCopySHA384StringToClipboard_Click);
+			// 
+			// buttonCopySHA256StringToClipboard
+			// 
+			this.buttonCopySHA256StringToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA256StringToClipboard.Image")));
+			this.buttonCopySHA256StringToClipboard.Location = new System.Drawing.Point(449, 111);
+			this.buttonCopySHA256StringToClipboard.Name = "buttonCopySHA256StringToClipboard";
+			this.buttonCopySHA256StringToClipboard.Size = new System.Drawing.Size(24, 24);
+			this.buttonCopySHA256StringToClipboard.TabIndex = 17;
+			this.buttonCopySHA256StringToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.buttonCopySHA256StringToClipboard.UseVisualStyleBackColor = true;
+			this.buttonCopySHA256StringToClipboard.Click += new System.EventHandler(this.ButtonCopySHA256StringToClipboard_Click);
+			// 
+			// buttonCopySHA1StringToClipboard
+			// 
+			this.buttonCopySHA1StringToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA1StringToClipboard.Image")));
+			this.buttonCopySHA1StringToClipboard.Location = new System.Drawing.Point(449, 85);
+			this.buttonCopySHA1StringToClipboard.Name = "buttonCopySHA1StringToClipboard";
+			this.buttonCopySHA1StringToClipboard.Size = new System.Drawing.Size(24, 24);
+			this.buttonCopySHA1StringToClipboard.TabIndex = 13;
+			this.buttonCopySHA1StringToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.buttonCopySHA1StringToClipboard.UseVisualStyleBackColor = true;
+			this.buttonCopySHA1StringToClipboard.Click += new System.EventHandler(this.ButtonCopySHA1StringToClipboard_Click);
+			// 
+			// buttonCopyRIPEMD160StringToClipboard
+			// 
+			this.buttonCopyRIPEMD160StringToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyRIPEMD160StringToClipboard.Image")));
+			this.buttonCopyRIPEMD160StringToClipboard.Location = new System.Drawing.Point(449, 59);
+			this.buttonCopyRIPEMD160StringToClipboard.Name = "buttonCopyRIPEMD160StringToClipboard";
+			this.buttonCopyRIPEMD160StringToClipboard.Size = new System.Drawing.Size(24, 24);
+			this.buttonCopyRIPEMD160StringToClipboard.TabIndex = 9;
+			this.buttonCopyRIPEMD160StringToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.buttonCopyRIPEMD160StringToClipboard.UseVisualStyleBackColor = true;
+			this.buttonCopyRIPEMD160StringToClipboard.Click += new System.EventHandler(this.ButtonCopyRIPEMD160StringToClipboard_Click);
+			// 
+			// buttonCopyMD5StringToClipboard
+			// 
+			this.buttonCopyMD5StringToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyMD5StringToClipboard.Image")));
+			this.buttonCopyMD5StringToClipboard.Location = new System.Drawing.Point(449, 33);
+			this.buttonCopyMD5StringToClipboard.Name = "buttonCopyMD5StringToClipboard";
+			this.buttonCopyMD5StringToClipboard.Size = new System.Drawing.Size(24, 24);
+			this.buttonCopyMD5StringToClipboard.TabIndex = 5;
+			this.buttonCopyMD5StringToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.buttonCopyMD5StringToClipboard.UseVisualStyleBackColor = true;
+			this.buttonCopyMD5StringToClipboard.Click += new System.EventHandler(this.ButtonCopyMD5StringToClipboard_Click);
+			// 
+			// buttonOpenAndCalculateFile
+			// 
+			this.buttonOpenAndCalculateFile.Image = global::Hasher.Properties.Resources.fatcow_document_hash_tag_16;
+			this.buttonOpenAndCalculateFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			this.buttonOpenAndCalculateFile.Location = new System.Drawing.Point(382, 3);
+			this.buttonOpenAndCalculateFile.Name = "buttonOpenAndCalculateFile";
+			this.buttonOpenAndCalculateFile.Size = new System.Drawing.Size(115, 24);
+			this.buttonOpenAndCalculateFile.TabIndex = 2;
+			this.buttonOpenAndCalculateFile.Text = "Open && Calculate";
+			this.buttonOpenAndCalculateFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.buttonOpenAndCalculateFile.UseVisualStyleBackColor = true;
+			this.buttonOpenAndCalculateFile.Click += new System.EventHandler(this.OpenAndCalculateFile_Click);
 			// 
 			// MainForm
 			// 
 			this.AllowDrop = true;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(562, 201);
+			this.ClientSize = new System.Drawing.Size(511, 201);
 			this.Controls.Add(this.buttonSaveSHA512StringToFile);
 			this.Controls.Add(this.buttonSaveSHA384StringToFile);
 			this.Controls.Add(this.buttonSaveSHA256StringToFile);

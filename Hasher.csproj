@@ -177,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="hashtag.ico" />
+    <None Include="Resources\fatcow_document_hash_tag_16.png" />
     <None Include="Resources\fatcow_diskette_16.png" />
     <None Include="Resources\fatcow_clipboard_empty_16.png" />
   </ItemGroup>

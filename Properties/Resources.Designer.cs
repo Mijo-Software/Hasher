@@ -79,5 +79,15 @@ namespace Hasher.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fatcow_document_hash_tag_16 {
+            get {
+                object obj = ResourceManager.GetObject("fatcow_document_hash_tag_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

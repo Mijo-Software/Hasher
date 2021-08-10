@@ -109,28 +109,47 @@ namespace Hasher
 			Clipboard.SetText(text: textBoxSHA512String.Text);
 		}
 
+		private void SaveHashValueToFile(string hashFileExtension, string hashValue)
+		{
+			saveFileDialog.FileName = $"{textBoxFileName.Text}{hashFileExtension}";
+			if (saveFileDialog.ShowDialog() == DialogResult.OK)
+			{
+				FileStream fileStream = new FileStream(path: saveFileDialog.FileName, mode: FileMode.Create, access: FileAccess.Write);
+				StreamWriter streamWriter = new StreamWriter(stream: fileStream);
+				streamWriter.Write(value: hashValue);
+				streamWriter.Flush();
+				streamWriter.Close();
+			}
+		}
+
 		private void ButtonSaveMD5StringToFile_Click(object sender, EventArgs e)
 		{
+			SaveHashValueToFile(hashFileExtension: ".md5", hashValue: textBoxMD5String.Text);
 		}
 
 		private void ButtonSaveRIPEMD160ToFile_Click(object sender, EventArgs e)
 		{
+			SaveHashValueToFile(hashFileExtension: ".ripemd160", hashValue: textBoxRIPEMD160String.Text);
 		}
 
 		private void ButtonSaveSHA1StringToFile_Click(object sender, EventArgs e)
 		{
+			SaveHashValueToFile(hashFileExtension: ".sha1", hashValue: textBoxSHA1String.Text);
 		}
 
 		private void ButtonSaveSHA256StringToFile_Click(object sender, EventArgs e)
 		{
+			SaveHashValueToFile(hashFileExtension: ".sha256", hashValue: textBoxSHA256String.Text);
 		}
 
 		private void ButtonSaveSHA384StringToFile_Click(object sender, EventArgs e)
 		{
+			SaveHashValueToFile(hashFileExtension: ".sha384", hashValue: textBoxSHA384String.Text);
 		}
 
 		private void ButtonSaveSHA512StringToFile_Click(object sender, EventArgs e)
 		{
+			SaveHashValueToFile(hashFileExtension: ".sha512", hashValue: textBoxSHA512String.Text);
 		}
 
 		private void MainForm_DragDrop(object sender, DragEventArgs e)
