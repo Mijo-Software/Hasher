@@ -61,6 +61,24 @@ namespace Hasher.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die - ähnelt.
+        /// </summary>
+        internal static string dash {
+            get {
+                return ResourceManager.GetString("dash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Error ähnelt.
+        /// </summary>
+        internal static string error {
+            get {
+                return ResourceManager.GetString("error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap fatcow_clipboard_empty_16 {
@@ -87,6 +105,97 @@ namespace Hasher.Properties {
             get {
                 object obj = ResourceManager.GetObject("fatcow_document_hash_tag_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fatcow_document_info_16 {
+            get {
+                object obj = ResourceManager.GetObject("fatcow_document_info_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die File does not exist. ähnelt.
+        /// </summary>
+        internal static string fileDoesNotExist {
+            get {
+                return ResourceManager.GetString("fileDoesNotExist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die .md5 ähnelt.
+        /// </summary>
+        internal static string md5FileExt {
+            get {
+                return ResourceManager.GetString("md5FileExt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Only the first file of multiple files is accepted. ähnelt.
+        /// </summary>
+        internal static string onlyFirstFileIsAccepted {
+            get {
+                return ResourceManager.GetString("onlyFirstFileIsAccepted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die .ripemd160 ähnelt.
+        /// </summary>
+        internal static string ripemd160FileExt {
+            get {
+                return ResourceManager.GetString("ripemd160FileExt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die .sha1 ähnelt.
+        /// </summary>
+        internal static string sha1FileExt {
+            get {
+                return ResourceManager.GetString("sha1FileExt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die .sha256 ähnelt.
+        /// </summary>
+        internal static string sha256FileExt {
+            get {
+                return ResourceManager.GetString("sha256FileExt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die .sha384 ähnelt.
+        /// </summary>
+        internal static string sha384FileExt {
+            get {
+                return ResourceManager.GetString("sha384FileExt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die .sha512 ähnelt.
+        /// </summary>
+        internal static string sha512FileExt {
+            get {
+                return ResourceManager.GetString("sha512FileExt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Warning ähnelt.
+        /// </summary>
+        internal static string warning {
+            get {
+                return ResourceManager.GetString("warning", resourceCulture);
             }
         }
     }
