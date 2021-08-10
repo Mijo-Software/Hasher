@@ -61,7 +61,7 @@ namespace Hasher
 
 		private void ButtonCopyRIPEMD160String_Click(object sender, EventArgs e)
 		{
-			Clipboard.SetText(text: textBoxMD5String.Text);
+			Clipboard.SetText(text: textBoxRIPEMD160String.Text);
 		}
 	}
 }
