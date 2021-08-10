@@ -79,34 +79,58 @@ namespace Hasher
 			}
 		}
 
-		private void ButtonCopyMD5String_Click(object sender, EventArgs e)
+		private void ButtonCopyMD5StringToClipboard_Click(object sender, EventArgs e)
 		{
 			Clipboard.SetText(text: textBoxMD5String.Text);
 		}
 
-		private void ButtonCopyRIPEMD160String_Click(object sender, EventArgs e)
+		private void ButtonCopyRIPEMD160StringToClipboard_Click(object sender, EventArgs e)
 		{
 			Clipboard.SetText(text: textBoxRIPEMD160String.Text);
 		}
 
-		private void ButtonCopySHA1String_Click(object sender, EventArgs e)
+		private void ButtonCopySHA1StringToClipboard_Click(object sender, EventArgs e)
 		{
 			Clipboard.SetText(text: textBoxSHA1String.Text);
 		}
 
-		private void ButtonCopySHA256String_Click(object sender, EventArgs e)
+		private void ButtonCopySHA256StringToClipboard_Click(object sender, EventArgs e)
 		{
 			Clipboard.SetText(text: textBoxSHA256String.Text);
 		}
 
-		private void ButtonCopySHA384String_Click(object sender, EventArgs e)
+		private void ButtonCopySHA384StringToClipboard_Click(object sender, EventArgs e)
 		{
 			Clipboard.SetText(text: textBoxSHA384String.Text);
 		}
 
-		private void ButtonbuttonCopySHA512String_Click(object sender, EventArgs e)
+		private void ButtonCopySHA512StringToClipboard_Click(object sender, EventArgs e)
 		{
 			Clipboard.SetText(text: textBoxSHA512String.Text);
+		}
+
+		private void ButtonSaveMD5StringToFile_Click(object sender, EventArgs e)
+		{
+		}
+
+		private void ButtonSaveRIPEMD160ToFile_Click(object sender, EventArgs e)
+		{
+		}
+
+		private void ButtonSaveSHA1StringToFile_Click(object sender, EventArgs e)
+		{
+		}
+
+		private void ButtonSaveSHA256StringToFile_Click(object sender, EventArgs e)
+		{
+		}
+
+		private void ButtonSaveSHA384StringToFile_Click(object sender, EventArgs e)
+		{
+		}
+
+		private void ButtonSaveSHA512StringToFile_Click(object sender, EventArgs e)
+		{
 		}
 
 		private void MainForm_DragDrop(object sender, DragEventArgs e)
