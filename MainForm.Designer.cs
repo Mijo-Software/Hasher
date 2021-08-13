@@ -63,6 +63,7 @@ namespace Hasher
 			this.tabControl = new System.Windows.Forms.TabControl();
 			this.tabPageFile = new System.Windows.Forms.TabPage();
 			this.tabPageText = new System.Windows.Forms.TabPage();
+			this.checkBoxAutoUpdateText = new System.Windows.Forms.CheckBox();
 			this.labelText = new System.Windows.Forms.Label();
 			this.textBoxText = new System.Windows.Forms.TextBox();
 			this.buttonCalculateHashFromText = new System.Windows.Forms.Button();
@@ -436,6 +437,7 @@ namespace Hasher
 			// 
 			// tabPageText
 			// 
+			this.tabPageText.Controls.Add(this.checkBoxAutoUpdateText);
 			this.tabPageText.Controls.Add(this.labelText);
 			this.tabPageText.Controls.Add(this.textBoxText);
 			this.tabPageText.Controls.Add(this.buttonCalculateHashFromText);
@@ -465,6 +467,19 @@ namespace Hasher
 			this.tabPageText.Text = "Text";
 			this.tabPageText.UseVisualStyleBackColor = true;
 			// 
+			// checkBoxAutoUpdateText
+			// 
+			this.checkBoxAutoUpdateText.Appearance = System.Windows.Forms.Appearance.Button;
+			this.checkBoxAutoUpdateText.AutoSize = true;
+			this.checkBoxAutoUpdateText.Image = global::Hasher.Properties.Resources.fatcow_arrow_refresh_small_16;
+			this.checkBoxAutoUpdateText.Location = new System.Drawing.Point(471, 7);
+			this.checkBoxAutoUpdateText.Name = "checkBoxAutoUpdateText";
+			this.checkBoxAutoUpdateText.Size = new System.Drawing.Size(22, 22);
+			this.checkBoxAutoUpdateText.TabIndex = 3;
+			this.checkBoxAutoUpdateText.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.checkBoxAutoUpdateText.UseVisualStyleBackColor = true;
+			this.checkBoxAutoUpdateText.CheckedChanged += new System.EventHandler(this.CheckBoxAutoUpdateText_CheckedChanged);
+			// 
 			// labelText
 			// 
 			this.labelText.AutoSize = true;
@@ -478,14 +493,15 @@ namespace Hasher
 			// 
 			this.textBoxText.Location = new System.Drawing.Point(44, 9);
 			this.textBoxText.Name = "textBoxText";
-			this.textBoxText.Size = new System.Drawing.Size(365, 20);
+			this.textBoxText.Size = new System.Drawing.Size(335, 20);
 			this.textBoxText.TabIndex = 1;
+			this.textBoxText.TextChanged += new System.EventHandler(this.TextBoxText_KeyPress);
 			// 
 			// buttonCalculateHashFromText
 			// 
 			this.buttonCalculateHashFromText.Image = global::Hasher.Properties.Resources.fatcow_document_hash_tag_16;
 			this.buttonCalculateHashFromText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.buttonCalculateHashFromText.Location = new System.Drawing.Point(415, 6);
+			this.buttonCalculateHashFromText.Location = new System.Drawing.Point(385, 6);
 			this.buttonCalculateHashFromText.Name = "buttonCalculateHashFromText";
 			this.buttonCalculateHashFromText.Size = new System.Drawing.Size(80, 24);
 			this.buttonCalculateHashFromText.TabIndex = 2;
@@ -500,7 +516,7 @@ namespace Hasher
 			this.labelMD5StringFromText.Location = new System.Drawing.Point(7, 42);
 			this.labelMD5StringFromText.Name = "labelMD5StringFromText";
 			this.labelMD5StringFromText.Size = new System.Drawing.Size(33, 13);
-			this.labelMD5StringFromText.TabIndex = 3;
+			this.labelMD5StringFromText.TabIndex = 4;
 			this.labelMD5StringFromText.Text = "MD5:";
 			// 
 			// textBoxMD5StringFromText
@@ -510,7 +526,7 @@ namespace Hasher
 			this.textBoxMD5StringFromText.Name = "textBoxMD5StringFromText";
 			this.textBoxMD5StringFromText.ReadOnly = true;
 			this.textBoxMD5StringFromText.Size = new System.Drawing.Size(382, 20);
-			this.textBoxMD5StringFromText.TabIndex = 4;
+			this.textBoxMD5StringFromText.TabIndex = 5;
 			// 
 			// buttonCopyMD5StringFromTextToClipboard
 			// 
@@ -518,7 +534,7 @@ namespace Hasher
 			this.buttonCopyMD5StringFromTextToClipboard.Location = new System.Drawing.Point(471, 36);
 			this.buttonCopyMD5StringFromTextToClipboard.Name = "buttonCopyMD5StringFromTextToClipboard";
 			this.buttonCopyMD5StringFromTextToClipboard.Size = new System.Drawing.Size(24, 24);
-			this.buttonCopyMD5StringFromTextToClipboard.TabIndex = 5;
+			this.buttonCopyMD5StringFromTextToClipboard.TabIndex = 6;
 			this.buttonCopyMD5StringFromTextToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.buttonCopyMD5StringFromTextToClipboard.UseVisualStyleBackColor = true;
 			this.buttonCopyMD5StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopyMD5StringFromTextToClipboard_Click);
@@ -529,7 +545,7 @@ namespace Hasher
 			this.labelRIPEMD160StringFromText.Location = new System.Drawing.Point(7, 68);
 			this.labelRIPEMD160StringFromText.Name = "labelRIPEMD160StringFromText";
 			this.labelRIPEMD160StringFromText.Size = new System.Drawing.Size(70, 13);
-			this.labelRIPEMD160StringFromText.TabIndex = 6;
+			this.labelRIPEMD160StringFromText.TabIndex = 7;
 			this.labelRIPEMD160StringFromText.Text = "RIPEMD160:";
 			// 
 			// textBoxRIPEMD160StringFromText
@@ -539,7 +555,7 @@ namespace Hasher
 			this.textBoxRIPEMD160StringFromText.Name = "textBoxRIPEMD160StringFromText";
 			this.textBoxRIPEMD160StringFromText.ReadOnly = true;
 			this.textBoxRIPEMD160StringFromText.Size = new System.Drawing.Size(382, 20);
-			this.textBoxRIPEMD160StringFromText.TabIndex = 7;
+			this.textBoxRIPEMD160StringFromText.TabIndex = 8;
 			// 
 			// buttonCopySHA512StringFromTextToClipboard
 			// 
@@ -547,7 +563,7 @@ namespace Hasher
 			this.buttonCopySHA512StringFromTextToClipboard.Location = new System.Drawing.Point(471, 166);
 			this.buttonCopySHA512StringFromTextToClipboard.Name = "buttonCopySHA512StringFromTextToClipboard";
 			this.buttonCopySHA512StringFromTextToClipboard.Size = new System.Drawing.Size(24, 24);
-			this.buttonCopySHA512StringFromTextToClipboard.TabIndex = 20;
+			this.buttonCopySHA512StringFromTextToClipboard.TabIndex = 21;
 			this.buttonCopySHA512StringFromTextToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.buttonCopySHA512StringFromTextToClipboard.UseVisualStyleBackColor = true;
 			this.buttonCopySHA512StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopySHA512StringFromTextToClipboard_Click);
@@ -558,7 +574,7 @@ namespace Hasher
 			this.buttonCopyRIPEMD160StringFromTextToClipboard.Location = new System.Drawing.Point(471, 62);
 			this.buttonCopyRIPEMD160StringFromTextToClipboard.Name = "buttonCopyRIPEMD160StringFromTextToClipboard";
 			this.buttonCopyRIPEMD160StringFromTextToClipboard.Size = new System.Drawing.Size(24, 24);
-			this.buttonCopyRIPEMD160StringFromTextToClipboard.TabIndex = 8;
+			this.buttonCopyRIPEMD160StringFromTextToClipboard.TabIndex = 9;
 			this.buttonCopyRIPEMD160StringFromTextToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.buttonCopyRIPEMD160StringFromTextToClipboard.UseVisualStyleBackColor = true;
 			this.buttonCopyRIPEMD160StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopyRIPEMD160StringFromTextToClipboard_Click);
@@ -570,7 +586,7 @@ namespace Hasher
 			this.textBoxSHA512StringFromText.Name = "textBoxSHA512StringFromText";
 			this.textBoxSHA512StringFromText.ReadOnly = true;
 			this.textBoxSHA512StringFromText.Size = new System.Drawing.Size(382, 20);
-			this.textBoxSHA512StringFromText.TabIndex = 19;
+			this.textBoxSHA512StringFromText.TabIndex = 20;
 			// 
 			// labelSHA1StringFromText
 			// 
@@ -578,7 +594,7 @@ namespace Hasher
 			this.labelSHA1StringFromText.Location = new System.Drawing.Point(7, 94);
 			this.labelSHA1StringFromText.Name = "labelSHA1StringFromText";
 			this.labelSHA1StringFromText.Size = new System.Drawing.Size(38, 13);
-			this.labelSHA1StringFromText.TabIndex = 9;
+			this.labelSHA1StringFromText.TabIndex = 10;
 			this.labelSHA1StringFromText.Text = "SHA1:";
 			// 
 			// labelSHA512StringFromText
@@ -587,7 +603,7 @@ namespace Hasher
 			this.labelSHA512StringFromText.Location = new System.Drawing.Point(7, 172);
 			this.labelSHA512StringFromText.Name = "labelSHA512StringFromText";
 			this.labelSHA512StringFromText.Size = new System.Drawing.Size(50, 13);
-			this.labelSHA512StringFromText.TabIndex = 18;
+			this.labelSHA512StringFromText.TabIndex = 19;
 			this.labelSHA512StringFromText.Text = "SHA512:";
 			// 
 			// textBoxSHA1StringFromText
@@ -597,7 +613,7 @@ namespace Hasher
 			this.textBoxSHA1StringFromText.Name = "textBoxSHA1StringFromText";
 			this.textBoxSHA1StringFromText.ReadOnly = true;
 			this.textBoxSHA1StringFromText.Size = new System.Drawing.Size(382, 20);
-			this.textBoxSHA1StringFromText.TabIndex = 10;
+			this.textBoxSHA1StringFromText.TabIndex = 11;
 			// 
 			// buttonCopySHA384StringFromTextToClipboard
 			// 
@@ -605,7 +621,7 @@ namespace Hasher
 			this.buttonCopySHA384StringFromTextToClipboard.Location = new System.Drawing.Point(471, 140);
 			this.buttonCopySHA384StringFromTextToClipboard.Name = "buttonCopySHA384StringFromTextToClipboard";
 			this.buttonCopySHA384StringFromTextToClipboard.Size = new System.Drawing.Size(24, 24);
-			this.buttonCopySHA384StringFromTextToClipboard.TabIndex = 17;
+			this.buttonCopySHA384StringFromTextToClipboard.TabIndex = 18;
 			this.buttonCopySHA384StringFromTextToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.buttonCopySHA384StringFromTextToClipboard.UseVisualStyleBackColor = true;
 			this.buttonCopySHA384StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopySHA384StringFromTextToClipboard_Click);
@@ -616,7 +632,7 @@ namespace Hasher
 			this.buttonCopySHA1StringFromTextToClipboard.Location = new System.Drawing.Point(471, 88);
 			this.buttonCopySHA1StringFromTextToClipboard.Name = "buttonCopySHA1StringFromTextToClipboard";
 			this.buttonCopySHA1StringFromTextToClipboard.Size = new System.Drawing.Size(24, 24);
-			this.buttonCopySHA1StringFromTextToClipboard.TabIndex = 11;
+			this.buttonCopySHA1StringFromTextToClipboard.TabIndex = 12;
 			this.buttonCopySHA1StringFromTextToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.buttonCopySHA1StringFromTextToClipboard.UseVisualStyleBackColor = true;
 			this.buttonCopySHA1StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopySHA1StringFromTextToClipboard_Click);
@@ -628,7 +644,7 @@ namespace Hasher
 			this.textBoxSHA384StringFromText.Name = "textBoxSHA384StringFromText";
 			this.textBoxSHA384StringFromText.ReadOnly = true;
 			this.textBoxSHA384StringFromText.Size = new System.Drawing.Size(382, 20);
-			this.textBoxSHA384StringFromText.TabIndex = 16;
+			this.textBoxSHA384StringFromText.TabIndex = 17;
 			// 
 			// labelSHA256StringFromText
 			// 
@@ -636,7 +652,7 @@ namespace Hasher
 			this.labelSHA256StringFromText.Location = new System.Drawing.Point(7, 120);
 			this.labelSHA256StringFromText.Name = "labelSHA256StringFromText";
 			this.labelSHA256StringFromText.Size = new System.Drawing.Size(50, 13);
-			this.labelSHA256StringFromText.TabIndex = 12;
+			this.labelSHA256StringFromText.TabIndex = 13;
 			this.labelSHA256StringFromText.Text = "SHA256:";
 			// 
 			// labelSHA384StringFromText
@@ -645,7 +661,7 @@ namespace Hasher
 			this.labelSHA384StringFromText.Location = new System.Drawing.Point(7, 146);
 			this.labelSHA384StringFromText.Name = "labelSHA384StringFromText";
 			this.labelSHA384StringFromText.Size = new System.Drawing.Size(50, 13);
-			this.labelSHA384StringFromText.TabIndex = 15;
+			this.labelSHA384StringFromText.TabIndex = 16;
 			this.labelSHA384StringFromText.Text = "SHA384:";
 			// 
 			// textBoxSHA256StringFromText
@@ -655,7 +671,7 @@ namespace Hasher
 			this.textBoxSHA256StringFromText.Name = "textBoxSHA256StringFromText";
 			this.textBoxSHA256StringFromText.ReadOnly = true;
 			this.textBoxSHA256StringFromText.Size = new System.Drawing.Size(382, 20);
-			this.textBoxSHA256StringFromText.TabIndex = 13;
+			this.textBoxSHA256StringFromText.TabIndex = 14;
 			// 
 			// buttonCopySHA256StringFromTextToClipboard
 			// 
@@ -663,7 +679,7 @@ namespace Hasher
 			this.buttonCopySHA256StringFromTextToClipboard.Location = new System.Drawing.Point(471, 114);
 			this.buttonCopySHA256StringFromTextToClipboard.Name = "buttonCopySHA256StringFromTextToClipboard";
 			this.buttonCopySHA256StringFromTextToClipboard.Size = new System.Drawing.Size(24, 24);
-			this.buttonCopySHA256StringFromTextToClipboard.TabIndex = 14;
+			this.buttonCopySHA256StringFromTextToClipboard.TabIndex = 15;
 			this.buttonCopySHA256StringFromTextToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.buttonCopySHA256StringFromTextToClipboard.UseVisualStyleBackColor = true;
 			this.buttonCopySHA256StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopySHA256StringFromTextToClipboard_Click);
@@ -748,6 +764,7 @@ namespace Hasher
 		private System.Windows.Forms.Label labelSHA384StringFromText;
 		private System.Windows.Forms.TextBox textBoxSHA256StringFromText;
 		private System.Windows.Forms.Button buttonCopySHA256StringFromTextToClipboard;
+		private System.Windows.Forms.CheckBox checkBoxAutoUpdateText;
 	}
 }
 

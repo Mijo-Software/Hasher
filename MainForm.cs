@@ -323,11 +323,11 @@ namespace Hasher
 				tabControl.SelectedTab = tabPageText;
 				if (e.Data.GetDataPresent(format: DataFormats.Text))
 				{
-					textBoxFileName.Text = e.Data.GetData(format: DataFormats.Text) as string;
+					textBoxText.Text = e.Data.GetData(format: DataFormats.Text) as string;
 				}
 				else if (e.Data.GetDataPresent(format: DataFormats.UnicodeText))
 				{
-					textBoxFileName.Text = e.Data.GetData(format: DataFormats.UnicodeText) as string;
+					textBoxText.Text = e.Data.GetData(format: DataFormats.UnicodeText) as string;
 				}
 				CalculateHashesFromText();
 			}
@@ -339,7 +339,7 @@ namespace Hasher
 
 		private void MainForm_DragEnter(object sender, DragEventArgs e)
 		{
-			if (e.Data.GetDataPresent(format: DataFormats.FileDrop))
+			if (e.Data.GetDataPresent(format: DataFormats.FileDrop) || e.Data.GetDataPresent(format: DataFormats.Text) || e.Data.GetDataPresent(format: DataFormats.UnicodeText))
 			{
 				e.Effect = DragDropEffects.Copy;
 			}
@@ -354,6 +354,19 @@ namespace Hasher
 			else
 			{
 				MessageBox.Show(text: Properties.Resources.fileDoesNotExist, caption: Properties.Resources.error, buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Error);
+			}
+		}
+
+		private void CheckBoxAutoUpdateText_CheckedChanged(object sender, EventArgs e)
+		{
+			buttonCalculateHashFromText.Enabled = !buttonCalculateHashFromText.Enabled;
+		}
+
+		private void TextBoxText_KeyPress(object sender, EventArgs e)
+		{
+			if (checkBoxAutoUpdateText.Checked)
+			{
+				CalculateHashesFromText();
 			}
 		}
 	}

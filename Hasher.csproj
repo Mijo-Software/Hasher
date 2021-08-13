@@ -178,6 +178,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="hashtag.ico" />
+    <None Include="Resources\fatcow_arrow_refresh_small_16.png" />
+    <None Include="Resources\fatcow_arrow_refresh_16.png" />
     <None Include="Resources\fatcow_document_info_16.png" />
     <None Include="Resources\fatcow_document_hash_tag_16.png" />
     <None Include="Resources\fatcow_diskette_16.png" />
