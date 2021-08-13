@@ -2,6 +2,7 @@
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Hasher
@@ -54,12 +55,22 @@ namespace Hasher
 
 		private void CalculateHashesFromFile()
 		{
-			textBoxMD5String.Text = GetMD5HashFromFile(fileName: textBoxFileName.Text);
-			textBoxRIPEMD160String.Text = GetRIPEMD160HashFromFile(fileName: textBoxFileName.Text);
-			textBoxSHA1String.Text = GetSHA1HashFromFile(fileName: textBoxFileName.Text);
-			textBoxSHA256String.Text = GetSHA256HashFromFile(fileName: textBoxFileName.Text);
-			textBoxSHA384String.Text = GetSHA384HashFromFile(fileName: textBoxFileName.Text);
-			textBoxSHA512String.Text = GetSHA512HashFromFile(fileName: textBoxFileName.Text);
+			textBoxMD5StringFromFile.Text = GetMD5HashFromFile(fileName: textBoxFileName.Text);
+			textBoxRIPEMD160StringFromFile.Text = GetRIPEMD160HashFromFile(fileName: textBoxFileName.Text);
+			textBoxSHA1StringFromFile.Text = GetSHA1HashFromFile(fileName: textBoxFileName.Text);
+			textBoxSHA256StringFromFile.Text = GetSHA256HashFromFile(fileName: textBoxFileName.Text);
+			textBoxSHA384StringFromFile.Text = GetSHA384HashFromFile(fileName: textBoxFileName.Text);
+			textBoxSHA512StringFromFile.Text = GetSHA512HashFromFile(fileName: textBoxFileName.Text);
+		}
+
+		private void CalculateHashesFromText()
+		{
+			textBoxMD5StringFromText.Text = GetMD5HashFromText(input: textBoxText.Text);
+			textBoxRIPEMD160StringFromText.Text = GetRIPEMD160HashFromText(input: textBoxText.Text);
+			textBoxSHA1StringFromText.Text = GetSHA1HashFromText(input: textBoxText.Text);
+			textBoxSHA256StringFromText.Text = GetSHA256HashFromText(input: textBoxText.Text);
+			textBoxSHA384StringFromText.Text = GetSHA384HashFromText(input: textBoxText.Text);
+			textBoxSHA512StringFromText.Text = GetSHA512HashFromText(input: textBoxText.Text);
 		}
 
 		private void OpenAndCalculateFile_Click(object sender, EventArgs e)
@@ -69,6 +80,11 @@ namespace Hasher
 				textBoxFileName.Text = openFileDialog.FileName;
 				CalculateHashesFromFile();
 			}
+		}
+
+		private void ButtonCalculateHashFromText_Click(object sender, EventArgs e)
+		{
+			CalculateHashesFromText();
 		}
 
 		private static string GetMD5HashFromFile(string fileName)
@@ -119,34 +135,129 @@ namespace Hasher
 			}
 		}
 
-		private void ButtonCopyMD5StringToClipboard_Click(object sender, EventArgs e)
+		private static string GetMD5HashFromText(string input)
 		{
-			Clipboard.SetText(text: textBoxMD5String.Text);
+			byte[] hashBytes = MD5.Create().ComputeHash(buffer: Encoding.ASCII.GetBytes(s: input));
+			StringBuilder stringBuilder = new StringBuilder();
+			for (int i = 0; i < hashBytes.Length; i++)
+			{
+				stringBuilder.Append(value: hashBytes[i].ToString(format: "X2"));
+			}
+			return stringBuilder.ToString();
 		}
 
-		private void ButtonCopyRIPEMD160StringToClipboard_Click(object sender, EventArgs e)
+		private static string GetRIPEMD160HashFromText(string input)
 		{
-			Clipboard.SetText(text: textBoxRIPEMD160String.Text);
+			byte[] hashBytes = RIPEMD160.Create().ComputeHash(buffer: Encoding.ASCII.GetBytes(s: input));
+			StringBuilder stringBuilder = new StringBuilder();
+			for (int i = 0; i < hashBytes.Length; i++)
+			{
+				stringBuilder.Append(value: hashBytes[i].ToString(format: "X2"));
+			}
+			return stringBuilder.ToString();
 		}
 
-		private void ButtonCopySHA1StringToClipboard_Click(object sender, EventArgs e)
+		private static string GetSHA1HashFromText(string input)
 		{
-			Clipboard.SetText(text: textBoxSHA1String.Text);
+			byte[] hashBytes = SHA1.Create().ComputeHash(buffer: Encoding.ASCII.GetBytes(s: input));
+			StringBuilder stringBuilder = new StringBuilder();
+			for (int i = 0; i < hashBytes.Length; i++)
+			{
+				stringBuilder.Append(value: hashBytes[i].ToString(format: "X2"));
+			}
+			return stringBuilder.ToString();
 		}
 
-		private void ButtonCopySHA256StringToClipboard_Click(object sender, EventArgs e)
+		private static string GetSHA256HashFromText(string input)
 		{
-			Clipboard.SetText(text: textBoxSHA256String.Text);
+			byte[] hashBytes = SHA256.Create().ComputeHash(buffer: Encoding.ASCII.GetBytes(s: input));
+			StringBuilder stringBuilder = new StringBuilder();
+			for (int i = 0; i < hashBytes.Length; i++)
+			{
+				stringBuilder.Append(value: hashBytes[i].ToString(format: "X2"));
+			}
+			return stringBuilder.ToString();
 		}
 
-		private void ButtonCopySHA384StringToClipboard_Click(object sender, EventArgs e)
+		private static string GetSHA384HashFromText(string input)
 		{
-			Clipboard.SetText(text: textBoxSHA384String.Text);
+			byte[] hashBytes = SHA384.Create().ComputeHash(buffer: Encoding.ASCII.GetBytes(s: input));
+			StringBuilder stringBuilder = new StringBuilder();
+			for (int i = 0; i < hashBytes.Length; i++)
+			{
+				stringBuilder.Append(value: hashBytes[i].ToString(format: "X2"));
+			}
+			return stringBuilder.ToString();
 		}
 
-		private void ButtonCopySHA512StringToClipboard_Click(object sender, EventArgs e)
+		private static string GetSHA512HashFromText(string input)
 		{
-			Clipboard.SetText(text: textBoxSHA512String.Text);
+			byte[] hashBytes = SHA512.Create().ComputeHash(buffer: Encoding.ASCII.GetBytes(s: input));
+			StringBuilder stringBuilder = new StringBuilder();
+			for (int i = 0; i < hashBytes.Length; i++)
+			{
+				stringBuilder.Append(value: hashBytes[i].ToString(format: "X2"));
+			}
+			return stringBuilder.ToString();
+		}
+
+		private void ButtonCopyMD5StringFromFileToClipboard_Click(object sender, EventArgs e)
+		{
+			Clipboard.SetText(text: textBoxMD5StringFromFile.Text);
+		}
+
+		private void ButtonCopyRIPEMD160StringFromFileToClipboard_Click(object sender, EventArgs e)
+		{
+			Clipboard.SetText(text: textBoxRIPEMD160StringFromFile.Text);
+		}
+
+		private void ButtonCopySHA1StringFromFileToClipboard_Click(object sender, EventArgs e)
+		{
+			Clipboard.SetText(text: textBoxSHA1StringFromFile.Text);
+		}
+
+		private void ButtonCopySHA256StringFromFileToClipboard_Click(object sender, EventArgs e)
+		{
+			Clipboard.SetText(text: textBoxSHA256StringFromFile.Text);
+		}
+
+		private void ButtonCopySHA384StringFromFileToClipboard_Click(object sender, EventArgs e)
+		{
+			Clipboard.SetText(text: textBoxSHA384StringFromFile.Text);
+		}
+
+		private void ButtonCopySHA512StringFromFileToClipboard_Click(object sender, EventArgs e)
+		{
+			Clipboard.SetText(text: textBoxSHA512StringFromFile.Text);
+		}
+		private void ButtonCopyMD5StringFromTextToClipboard_Click(object sender, EventArgs e)
+		{
+			Clipboard.SetText(text: textBoxMD5StringFromText.Text);
+		}
+
+		private void ButtonCopyRIPEMD160StringFromTextToClipboard_Click(object sender, EventArgs e)
+		{
+			Clipboard.SetText(text: textBoxRIPEMD160StringFromText.Text);
+		}
+
+		private void ButtonCopySHA1StringFromTextToClipboard_Click(object sender, EventArgs e)
+		{
+			Clipboard.SetText(text: textBoxSHA1StringFromText.Text);
+		}
+
+		private void ButtonCopySHA256StringFromTextToClipboard_Click(object sender, EventArgs e)
+		{
+			Clipboard.SetText(text: textBoxSHA256StringFromText.Text);
+		}
+
+		private void ButtonCopySHA384StringFromTextToClipboard_Click(object sender, EventArgs e)
+		{
+			Clipboard.SetText(text: textBoxSHA384StringFromText.Text);
+		}
+
+		private void ButtonCopySHA512StringFromTextToClipboard_Click(object sender, EventArgs e)
+		{
+			Clipboard.SetText(text: textBoxSHA512StringFromText.Text);
 		}
 
 		private void SaveHashValueToFile(string hashFileExtension, string hashValue)
@@ -166,38 +277,39 @@ namespace Hasher
 
 		private void ButtonSaveMD5StringToFile_Click(object sender, EventArgs e)
 		{
-			SaveHashValueToFile(hashFileExtension: Properties.Resources.md5FileExt, hashValue: textBoxMD5String.Text);
+			SaveHashValueToFile(hashFileExtension: Properties.Resources.md5FileExt, hashValue: textBoxMD5StringFromFile.Text);
 		}
 
 		private void ButtonSaveRIPEMD160ToFile_Click(object sender, EventArgs e)
 		{
-			SaveHashValueToFile(hashFileExtension: Properties.Resources.ripemd160FileExt, hashValue: textBoxRIPEMD160String.Text);
+			SaveHashValueToFile(hashFileExtension: Properties.Resources.ripemd160FileExt, hashValue: textBoxRIPEMD160StringFromFile.Text);
 		}
 
 		private void ButtonSaveSHA1StringToFile_Click(object sender, EventArgs e)
 		{
-			SaveHashValueToFile(hashFileExtension: Properties.Resources.sha1FileExt, hashValue: textBoxSHA1String.Text);
+			SaveHashValueToFile(hashFileExtension: Properties.Resources.sha1FileExt, hashValue: textBoxSHA1StringFromFile.Text);
 		}
 
 		private void ButtonSaveSHA256StringToFile_Click(object sender, EventArgs e)
 		{
-			SaveHashValueToFile(hashFileExtension: Properties.Resources.sha256FileExt, hashValue: textBoxSHA256String.Text);
+			SaveHashValueToFile(hashFileExtension: Properties.Resources.sha256FileExt, hashValue: textBoxSHA256StringFromFile.Text);
 		}
 
 		private void ButtonSaveSHA384StringToFile_Click(object sender, EventArgs e)
 		{
-			SaveHashValueToFile(hashFileExtension: Properties.Resources.sha384FileExt, hashValue: textBoxSHA384String.Text);
+			SaveHashValueToFile(hashFileExtension: Properties.Resources.sha384FileExt, hashValue: textBoxSHA384StringFromFile.Text);
 		}
 
 		private void ButtonSaveSHA512StringToFile_Click(object sender, EventArgs e)
 		{
-			SaveHashValueToFile(hashFileExtension: Properties.Resources.sha512FileExt, hashValue: textBoxSHA512String.Text);
+			SaveHashValueToFile(hashFileExtension: Properties.Resources.sha512FileExt, hashValue: textBoxSHA512StringFromFile.Text);
 		}
 
 		private void MainForm_DragDrop(object sender, DragEventArgs e)
 		{
 			if (e.Data.GetDataPresent(format: DataFormats.FileDrop))
 			{
+				tabControl.SelectedTab = tabPageFile;
 				string[] files = e.Data.GetData(format: DataFormats.FileDrop) as string[];
 				if (files.Length > 1)
 				{
@@ -205,6 +317,23 @@ namespace Hasher
 				}
 				textBoxFileName.Text = files[0];
 				CalculateHashesFromFile();
+			}
+			else if (e.Data.GetDataPresent(format: DataFormats.Text) || e.Data.GetDataPresent(format: DataFormats.UnicodeText))
+			{
+				tabControl.SelectedTab = tabPageText;
+				if (e.Data.GetDataPresent(format: DataFormats.Text))
+				{
+					textBoxFileName.Text = e.Data.GetData(format: DataFormats.Text) as string;
+				}
+				else if (e.Data.GetDataPresent(format: DataFormats.UnicodeText))
+				{
+					textBoxFileName.Text = e.Data.GetData(format: DataFormats.UnicodeText) as string;
+				}
+				CalculateHashesFromText();
+			}
+			else
+			{
+				MessageBox.Show(text: Properties.Resources.onlyFileOrTextAreAccepted, caption: Properties.Resources.warning, buttons: MessageBoxButtons.OK, icon: MessageBoxIcon.Warning);
 			}
 		}
 
