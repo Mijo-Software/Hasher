@@ -79,6 +79,25 @@ namespace Hasher.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die This function is experimental and may not provide exact results. ähnelt.
+        /// </summary>
+        internal static string experimental {
+            get {
+                return ResourceManager.GetString("experimental", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fatcow_arrow_refresh_small_16 {
+            get {
+                object obj = ResourceManager.GetObject("fatcow_arrow_refresh_small_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap fatcow_clipboard_empty_16 {
