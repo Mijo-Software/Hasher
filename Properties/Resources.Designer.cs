@@ -137,6 +137,15 @@ namespace Hasher.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Only a file or a text are accepted. ähnelt.
+        /// </summary>
+        internal static string onlyFileOrTextAreAccepted {
+            get {
+                return ResourceManager.GetString("onlyFileOrTextAreAccepted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Only the first file of multiple files is accepted. ähnelt.
         /// </summary>
         internal static string onlyFirstFileIsAccepted {

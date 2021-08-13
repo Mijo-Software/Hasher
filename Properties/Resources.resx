@@ -142,6 +142,9 @@
   <data name="md5FileExt" xml:space="preserve">
     <value>.md5</value>
   </data>
+  <data name="onlyFileOrTextAreAccepted" xml:space="preserve">
+    <value>Only a file or a text are accepted.</value>
+  </data>
   <data name="onlyFirstFileIsAccepted" xml:space="preserve">
     <value>Only the first file of multiple files is accepted.</value>
   </data>
