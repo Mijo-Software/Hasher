@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Hasher
+namespace HashLister
 {
 	internal static class Program
 	{
@@ -13,7 +13,10 @@ namespace Hasher
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(defaultValue: false);
-			Application.Run(mainForm: new MainForm());
+			using (HashListerForm hashListerForm = new HashListerForm())
+			{
+				Application.Run(hashListerForm);
+			}
 		}
 	}
 }
