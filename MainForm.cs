@@ -1,6 +1,7 @@
 ﻿using Hasher.Properties;
 using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -82,7 +83,7 @@ namespace Hasher
             StringBuilder stringBuilder = new StringBuilder();
             foreach (byte v in hashBytes)
             {
-                stringBuilder.Append(value: v.ToString(format: "X2"));
+                stringBuilder.Append(value: v.ToString(format: "X2", provider: CultureInfo.InvariantCulture));
             }
             return new StringBuilder().ToString();
         }
@@ -112,7 +113,8 @@ namespace Hasher
             StringBuilder stringBuilder = new StringBuilder();
             foreach (byte v in hashBytes)
             {
-                stringBuilder.Append(value: v.ToString(format: "X2"));
+                //stringBuilder.AppendFormat(provider: CultureInfo.InvariantCulture, format: "{0}", arg0: v);
+                stringBuilder.Append(value: v.ToString(format: "X2", provider: CultureInfo.InvariantCulture));
             }
             return stringBuilder.ToString();
         }
@@ -142,7 +144,7 @@ namespace Hasher
             StringBuilder stringBuilder = new StringBuilder();
             foreach (byte v in hashBytes)
             {
-                stringBuilder.Append(value: v.ToString(format: "X2"));
+                stringBuilder.Append(value: v.ToString(format: "X2", provider: CultureInfo.InvariantCulture));
             }
             return stringBuilder.ToString();
         }
@@ -172,7 +174,7 @@ namespace Hasher
             StringBuilder stringBuilder = new StringBuilder();
             foreach (byte v in hashBytes)
             {
-                stringBuilder.Append(value: v.ToString(format: "X2"));
+                stringBuilder.Append(value: v.ToString(format: "X2", provider: CultureInfo.InvariantCulture));
             }
             return stringBuilder.ToString();
         }
@@ -202,7 +204,7 @@ namespace Hasher
             StringBuilder stringBuilder = new StringBuilder();
             foreach (byte v in hashBytes)
             {
-                stringBuilder.Append(value: v.ToString(format: "X2"));
+                stringBuilder.Append(value: v.ToString(format: "X2", provider: CultureInfo.InvariantCulture));
             }
             return stringBuilder.ToString();
         }
@@ -232,7 +234,7 @@ namespace Hasher
             StringBuilder stringBuilder = new StringBuilder();
             foreach (byte v in hashBytes)
             {
-                stringBuilder.Append(value: v.ToString(format: "X2"));
+                stringBuilder.Append(value: v.ToString(format: "X2", provider: CultureInfo.InvariantCulture));
             }
             return stringBuilder.ToString();
         }

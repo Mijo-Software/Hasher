@@ -93,6 +93,9 @@ namespace Hasher
             // 
             // labelFileName
             // 
+            this.labelFileName.AccessibleDescription = "file";
+            this.labelFileName.AccessibleName = "file";
+            this.labelFileName.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelFileName.AutoSize = true;
             this.labelFileName.Location = new System.Drawing.Point(7, 12);
             this.labelFileName.Name = "labelFileName";
@@ -103,15 +106,21 @@ namespace Hasher
             // 
             // textBoxFileName
             // 
+            this.textBoxFileName.AccessibleDescription = "Show the path of the file";
+            this.textBoxFileName.AccessibleName = "Path of the file";
+            this.textBoxFileName.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBoxFileName.Location = new System.Drawing.Point(39, 9);
             this.textBoxFileName.Name = "textBoxFileName";
             this.textBoxFileName.ReadOnly = true;
             this.textBoxFileName.Size = new System.Drawing.Size(335, 20);
             this.textBoxFileName.TabIndex = 1;
-            this.toolTip.SetToolTip(this.textBoxFileName, "path of the file");
+            this.toolTip.SetToolTip(this.textBoxFileName, "Path of the file");
             // 
             // labelMD5StringFromFile
             // 
+            this.labelMD5StringFromFile.AccessibleDescription = "MD5";
+            this.labelMD5StringFromFile.AccessibleName = "MD5";
+            this.labelMD5StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelMD5StringFromFile.AutoSize = true;
             this.labelMD5StringFromFile.Location = new System.Drawing.Point(7, 42);
             this.labelMD5StringFromFile.Name = "labelMD5StringFromFile";
@@ -122,6 +131,9 @@ namespace Hasher
             // 
             // textBoxMD5StringFromFile
             // 
+            this.textBoxMD5StringFromFile.AccessibleDescription = "Show the MD5 hash value";
+            this.textBoxMD5StringFromFile.AccessibleName = "MD5 hash value";
+            this.textBoxMD5StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBoxMD5StringFromFile.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMD5StringFromFile.Location = new System.Drawing.Point(83, 39);
             this.textBoxMD5StringFromFile.Name = "textBoxMD5StringFromFile";
@@ -137,6 +149,9 @@ namespace Hasher
             // 
             // textBoxRIPEMD160StringFromFile
             // 
+            this.textBoxRIPEMD160StringFromFile.AccessibleDescription = "Show the RIPEMD160 hash value";
+            this.textBoxRIPEMD160StringFromFile.AccessibleName = "RIPEMD160 hash value";
+            this.textBoxRIPEMD160StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBoxRIPEMD160StringFromFile.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxRIPEMD160StringFromFile.Location = new System.Drawing.Point(83, 65);
             this.textBoxRIPEMD160StringFromFile.Name = "textBoxRIPEMD160StringFromFile";
@@ -147,6 +162,9 @@ namespace Hasher
             // 
             // labelRIPEMD160StringFromFile
             // 
+            this.labelRIPEMD160StringFromFile.AccessibleDescription = "RIPEMD160";
+            this.labelRIPEMD160StringFromFile.AccessibleName = "RIPEMD160";
+            this.labelRIPEMD160StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelRIPEMD160StringFromFile.AutoSize = true;
             this.labelRIPEMD160StringFromFile.Location = new System.Drawing.Point(7, 68);
             this.labelRIPEMD160StringFromFile.Name = "labelRIPEMD160StringFromFile";
@@ -157,6 +175,9 @@ namespace Hasher
             // 
             // textBoxSHA1StringFromFile
             // 
+            this.textBoxSHA1StringFromFile.AccessibleDescription = "Show the SHA1 hash value";
+            this.textBoxSHA1StringFromFile.AccessibleName = "SHA1 hash value";
+            this.textBoxSHA1StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBoxSHA1StringFromFile.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSHA1StringFromFile.Location = new System.Drawing.Point(83, 91);
             this.textBoxSHA1StringFromFile.Name = "textBoxSHA1StringFromFile";
@@ -167,6 +188,9 @@ namespace Hasher
             // 
             // labelSHA1StringFromFile
             // 
+            this.labelSHA1StringFromFile.AccessibleDescription = "SHA1";
+            this.labelSHA1StringFromFile.AccessibleName = "SHA1";
+            this.labelSHA1StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSHA1StringFromFile.AutoSize = true;
             this.labelSHA1StringFromFile.Location = new System.Drawing.Point(7, 94);
             this.labelSHA1StringFromFile.Name = "labelSHA1StringFromFile";
@@ -177,6 +201,9 @@ namespace Hasher
             // 
             // textBoxSHA256StringFromFile
             // 
+            this.textBoxSHA256StringFromFile.AccessibleDescription = "Show the SHA256 hash value";
+            this.textBoxSHA256StringFromFile.AccessibleName = "SHA256 hash value";
+            this.textBoxSHA256StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBoxSHA256StringFromFile.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSHA256StringFromFile.Location = new System.Drawing.Point(83, 117);
             this.textBoxSHA256StringFromFile.Name = "textBoxSHA256StringFromFile";
@@ -187,6 +214,9 @@ namespace Hasher
             // 
             // labelSHA256StringFromFile
             // 
+            this.labelSHA256StringFromFile.AccessibleDescription = "SHA256";
+            this.labelSHA256StringFromFile.AccessibleName = "SHA256";
+            this.labelSHA256StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSHA256StringFromFile.AutoSize = true;
             this.labelSHA256StringFromFile.Location = new System.Drawing.Point(7, 120);
             this.labelSHA256StringFromFile.Name = "labelSHA256StringFromFile";
@@ -197,6 +227,9 @@ namespace Hasher
             // 
             // textBoxSHA384StringFromFile
             // 
+            this.textBoxSHA384StringFromFile.AccessibleDescription = "Show the SHA384 hash value";
+            this.textBoxSHA384StringFromFile.AccessibleName = "SHA384 hash value";
+            this.textBoxSHA384StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBoxSHA384StringFromFile.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSHA384StringFromFile.Location = new System.Drawing.Point(83, 143);
             this.textBoxSHA384StringFromFile.Name = "textBoxSHA384StringFromFile";
@@ -207,6 +240,9 @@ namespace Hasher
             // 
             // labelSHA384FromFile
             // 
+            this.labelSHA384FromFile.AccessibleDescription = "SHA384";
+            this.labelSHA384FromFile.AccessibleName = "SHA384";
+            this.labelSHA384FromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSHA384FromFile.AutoSize = true;
             this.labelSHA384FromFile.Location = new System.Drawing.Point(7, 146);
             this.labelSHA384FromFile.Name = "labelSHA384FromFile";
@@ -217,6 +253,9 @@ namespace Hasher
             // 
             // textBoxSHA512StringFromFile
             // 
+            this.textBoxSHA512StringFromFile.AccessibleDescription = "Show the SHA512 hash value";
+            this.textBoxSHA512StringFromFile.AccessibleName = "SHA512 hash value";
+            this.textBoxSHA512StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBoxSHA512StringFromFile.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSHA512StringFromFile.Location = new System.Drawing.Point(83, 169);
             this.textBoxSHA512StringFromFile.Name = "textBoxSHA512StringFromFile";
@@ -227,6 +266,9 @@ namespace Hasher
             // 
             // labelSHA512StringFromFile
             // 
+            this.labelSHA512StringFromFile.AccessibleDescription = "SHA512";
+            this.labelSHA512StringFromFile.AccessibleName = "SHA512";
+            this.labelSHA512StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSHA512StringFromFile.AutoSize = true;
             this.labelSHA512StringFromFile.Location = new System.Drawing.Point(7, 172);
             this.labelSHA512StringFromFile.Name = "labelSHA512StringFromFile";
@@ -242,6 +284,9 @@ namespace Hasher
             // 
             // buttonSaveSHA512StringToFile
             // 
+            this.buttonSaveSHA512StringToFile.AccessibleDescription = "Save the SHA512 hash value in a file";
+            this.buttonSaveSHA512StringToFile.AccessibleName = "Save SHA512 hash to file";
+            this.buttonSaveSHA512StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonSaveSHA512StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA512StringToFile.Image")));
             this.buttonSaveSHA512StringToFile.Location = new System.Drawing.Point(471, 166);
             this.buttonSaveSHA512StringToFile.Name = "buttonSaveSHA512StringToFile";
@@ -254,6 +299,9 @@ namespace Hasher
             // 
             // buttonSaveSHA384StringToFile
             // 
+            this.buttonSaveSHA384StringToFile.AccessibleDescription = "Save the SHA384 hash value in a file";
+            this.buttonSaveSHA384StringToFile.AccessibleName = "Save SHA384 hash to file";
+            this.buttonSaveSHA384StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonSaveSHA384StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA384StringToFile.Image")));
             this.buttonSaveSHA384StringToFile.Location = new System.Drawing.Point(471, 140);
             this.buttonSaveSHA384StringToFile.Name = "buttonSaveSHA384StringToFile";
@@ -266,6 +314,9 @@ namespace Hasher
             // 
             // buttonSaveSHA256StringToFile
             // 
+            this.buttonSaveSHA256StringToFile.AccessibleDescription = "Save the SHA1 hash value in a file";
+            this.buttonSaveSHA256StringToFile.AccessibleName = "Save SHA1 hash to file";
+            this.buttonSaveSHA256StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonSaveSHA256StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA256StringToFile.Image")));
             this.buttonSaveSHA256StringToFile.Location = new System.Drawing.Point(471, 114);
             this.buttonSaveSHA256StringToFile.Name = "buttonSaveSHA256StringToFile";
@@ -278,6 +329,9 @@ namespace Hasher
             // 
             // buttonSaveSHA1StringToFile
             // 
+            this.buttonSaveSHA1StringToFile.AccessibleDescription = "Save the SHA1 hash value in a file";
+            this.buttonSaveSHA1StringToFile.AccessibleName = "Save SHA1 hash to file";
+            this.buttonSaveSHA1StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonSaveSHA1StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA1StringToFile.Image")));
             this.buttonSaveSHA1StringToFile.Location = new System.Drawing.Point(471, 88);
             this.buttonSaveSHA1StringToFile.Name = "buttonSaveSHA1StringToFile";
@@ -290,6 +344,9 @@ namespace Hasher
             // 
             // buttonSaveRIPEMD160ToFile
             // 
+            this.buttonSaveRIPEMD160ToFile.AccessibleDescription = "Save the RIPEMD160 hash value in a file";
+            this.buttonSaveRIPEMD160ToFile.AccessibleName = "Save RIPEMD160 hash to file";
+            this.buttonSaveRIPEMD160ToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonSaveRIPEMD160ToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveRIPEMD160ToFile.Image")));
             this.buttonSaveRIPEMD160ToFile.Location = new System.Drawing.Point(471, 62);
             this.buttonSaveRIPEMD160ToFile.Name = "buttonSaveRIPEMD160ToFile";
@@ -302,6 +359,9 @@ namespace Hasher
             // 
             // buttonSaveMD5StringToFile
             // 
+            this.buttonSaveMD5StringToFile.AccessibleDescription = "Save the MD5 hash value in a file";
+            this.buttonSaveMD5StringToFile.AccessibleName = "Save MD5 hash to file";
+            this.buttonSaveMD5StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonSaveMD5StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveMD5StringToFile.Image")));
             this.buttonSaveMD5StringToFile.Location = new System.Drawing.Point(471, 36);
             this.buttonSaveMD5StringToFile.Name = "buttonSaveMD5StringToFile";
@@ -314,6 +374,9 @@ namespace Hasher
             // 
             // buttonCopySHA512StringFromFileToClipboard
             // 
+            this.buttonCopySHA512StringFromFileToClipboard.AccessibleDescription = "Copy the SHA512 hash value to the clipboard";
+            this.buttonCopySHA512StringFromFileToClipboard.AccessibleName = "Copy SHA512 hash value to clipboard";
+            this.buttonCopySHA512StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonCopySHA512StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA512StringFromFileToClipboard.Image")));
             this.buttonCopySHA512StringFromFileToClipboard.Location = new System.Drawing.Point(447, 166);
             this.buttonCopySHA512StringFromFileToClipboard.Name = "buttonCopySHA512StringFromFileToClipboard";
@@ -326,6 +389,9 @@ namespace Hasher
             // 
             // buttonCopySHA384StringFromFileToClipboard
             // 
+            this.buttonCopySHA384StringFromFileToClipboard.AccessibleDescription = "Copy the SHA384 hash value to the clipboard";
+            this.buttonCopySHA384StringFromFileToClipboard.AccessibleName = "Copy SHA384 hash value to clipboard";
+            this.buttonCopySHA384StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonCopySHA384StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA384StringFromFileToClipboard.Image")));
             this.buttonCopySHA384StringFromFileToClipboard.Location = new System.Drawing.Point(447, 140);
             this.buttonCopySHA384StringFromFileToClipboard.Name = "buttonCopySHA384StringFromFileToClipboard";
@@ -338,6 +404,9 @@ namespace Hasher
             // 
             // buttonCopySHA256StringFromFileToClipboard
             // 
+            this.buttonCopySHA256StringFromFileToClipboard.AccessibleDescription = "Copy the SHA256 hash value to the clipboard";
+            this.buttonCopySHA256StringFromFileToClipboard.AccessibleName = "Copy SHA256 hash value to clipboard";
+            this.buttonCopySHA256StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonCopySHA256StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA256StringFromFileToClipboard.Image")));
             this.buttonCopySHA256StringFromFileToClipboard.Location = new System.Drawing.Point(447, 114);
             this.buttonCopySHA256StringFromFileToClipboard.Name = "buttonCopySHA256StringFromFileToClipboard";
@@ -350,6 +419,9 @@ namespace Hasher
             // 
             // buttonCopySHA1StringFromFileToClipboard
             // 
+            this.buttonCopySHA1StringFromFileToClipboard.AccessibleDescription = "Copy the SHA1 hash value to the clipboard";
+            this.buttonCopySHA1StringFromFileToClipboard.AccessibleName = "Copy SHA1 hash value to clipboard";
+            this.buttonCopySHA1StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonCopySHA1StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA1StringFromFileToClipboard.Image")));
             this.buttonCopySHA1StringFromFileToClipboard.Location = new System.Drawing.Point(447, 88);
             this.buttonCopySHA1StringFromFileToClipboard.Name = "buttonCopySHA1StringFromFileToClipboard";
@@ -362,6 +434,9 @@ namespace Hasher
             // 
             // buttonCopyRIPEMD160StringFromFileToClipboard
             // 
+            this.buttonCopyRIPEMD160StringFromFileToClipboard.AccessibleDescription = "Copy the RIPEMD160 hash value to the clipboard";
+            this.buttonCopyRIPEMD160StringFromFileToClipboard.AccessibleName = "Copy RIPEMD160 hash value to clipboard";
+            this.buttonCopyRIPEMD160StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonCopyRIPEMD160StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyRIPEMD160StringFromFileToClipboard.Image")));
             this.buttonCopyRIPEMD160StringFromFileToClipboard.Location = new System.Drawing.Point(447, 62);
             this.buttonCopyRIPEMD160StringFromFileToClipboard.Name = "buttonCopyRIPEMD160StringFromFileToClipboard";
@@ -374,6 +449,9 @@ namespace Hasher
             // 
             // buttonCopyMD5StringFromFileToClipboard
             // 
+            this.buttonCopyMD5StringFromFileToClipboard.AccessibleDescription = "Copy the MD5 hash value to the clipboard";
+            this.buttonCopyMD5StringFromFileToClipboard.AccessibleName = "Copy MD5 hash value to clipboard";
+            this.buttonCopyMD5StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonCopyMD5StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyMD5StringFromFileToClipboard.Image")));
             this.buttonCopyMD5StringFromFileToClipboard.Location = new System.Drawing.Point(447, 36);
             this.buttonCopyMD5StringFromFileToClipboard.Name = "buttonCopyMD5StringFromFileToClipboard";
@@ -386,6 +464,9 @@ namespace Hasher
             // 
             // buttonOpenAndCalculateHashFromFile
             // 
+            this.buttonOpenAndCalculateHashFromFile.AccessibleDescription = "Open a file and calculate the hash values";
+            this.buttonOpenAndCalculateHashFromFile.AccessibleName = "Open and calculate hash values from file";
+            this.buttonOpenAndCalculateHashFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonOpenAndCalculateHashFromFile.Image = global::Hasher.Properties.Resources.fatcow_document_hash_tag_16;
             this.buttonOpenAndCalculateHashFromFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonOpenAndCalculateHashFromFile.Location = new System.Drawing.Point(380, 6);
@@ -400,6 +481,9 @@ namespace Hasher
             // 
             // tabControl
             // 
+            this.tabControl.AccessibleDescription = "Just a tab control";
+            this.tabControl.AccessibleName = "tab control";
+            this.tabControl.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
             this.tabControl.AllowDrop = true;
             this.tabControl.Controls.Add(this.tabPageFile);
             this.tabControl.Controls.Add(this.tabPageText);
@@ -416,6 +500,9 @@ namespace Hasher
             // 
             // tabPageFile
             // 
+            this.tabPageFile.AccessibleDescription = "Show the file tab page";
+            this.tabPageFile.AccessibleName = "file tab page";
+            this.tabPageFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
             this.tabPageFile.Controls.Add(this.labelFileName);
             this.tabPageFile.Controls.Add(this.textBoxFileName);
             this.tabPageFile.Controls.Add(this.buttonSaveSHA512StringToFile);
@@ -455,6 +542,9 @@ namespace Hasher
             // 
             // tabPageText
             // 
+            this.tabPageText.AccessibleDescription = "Show the text tab page";
+            this.tabPageText.AccessibleName = "text tab page";
+            this.tabPageText.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
             this.tabPageText.Controls.Add(this.checkBoxAutoUpdateText);
             this.tabPageText.Controls.Add(this.labelText);
             this.tabPageText.Controls.Add(this.textBoxText);
@@ -489,6 +579,9 @@ namespace Hasher
             // 
             // checkBoxAutoUpdateText
             // 
+            this.checkBoxAutoUpdateText.AccessibleDescription = "Enable/disable the permanent calculation";
+            this.checkBoxAutoUpdateText.AccessibleName = "Permanent calculation";
+            this.checkBoxAutoUpdateText.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.checkBoxAutoUpdateText.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkBoxAutoUpdateText.AutoSize = true;
             this.checkBoxAutoUpdateText.Image = global::Hasher.Properties.Resources.fatcow_arrow_refresh_small_16;
@@ -503,6 +596,9 @@ namespace Hasher
             // 
             // labelText
             // 
+            this.labelText.AccessibleDescription = "text";
+            this.labelText.AccessibleName = "text";
+            this.labelText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelText.AutoSize = true;
             this.labelText.Location = new System.Drawing.Point(7, 12);
             this.labelText.Name = "labelText";
@@ -513,6 +609,9 @@ namespace Hasher
             // 
             // textBoxText
             // 
+            this.textBoxText.AccessibleDescription = "Show the text";
+            this.textBoxText.AccessibleName = "text";
+            this.textBoxText.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBoxText.Location = new System.Drawing.Point(44, 9);
             this.textBoxText.Name = "textBoxText";
             this.textBoxText.Size = new System.Drawing.Size(335, 20);
@@ -522,6 +621,9 @@ namespace Hasher
             // 
             // buttonCalculateHashFromText
             // 
+            this.buttonCalculateHashFromText.AccessibleDescription = "Calculate the hash values from a text";
+            this.buttonCalculateHashFromText.AccessibleName = "Calculate hash values from text";
+            this.buttonCalculateHashFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonCalculateHashFromText.Image = global::Hasher.Properties.Resources.fatcow_document_hash_tag_16;
             this.buttonCalculateHashFromText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCalculateHashFromText.Location = new System.Drawing.Point(385, 6);
@@ -536,6 +638,9 @@ namespace Hasher
             // 
             // labelMD5StringFromText
             // 
+            this.labelMD5StringFromText.AccessibleDescription = "MD5";
+            this.labelMD5StringFromText.AccessibleName = "MD5";
+            this.labelMD5StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelMD5StringFromText.AutoSize = true;
             this.labelMD5StringFromText.Location = new System.Drawing.Point(7, 42);
             this.labelMD5StringFromText.Name = "labelMD5StringFromText";
@@ -546,6 +651,9 @@ namespace Hasher
             // 
             // textBoxMD5StringFromText
             // 
+            this.textBoxMD5StringFromText.AccessibleDescription = "Show the MD5 hash value";
+            this.textBoxMD5StringFromText.AccessibleName = "MD5 hash value";
+            this.textBoxMD5StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBoxMD5StringFromText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxMD5StringFromText.Location = new System.Drawing.Point(83, 39);
             this.textBoxMD5StringFromText.Name = "textBoxMD5StringFromText";
@@ -556,6 +664,9 @@ namespace Hasher
             // 
             // buttonCopyMD5StringFromTextToClipboard
             // 
+            this.buttonCopyMD5StringFromTextToClipboard.AccessibleDescription = "Copy the MD5hash value to the clipboard";
+            this.buttonCopyMD5StringFromTextToClipboard.AccessibleName = "Copy MD5 hash value to clipboard";
+            this.buttonCopyMD5StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonCopyMD5StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyMD5StringFromTextToClipboard.Image")));
             this.buttonCopyMD5StringFromTextToClipboard.Location = new System.Drawing.Point(471, 36);
             this.buttonCopyMD5StringFromTextToClipboard.Name = "buttonCopyMD5StringFromTextToClipboard";
@@ -568,6 +679,9 @@ namespace Hasher
             // 
             // labelRIPEMD160StringFromText
             // 
+            this.labelRIPEMD160StringFromText.AccessibleDescription = "RIPEMD160";
+            this.labelRIPEMD160StringFromText.AccessibleName = "RIPEMD160";
+            this.labelRIPEMD160StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelRIPEMD160StringFromText.AutoSize = true;
             this.labelRIPEMD160StringFromText.Location = new System.Drawing.Point(7, 68);
             this.labelRIPEMD160StringFromText.Name = "labelRIPEMD160StringFromText";
@@ -578,6 +692,9 @@ namespace Hasher
             // 
             // textBoxRIPEMD160StringFromText
             // 
+            this.textBoxRIPEMD160StringFromText.AccessibleDescription = "Show the RIPEMD160 hash value";
+            this.textBoxRIPEMD160StringFromText.AccessibleName = "RIPEMD160 hash value";
+            this.textBoxRIPEMD160StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBoxRIPEMD160StringFromText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxRIPEMD160StringFromText.Location = new System.Drawing.Point(83, 65);
             this.textBoxRIPEMD160StringFromText.Name = "textBoxRIPEMD160StringFromText";
@@ -588,6 +705,9 @@ namespace Hasher
             // 
             // buttonCopySHA512StringFromTextToClipboard
             // 
+            this.buttonCopySHA512StringFromTextToClipboard.AccessibleDescription = "Copy the SHA512 hash value to the clipboard";
+            this.buttonCopySHA512StringFromTextToClipboard.AccessibleName = "Copy SHA512 hash value to clipboard";
+            this.buttonCopySHA512StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonCopySHA512StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA512StringFromTextToClipboard.Image")));
             this.buttonCopySHA512StringFromTextToClipboard.Location = new System.Drawing.Point(471, 166);
             this.buttonCopySHA512StringFromTextToClipboard.Name = "buttonCopySHA512StringFromTextToClipboard";
@@ -600,6 +720,9 @@ namespace Hasher
             // 
             // buttonCopyRIPEMD160StringFromTextToClipboard
             // 
+            this.buttonCopyRIPEMD160StringFromTextToClipboard.AccessibleDescription = "Copy the RIPEMD160 hash value to the clipboard";
+            this.buttonCopyRIPEMD160StringFromTextToClipboard.AccessibleName = "Copy RIPEMD160 hash value to clipboard";
+            this.buttonCopyRIPEMD160StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonCopyRIPEMD160StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyRIPEMD160StringFromTextToClipboard.Image")));
             this.buttonCopyRIPEMD160StringFromTextToClipboard.Location = new System.Drawing.Point(471, 62);
             this.buttonCopyRIPEMD160StringFromTextToClipboard.Name = "buttonCopyRIPEMD160StringFromTextToClipboard";
@@ -612,6 +735,9 @@ namespace Hasher
             // 
             // textBoxSHA512StringFromText
             // 
+            this.textBoxSHA512StringFromText.AccessibleDescription = "Show the SHA512 hash value";
+            this.textBoxSHA512StringFromText.AccessibleName = "SHA512 hash value";
+            this.textBoxSHA512StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBoxSHA512StringFromText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSHA512StringFromText.Location = new System.Drawing.Point(83, 169);
             this.textBoxSHA512StringFromText.Name = "textBoxSHA512StringFromText";
@@ -622,6 +748,9 @@ namespace Hasher
             // 
             // labelSHA1StringFromText
             // 
+            this.labelSHA1StringFromText.AccessibleDescription = "SHA1";
+            this.labelSHA1StringFromText.AccessibleName = "SHA1";
+            this.labelSHA1StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSHA1StringFromText.AutoSize = true;
             this.labelSHA1StringFromText.Location = new System.Drawing.Point(7, 94);
             this.labelSHA1StringFromText.Name = "labelSHA1StringFromText";
@@ -632,6 +761,9 @@ namespace Hasher
             // 
             // labelSHA512StringFromText
             // 
+            this.labelSHA512StringFromText.AccessibleDescription = "SHA512";
+            this.labelSHA512StringFromText.AccessibleName = "SHA512";
+            this.labelSHA512StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSHA512StringFromText.AutoSize = true;
             this.labelSHA512StringFromText.Location = new System.Drawing.Point(7, 172);
             this.labelSHA512StringFromText.Name = "labelSHA512StringFromText";
@@ -642,6 +774,9 @@ namespace Hasher
             // 
             // textBoxSHA1StringFromText
             // 
+            this.textBoxSHA1StringFromText.AccessibleDescription = "Show the SHA1 hash value";
+            this.textBoxSHA1StringFromText.AccessibleName = "SHA1 hash value";
+            this.textBoxSHA1StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBoxSHA1StringFromText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSHA1StringFromText.Location = new System.Drawing.Point(83, 91);
             this.textBoxSHA1StringFromText.Name = "textBoxSHA1StringFromText";
@@ -652,6 +787,9 @@ namespace Hasher
             // 
             // buttonCopySHA384StringFromTextToClipboard
             // 
+            this.buttonCopySHA384StringFromTextToClipboard.AccessibleDescription = "Copy the SHA384 hash value to the clipboard";
+            this.buttonCopySHA384StringFromTextToClipboard.AccessibleName = "Copy SHA384 hash value to clipboard";
+            this.buttonCopySHA384StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonCopySHA384StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA384StringFromTextToClipboard.Image")));
             this.buttonCopySHA384StringFromTextToClipboard.Location = new System.Drawing.Point(471, 140);
             this.buttonCopySHA384StringFromTextToClipboard.Name = "buttonCopySHA384StringFromTextToClipboard";
@@ -664,6 +802,9 @@ namespace Hasher
             // 
             // buttonCopySHA1StringFromTextToClipboard
             // 
+            this.buttonCopySHA1StringFromTextToClipboard.AccessibleDescription = "Copy the SHA1 hash value to the clipboard";
+            this.buttonCopySHA1StringFromTextToClipboard.AccessibleName = "Copy SHA1 hash value to clipboard";
+            this.buttonCopySHA1StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonCopySHA1StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA1StringFromTextToClipboard.Image")));
             this.buttonCopySHA1StringFromTextToClipboard.Location = new System.Drawing.Point(471, 88);
             this.buttonCopySHA1StringFromTextToClipboard.Name = "buttonCopySHA1StringFromTextToClipboard";
@@ -676,6 +817,9 @@ namespace Hasher
             // 
             // textBoxSHA384StringFromText
             // 
+            this.textBoxSHA384StringFromText.AccessibleDescription = "Show the SHA384 hash value";
+            this.textBoxSHA384StringFromText.AccessibleName = "SHA384 hash value";
+            this.textBoxSHA384StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBoxSHA384StringFromText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSHA384StringFromText.Location = new System.Drawing.Point(83, 143);
             this.textBoxSHA384StringFromText.Name = "textBoxSHA384StringFromText";
@@ -686,6 +830,9 @@ namespace Hasher
             // 
             // labelSHA256StringFromText
             // 
+            this.labelSHA256StringFromText.AccessibleDescription = "SHA256";
+            this.labelSHA256StringFromText.AccessibleName = "SHA256";
+            this.labelSHA256StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSHA256StringFromText.AutoSize = true;
             this.labelSHA256StringFromText.Location = new System.Drawing.Point(7, 120);
             this.labelSHA256StringFromText.Name = "labelSHA256StringFromText";
@@ -696,6 +843,9 @@ namespace Hasher
             // 
             // labelSHA384StringFromText
             // 
+            this.labelSHA384StringFromText.AccessibleDescription = "SHA384";
+            this.labelSHA384StringFromText.AccessibleName = "SHA384";
+            this.labelSHA384StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
             this.labelSHA384StringFromText.AutoSize = true;
             this.labelSHA384StringFromText.Location = new System.Drawing.Point(7, 146);
             this.labelSHA384StringFromText.Name = "labelSHA384StringFromText";
@@ -706,6 +856,9 @@ namespace Hasher
             // 
             // textBoxSHA256StringFromText
             // 
+            this.textBoxSHA256StringFromText.AccessibleDescription = "Show the SHA256 hash value";
+            this.textBoxSHA256StringFromText.AccessibleName = "SHA256 hash value";
+            this.textBoxSHA256StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
             this.textBoxSHA256StringFromText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSHA256StringFromText.Location = new System.Drawing.Point(83, 117);
             this.textBoxSHA256StringFromText.Name = "textBoxSHA256StringFromText";
@@ -716,6 +869,9 @@ namespace Hasher
             // 
             // buttonCopySHA256StringFromTextToClipboard
             // 
+            this.buttonCopySHA256StringFromTextToClipboard.AccessibleDescription = "Copy the SHA256 hash value to the clipboard";
+            this.buttonCopySHA256StringFromTextToClipboard.AccessibleName = "Copy SHA256 hash value to clipboard";
+            this.buttonCopySHA256StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonCopySHA256StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA256StringFromTextToClipboard.Image")));
             this.buttonCopySHA256StringFromTextToClipboard.Location = new System.Drawing.Point(471, 114);
             this.buttonCopySHA256StringFromTextToClipboard.Name = "buttonCopySHA256StringFromTextToClipboard";
@@ -728,6 +884,9 @@ namespace Hasher
             // 
             // MainForm
             // 
+            this.AccessibleDescription = "This is the window of the application";
+            this.AccessibleName = "Window of the application";
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

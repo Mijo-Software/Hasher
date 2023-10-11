@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HashLister.Properties {
+namespace Hasher.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace HashLister.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("HashLister.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Hasher.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,11 +61,38 @@ namespace HashLister.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die - ähnelt.
+        /// </summary>
+        internal static string dash {
+            get {
+                return ResourceManager.GetString("dash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Error ähnelt.
+        /// </summary>
+        internal static string error {
+            get {
+                return ResourceManager.GetString("error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die This function is experimental and may not provide exact results. ähnelt.
+        /// </summary>
+        internal static string experimental {
+            get {
+                return ResourceManager.GetString("experimental", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fugue_application_16_shadowless {
+        internal static System.Drawing.Bitmap fatcow_arrow_refresh_small_16 {
             get {
-                object obj = ResourceManager.GetObject("fugue-application-16-shadowless", resourceCulture);
+                object obj = ResourceManager.GetObject("fatcow_arrow_refresh_small_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +100,9 @@ namespace HashLister.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fugue_application_blue_16_shadowless {
+        internal static System.Drawing.Bitmap fatcow_clipboard_empty_16 {
             get {
-                object obj = ResourceManager.GetObject("fugue-application-blue-16-shadowless", resourceCulture);
+                object obj = ResourceManager.GetObject("fatcow_clipboard_empty_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +110,9 @@ namespace HashLister.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fugue_arrow_circle_16_shadowless {
+        internal static System.Drawing.Bitmap fatcow_diskette_16 {
             get {
-                object obj = ResourceManager.GetObject("fugue-arrow-circle-16-shadowless", resourceCulture);
+                object obj = ResourceManager.GetObject("fatcow_diskette_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +120,9 @@ namespace HashLister.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fugue_cross_circle_16_shadowless {
+        internal static System.Drawing.Bitmap fatcow_document_hash_tag_16 {
             get {
-                object obj = ResourceManager.GetObject("fugue-cross-circle-16-shadowless", resourceCulture);
+                object obj = ResourceManager.GetObject("fatcow_document_hash_tag_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,200 +130,100 @@ namespace HashLister.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fugue_cross_script_16_shadowless {
+        internal static System.Drawing.Bitmap fatcow_document_info_16 {
             get {
-                object obj = ResourceManager.GetObject("fugue-cross-script-16-shadowless", resourceCulture);
+                object obj = ResourceManager.GetObject("fatcow_document_info_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die File does not exist. ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap fugue_disk_16_shadowless {
+        internal static string fileDoesNotExist {
             get {
-                object obj = ResourceManager.GetObject("fugue-disk-16-shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("fileDoesNotExist", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die .md5 ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap fugue_disk_black_16_shadowless {
+        internal static string md5FileExt {
             get {
-                object obj = ResourceManager.GetObject("fugue-disk-black-16-shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("md5FileExt", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Only a file or a text are accepted. ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap fugue_disk_small_16_shadowless {
+        internal static string onlyFileOrTextAreAccepted {
             get {
-                object obj = ResourceManager.GetObject("fugue-disk-small-16-shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("onlyFileOrTextAreAccepted", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Only the first file of multiple files is accepted. ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap fugue_disks_16_shadowless {
+        internal static string onlyFirstFileIsAccepted {
             get {
-                object obj = ResourceManager.GetObject("fugue-disks-16-shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("onlyFirstFileIsAccepted", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die .ripemd160 ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap fugue_door_open_in_16_shadowless {
+        internal static string ripemd160FileExt {
             get {
-                object obj = ResourceManager.GetObject("fugue-door-open-in-16-shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("ripemd160FileExt", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die .sha1 ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap fugue_drive_16_shadowless {
+        internal static string sha1FileExt {
             get {
-                object obj = ResourceManager.GetObject("fugue_drive_16_shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("sha1FileExt", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die .sha256 ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap fugue_folder_open_16_shadowless {
+        internal static string sha256FileExt {
             get {
-                object obj = ResourceManager.GetObject("fugue-folder-open-16-shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("sha256FileExt", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die .sha384 ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap fugue_folder_open_document_16_shadowless {
+        internal static string sha384FileExt {
             get {
-                object obj = ResourceManager.GetObject("fugue-folder-open-document-16-shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("sha384FileExt", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die .sha512 ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap fugue_gear_16_shadowless {
+        internal static string sha512FileExt {
             get {
-                object obj = ResourceManager.GetObject("fugue_gear_16_shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("sha512FileExt", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        ///   Sucht eine lokalisierte Zeichenfolge, die Warning ähnelt.
         /// </summary>
-        internal static System.Drawing.Bitmap fugue_globe_16_shadowless {
+        internal static string warning {
             get {
-                object obj = ResourceManager.GetObject("fugue-globe-16-shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fugue_home_16_shadowless {
-            get {
-                object obj = ResourceManager.GetObject("fugue-home-16-shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fugue_information_16_shadowless {
-            get {
-                object obj = ResourceManager.GetObject("fugue_information_16_shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fugue_navigation_000_button_16_shadowless {
-            get {
-                object obj = ResourceManager.GetObject("fugue-navigation-000-button-16-shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fugue_navigation_180_button_16_shadowless {
-            get {
-                object obj = ResourceManager.GetObject("fugue-navigation-180-button-16-shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fugue_printer_16_shadowless {
-            get {
-                object obj = ResourceManager.GetObject("fugue_printer_16_shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fugue_property_16_shadowless {
-            get {
-                object obj = ResourceManager.GetObject("fugue-property-16-shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fugue_question_16_shadowless {
-            get {
-                object obj = ResourceManager.GetObject("fugue_question_16_shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap fugue_wrench_16_shadowless {
-            get {
-                object obj = ResourceManager.GetObject("fugue_wrench_16_shadowless", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap hashtag_128 {
-            get {
-                object obj = ResourceManager.GetObject("hashtag-128", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("warning", resourceCulture);
             }
         }
     }
