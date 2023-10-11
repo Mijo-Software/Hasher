@@ -62,6 +62,8 @@ namespace Hasher
             this.buttonOpenAndCalculateHashFromFile = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageFile = new System.Windows.Forms.TabPage();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabelInformation = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabPageText = new System.Windows.Forms.TabPage();
             this.checkBoxAutoUpdateText = new System.Windows.Forms.CheckBox();
             this.labelText = new System.Windows.Forms.Label();
@@ -86,9 +88,15 @@ namespace Hasher
             this.textBoxSHA256StringFromText = new System.Windows.Forms.TextBox();
             this.buttonCopySHA256StringFromTextToClipboard = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
+            this.imageListTab = new System.Windows.Forms.ImageList(this.components);
             this.tabControl.SuspendLayout();
             this.tabPageFile.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.tabPageText.SuspendLayout();
+            this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
+            this.toolStripContainer.ContentPanel.SuspendLayout();
+            this.toolStripContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelFileName
@@ -103,6 +111,10 @@ namespace Hasher
             this.labelFileName.TabIndex = 0;
             this.labelFileName.Text = "File:";
             this.toolTip.SetToolTip(this.labelFileName, "file");
+            this.labelFileName.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelFileName.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelFileName.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelFileName.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // textBoxFileName
             // 
@@ -115,6 +127,10 @@ namespace Hasher
             this.textBoxFileName.Size = new System.Drawing.Size(335, 20);
             this.textBoxFileName.TabIndex = 1;
             this.toolTip.SetToolTip(this.textBoxFileName, "Path of the file");
+            this.textBoxFileName.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxFileName.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxFileName.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxFileName.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelMD5StringFromFile
             // 
@@ -128,6 +144,10 @@ namespace Hasher
             this.labelMD5StringFromFile.TabIndex = 4;
             this.labelMD5StringFromFile.Text = "MD5:";
             this.toolTip.SetToolTip(this.labelMD5StringFromFile, "MD5 hash");
+            this.labelMD5StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelMD5StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelMD5StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelMD5StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // textBoxMD5StringFromFile
             // 
@@ -141,6 +161,10 @@ namespace Hasher
             this.textBoxMD5StringFromFile.Size = new System.Drawing.Size(358, 20);
             this.textBoxMD5StringFromFile.TabIndex = 5;
             this.toolTip.SetToolTip(this.textBoxMD5StringFromFile, "MD5 hash value");
+            this.textBoxMD5StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxMD5StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxMD5StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxMD5StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // openFileDialog
             // 
@@ -159,6 +183,10 @@ namespace Hasher
             this.textBoxRIPEMD160StringFromFile.Size = new System.Drawing.Size(358, 20);
             this.textBoxRIPEMD160StringFromFile.TabIndex = 9;
             this.toolTip.SetToolTip(this.textBoxRIPEMD160StringFromFile, "RIPEMD160 hash value");
+            this.textBoxRIPEMD160StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxRIPEMD160StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxRIPEMD160StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxRIPEMD160StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelRIPEMD160StringFromFile
             // 
@@ -172,6 +200,10 @@ namespace Hasher
             this.labelRIPEMD160StringFromFile.TabIndex = 8;
             this.labelRIPEMD160StringFromFile.Text = "RIPEMD160:";
             this.toolTip.SetToolTip(this.labelRIPEMD160StringFromFile, "RIPEMD160 hash");
+            this.labelRIPEMD160StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelRIPEMD160StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelRIPEMD160StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelRIPEMD160StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // textBoxSHA1StringFromFile
             // 
@@ -185,6 +217,10 @@ namespace Hasher
             this.textBoxSHA1StringFromFile.Size = new System.Drawing.Size(358, 20);
             this.textBoxSHA1StringFromFile.TabIndex = 13;
             this.toolTip.SetToolTip(this.textBoxSHA1StringFromFile, "SHA1 hash value");
+            this.textBoxSHA1StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA1StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxSHA1StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA1StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelSHA1StringFromFile
             // 
@@ -198,6 +234,10 @@ namespace Hasher
             this.labelSHA1StringFromFile.TabIndex = 12;
             this.labelSHA1StringFromFile.Text = "SHA1:";
             this.toolTip.SetToolTip(this.labelSHA1StringFromFile, "SHA1 hash");
+            this.labelSHA1StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA1StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelSHA1StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA1StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // textBoxSHA256StringFromFile
             // 
@@ -211,6 +251,10 @@ namespace Hasher
             this.textBoxSHA256StringFromFile.Size = new System.Drawing.Size(358, 20);
             this.textBoxSHA256StringFromFile.TabIndex = 17;
             this.toolTip.SetToolTip(this.textBoxSHA256StringFromFile, "SHA256 hash value");
+            this.textBoxSHA256StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA256StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxSHA256StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA256StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelSHA256StringFromFile
             // 
@@ -224,6 +268,10 @@ namespace Hasher
             this.labelSHA256StringFromFile.TabIndex = 16;
             this.labelSHA256StringFromFile.Text = "SHA256:";
             this.toolTip.SetToolTip(this.labelSHA256StringFromFile, "SHA256 hash");
+            this.labelSHA256StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA256StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelSHA256StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA256StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // textBoxSHA384StringFromFile
             // 
@@ -237,6 +285,10 @@ namespace Hasher
             this.textBoxSHA384StringFromFile.Size = new System.Drawing.Size(358, 20);
             this.textBoxSHA384StringFromFile.TabIndex = 21;
             this.toolTip.SetToolTip(this.textBoxSHA384StringFromFile, "SHA384 hash value");
+            this.textBoxSHA384StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA384StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxSHA384StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA384StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelSHA384FromFile
             // 
@@ -250,6 +302,10 @@ namespace Hasher
             this.labelSHA384FromFile.TabIndex = 20;
             this.labelSHA384FromFile.Text = "SHA384:";
             this.toolTip.SetToolTip(this.labelSHA384FromFile, "SHA384 hash");
+            this.labelSHA384FromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA384FromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelSHA384FromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA384FromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // textBoxSHA512StringFromFile
             // 
@@ -263,6 +319,10 @@ namespace Hasher
             this.textBoxSHA512StringFromFile.Size = new System.Drawing.Size(358, 20);
             this.textBoxSHA512StringFromFile.TabIndex = 25;
             this.toolTip.SetToolTip(this.textBoxSHA512StringFromFile, "SHA512 hash value");
+            this.textBoxSHA512StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA512StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxSHA512StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA512StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelSHA512StringFromFile
             // 
@@ -276,6 +336,10 @@ namespace Hasher
             this.labelSHA512StringFromFile.TabIndex = 24;
             this.labelSHA512StringFromFile.Text = "SHA512:";
             this.toolTip.SetToolTip(this.labelSHA512StringFromFile, "SHA512 hash");
+            this.labelSHA512StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA512StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelSHA512StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA512StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // saveFileDialog
             // 
@@ -296,6 +360,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonSaveSHA512StringToFile, "Save the SHA512 hash value in a file");
             this.buttonSaveSHA512StringToFile.UseVisualStyleBackColor = true;
             this.buttonSaveSHA512StringToFile.Click += new System.EventHandler(this.ButtonSaveSHA512StringToFile_Click);
+            this.buttonSaveSHA512StringToFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveSHA512StringToFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonSaveSHA512StringToFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveSHA512StringToFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonSaveSHA384StringToFile
             // 
@@ -311,6 +379,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonSaveSHA384StringToFile, "Save the SHA384 hash value in a file");
             this.buttonSaveSHA384StringToFile.UseVisualStyleBackColor = true;
             this.buttonSaveSHA384StringToFile.Click += new System.EventHandler(this.ButtonSaveSHA384StringToFile_Click);
+            this.buttonSaveSHA384StringToFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveSHA384StringToFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonSaveSHA384StringToFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveSHA384StringToFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonSaveSHA256StringToFile
             // 
@@ -326,6 +398,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonSaveSHA256StringToFile, "Save the SHA256 hash value in a file");
             this.buttonSaveSHA256StringToFile.UseVisualStyleBackColor = true;
             this.buttonSaveSHA256StringToFile.Click += new System.EventHandler(this.ButtonSaveSHA256StringToFile_Click);
+            this.buttonSaveSHA256StringToFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveSHA256StringToFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonSaveSHA256StringToFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveSHA256StringToFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonSaveSHA1StringToFile
             // 
@@ -341,6 +417,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonSaveSHA1StringToFile, "Save the SHA1 hash value in a file");
             this.buttonSaveSHA1StringToFile.UseVisualStyleBackColor = true;
             this.buttonSaveSHA1StringToFile.Click += new System.EventHandler(this.ButtonSaveSHA1StringToFile_Click);
+            this.buttonSaveSHA1StringToFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveSHA1StringToFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonSaveSHA1StringToFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveSHA1StringToFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonSaveRIPEMD160ToFile
             // 
@@ -356,6 +436,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonSaveRIPEMD160ToFile, "Save the RIPEMD160 hash value in a file");
             this.buttonSaveRIPEMD160ToFile.UseVisualStyleBackColor = true;
             this.buttonSaveRIPEMD160ToFile.Click += new System.EventHandler(this.ButtonSaveRIPEMD160ToFile_Click);
+            this.buttonSaveRIPEMD160ToFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveRIPEMD160ToFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonSaveRIPEMD160ToFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveRIPEMD160ToFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonSaveMD5StringToFile
             // 
@@ -371,6 +455,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonSaveMD5StringToFile, "Save the MD5 hash value in a file");
             this.buttonSaveMD5StringToFile.UseVisualStyleBackColor = true;
             this.buttonSaveMD5StringToFile.Click += new System.EventHandler(this.ButtonSaveMD5StringToFile_Click);
+            this.buttonSaveMD5StringToFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveMD5StringToFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonSaveMD5StringToFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveMD5StringToFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonCopySHA512StringFromFileToClipboard
             // 
@@ -386,6 +474,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonCopySHA512StringFromFileToClipboard, "Copy the SHA512 hash value to the clipboard");
             this.buttonCopySHA512StringFromFileToClipboard.UseVisualStyleBackColor = true;
             this.buttonCopySHA512StringFromFileToClipboard.Click += new System.EventHandler(this.ButtonCopySHA512StringFromFileToClipboard_Click);
+            this.buttonCopySHA512StringFromFileToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA512StringFromFileToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonCopySHA512StringFromFileToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA512StringFromFileToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonCopySHA384StringFromFileToClipboard
             // 
@@ -401,6 +493,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonCopySHA384StringFromFileToClipboard, "Copy the SHA384 hash value to the clipboard");
             this.buttonCopySHA384StringFromFileToClipboard.UseVisualStyleBackColor = true;
             this.buttonCopySHA384StringFromFileToClipboard.Click += new System.EventHandler(this.ButtonCopySHA384StringFromFileToClipboard_Click);
+            this.buttonCopySHA384StringFromFileToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA384StringFromFileToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonCopySHA384StringFromFileToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA384StringFromFileToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonCopySHA256StringFromFileToClipboard
             // 
@@ -416,6 +512,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonCopySHA256StringFromFileToClipboard, "Copy the SHA256 hash value to the clipboard");
             this.buttonCopySHA256StringFromFileToClipboard.UseVisualStyleBackColor = true;
             this.buttonCopySHA256StringFromFileToClipboard.Click += new System.EventHandler(this.ButtonCopySHA256StringFromFileToClipboard_Click);
+            this.buttonCopySHA256StringFromFileToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA256StringFromFileToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonCopySHA256StringFromFileToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA256StringFromFileToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonCopySHA1StringFromFileToClipboard
             // 
@@ -431,6 +531,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonCopySHA1StringFromFileToClipboard, "Copy the SHA1 hash value to the clipboard");
             this.buttonCopySHA1StringFromFileToClipboard.UseVisualStyleBackColor = true;
             this.buttonCopySHA1StringFromFileToClipboard.Click += new System.EventHandler(this.ButtonCopySHA1StringFromFileToClipboard_Click);
+            this.buttonCopySHA1StringFromFileToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA1StringFromFileToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonCopySHA1StringFromFileToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA1StringFromFileToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonCopyRIPEMD160StringFromFileToClipboard
             // 
@@ -446,6 +550,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonCopyRIPEMD160StringFromFileToClipboard, "Copy the RIPEMD160 hash value to the clipboard");
             this.buttonCopyRIPEMD160StringFromFileToClipboard.UseVisualStyleBackColor = true;
             this.buttonCopyRIPEMD160StringFromFileToClipboard.Click += new System.EventHandler(this.ButtonCopyRIPEMD160StringFromFileToClipboard_Click);
+            this.buttonCopyRIPEMD160StringFromFileToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopyRIPEMD160StringFromFileToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonCopyRIPEMD160StringFromFileToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopyRIPEMD160StringFromFileToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonCopyMD5StringFromFileToClipboard
             // 
@@ -461,6 +569,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonCopyMD5StringFromFileToClipboard, "Copy the MD5 hash value to the clipboard");
             this.buttonCopyMD5StringFromFileToClipboard.UseVisualStyleBackColor = true;
             this.buttonCopyMD5StringFromFileToClipboard.Click += new System.EventHandler(this.ButtonCopyMD5StringFromFileToClipboard_Click);
+            this.buttonCopyMD5StringFromFileToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopyMD5StringFromFileToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonCopyMD5StringFromFileToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopyMD5StringFromFileToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonOpenAndCalculateHashFromFile
             // 
@@ -478,6 +590,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonOpenAndCalculateHashFromFile, "Open a file and calculate the hash value");
             this.buttonOpenAndCalculateHashFromFile.UseVisualStyleBackColor = true;
             this.buttonOpenAndCalculateHashFromFile.Click += new System.EventHandler(this.OpenAndCalculateFile_Click);
+            this.buttonOpenAndCalculateHashFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonOpenAndCalculateHashFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonOpenAndCalculateHashFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonOpenAndCalculateHashFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // tabControl
             // 
@@ -489,11 +605,12 @@ namespace Hasher
             this.tabControl.Controls.Add(this.tabPageText);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.HotTrack = true;
+            this.tabControl.ImageList = this.imageListTab;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.ShowToolTips = true;
-            this.tabControl.Size = new System.Drawing.Size(511, 219);
+            this.tabControl.Size = new System.Drawing.Size(511, 221);
             this.tabControl.TabIndex = 0;
             this.tabControl.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
             this.tabControl.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
@@ -530,15 +647,54 @@ namespace Hasher
             this.tabPageFile.Controls.Add(this.labelSHA384FromFile);
             this.tabPageFile.Controls.Add(this.textBoxSHA256StringFromFile);
             this.tabPageFile.Controls.Add(this.buttonCopySHA256StringFromFileToClipboard);
-            this.tabPageFile.Location = new System.Drawing.Point(4, 22);
+            this.tabPageFile.ImageKey = "fatcow_page_16.png";
+            this.tabPageFile.Location = new System.Drawing.Point(4, 23);
             this.tabPageFile.Name = "tabPageFile";
             this.tabPageFile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFile.Size = new System.Drawing.Size(503, 193);
+            this.tabPageFile.Size = new System.Drawing.Size(503, 194);
             this.tabPageFile.TabIndex = 0;
             this.tabPageFile.Text = "File";
             this.toolTip.SetToolTip(this.tabPageFile, "Hash a file");
             this.tabPageFile.ToolTipText = "Hash a file";
             this.tabPageFile.UseVisualStyleBackColor = true;
+            this.tabPageFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.tabPageFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.tabPageFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.tabPageFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.AccessibleDescription = "Just a status bar";
+            this.statusStrip.AccessibleName = "status bar";
+            this.statusStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
+            this.statusStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelInformation});
+            this.statusStrip.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.ShowItemToolTips = true;
+            this.statusStrip.Size = new System.Drawing.Size(511, 22);
+            this.statusStrip.SizingGrip = false;
+            this.statusStrip.TabIndex = 28;
+            this.statusStrip.TabStop = true;
+            this.statusStrip.Text = "status bar";
+            this.toolTip.SetToolTip(this.statusStrip, "Just a status bar");
+            this.statusStrip.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.statusStrip.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.statusStrip.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.statusStrip.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripStatusLabelInformation
+            // 
+            this.toolStripStatusLabelInformation.AccessibleDescription = "Show some information";
+            this.toolStripStatusLabelInformation.AccessibleName = "information";
+            this.toolStripStatusLabelInformation.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
+            this.toolStripStatusLabelInformation.AutoToolTip = true;
+            this.toolStripStatusLabelInformation.Name = "toolStripStatusLabelInformation";
+            this.toolStripStatusLabelInformation.Size = new System.Drawing.Size(70, 17);
+            this.toolStripStatusLabelInformation.Text = "information";
+            this.toolStripStatusLabelInformation.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripStatusLabelInformation.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // tabPageText
             // 
@@ -567,15 +723,20 @@ namespace Hasher
             this.tabPageText.Controls.Add(this.labelSHA384StringFromText);
             this.tabPageText.Controls.Add(this.textBoxSHA256StringFromText);
             this.tabPageText.Controls.Add(this.buttonCopySHA256StringFromTextToClipboard);
-            this.tabPageText.Location = new System.Drawing.Point(4, 22);
+            this.tabPageText.ImageKey = "fatcow_text_effects_16.png";
+            this.tabPageText.Location = new System.Drawing.Point(4, 23);
             this.tabPageText.Name = "tabPageText";
             this.tabPageText.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageText.Size = new System.Drawing.Size(503, 193);
+            this.tabPageText.Size = new System.Drawing.Size(503, 194);
             this.tabPageText.TabIndex = 1;
             this.tabPageText.Text = "Text";
             this.toolTip.SetToolTip(this.tabPageText, "Hash a text");
             this.tabPageText.ToolTipText = "Hash a text";
             this.tabPageText.UseVisualStyleBackColor = true;
+            this.tabPageText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.tabPageText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.tabPageText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.tabPageText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // checkBoxAutoUpdateText
             // 
@@ -593,6 +754,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.checkBoxAutoUpdateText, "Enable/disable the permanent calculation");
             this.checkBoxAutoUpdateText.UseVisualStyleBackColor = true;
             this.checkBoxAutoUpdateText.CheckedChanged += new System.EventHandler(this.CheckBoxAutoUpdateText_CheckedChanged);
+            this.checkBoxAutoUpdateText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.checkBoxAutoUpdateText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.checkBoxAutoUpdateText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.checkBoxAutoUpdateText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelText
             // 
@@ -606,6 +771,10 @@ namespace Hasher
             this.labelText.TabIndex = 0;
             this.labelText.Text = "Text:";
             this.toolTip.SetToolTip(this.labelText, "text");
+            this.labelText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // textBoxText
             // 
@@ -618,6 +787,10 @@ namespace Hasher
             this.textBoxText.TabIndex = 1;
             this.toolTip.SetToolTip(this.textBoxText, "text to hash");
             this.textBoxText.TextChanged += new System.EventHandler(this.TextBoxText_KeyPress);
+            this.textBoxText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonCalculateHashFromText
             // 
@@ -635,6 +808,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonCalculateHashFromText, "Calculate the hash values from a text");
             this.buttonCalculateHashFromText.UseVisualStyleBackColor = true;
             this.buttonCalculateHashFromText.Click += new System.EventHandler(this.ButtonCalculateHashFromText_Click);
+            this.buttonCalculateHashFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCalculateHashFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonCalculateHashFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCalculateHashFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelMD5StringFromText
             // 
@@ -648,6 +825,10 @@ namespace Hasher
             this.labelMD5StringFromText.TabIndex = 4;
             this.labelMD5StringFromText.Text = "MD5:";
             this.toolTip.SetToolTip(this.labelMD5StringFromText, "MD5 hash");
+            this.labelMD5StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelMD5StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelMD5StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelMD5StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // textBoxMD5StringFromText
             // 
@@ -661,6 +842,10 @@ namespace Hasher
             this.textBoxMD5StringFromText.Size = new System.Drawing.Size(382, 20);
             this.textBoxMD5StringFromText.TabIndex = 5;
             this.toolTip.SetToolTip(this.textBoxMD5StringFromText, "MD5 hash value");
+            this.textBoxMD5StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxMD5StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxMD5StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxMD5StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonCopyMD5StringFromTextToClipboard
             // 
@@ -676,6 +861,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonCopyMD5StringFromTextToClipboard, "Copy the MD5 hash value to the clipboard");
             this.buttonCopyMD5StringFromTextToClipboard.UseVisualStyleBackColor = true;
             this.buttonCopyMD5StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopyMD5StringFromTextToClipboard_Click);
+            this.buttonCopyMD5StringFromTextToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopyMD5StringFromTextToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonCopyMD5StringFromTextToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopyMD5StringFromTextToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelRIPEMD160StringFromText
             // 
@@ -689,6 +878,10 @@ namespace Hasher
             this.labelRIPEMD160StringFromText.TabIndex = 7;
             this.labelRIPEMD160StringFromText.Text = "RIPEMD160:";
             this.toolTip.SetToolTip(this.labelRIPEMD160StringFromText, "RIPEMD160 hash");
+            this.labelRIPEMD160StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelRIPEMD160StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelRIPEMD160StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelRIPEMD160StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // textBoxRIPEMD160StringFromText
             // 
@@ -702,6 +895,10 @@ namespace Hasher
             this.textBoxRIPEMD160StringFromText.Size = new System.Drawing.Size(382, 20);
             this.textBoxRIPEMD160StringFromText.TabIndex = 8;
             this.toolTip.SetToolTip(this.textBoxRIPEMD160StringFromText, "RIPEMD160 hash value");
+            this.textBoxRIPEMD160StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxRIPEMD160StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxRIPEMD160StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxRIPEMD160StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonCopySHA512StringFromTextToClipboard
             // 
@@ -717,6 +914,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonCopySHA512StringFromTextToClipboard, "Copy the SHA512 hash value to the clipboard");
             this.buttonCopySHA512StringFromTextToClipboard.UseVisualStyleBackColor = true;
             this.buttonCopySHA512StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopySHA512StringFromTextToClipboard_Click);
+            this.buttonCopySHA512StringFromTextToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA512StringFromTextToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonCopySHA512StringFromTextToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA512StringFromTextToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonCopyRIPEMD160StringFromTextToClipboard
             // 
@@ -732,6 +933,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonCopyRIPEMD160StringFromTextToClipboard, "Copy the RIPEMD160 hash value to the clipboard");
             this.buttonCopyRIPEMD160StringFromTextToClipboard.UseVisualStyleBackColor = true;
             this.buttonCopyRIPEMD160StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopyRIPEMD160StringFromTextToClipboard_Click);
+            this.buttonCopyRIPEMD160StringFromTextToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopyRIPEMD160StringFromTextToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonCopyRIPEMD160StringFromTextToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopyRIPEMD160StringFromTextToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // textBoxSHA512StringFromText
             // 
@@ -745,6 +950,10 @@ namespace Hasher
             this.textBoxSHA512StringFromText.Size = new System.Drawing.Size(382, 20);
             this.textBoxSHA512StringFromText.TabIndex = 20;
             this.toolTip.SetToolTip(this.textBoxSHA512StringFromText, "SHA512 hash value");
+            this.textBoxSHA512StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA512StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxSHA512StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA512StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelSHA1StringFromText
             // 
@@ -758,6 +967,10 @@ namespace Hasher
             this.labelSHA1StringFromText.TabIndex = 10;
             this.labelSHA1StringFromText.Text = "SHA1:";
             this.toolTip.SetToolTip(this.labelSHA1StringFromText, "SHA1 hash");
+            this.labelSHA1StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA1StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelSHA1StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA1StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelSHA512StringFromText
             // 
@@ -771,6 +984,10 @@ namespace Hasher
             this.labelSHA512StringFromText.TabIndex = 19;
             this.labelSHA512StringFromText.Text = "SHA512:";
             this.toolTip.SetToolTip(this.labelSHA512StringFromText, "SHA512 hash");
+            this.labelSHA512StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA512StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelSHA512StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA512StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // textBoxSHA1StringFromText
             // 
@@ -784,6 +1001,10 @@ namespace Hasher
             this.textBoxSHA1StringFromText.Size = new System.Drawing.Size(382, 20);
             this.textBoxSHA1StringFromText.TabIndex = 11;
             this.toolTip.SetToolTip(this.textBoxSHA1StringFromText, "SHA1 hash value");
+            this.textBoxSHA1StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA1StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxSHA1StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA1StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonCopySHA384StringFromTextToClipboard
             // 
@@ -799,6 +1020,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonCopySHA384StringFromTextToClipboard, "Copy the SHA384 hash value to the clipboard");
             this.buttonCopySHA384StringFromTextToClipboard.UseVisualStyleBackColor = true;
             this.buttonCopySHA384StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopySHA384StringFromTextToClipboard_Click);
+            this.buttonCopySHA384StringFromTextToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA384StringFromTextToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonCopySHA384StringFromTextToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA384StringFromTextToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonCopySHA1StringFromTextToClipboard
             // 
@@ -814,6 +1039,10 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonCopySHA1StringFromTextToClipboard, "Copy the SHA1 hash value to the clipboard");
             this.buttonCopySHA1StringFromTextToClipboard.UseVisualStyleBackColor = true;
             this.buttonCopySHA1StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopySHA1StringFromTextToClipboard_Click);
+            this.buttonCopySHA1StringFromTextToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA1StringFromTextToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonCopySHA1StringFromTextToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA1StringFromTextToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // textBoxSHA384StringFromText
             // 
@@ -827,6 +1056,10 @@ namespace Hasher
             this.textBoxSHA384StringFromText.Size = new System.Drawing.Size(382, 20);
             this.textBoxSHA384StringFromText.TabIndex = 17;
             this.toolTip.SetToolTip(this.textBoxSHA384StringFromText, "SHA384 hash value");
+            this.textBoxSHA384StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA384StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxSHA384StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA384StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelSHA256StringFromText
             // 
@@ -840,6 +1073,10 @@ namespace Hasher
             this.labelSHA256StringFromText.TabIndex = 13;
             this.labelSHA256StringFromText.Text = "SHA256:";
             this.toolTip.SetToolTip(this.labelSHA256StringFromText, "SHA256 hash");
+            this.labelSHA256StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA256StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelSHA256StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA256StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // labelSHA384StringFromText
             // 
@@ -853,6 +1090,10 @@ namespace Hasher
             this.labelSHA384StringFromText.TabIndex = 16;
             this.labelSHA384StringFromText.Text = "SHA384:";
             this.toolTip.SetToolTip(this.labelSHA384StringFromText, "SHA384 hash");
+            this.labelSHA384StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA384StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelSHA384StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelSHA384StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // textBoxSHA256StringFromText
             // 
@@ -866,6 +1107,10 @@ namespace Hasher
             this.textBoxSHA256StringFromText.Size = new System.Drawing.Size(382, 20);
             this.textBoxSHA256StringFromText.TabIndex = 14;
             this.toolTip.SetToolTip(this.textBoxSHA256StringFromText, "SHA256 hash value");
+            this.textBoxSHA256StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA256StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxSHA256StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxSHA256StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonCopySHA256StringFromTextToClipboard
             // 
@@ -881,6 +1126,38 @@ namespace Hasher
             this.toolTip.SetToolTip(this.buttonCopySHA256StringFromTextToClipboard, "Copy the SHA256 hash value to the clipboard");
             this.buttonCopySHA256StringFromTextToClipboard.UseVisualStyleBackColor = true;
             this.buttonCopySHA256StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopySHA256StringFromTextToClipboard_Click);
+            this.buttonCopySHA256StringFromTextToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA256StringFromTextToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonCopySHA256StringFromTextToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonCopySHA256StringFromTextToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripContainer
+            // 
+            this.toolStripContainer.AccessibleDescription = "Just an container";
+            this.toolStripContainer.AccessibleName = "Container";
+            this.toolStripContainer.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
+            // 
+            // toolStripContainer.BottomToolStripPanel
+            // 
+            this.toolStripContainer.BottomToolStripPanel.Controls.Add(this.statusStrip);
+            // 
+            // toolStripContainer.ContentPanel
+            // 
+            this.toolStripContainer.ContentPanel.Controls.Add(this.tabControl);
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(511, 221);
+            this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer.Name = "toolStripContainer";
+            this.toolStripContainer.Size = new System.Drawing.Size(511, 243);
+            this.toolStripContainer.TabIndex = 29;
+            this.toolStripContainer.Text = "toolStripContainer";
+            // 
+            // imageListTab
+            // 
+            this.imageListTab.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListTab.ImageStream")));
+            this.imageListTab.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListTab.Images.SetKeyName(0, "fatcow_page_16.png");
+            this.imageListTab.Images.SetKeyName(1, "fatcow_text_effects_16.png");
             // 
             // MainForm
             // 
@@ -890,21 +1167,29 @@ namespace Hasher
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 219);
-            this.Controls.Add(this.tabControl);
+            this.ClientSize = new System.Drawing.Size(511, 243);
+            this.Controls.Add(this.toolStripContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hasher";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
             this.tabControl.ResumeLayout(false);
             this.tabPageFile.ResumeLayout(false);
             this.tabPageFile.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.tabPageText.ResumeLayout(false);
             this.tabPageText.PerformLayout();
+            this.toolStripContainer.BottomToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer.BottomToolStripPanel.PerformLayout();
+            this.toolStripContainer.ContentPanel.ResumeLayout(false);
+            this.toolStripContainer.ResumeLayout(false);
+            this.toolStripContainer.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -966,6 +1251,10 @@ namespace Hasher
 		private System.Windows.Forms.Button buttonCopySHA256StringFromTextToClipboard;
 		private System.Windows.Forms.CheckBox checkBoxAutoUpdateText;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelInformation;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer;
+        private System.Windows.Forms.ImageList imageListTab;
     }
 }
 

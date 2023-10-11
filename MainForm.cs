@@ -33,6 +33,16 @@ namespace Hasher
         private string GetDebuggerDisplay() => ToString();
 
         /// <summary>
+        /// Set a specific text to the status bar
+        /// </summary>
+        /// <param name="text">text with some information</param>
+        private void SetStatusbarText(string text)
+        {
+            toolStripStatusLabelInformation.Enabled = !string.IsNullOrEmpty(value: text);
+            toolStripStatusLabelInformation.Text = text;
+        }
+
+        /// <summary>
         /// Calculate hash values from a file
         /// </summary>
         private void CalculateHashesFromFile()
@@ -266,13 +276,151 @@ namespace Hasher
 
         #endregion
 
+        #region Load event handlers
+
+        /// <summary>
+        /// Load the form
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void MainForm_Load(object sender, EventArgs e) => SetStatusbarText(text: string.Empty);
+
+        #endregion
+
+        #region Enter event handlers
+
+        /// <summary>
+        /// Detect the accessibility description to set as information text in the status bar
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameter <paramref name="e"/> is not needed, but must be indicated.</remarks>
+        private void SetStatusbar_Enter(object sender, EventArgs e)
+        {
+            switch (sender)
+            {
+                case TextBox textBox:
+                    SetStatusbarText(text: textBox.AccessibleDescription);
+                    break;
+                case Button button:
+                    SetStatusbarText(text: button.AccessibleDescription);
+                    break;
+                case RadioButton radioButton:
+                    SetStatusbarText(text: radioButton.AccessibleDescription);
+                    break;
+                case CheckBox checkBox:
+                    SetStatusbarText(text: checkBox.AccessibleDescription);
+                    break;
+                case DateTimePicker dateTimePicker:
+                    SetStatusbarText(text: dateTimePicker.AccessibleDescription);
+                    break;
+                case Label label:
+                    SetStatusbarText(text: label.AccessibleDescription);
+                    break;
+                case PictureBox pictureBox:
+                    SetStatusbarText(text: pictureBox.AccessibleDescription);
+                    break;
+                case CheckedListBox checkedListBox:
+                    SetStatusbarText(text: checkedListBox.AccessibleDescription);
+                    break;
+                case ComboBox box:
+                    SetStatusbarText(text: box.AccessibleDescription);
+                    break;
+                case DataGridView view:
+                    SetStatusbarText(text: view.AccessibleDescription);
+                    break;
+                case GroupBox group:
+                    SetStatusbarText(text: group.AccessibleDescription);
+                    break;
+                case ListBox box:
+                    SetStatusbarText(text: box.AccessibleDescription);
+                    break;
+                case ListView view:
+                    SetStatusbarText(text: view.AccessibleDescription);
+                    break;
+                case MaskedTextBox box:
+                    SetStatusbarText(text: box.AccessibleDescription);
+                    break;
+                case NumericUpDown numericUpDown:
+                    SetStatusbarText(text: numericUpDown.AccessibleDescription);
+                    break;
+                case MonthCalendar monthCalendar:
+                    SetStatusbarText(text: monthCalendar.AccessibleDescription);
+                    break;
+                case PropertyGrid propertyGrid:
+                    SetStatusbarText(text: propertyGrid.AccessibleDescription);
+                    break;
+                case RichTextBox richTextBox:
+                    SetStatusbarText(text: richTextBox.AccessibleDescription);
+                    break;
+                case ScrollBar scrollBar:
+                    SetStatusbarText(text: scrollBar.AccessibleDescription);
+                    break;
+                case TrackBar trackBar:
+                    SetStatusbarText(text: trackBar.AccessibleDescription);
+                    break;
+                case WebBrowser webBrowser:
+                    SetStatusbarText(text: webBrowser.AccessibleDescription);
+                    break;
+                case DomainUpDown domainUpDown:
+                    SetStatusbarText(text: domainUpDown.AccessibleDescription);
+                    break;
+                case ToolStripButton toolStripButton:
+                    SetStatusbarText(text: toolStripButton.AccessibleDescription);
+                    break;
+                case ToolStripMenuItem toolStripMenuItem:
+                    SetStatusbarText(text: toolStripMenuItem.AccessibleDescription);
+                    break;
+                case ToolStripLabel toolStripLabel:
+                    SetStatusbarText(text: toolStripLabel.AccessibleDescription);
+                    break;
+                case ToolStripComboBox toolStripComboBox:
+                    SetStatusbarText(text: toolStripComboBox.AccessibleDescription);
+                    break;
+                case ToolStripDropDown toolStripDropDown:
+                    SetStatusbarText(text: toolStripDropDown.AccessibleDescription);
+                    break;
+                case ToolStripDropDownButton toolStripDropDownButton:
+                    SetStatusbarText(text: toolStripDropDownButton.AccessibleDescription);
+                    break;
+                case ToolStripDropDownItem toolStripDropDownItem:
+                    SetStatusbarText(text: toolStripDropDownItem.AccessibleDescription);
+                    break;
+                case ToolStripProgressBar progressBar:
+                    SetStatusbarText(text: progressBar.AccessibleDescription);
+                    break;
+                case ToolStripSeparator toolStripSeparator:
+                    SetStatusbarText(text: toolStripSeparator.AccessibleDescription);
+                    break;
+                case ToolStripTextBox toolStripTextBox:
+                    SetStatusbarText(text: toolStripTextBox.AccessibleDescription);
+                    break;
+            }
+        }
+
+        #endregion
+
+        #region Leave event handlers
+
+        /// <summary>
+        /// Clear the information text of the status bar
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void ClearStatusbar_Leave(object sender, EventArgs e) => SetStatusbarText(text: string.Empty);
+
+        #endregion
+
         #region Click event handlers
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void OpenAndCalculateFile_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -285,111 +433,125 @@ namespace Hasher
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonCalculateHashFromText_Click(object sender, EventArgs e) => CalculateHashesFromText();
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonCopyMD5StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
             text: textBoxMD5StringFromFile.Text);
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonCopyMD5StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
             text: textBoxMD5StringFromText.Text);
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonCopyRIPEMD160StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
             text: textBoxRIPEMD160StringFromFile.Text);
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonCopyRIPEMD160StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
             text: textBoxRIPEMD160StringFromText.Text);
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonCopySHA1StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
             text: textBoxSHA1StringFromFile.Text);
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonCopySHA1StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
             text: textBoxSHA1StringFromText.Text);
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonCopySHA256StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
             text: textBoxSHA256StringFromFile.Text);
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonCopySHA256StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
             text: textBoxSHA256StringFromText.Text);
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonCopySHA384StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
             text: textBoxSHA384StringFromFile.Text);
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonCopySHA384StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
             text: textBoxSHA384StringFromText.Text);
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonCopySHA512StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
             text: textBoxSHA512StringFromFile.Text);
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonCopySHA512StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
             text: textBoxSHA512StringFromText.Text);
 
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonSaveMD5StringToFile_Click(object sender, EventArgs e) => SaveHashValueToFile(
             hashFileExtension: Resources.md5FileExt,
             hashValue: textBoxMD5StringFromFile.Text);
@@ -397,8 +559,9 @@ namespace Hasher
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonSaveRIPEMD160ToFile_Click(object sender, EventArgs e) => SaveHashValueToFile(
             hashFileExtension: Resources.ripemd160FileExt,
             hashValue: textBoxRIPEMD160StringFromFile.Text);
@@ -406,8 +569,9 @@ namespace Hasher
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonSaveSHA1StringToFile_Click(object sender, EventArgs e) => SaveHashValueToFile(
             hashFileExtension: Resources.sha1FileExt,
             hashValue: textBoxSHA1StringFromFile.Text);
@@ -415,8 +579,9 @@ namespace Hasher
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonSaveSHA256StringToFile_Click(object sender, EventArgs e) => SaveHashValueToFile(
             hashFileExtension: Resources.sha256FileExt,
             hashValue: textBoxSHA256StringFromFile.Text);
@@ -424,8 +589,9 @@ namespace Hasher
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonSaveSHA384StringToFile_Click(object sender, EventArgs e) => SaveHashValueToFile(
             hashFileExtension: Resources.sha384FileExt,
             hashValue: textBoxSHA384StringFromFile.Text);
@@ -433,8 +599,9 @@ namespace Hasher
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonSaveSHA512StringToFile_Click(object sender, EventArgs e) => SaveHashValueToFile(
             hashFileExtension: Resources.sha512FileExt,
             hashValue: textBoxSHA512StringFromFile.Text);
@@ -446,8 +613,9 @@ namespace Hasher
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void CheckBoxAutoUpdateText_CheckedChanged(object sender, EventArgs e) => buttonCalculateHashFromText.Enabled =
             !buttonCalculateHashFromText.Enabled;
 
@@ -458,8 +626,8 @@ namespace Hasher
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
         private void MainForm_DragDrop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(format: DataFormats.FileDrop))
@@ -504,8 +672,8 @@ namespace Hasher
         /// <summary>
         ///
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
         private void MainForm_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(format: DataFormats.FileDrop) ||
@@ -523,8 +691,9 @@ namespace Hasher
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void TextBoxText_KeyPress(object sender, EventArgs e)
         {
             if (checkBoxAutoUpdateText.Checked)
@@ -534,6 +703,5 @@ namespace Hasher
         }
 
         #endregion
-
     }
 }
