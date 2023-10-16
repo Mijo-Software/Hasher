@@ -147,6 +147,16 @@ namespace Hasher.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_hasher_96 {
+            get {
+                object obj = ResourceManager.GetObject("logo-hasher-96", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die .md5 ähnelt.
         /// </summary>
         internal static string md5FileExt {
