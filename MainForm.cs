@@ -1,4 +1,5 @@
 ﻿using Hasher.Properties;
+using MijoSoftware.AssemblyInformation;
 using System;
 using System.Diagnostics;
 using System.Globalization;
@@ -123,7 +124,6 @@ namespace Hasher
             StringBuilder stringBuilder = new StringBuilder();
             foreach (byte v in hashBytes)
             {
-                //stringBuilder.AppendFormat(provider: CultureInfo.InvariantCulture, format: "{0}", arg0: v);
                 stringBuilder.Append(value: v.ToString(format: "X2", provider: CultureInfo.InvariantCulture));
             }
             return stringBuilder.ToString();
@@ -284,7 +284,15 @@ namespace Hasher
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void MainForm_Load(object sender, EventArgs e) => SetStatusbarText(text: string.Empty);
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            SetStatusbarText(text: string.Empty);
+            labelProductName.Text = AssemblyInfo.AssemblyProduct;
+            labelVersion.Text = AssemblyInfo.AssemblyVersion;
+            labelCompanyName.Text = AssemblyInfo.AssemblyCompany;
+            labelCopyright.Text = AssemblyInfo.AssemblyCopyright;
+            textBoxDescription.Text = AssemblyInfo.AssemblyDescription;
+        }
 
         #endregion
 

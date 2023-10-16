@@ -7,12 +7,12 @@ using System.Runtime.InteropServices;
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die einer Assembly zugeordnet sind.
 [assembly: AssemblyTitle("Hasher")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Hasher calculates some hash values of files and texts. The application supports MD5, RIPEMD160, SHA1, SHA256, SHA386 and SHA512.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Mijo Software")]
 [assembly: AssemblyProduct("Hasher")]
 [assembly: AssemblyCopyright("Copyright © 2021-2023")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyTrademark("Hasher")]
 [assembly: AssemblyCulture("")]
 
 // Durch Festlegen von ComVisible auf FALSE werden die Typen in dieser Assembly
@@ -33,6 +33,6 @@ using System.Runtime.InteropServices;
 // Sie können alle Werte angeben oder Standardwerte für die Build- und Revisionsnummern verwenden,
 // indem Sie "*" wie unten gezeigt eingeben:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.3.16")]
-[assembly: AssemblyFileVersion("1.2.3.16")]
+[assembly: AssemblyVersion("1.2.4.17")]
+[assembly: AssemblyFileVersion("1.2.4.17")]
 [assembly: NeutralResourcesLanguage("en")]

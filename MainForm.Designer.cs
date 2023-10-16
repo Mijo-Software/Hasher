@@ -62,8 +62,6 @@ namespace Hasher
             this.buttonOpenAndCalculateHashFromFile = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageFile = new System.Windows.Forms.TabPage();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabelInformation = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabPageText = new System.Windows.Forms.TabPage();
             this.checkBoxAutoUpdateText = new System.Windows.Forms.CheckBox();
             this.labelText = new System.Windows.Forms.Label();
@@ -87,13 +85,24 @@ namespace Hasher
             this.labelSHA384StringFromText = new System.Windows.Forms.Label();
             this.textBoxSHA256StringFromText = new System.Windows.Forms.TextBox();
             this.buttonCopySHA256StringFromTextToClipboard = new System.Windows.Forms.Button();
+            this.tabPageInfo = new System.Windows.Forms.TabPage();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.labelCompanyName = new System.Windows.Forms.Label();
+            this.labelCopyright = new System.Windows.Forms.Label();
+            this.labelVersion = new System.Windows.Forms.Label();
+            this.labelProductName = new System.Windows.Forms.Label();
+            this.logoPictureBox = new System.Windows.Forms.PictureBox();
+            this.imageListTab = new System.Windows.Forms.ImageList(this.components);
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabelInformation = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
-            this.imageListTab = new System.Windows.Forms.ImageList(this.components);
             this.tabControl.SuspendLayout();
             this.tabPageFile.SuspendLayout();
-            this.statusStrip.SuspendLayout();
             this.tabPageText.SuspendLayout();
+            this.tabPageInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
+            this.statusStrip.SuspendLayout();
             this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer.ContentPanel.SuspendLayout();
             this.toolStripContainer.SuspendLayout();
@@ -603,6 +612,7 @@ namespace Hasher
             this.tabControl.AllowDrop = true;
             this.tabControl.Controls.Add(this.tabPageFile);
             this.tabControl.Controls.Add(this.tabPageText);
+            this.tabControl.Controls.Add(this.tabPageInfo);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.HotTrack = true;
             this.tabControl.ImageList = this.imageListTab;
@@ -610,7 +620,7 @@ namespace Hasher
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.ShowToolTips = true;
-            this.tabControl.Size = new System.Drawing.Size(511, 221);
+            this.tabControl.Size = new System.Drawing.Size(511, 225);
             this.tabControl.TabIndex = 0;
             this.tabControl.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
             this.tabControl.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
@@ -651,7 +661,7 @@ namespace Hasher
             this.tabPageFile.Location = new System.Drawing.Point(4, 23);
             this.tabPageFile.Name = "tabPageFile";
             this.tabPageFile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFile.Size = new System.Drawing.Size(503, 194);
+            this.tabPageFile.Size = new System.Drawing.Size(503, 173);
             this.tabPageFile.TabIndex = 0;
             this.tabPageFile.Text = "File";
             this.toolTip.SetToolTip(this.tabPageFile, "Hash a file");
@@ -661,40 +671,6 @@ namespace Hasher
             this.tabPageFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.tabPageFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.tabPageFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.AccessibleDescription = "Just a status bar";
-            this.statusStrip.AccessibleName = "status bar";
-            this.statusStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
-            this.statusStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabelInformation});
-            this.statusStrip.Location = new System.Drawing.Point(0, 0);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.ShowItemToolTips = true;
-            this.statusStrip.Size = new System.Drawing.Size(511, 22);
-            this.statusStrip.SizingGrip = false;
-            this.statusStrip.TabIndex = 28;
-            this.statusStrip.TabStop = true;
-            this.statusStrip.Text = "status bar";
-            this.toolTip.SetToolTip(this.statusStrip, "Just a status bar");
-            this.statusStrip.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.statusStrip.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.statusStrip.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.statusStrip.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripStatusLabelInformation
-            // 
-            this.toolStripStatusLabelInformation.AccessibleDescription = "Show some information";
-            this.toolStripStatusLabelInformation.AccessibleName = "information";
-            this.toolStripStatusLabelInformation.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.toolStripStatusLabelInformation.AutoToolTip = true;
-            this.toolStripStatusLabelInformation.Name = "toolStripStatusLabelInformation";
-            this.toolStripStatusLabelInformation.Size = new System.Drawing.Size(70, 17);
-            this.toolStripStatusLabelInformation.Text = "information";
-            this.toolStripStatusLabelInformation.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripStatusLabelInformation.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // tabPageText
             // 
@@ -727,7 +703,7 @@ namespace Hasher
             this.tabPageText.Location = new System.Drawing.Point(4, 23);
             this.tabPageText.Name = "tabPageText";
             this.tabPageText.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageText.Size = new System.Drawing.Size(503, 194);
+            this.tabPageText.Size = new System.Drawing.Size(503, 173);
             this.tabPageText.TabIndex = 1;
             this.tabPageText.Text = "Text";
             this.toolTip.SetToolTip(this.tabPageText, "Hash a text");
@@ -764,6 +740,7 @@ namespace Hasher
             this.labelText.AccessibleDescription = "text";
             this.labelText.AccessibleName = "text";
             this.labelText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
+            this.labelText.AutoEllipsis = true;
             this.labelText.AutoSize = true;
             this.labelText.Location = new System.Drawing.Point(7, 12);
             this.labelText.Name = "labelText";
@@ -797,6 +774,7 @@ namespace Hasher
             this.buttonCalculateHashFromText.AccessibleDescription = "Calculate the hash values from a text";
             this.buttonCalculateHashFromText.AccessibleName = "Calculate hash values from text";
             this.buttonCalculateHashFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonCalculateHashFromText.AutoEllipsis = true;
             this.buttonCalculateHashFromText.Image = global::Hasher.Properties.Resources.fatcow_document_hash_tag_16;
             this.buttonCalculateHashFromText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCalculateHashFromText.Location = new System.Drawing.Point(385, 6);
@@ -818,6 +796,7 @@ namespace Hasher
             this.labelMD5StringFromText.AccessibleDescription = "MD5";
             this.labelMD5StringFromText.AccessibleName = "MD5";
             this.labelMD5StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
+            this.labelMD5StringFromText.AutoEllipsis = true;
             this.labelMD5StringFromText.AutoSize = true;
             this.labelMD5StringFromText.Location = new System.Drawing.Point(7, 42);
             this.labelMD5StringFromText.Name = "labelMD5StringFromText";
@@ -852,6 +831,7 @@ namespace Hasher
             this.buttonCopyMD5StringFromTextToClipboard.AccessibleDescription = "Copy the MD5hash value to the clipboard";
             this.buttonCopyMD5StringFromTextToClipboard.AccessibleName = "Copy MD5 hash value to clipboard";
             this.buttonCopyMD5StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonCopyMD5StringFromTextToClipboard.AutoEllipsis = true;
             this.buttonCopyMD5StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyMD5StringFromTextToClipboard.Image")));
             this.buttonCopyMD5StringFromTextToClipboard.Location = new System.Drawing.Point(471, 36);
             this.buttonCopyMD5StringFromTextToClipboard.Name = "buttonCopyMD5StringFromTextToClipboard";
@@ -871,6 +851,7 @@ namespace Hasher
             this.labelRIPEMD160StringFromText.AccessibleDescription = "RIPEMD160";
             this.labelRIPEMD160StringFromText.AccessibleName = "RIPEMD160";
             this.labelRIPEMD160StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
+            this.labelRIPEMD160StringFromText.AutoEllipsis = true;
             this.labelRIPEMD160StringFromText.AutoSize = true;
             this.labelRIPEMD160StringFromText.Location = new System.Drawing.Point(7, 68);
             this.labelRIPEMD160StringFromText.Name = "labelRIPEMD160StringFromText";
@@ -905,6 +886,7 @@ namespace Hasher
             this.buttonCopySHA512StringFromTextToClipboard.AccessibleDescription = "Copy the SHA512 hash value to the clipboard";
             this.buttonCopySHA512StringFromTextToClipboard.AccessibleName = "Copy SHA512 hash value to clipboard";
             this.buttonCopySHA512StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonCopySHA512StringFromTextToClipboard.AutoEllipsis = true;
             this.buttonCopySHA512StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA512StringFromTextToClipboard.Image")));
             this.buttonCopySHA512StringFromTextToClipboard.Location = new System.Drawing.Point(471, 166);
             this.buttonCopySHA512StringFromTextToClipboard.Name = "buttonCopySHA512StringFromTextToClipboard";
@@ -924,6 +906,7 @@ namespace Hasher
             this.buttonCopyRIPEMD160StringFromTextToClipboard.AccessibleDescription = "Copy the RIPEMD160 hash value to the clipboard";
             this.buttonCopyRIPEMD160StringFromTextToClipboard.AccessibleName = "Copy RIPEMD160 hash value to clipboard";
             this.buttonCopyRIPEMD160StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonCopyRIPEMD160StringFromTextToClipboard.AutoEllipsis = true;
             this.buttonCopyRIPEMD160StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyRIPEMD160StringFromTextToClipboard.Image")));
             this.buttonCopyRIPEMD160StringFromTextToClipboard.Location = new System.Drawing.Point(471, 62);
             this.buttonCopyRIPEMD160StringFromTextToClipboard.Name = "buttonCopyRIPEMD160StringFromTextToClipboard";
@@ -960,6 +943,7 @@ namespace Hasher
             this.labelSHA1StringFromText.AccessibleDescription = "SHA1";
             this.labelSHA1StringFromText.AccessibleName = "SHA1";
             this.labelSHA1StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
+            this.labelSHA1StringFromText.AutoEllipsis = true;
             this.labelSHA1StringFromText.AutoSize = true;
             this.labelSHA1StringFromText.Location = new System.Drawing.Point(7, 94);
             this.labelSHA1StringFromText.Name = "labelSHA1StringFromText";
@@ -977,6 +961,7 @@ namespace Hasher
             this.labelSHA512StringFromText.AccessibleDescription = "SHA512";
             this.labelSHA512StringFromText.AccessibleName = "SHA512";
             this.labelSHA512StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
+            this.labelSHA512StringFromText.AutoEllipsis = true;
             this.labelSHA512StringFromText.AutoSize = true;
             this.labelSHA512StringFromText.Location = new System.Drawing.Point(7, 172);
             this.labelSHA512StringFromText.Name = "labelSHA512StringFromText";
@@ -1011,6 +996,7 @@ namespace Hasher
             this.buttonCopySHA384StringFromTextToClipboard.AccessibleDescription = "Copy the SHA384 hash value to the clipboard";
             this.buttonCopySHA384StringFromTextToClipboard.AccessibleName = "Copy SHA384 hash value to clipboard";
             this.buttonCopySHA384StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonCopySHA384StringFromTextToClipboard.AutoEllipsis = true;
             this.buttonCopySHA384StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA384StringFromTextToClipboard.Image")));
             this.buttonCopySHA384StringFromTextToClipboard.Location = new System.Drawing.Point(471, 140);
             this.buttonCopySHA384StringFromTextToClipboard.Name = "buttonCopySHA384StringFromTextToClipboard";
@@ -1030,6 +1016,7 @@ namespace Hasher
             this.buttonCopySHA1StringFromTextToClipboard.AccessibleDescription = "Copy the SHA1 hash value to the clipboard";
             this.buttonCopySHA1StringFromTextToClipboard.AccessibleName = "Copy SHA1 hash value to clipboard";
             this.buttonCopySHA1StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonCopySHA1StringFromTextToClipboard.AutoEllipsis = true;
             this.buttonCopySHA1StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA1StringFromTextToClipboard.Image")));
             this.buttonCopySHA1StringFromTextToClipboard.Location = new System.Drawing.Point(471, 88);
             this.buttonCopySHA1StringFromTextToClipboard.Name = "buttonCopySHA1StringFromTextToClipboard";
@@ -1066,6 +1053,7 @@ namespace Hasher
             this.labelSHA256StringFromText.AccessibleDescription = "SHA256";
             this.labelSHA256StringFromText.AccessibleName = "SHA256";
             this.labelSHA256StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
+            this.labelSHA256StringFromText.AutoEllipsis = true;
             this.labelSHA256StringFromText.AutoSize = true;
             this.labelSHA256StringFromText.Location = new System.Drawing.Point(7, 120);
             this.labelSHA256StringFromText.Name = "labelSHA256StringFromText";
@@ -1083,6 +1071,7 @@ namespace Hasher
             this.labelSHA384StringFromText.AccessibleDescription = "SHA384";
             this.labelSHA384StringFromText.AccessibleName = "SHA384";
             this.labelSHA384StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
+            this.labelSHA384StringFromText.AutoEllipsis = true;
             this.labelSHA384StringFromText.AutoSize = true;
             this.labelSHA384StringFromText.Location = new System.Drawing.Point(7, 146);
             this.labelSHA384StringFromText.Name = "labelSHA384StringFromText";
@@ -1117,6 +1106,7 @@ namespace Hasher
             this.buttonCopySHA256StringFromTextToClipboard.AccessibleDescription = "Copy the SHA256 hash value to the clipboard";
             this.buttonCopySHA256StringFromTextToClipboard.AccessibleName = "Copy SHA256 hash value to clipboard";
             this.buttonCopySHA256StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonCopySHA256StringFromTextToClipboard.AutoEllipsis = true;
             this.buttonCopySHA256StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA256StringFromTextToClipboard.Image")));
             this.buttonCopySHA256StringFromTextToClipboard.Location = new System.Drawing.Point(471, 114);
             this.buttonCopySHA256StringFromTextToClipboard.Name = "buttonCopySHA256StringFromTextToClipboard";
@@ -1131,6 +1121,194 @@ namespace Hasher
             this.buttonCopySHA256StringFromTextToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.buttonCopySHA256StringFromTextToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
+            // tabPageInfo
+            // 
+            this.tabPageInfo.AccessibleDescription = "Show the info tab page";
+            this.tabPageInfo.AccessibleName = "info tabe page";
+            this.tabPageInfo.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
+            this.tabPageInfo.Controls.Add(this.textBoxDescription);
+            this.tabPageInfo.Controls.Add(this.labelCompanyName);
+            this.tabPageInfo.Controls.Add(this.labelCopyright);
+            this.tabPageInfo.Controls.Add(this.labelVersion);
+            this.tabPageInfo.Controls.Add(this.labelProductName);
+            this.tabPageInfo.Controls.Add(this.logoPictureBox);
+            this.tabPageInfo.ImageKey = "fatcow_infomation_16.png";
+            this.tabPageInfo.Location = new System.Drawing.Point(4, 23);
+            this.tabPageInfo.Name = "tabPageInfo";
+            this.tabPageInfo.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageInfo.Size = new System.Drawing.Size(503, 198);
+            this.tabPageInfo.TabIndex = 2;
+            this.tabPageInfo.Text = "Info";
+            this.toolTip.SetToolTip(this.tabPageInfo, "Show some info");
+            this.tabPageInfo.ToolTipText = "Show some info";
+            this.tabPageInfo.UseVisualStyleBackColor = true;
+            this.tabPageInfo.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.tabPageInfo.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.tabPageInfo.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.tabPageInfo.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // textBoxDescription
+            // 
+            this.textBoxDescription.AccessibleDescription = "Show the description";
+            this.textBoxDescription.AccessibleName = "Description";
+            this.textBoxDescription.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
+            this.textBoxDescription.Location = new System.Drawing.Point(115, 77);
+            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.textBoxDescription.Multiline = true;
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.ReadOnly = true;
+            this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxDescription.Size = new System.Drawing.Size(380, 115);
+            this.textBoxDescription.TabIndex = 4;
+            this.textBoxDescription.TabStop = false;
+            this.textBoxDescription.Text = "Description";
+            this.toolTip.SetToolTip(this.textBoxDescription, "Description");
+            this.textBoxDescription.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxDescription.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxDescription.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxDescription.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // labelCompanyName
+            // 
+            this.labelCompanyName.AccessibleDescription = "Show the company name";
+            this.labelCompanyName.AccessibleName = "Company name";
+            this.labelCompanyName.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
+            this.labelCompanyName.AutoEllipsis = true;
+            this.labelCompanyName.AutoSize = true;
+            this.labelCompanyName.Location = new System.Drawing.Point(112, 57);
+            this.labelCompanyName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+            this.labelCompanyName.MaximumSize = new System.Drawing.Size(0, 17);
+            this.labelCompanyName.Name = "labelCompanyName";
+            this.labelCompanyName.Size = new System.Drawing.Size(80, 13);
+            this.labelCompanyName.TabIndex = 3;
+            this.labelCompanyName.Text = "Company name";
+            this.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip.SetToolTip(this.labelCompanyName, "Copyright name");
+            this.labelCompanyName.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelCompanyName.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelCompanyName.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelCompanyName.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // labelCopyright
+            // 
+            this.labelCopyright.AccessibleDescription = "Show the copyright";
+            this.labelCopyright.AccessibleName = "Copyright";
+            this.labelCopyright.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
+            this.labelCopyright.AutoEllipsis = true;
+            this.labelCopyright.AutoSize = true;
+            this.labelCopyright.Location = new System.Drawing.Point(112, 40);
+            this.labelCopyright.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+            this.labelCopyright.MaximumSize = new System.Drawing.Size(0, 17);
+            this.labelCopyright.Name = "labelCopyright";
+            this.labelCopyright.Size = new System.Drawing.Size(51, 13);
+            this.labelCopyright.TabIndex = 2;
+            this.labelCopyright.Text = "Copyright";
+            this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip.SetToolTip(this.labelCopyright, "Copyright");
+            this.labelCopyright.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelCopyright.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelCopyright.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelCopyright.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // labelVersion
+            // 
+            this.labelVersion.AccessibleDescription = "Show the version";
+            this.labelVersion.AccessibleName = "Version";
+            this.labelVersion.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
+            this.labelVersion.AutoEllipsis = true;
+            this.labelVersion.AutoSize = true;
+            this.labelVersion.Location = new System.Drawing.Point(112, 23);
+            this.labelVersion.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+            this.labelVersion.MaximumSize = new System.Drawing.Size(0, 17);
+            this.labelVersion.Name = "labelVersion";
+            this.labelVersion.Size = new System.Drawing.Size(42, 13);
+            this.labelVersion.TabIndex = 1;
+            this.labelVersion.Text = "Version";
+            this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip.SetToolTip(this.labelVersion, "Version");
+            this.labelVersion.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelVersion.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelVersion.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelVersion.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // labelProductName
+            // 
+            this.labelProductName.AccessibleDescription = "Show the product name";
+            this.labelProductName.AccessibleName = "Product name";
+            this.labelProductName.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
+            this.labelProductName.AutoEllipsis = true;
+            this.labelProductName.AutoSize = true;
+            this.labelProductName.Location = new System.Drawing.Point(112, 6);
+            this.labelProductName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+            this.labelProductName.MaximumSize = new System.Drawing.Size(0, 17);
+            this.labelProductName.Name = "labelProductName";
+            this.labelProductName.Size = new System.Drawing.Size(73, 13);
+            this.labelProductName.TabIndex = 0;
+            this.labelProductName.Text = "Product name";
+            this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolTip.SetToolTip(this.labelProductName, "Product name");
+            this.labelProductName.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelProductName.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.labelProductName.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.labelProductName.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // logoPictureBox
+            // 
+            this.logoPictureBox.AccessibleDescription = "This is the program icon.";
+            this.logoPictureBox.AccessibleName = "program icon";
+            this.logoPictureBox.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
+            this.logoPictureBox.Image = global::Hasher.Properties.Resources.logo_hasher_96;
+            this.logoPictureBox.Location = new System.Drawing.Point(6, 6);
+            this.logoPictureBox.Name = "logoPictureBox";
+            this.logoPictureBox.Size = new System.Drawing.Size(97, 94);
+            this.logoPictureBox.TabIndex = 13;
+            this.logoPictureBox.TabStop = false;
+            this.toolTip.SetToolTip(this.logoPictureBox, "program icon");
+            this.logoPictureBox.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.logoPictureBox.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // imageListTab
+            // 
+            this.imageListTab.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListTab.ImageStream")));
+            this.imageListTab.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListTab.Images.SetKeyName(0, "fatcow_page_16.png");
+            this.imageListTab.Images.SetKeyName(1, "fatcow_text_effects_16.png");
+            this.imageListTab.Images.SetKeyName(2, "fatcow_infomation_16.png");
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.AccessibleDescription = "Just a status bar";
+            this.statusStrip.AccessibleName = "status bar";
+            this.statusStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
+            this.statusStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelInformation});
+            this.statusStrip.Location = new System.Drawing.Point(0, 0);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.ShowItemToolTips = true;
+            this.statusStrip.Size = new System.Drawing.Size(511, 22);
+            this.statusStrip.SizingGrip = false;
+            this.statusStrip.TabIndex = 0;
+            this.statusStrip.TabStop = true;
+            this.statusStrip.Text = "status bar";
+            this.toolTip.SetToolTip(this.statusStrip, "Just a status bar");
+            this.statusStrip.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.statusStrip.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.statusStrip.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.statusStrip.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // toolStripStatusLabelInformation
+            // 
+            this.toolStripStatusLabelInformation.AccessibleDescription = "Show some information";
+            this.toolStripStatusLabelInformation.AccessibleName = "information";
+            this.toolStripStatusLabelInformation.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
+            this.toolStripStatusLabelInformation.AutoToolTip = true;
+            this.toolStripStatusLabelInformation.Name = "toolStripStatusLabelInformation";
+            this.toolStripStatusLabelInformation.Size = new System.Drawing.Size(70, 17);
+            this.toolStripStatusLabelInformation.Text = "information";
+            this.toolStripStatusLabelInformation.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.toolStripStatusLabelInformation.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
             // toolStripContainer
             // 
             this.toolStripContainer.AccessibleDescription = "Just an container";
@@ -1144,20 +1322,13 @@ namespace Hasher
             // toolStripContainer.ContentPanel
             // 
             this.toolStripContainer.ContentPanel.Controls.Add(this.tabControl);
-            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(511, 221);
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(511, 225);
             this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer.Name = "toolStripContainer";
-            this.toolStripContainer.Size = new System.Drawing.Size(511, 243);
+            this.toolStripContainer.Size = new System.Drawing.Size(511, 247);
             this.toolStripContainer.TabIndex = 29;
             this.toolStripContainer.Text = "toolStripContainer";
-            // 
-            // imageListTab
-            // 
-            this.imageListTab.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListTab.ImageStream")));
-            this.imageListTab.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListTab.Images.SetKeyName(0, "fatcow_page_16.png");
-            this.imageListTab.Images.SetKeyName(1, "fatcow_text_effects_16.png");
             // 
             // MainForm
             // 
@@ -1167,7 +1338,7 @@ namespace Hasher
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 243);
+            this.ClientSize = new System.Drawing.Size(511, 247);
             this.Controls.Add(this.toolStripContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1181,10 +1352,13 @@ namespace Hasher
             this.tabControl.ResumeLayout(false);
             this.tabPageFile.ResumeLayout(false);
             this.tabPageFile.PerformLayout();
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
             this.tabPageText.ResumeLayout(false);
             this.tabPageText.PerformLayout();
+            this.tabPageInfo.ResumeLayout(false);
+            this.tabPageInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.toolStripContainer.BottomToolStripPanel.ResumeLayout(false);
             this.toolStripContainer.BottomToolStripPanel.PerformLayout();
             this.toolStripContainer.ContentPanel.ResumeLayout(false);
@@ -1255,6 +1429,13 @@ namespace Hasher
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelInformation;
         private System.Windows.Forms.ToolStripContainer toolStripContainer;
         private System.Windows.Forms.ImageList imageListTab;
+        private System.Windows.Forms.TabPage tabPageInfo;
+        private System.Windows.Forms.Label labelVersion;
+        private System.Windows.Forms.Label labelProductName;
+        private System.Windows.Forms.PictureBox logoPictureBox;
+        private System.Windows.Forms.Label labelCopyright;
+        private System.Windows.Forms.Label labelCompanyName;
+        private System.Windows.Forms.TextBox textBoxDescription;
     }
 }
 
