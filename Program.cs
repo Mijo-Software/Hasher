@@ -1,19 +1,17 @@
-﻿using System;
-using System.Windows.Forms;
-
 namespace Hasher
 {
-    internal static class Program
-    {
-        /// <summary>
-        /// Main entrance point of the application
-        /// </summary>
-        [STAThread]
-        private static void Main()
-        {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(defaultValue: false);
-            Application.Run(mainForm: new MainForm());
-        }
-    }
+	internal static class Program
+	{
+		/// <summary>
+		///  The main entry point for the application.
+		/// </summary>
+		[STAThread]
+		static void Main()
+		{
+			// To customize application configuration such as set high DPI settings or default font,
+			// see https://aka.ms/applicationconfiguration.
+			ApplicationConfiguration.Initialize();
+			Application.Run(new MainForm());
+		}
+	}
 }
