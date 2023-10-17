@@ -17,6 +17,11 @@ namespace Hasher
     [DebuggerDisplay("{" + nameof(GetDebuggerDisplay) + "(),nq}")]
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// isSaveAutomatically
+        /// </summary>
+        private bool isSaveAutomatically = false;
+
         #region Constructor
 
         /// <summary>
@@ -288,10 +293,11 @@ namespace Hasher
         /// </summary>
         /// <param name="hashFileExtension">file extension</param>
         /// <param name="hashValue">hash value</param>
-        private void SaveHashValueToFile(string hashFileExtension, string hashValue)
+        /// <param name="saveAutomatic">save automatic</param>
+        private void SaveHashValueToFile(string hashFileExtension, string hashValue, bool saveAutomatic)
         {
             saveFileDialog.FileName = $"{textBoxFileName.Text}{hashFileExtension}";
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            if (saveAutomatic)
             {
                 using (FileStream fileStream = new FileStream(
                     path: saveFileDialog.FileName,
@@ -303,6 +309,24 @@ namespace Hasher
                         streamWriter.Write(value: hashValue);
                         streamWriter.Flush();
                         streamWriter.Close();
+                    }
+                }
+            }
+            else
+            {
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    using (FileStream fileStream = new FileStream(
+                        path: saveFileDialog.FileName,
+                        mode: FileMode.Create,
+                        access: FileAccess.Write))
+                    {
+                        using (StreamWriter streamWriter = new StreamWriter(stream: fileStream))
+                        {
+                            streamWriter.Write(value: hashValue);
+                            streamWriter.Flush();
+                            streamWriter.Close();
+                        }
                     }
                 }
             }
@@ -344,6 +368,9 @@ namespace Hasher
             buttonCopySHA256StringFromTextToClipboard.Enabled = false;
             buttonCopySHA384StringFromTextToClipboard.Enabled = false;
             buttonCopySHA512StringFromTextToClipboard.Enabled = false;
+            buttonSaveAllHashValuesAutomatically.Enabled = false;
+            buttonSaveAllHashValuesInList.Enabled = false;
+            buttonSaveAllHashValuesInClipboard.Enabled = false;
         }
 
         #endregion
@@ -682,7 +709,8 @@ namespace Hasher
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonSaveMD5StringToFile_Click(object sender, EventArgs e) => SaveHashValueToFile(
             hashFileExtension: Resources.md5FileExt,
-            hashValue: textBoxMD5StringFromFile.Text);
+            hashValue: textBoxMD5StringFromFile.Text,
+            saveAutomatic: isSaveAutomatically);
 
         /// <summary>
         /// Save the RIPEMD160 hash value to a file
@@ -692,7 +720,8 @@ namespace Hasher
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonSaveRIPEMD160StringToFile_Click(object sender, EventArgs e) => SaveHashValueToFile(
             hashFileExtension: Resources.ripemd160FileExt,
-            hashValue: textBoxRIPEMD160StringFromFile.Text);
+            hashValue: textBoxRIPEMD160StringFromFile.Text,
+            saveAutomatic: isSaveAutomatically);
 
         /// <summary>
         /// Save the SHA1 hash value to a file
@@ -702,7 +731,8 @@ namespace Hasher
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonSaveSHA1StringToFile_Click(object sender, EventArgs e) => SaveHashValueToFile(
             hashFileExtension: Resources.sha1FileExt,
-            hashValue: textBoxSHA1StringFromFile.Text);
+            hashValue: textBoxSHA1StringFromFile.Text,
+            saveAutomatic: isSaveAutomatically);
 
         /// <summary>
         /// Save the SHA256 hash value to a file
@@ -712,7 +742,8 @@ namespace Hasher
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonSaveSHA256StringToFile_Click(object sender, EventArgs e) => SaveHashValueToFile(
             hashFileExtension: Resources.sha256FileExt,
-            hashValue: textBoxSHA256StringFromFile.Text);
+            hashValue: textBoxSHA256StringFromFile.Text,
+            saveAutomatic: isSaveAutomatically);
 
         /// <summary>
         /// Save the SHA384 hash value to a file
@@ -722,7 +753,8 @@ namespace Hasher
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonSaveSHA384StringToFile_Click(object sender, EventArgs e) => SaveHashValueToFile(
             hashFileExtension: Resources.sha384FileExt,
-            hashValue: textBoxSHA384StringFromFile.Text);
+            hashValue: textBoxSHA384StringFromFile.Text,
+            saveAutomatic: isSaveAutomatically);
 
         /// <summary>
         /// Save the SHA512 hash value to a file
@@ -732,7 +764,99 @@ namespace Hasher
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void ButtonSaveSHA512StringToFile_Click(object sender, EventArgs e) => SaveHashValueToFile(
             hashFileExtension: Resources.sha512FileExt,
-            hashValue: textBoxSHA512StringFromFile.Text);
+            hashValue: textBoxSHA512StringFromFile.Text,
+            saveAutomatic: isSaveAutomatically);
+
+        /// <summary>
+        /// Save all hash values automatically in separate files
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void ButtonSaveAllHashValuesAutomatically_Click(object sender, EventArgs e)
+        {
+            isSaveAutomatically = true;
+            SaveHashValueToFile(
+                hashFileExtension: Resources.md5FileExt,
+                hashValue: textBoxMD5StringFromFile.Text,
+                saveAutomatic: isSaveAutomatically);
+            SaveHashValueToFile(
+                hashFileExtension: Resources.ripemd160FileExt,
+                hashValue: textBoxRIPEMD160StringFromFile.Text,
+                saveAutomatic: isSaveAutomatically);
+            SaveHashValueToFile(
+                hashFileExtension: Resources.sha1FileExt,
+                hashValue: textBoxSHA1StringFromFile.Text,
+                saveAutomatic: isSaveAutomatically);
+            SaveHashValueToFile(
+                hashFileExtension: Resources.sha256FileExt,
+                hashValue: textBoxSHA256StringFromFile.Text,
+                saveAutomatic: isSaveAutomatically);
+            SaveHashValueToFile(
+                hashFileExtension: Resources.sha384FileExt,
+                hashValue: textBoxSHA384StringFromFile.Text,
+                saveAutomatic: isSaveAutomatically);
+            SaveHashValueToFile(
+                hashFileExtension: Resources.sha512FileExt,
+                hashValue: textBoxSHA512StringFromFile.Text,
+                saveAutomatic: isSaveAutomatically);
+            isSaveAutomatically = false;
+            MessageBox.Show(
+                text: Resources.saved,
+                caption: Resources.info,
+                buttons: MessageBoxButtons.OK,
+                icon: MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// Save all hash values in a list
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void ButtonSaveAllHashValuesInList_Click(object sender, EventArgs e)
+        {
+            saveFileDialog.FileName = $"{textBoxFileName.Text}{Resources.checksumFileExt}";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string delimiter = $"{Resources.colonDelimiter}{Resources.spaceDelimiter}";
+                using (FileStream fileStream = new FileStream(
+                        path: saveFileDialog.FileName,
+                        mode: FileMode.Create,
+                        access: FileAccess.Write))
+                {
+                    using (StreamWriter streamWriter = new StreamWriter(stream: fileStream))
+                    {
+                        streamWriter.WriteLine(value: $"{Resources.md5}{delimiter}{textBoxMD5StringFromFile.Text}");
+                        streamWriter.WriteLine(value: $"{Resources.ripemd160}{delimiter}{textBoxRIPEMD160StringFromFile.Text}");
+                        streamWriter.WriteLine(value: $"{Resources.sha1}{delimiter}{textBoxSHA1StringFromFile.Text}");
+                        streamWriter.WriteLine(value: $"{Resources.sha256}{delimiter}{textBoxSHA256StringFromFile.Text}");
+                        streamWriter.WriteLine(value: $"{Resources.sha384}{delimiter}{textBoxSHA384StringFromFile.Text}");
+                        streamWriter.WriteLine(value: $"{Resources.sha512}{delimiter}{textBoxSHA512StringFromFile.Text}");
+                        streamWriter.Flush();
+                        streamWriter.Close();
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// Save all hash values into the clipboard
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void ButtonSaveAllHashValuesInClipboard_Click(object sender, EventArgs e)
+        {
+            string delimiter = $"{Resources.colonDelimiter}{Resources.spaceDelimiter}";
+            string listToClipboard = $"{Resources.md5}{delimiter}{textBoxMD5StringFromText.Text}{Environment.NewLine}";
+            listToClipboard = $"{listToClipboard}{Resources.ripemd160}{delimiter}{textBoxRIPEMD160StringFromText.Text}{Environment.NewLine}";
+            listToClipboard = $"{listToClipboard}{Resources.sha1}{delimiter}{textBoxSHA1StringFromText.Text}{Environment.NewLine}";
+            listToClipboard = $"{listToClipboard}{Resources.sha256}{delimiter}{textBoxSHA256StringFromText.Text}{Environment.NewLine}";
+            listToClipboard = $"{listToClipboard}{Resources.sha384}{delimiter}{textBoxSHA384StringFromText.Text}{Environment.NewLine}";
+            listToClipboard = $"{listToClipboard}{Resources.sha512}{delimiter}{textBoxSHA512StringFromText.Text}{Environment.NewLine}";
+            Clipboard.SetText(text: listToClipboard);
+        }
 
         #endregion
 
@@ -853,6 +977,8 @@ namespace Hasher
             {
                 buttonCopyMD5StringFromFileToClipboard.Enabled = true;
                 buttonSaveMD5StringToFile.Enabled = true;
+                buttonSaveAllHashValuesAutomatically.Enabled = true;
+                buttonSaveAllHashValuesInList.Enabled = true;
             }
         }
 
@@ -868,6 +994,8 @@ namespace Hasher
             {
                 buttonCopyRIPEMD160StringFromFileToClipboard.Enabled = true;
                 buttonSaveRIPEMD160StringToFile.Enabled = true;
+                buttonSaveAllHashValuesAutomatically.Enabled = true;
+                buttonSaveAllHashValuesInList.Enabled = true;
             }
         }
 
@@ -883,6 +1011,8 @@ namespace Hasher
             {
                 buttonCopySHA1StringFromFileToClipboard.Enabled = true;
                 buttonSaveSHA1StringToFile.Enabled = true;
+                buttonSaveAllHashValuesAutomatically.Enabled = true;
+                buttonSaveAllHashValuesInList.Enabled = true;
             }
         }
 
@@ -898,6 +1028,8 @@ namespace Hasher
             {
                 buttonCopySHA256StringFromFileToClipboard.Enabled = true;
                 buttonSaveSHA256StringToFile.Enabled = true;
+                buttonSaveAllHashValuesAutomatically.Enabled = true;
+                buttonSaveAllHashValuesInList.Enabled = true;
             }
         }
 
@@ -913,6 +1045,8 @@ namespace Hasher
             {
                 buttonCopySHA384StringFromFileToClipboard.Enabled = true;
                 buttonSaveSHA384StringToFile.Enabled = true;
+                buttonSaveAllHashValuesAutomatically.Enabled = true;
+                buttonSaveAllHashValuesInList.Enabled = true;
             }
         }
 
@@ -928,6 +1062,8 @@ namespace Hasher
             {
                 buttonCopySHA512StringFromFileToClipboard.Enabled = true;
                 buttonSaveSHA512StringToFile.Enabled = true;
+                buttonSaveAllHashValuesAutomatically.Enabled = true;
+                buttonSaveAllHashValuesInList.Enabled = true;
             }
         }
 
@@ -937,7 +1073,14 @@ namespace Hasher
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void TextBoxMD5StringFromText_TextChanged(object sender, EventArgs e) => buttonCopyMD5StringFromTextToClipboard.Enabled = !string.IsNullOrEmpty(value: textBoxMD5StringFromText.Text);
+        private void TextBoxMD5StringFromText_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(value: textBoxMD5StringFromText.Text))
+            {
+                buttonCopyMD5StringFromTextToClipboard.Enabled = true;
+                buttonSaveAllHashValuesInClipboard.Enabled = true;
+            }
+        }
 
         /// <summary>
         /// Enable button to copy the RIPEMD160 hash value from a text into the clipboard if checked the input isn't empty or null
@@ -945,7 +1088,14 @@ namespace Hasher
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void TextBoxRIPEMD160StringFromText_TextChanged(object sender, EventArgs e) => buttonCopyRIPEMD160StringFromTextToClipboard.Enabled = !string.IsNullOrEmpty(value: textBoxRIPEMD160StringFromText.Text);
+        private void TextBoxRIPEMD160StringFromText_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(value: textBoxRIPEMD160StringFromText.Text))
+            {
+                buttonCopyRIPEMD160StringFromTextToClipboard.Enabled = true;
+                buttonSaveAllHashValuesInClipboard.Enabled = true;
+            }
+        }
 
         /// <summary>
         /// Enable button to copy the SHA1 hash value from a text into the clipboard if checked the input isn't empty or null
@@ -953,7 +1103,14 @@ namespace Hasher
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void TextBoxSHA1StringFromText_TextChanged(object sender, EventArgs e) => buttonCopySHA1StringFromTextToClipboard.Enabled = !string.IsNullOrEmpty(value: textBoxSHA1StringFromText.Text);
+        private void TextBoxSHA1StringFromText_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(value: textBoxSHA1StringFromText.Text))
+            {
+                buttonCopySHA1StringFromTextToClipboard.Enabled = true;
+                buttonSaveAllHashValuesInClipboard.Enabled = true;
+            }
+        }
 
         /// <summary>
         /// Enable button to copy the SHA256 hash value from a text into the clipboard if checked the input isn't empty or null
@@ -961,7 +1118,14 @@ namespace Hasher
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void TextBoxSHA256StringFromText_TextChanged(object sender, EventArgs e) => buttonCopySHA256StringFromTextToClipboard.Enabled = !string.IsNullOrEmpty(value: textBoxSHA256StringFromText.Text);
+        private void TextBoxSHA256StringFromText_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(value: textBoxSHA256StringFromText.Text))
+            {
+                buttonCopySHA256StringFromTextToClipboard.Enabled = true;
+                buttonSaveAllHashValuesInClipboard.Enabled = true;
+            }
+        }
 
         /// <summary>
         /// Enable button to copy the SHA384 hash value from a text into the clipboard if checked the input isn't empty or null
@@ -969,7 +1133,14 @@ namespace Hasher
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void TextBoxSHA384StringFromText_TextChanged(object sender, EventArgs e) => buttonCopySHA384StringFromTextToClipboard.Enabled = !string.IsNullOrEmpty(value: textBoxSHA384StringFromText.Text);
+        private void TextBoxSHA384StringFromText_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(value: textBoxSHA384StringFromText.Text))
+            {
+                buttonCopySHA384StringFromTextToClipboard.Enabled = true;
+                buttonSaveAllHashValuesInClipboard.Enabled = true;
+            }
+        }
 
         /// <summary>
         /// Enable button to copy the SHA512 hash value from a text into the clipboard if checked the input isn't empty or null
@@ -977,7 +1148,14 @@ namespace Hasher
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void TextBoxSHA512StringFromText_TextChanged(object sender, EventArgs e) => buttonCopySHA512StringFromTextToClipboard.Enabled = !string.IsNullOrEmpty(value: textBoxSHA512StringFromText.Text);
+        private void TextBoxSHA512StringFromText_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(value: textBoxSHA512StringFromText.Text))
+            {
+                buttonCopySHA512StringFromTextToClipboard.Enabled = true;
+                buttonSaveAllHashValuesInClipboard.Enabled = true;
+            }
+        }
     }
 
     #endregion
