@@ -974,7 +974,7 @@ namespace Hasher
 		private void ButtonSelfTest_Click(object sender, EventArgs e)
 		{
 			tabControl.SelectedTab = tabPageFile;
-			textBoxFileName.Text = System.Reflection.Assembly.GetExecutingAssembly().Location;
+			textBoxFileName.Text = Application.ExecutablePath;
 			CalculateHashesFromFile();
 		}
 	}
