@@ -62,7 +62,10 @@ namespace Hasher
             this.buttonOpenAndCalculateHashFromFile = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageFile = new System.Windows.Forms.TabPage();
+            this.buttonSaveAllHashValuesInList = new System.Windows.Forms.Button();
+            this.buttonSaveAllHashValuesAutomatically = new System.Windows.Forms.Button();
             this.tabPageText = new System.Windows.Forms.TabPage();
+            this.buttonSaveAllHashValuesInClipboard = new System.Windows.Forms.Button();
             this.checkBoxAutoUpdateText = new System.Windows.Forms.CheckBox();
             this.labelText = new System.Windows.Forms.Label();
             this.textBoxText = new System.Windows.Forms.TextBox();
@@ -370,6 +373,7 @@ namespace Hasher
             this.buttonSaveSHA512StringToFile.AccessibleDescription = "Save the SHA512 hash value in a file";
             this.buttonSaveSHA512StringToFile.AccessibleName = "Save SHA512 hash to file";
             this.buttonSaveSHA512StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonSaveSHA512StringToFile.AutoEllipsis = true;
             this.buttonSaveSHA512StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA512StringToFile.Image")));
             this.buttonSaveSHA512StringToFile.Location = new System.Drawing.Point(471, 166);
             this.buttonSaveSHA512StringToFile.Name = "buttonSaveSHA512StringToFile";
@@ -389,6 +393,7 @@ namespace Hasher
             this.buttonSaveSHA384StringToFile.AccessibleDescription = "Save the SHA384 hash value in a file";
             this.buttonSaveSHA384StringToFile.AccessibleName = "Save SHA384 hash to file";
             this.buttonSaveSHA384StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonSaveSHA384StringToFile.AutoEllipsis = true;
             this.buttonSaveSHA384StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA384StringToFile.Image")));
             this.buttonSaveSHA384StringToFile.Location = new System.Drawing.Point(471, 140);
             this.buttonSaveSHA384StringToFile.Name = "buttonSaveSHA384StringToFile";
@@ -408,6 +413,7 @@ namespace Hasher
             this.buttonSaveSHA256StringToFile.AccessibleDescription = "Save the SHA1 hash value in a file";
             this.buttonSaveSHA256StringToFile.AccessibleName = "Save SHA1 hash to file";
             this.buttonSaveSHA256StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonSaveSHA256StringToFile.AutoEllipsis = true;
             this.buttonSaveSHA256StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA256StringToFile.Image")));
             this.buttonSaveSHA256StringToFile.Location = new System.Drawing.Point(471, 114);
             this.buttonSaveSHA256StringToFile.Name = "buttonSaveSHA256StringToFile";
@@ -427,6 +433,7 @@ namespace Hasher
             this.buttonSaveSHA1StringToFile.AccessibleDescription = "Save the SHA1 hash value in a file";
             this.buttonSaveSHA1StringToFile.AccessibleName = "Save SHA1 hash to file";
             this.buttonSaveSHA1StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonSaveSHA1StringToFile.AutoEllipsis = true;
             this.buttonSaveSHA1StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA1StringToFile.Image")));
             this.buttonSaveSHA1StringToFile.Location = new System.Drawing.Point(471, 88);
             this.buttonSaveSHA1StringToFile.Name = "buttonSaveSHA1StringToFile";
@@ -446,6 +453,7 @@ namespace Hasher
             this.buttonSaveRIPEMD160StringToFile.AccessibleDescription = "Save the RIPEMD160 hash value in a file";
             this.buttonSaveRIPEMD160StringToFile.AccessibleName = "Save RIPEMD160 hash to file";
             this.buttonSaveRIPEMD160StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonSaveRIPEMD160StringToFile.AutoEllipsis = true;
             this.buttonSaveRIPEMD160StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveRIPEMD160StringToFile.Image")));
             this.buttonSaveRIPEMD160StringToFile.Location = new System.Drawing.Point(471, 62);
             this.buttonSaveRIPEMD160StringToFile.Name = "buttonSaveRIPEMD160StringToFile";
@@ -465,6 +473,7 @@ namespace Hasher
             this.buttonSaveMD5StringToFile.AccessibleDescription = "Save the MD5 hash value in a file";
             this.buttonSaveMD5StringToFile.AccessibleName = "Save MD5 hash to file";
             this.buttonSaveMD5StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonSaveMD5StringToFile.AutoEllipsis = true;
             this.buttonSaveMD5StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveMD5StringToFile.Image")));
             this.buttonSaveMD5StringToFile.Location = new System.Drawing.Point(471, 36);
             this.buttonSaveMD5StringToFile.Name = "buttonSaveMD5StringToFile";
@@ -484,6 +493,7 @@ namespace Hasher
             this.buttonCopySHA512StringFromFileToClipboard.AccessibleDescription = "Copy the SHA512 hash value to the clipboard";
             this.buttonCopySHA512StringFromFileToClipboard.AccessibleName = "Copy SHA512 hash value to clipboard";
             this.buttonCopySHA512StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonCopySHA512StringFromFileToClipboard.AutoEllipsis = true;
             this.buttonCopySHA512StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA512StringFromFileToClipboard.Image")));
             this.buttonCopySHA512StringFromFileToClipboard.Location = new System.Drawing.Point(447, 166);
             this.buttonCopySHA512StringFromFileToClipboard.Name = "buttonCopySHA512StringFromFileToClipboard";
@@ -503,6 +513,7 @@ namespace Hasher
             this.buttonCopySHA384StringFromFileToClipboard.AccessibleDescription = "Copy the SHA384 hash value to the clipboard";
             this.buttonCopySHA384StringFromFileToClipboard.AccessibleName = "Copy SHA384 hash value to clipboard";
             this.buttonCopySHA384StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonCopySHA384StringFromFileToClipboard.AutoEllipsis = true;
             this.buttonCopySHA384StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA384StringFromFileToClipboard.Image")));
             this.buttonCopySHA384StringFromFileToClipboard.Location = new System.Drawing.Point(447, 140);
             this.buttonCopySHA384StringFromFileToClipboard.Name = "buttonCopySHA384StringFromFileToClipboard";
@@ -522,6 +533,7 @@ namespace Hasher
             this.buttonCopySHA256StringFromFileToClipboard.AccessibleDescription = "Copy the SHA256 hash value to the clipboard";
             this.buttonCopySHA256StringFromFileToClipboard.AccessibleName = "Copy SHA256 hash value to clipboard";
             this.buttonCopySHA256StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonCopySHA256StringFromFileToClipboard.AutoEllipsis = true;
             this.buttonCopySHA256StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA256StringFromFileToClipboard.Image")));
             this.buttonCopySHA256StringFromFileToClipboard.Location = new System.Drawing.Point(447, 114);
             this.buttonCopySHA256StringFromFileToClipboard.Name = "buttonCopySHA256StringFromFileToClipboard";
@@ -541,6 +553,7 @@ namespace Hasher
             this.buttonCopySHA1StringFromFileToClipboard.AccessibleDescription = "Copy the SHA1 hash value to the clipboard";
             this.buttonCopySHA1StringFromFileToClipboard.AccessibleName = "Copy SHA1 hash value to clipboard";
             this.buttonCopySHA1StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonCopySHA1StringFromFileToClipboard.AutoEllipsis = true;
             this.buttonCopySHA1StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA1StringFromFileToClipboard.Image")));
             this.buttonCopySHA1StringFromFileToClipboard.Location = new System.Drawing.Point(447, 88);
             this.buttonCopySHA1StringFromFileToClipboard.Name = "buttonCopySHA1StringFromFileToClipboard";
@@ -560,6 +573,7 @@ namespace Hasher
             this.buttonCopyRIPEMD160StringFromFileToClipboard.AccessibleDescription = "Copy the RIPEMD160 hash value to the clipboard";
             this.buttonCopyRIPEMD160StringFromFileToClipboard.AccessibleName = "Copy RIPEMD160 hash value to clipboard";
             this.buttonCopyRIPEMD160StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonCopyRIPEMD160StringFromFileToClipboard.AutoEllipsis = true;
             this.buttonCopyRIPEMD160StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyRIPEMD160StringFromFileToClipboard.Image")));
             this.buttonCopyRIPEMD160StringFromFileToClipboard.Location = new System.Drawing.Point(447, 62);
             this.buttonCopyRIPEMD160StringFromFileToClipboard.Name = "buttonCopyRIPEMD160StringFromFileToClipboard";
@@ -579,6 +593,7 @@ namespace Hasher
             this.buttonCopyMD5StringFromFileToClipboard.AccessibleDescription = "Copy the MD5 hash value to the clipboard";
             this.buttonCopyMD5StringFromFileToClipboard.AccessibleName = "Copy MD5 hash value to clipboard";
             this.buttonCopyMD5StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonCopyMD5StringFromFileToClipboard.AutoEllipsis = true;
             this.buttonCopyMD5StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyMD5StringFromFileToClipboard.Image")));
             this.buttonCopyMD5StringFromFileToClipboard.Location = new System.Drawing.Point(447, 36);
             this.buttonCopyMD5StringFromFileToClipboard.Name = "buttonCopyMD5StringFromFileToClipboard";
@@ -598,6 +613,7 @@ namespace Hasher
             this.buttonOpenAndCalculateHashFromFile.AccessibleDescription = "Open a file and calculate the hash values";
             this.buttonOpenAndCalculateHashFromFile.AccessibleName = "Open and calculate hash values from file";
             this.buttonOpenAndCalculateHashFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonOpenAndCalculateHashFromFile.AutoEllipsis = true;
             this.buttonOpenAndCalculateHashFromFile.Image = global::Hasher.Properties.Resources.fatcow_document_hash_tag_16;
             this.buttonOpenAndCalculateHashFromFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonOpenAndCalculateHashFromFile.Location = new System.Drawing.Point(380, 6);
@@ -631,7 +647,7 @@ namespace Hasher
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.ShowToolTips = true;
-            this.tabControl.Size = new System.Drawing.Size(511, 225);
+            this.tabControl.Size = new System.Drawing.Size(511, 256);
             this.tabControl.TabIndex = 0;
             this.tabControl.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
             this.tabControl.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
@@ -641,6 +657,8 @@ namespace Hasher
             this.tabPageFile.AccessibleDescription = "Show the file tab page";
             this.tabPageFile.AccessibleName = "file tab page";
             this.tabPageFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
+            this.tabPageFile.Controls.Add(this.buttonSaveAllHashValuesInList);
+            this.tabPageFile.Controls.Add(this.buttonSaveAllHashValuesAutomatically);
             this.tabPageFile.Controls.Add(this.labelFileName);
             this.tabPageFile.Controls.Add(this.textBoxFileName);
             this.tabPageFile.Controls.Add(this.buttonSaveSHA512StringToFile);
@@ -672,7 +690,7 @@ namespace Hasher
             this.tabPageFile.Location = new System.Drawing.Point(4, 23);
             this.tabPageFile.Name = "tabPageFile";
             this.tabPageFile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFile.Size = new System.Drawing.Size(503, 173);
+            this.tabPageFile.Size = new System.Drawing.Size(503, 229);
             this.tabPageFile.TabIndex = 0;
             this.tabPageFile.Text = "File";
             this.toolTip.SetToolTip(this.tabPageFile, "Hash a file");
@@ -683,11 +701,56 @@ namespace Hasher
             this.tabPageFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.tabPageFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
+            // buttonSaveAllHashValuesInList
+            // 
+            this.buttonSaveAllHashValuesInList.AccessibleDescription = "Save all hash values in a list";
+            this.buttonSaveAllHashValuesInList.AccessibleName = "Save all in a list";
+            this.buttonSaveAllHashValuesInList.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonSaveAllHashValuesInList.AutoEllipsis = true;
+            this.buttonSaveAllHashValuesInList.Image = global::Hasher.Properties.Resources.fatcow_page_save_16;
+            this.buttonSaveAllHashValuesInList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSaveAllHashValuesInList.Location = new System.Drawing.Point(391, 195);
+            this.buttonSaveAllHashValuesInList.Name = "buttonSaveAllHashValuesInList";
+            this.buttonSaveAllHashValuesInList.Size = new System.Drawing.Size(104, 23);
+            this.buttonSaveAllHashValuesInList.TabIndex = 29;
+            this.buttonSaveAllHashValuesInList.Text = "Save all in a list";
+            this.buttonSaveAllHashValuesInList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip.SetToolTip(this.buttonSaveAllHashValuesInList, "Save all in a list");
+            this.buttonSaveAllHashValuesInList.UseVisualStyleBackColor = true;
+            this.buttonSaveAllHashValuesInList.Click += new System.EventHandler(this.ButtonSaveAllHashValuesInList_Click);
+            this.buttonSaveAllHashValuesInList.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveAllHashValuesInList.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonSaveAllHashValuesInList.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveAllHashValuesInList.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // buttonSaveAllHashValuesAutomatically
+            // 
+            this.buttonSaveAllHashValuesAutomatically.AccessibleDescription = "Save all hash values automatically in separate files";
+            this.buttonSaveAllHashValuesAutomatically.AccessibleName = "Save all automatically";
+            this.buttonSaveAllHashValuesAutomatically.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonSaveAllHashValuesAutomatically.AutoEllipsis = true;
+            this.buttonSaveAllHashValuesAutomatically.Image = global::Hasher.Properties.Resources.fatcow_diskette_16;
+            this.buttonSaveAllHashValuesAutomatically.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSaveAllHashValuesAutomatically.Location = new System.Drawing.Point(251, 195);
+            this.buttonSaveAllHashValuesAutomatically.Name = "buttonSaveAllHashValuesAutomatically";
+            this.buttonSaveAllHashValuesAutomatically.Size = new System.Drawing.Size(134, 23);
+            this.buttonSaveAllHashValuesAutomatically.TabIndex = 28;
+            this.buttonSaveAllHashValuesAutomatically.Text = "Save all automatically";
+            this.buttonSaveAllHashValuesAutomatically.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip.SetToolTip(this.buttonSaveAllHashValuesAutomatically, "Save all automatically");
+            this.buttonSaveAllHashValuesAutomatically.UseVisualStyleBackColor = true;
+            this.buttonSaveAllHashValuesAutomatically.Click += new System.EventHandler(this.ButtonSaveAllHashValuesAutomatically_Click);
+            this.buttonSaveAllHashValuesAutomatically.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveAllHashValuesAutomatically.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonSaveAllHashValuesAutomatically.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveAllHashValuesAutomatically.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
             // tabPageText
             // 
             this.tabPageText.AccessibleDescription = "Show the text tab page";
             this.tabPageText.AccessibleName = "text tab page";
             this.tabPageText.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
+            this.tabPageText.Controls.Add(this.buttonSaveAllHashValuesInClipboard);
             this.tabPageText.Controls.Add(this.checkBoxAutoUpdateText);
             this.tabPageText.Controls.Add(this.labelText);
             this.tabPageText.Controls.Add(this.textBoxText);
@@ -714,7 +777,7 @@ namespace Hasher
             this.tabPageText.Location = new System.Drawing.Point(4, 23);
             this.tabPageText.Name = "tabPageText";
             this.tabPageText.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageText.Size = new System.Drawing.Size(503, 198);
+            this.tabPageText.Size = new System.Drawing.Size(503, 204);
             this.tabPageText.TabIndex = 1;
             this.tabPageText.Text = "Text";
             this.toolTip.SetToolTip(this.tabPageText, "Hash a text");
@@ -724,6 +787,28 @@ namespace Hasher
             this.tabPageText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.tabPageText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.tabPageText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // buttonSaveAllHashValuesInClipboard
+            // 
+            this.buttonSaveAllHashValuesInClipboard.AccessibleDescription = "Save all hash values into the clipboard";
+            this.buttonSaveAllHashValuesInClipboard.AccessibleName = "Save all in clipboard";
+            this.buttonSaveAllHashValuesInClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonSaveAllHashValuesInClipboard.AutoEllipsis = true;
+            this.buttonSaveAllHashValuesInClipboard.Image = global::Hasher.Properties.Resources.fatcow_clipboard_empty_16;
+            this.buttonSaveAllHashValuesInClipboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSaveAllHashValuesInClipboard.Location = new System.Drawing.Point(368, 195);
+            this.buttonSaveAllHashValuesInClipboard.Name = "buttonSaveAllHashValuesInClipboard";
+            this.buttonSaveAllHashValuesInClipboard.Size = new System.Drawing.Size(127, 23);
+            this.buttonSaveAllHashValuesInClipboard.TabIndex = 31;
+            this.buttonSaveAllHashValuesInClipboard.Text = "Save all in clipboard";
+            this.buttonSaveAllHashValuesInClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip.SetToolTip(this.buttonSaveAllHashValuesInClipboard, "Save all hash values into the clipboard");
+            this.buttonSaveAllHashValuesInClipboard.UseVisualStyleBackColor = true;
+            this.buttonSaveAllHashValuesInClipboard.Click += new System.EventHandler(this.ButtonSaveAllHashValuesInClipboard_Click);
+            this.buttonSaveAllHashValuesInClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveAllHashValuesInClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonSaveAllHashValuesInClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveAllHashValuesInClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // checkBoxAutoUpdateText
             // 
@@ -1154,7 +1239,7 @@ namespace Hasher
             this.tabPageInfo.Location = new System.Drawing.Point(4, 23);
             this.tabPageInfo.Name = "tabPageInfo";
             this.tabPageInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageInfo.Size = new System.Drawing.Size(503, 173);
+            this.tabPageInfo.Size = new System.Drawing.Size(503, 204);
             this.tabPageInfo.TabIndex = 2;
             this.tabPageInfo.Text = "Info";
             this.toolTip.SetToolTip(this.tabPageInfo, "Show some info");
@@ -1170,6 +1255,7 @@ namespace Hasher
             this.linkLabelUrl.AccessibleDescription = "Open the Link to Github";
             this.linkLabelUrl.AccessibleName = "Github link";
             this.linkLabelUrl.AccessibleRole = System.Windows.Forms.AccessibleRole.Link;
+            this.linkLabelUrl.AutoEllipsis = true;
             this.linkLabelUrl.AutoSize = true;
             this.linkLabelUrl.Location = new System.Drawing.Point(112, 74);
             this.linkLabelUrl.Name = "linkLabelUrl";
@@ -1313,7 +1399,7 @@ namespace Hasher
             this.tabPageLicense.Location = new System.Drawing.Point(4, 23);
             this.tabPageLicense.Name = "tabPageLicense";
             this.tabPageLicense.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageLicense.Size = new System.Drawing.Size(503, 173);
+            this.tabPageLicense.Size = new System.Drawing.Size(503, 204);
             this.tabPageLicense.TabIndex = 3;
             this.tabPageLicense.Text = "License";
             this.toolTip.SetToolTip(this.tabPageLicense, "Show the license");
@@ -1337,7 +1423,7 @@ namespace Hasher
             this.textBoxLicense.Name = "textBoxLicense";
             this.textBoxLicense.ReadOnly = true;
             this.textBoxLicense.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxLicense.Size = new System.Drawing.Size(497, 167);
+            this.textBoxLicense.Size = new System.Drawing.Size(497, 198);
             this.textBoxLicense.TabIndex = 5;
             this.textBoxLicense.Text = resources.GetString("textBoxLicense.Text");
             this.toolTip.SetToolTip(this.textBoxLicense, "License");
@@ -1402,11 +1488,11 @@ namespace Hasher
             // toolStripContainer.ContentPanel
             // 
             this.toolStripContainer.ContentPanel.Controls.Add(this.tabControl);
-            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(511, 225);
+            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(511, 256);
             this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer.Name = "toolStripContainer";
-            this.toolStripContainer.Size = new System.Drawing.Size(511, 247);
+            this.toolStripContainer.Size = new System.Drawing.Size(511, 278);
             this.toolStripContainer.TabIndex = 29;
             this.toolStripContainer.Text = "toolStripContainer";
             // 
@@ -1418,7 +1504,7 @@ namespace Hasher
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 247);
+            this.ClientSize = new System.Drawing.Size(511, 278);
             this.Controls.Add(this.toolStripContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1521,6 +1607,9 @@ namespace Hasher
         private System.Windows.Forms.TabPage tabPageLicense;
         private System.Windows.Forms.TextBox textBoxLicense;
         private System.Windows.Forms.LinkLabel linkLabelUrl;
+        private System.Windows.Forms.Button buttonSaveAllHashValuesInList;
+        private System.Windows.Forms.Button buttonSaveAllHashValuesAutomatically;
+        private System.Windows.Forms.Button buttonSaveAllHashValuesInClipboard;
     }
 }
 

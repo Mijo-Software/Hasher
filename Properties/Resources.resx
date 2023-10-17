@@ -127,8 +127,8 @@
   <data name="fatcow_arrow_refresh_small_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fatcow_arrow_refresh_small_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="experimental" xml:space="preserve">
-    <value>This function is experimental and may not provide exact results.</value>
+  <data name="fatcow_clipboard_empty_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fatcow_clipboard_empty_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fatcow_diskette_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fatcow_diskette_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +142,8 @@
   <data name="sha512FileExt" xml:space="preserve">
     <value>.sha512</value>
   </data>
-  <data name="fileDoesNotExist" xml:space="preserve">
-    <value>File does not exist.</value>
+  <data name="experimental" xml:space="preserve">
+    <value>This function is experimental and may not provide exact results.</value>
   </data>
   <data name="sha1FileExt" xml:space="preserve">
     <value>.sha1</value>
@@ -151,11 +151,11 @@
   <data name="warning" xml:space="preserve">
     <value>Warning</value>
   </data>
-  <data name="fatcow_document_info_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fatcow_document_info_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fileDoesNotExist" xml:space="preserve">
+    <value>File does not exist.</value>
   </data>
-  <data name="error" xml:space="preserve">
-    <value>Error</value>
+  <data name="logo-hasher-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo-hasher-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ripemd160FileExt" xml:space="preserve">
     <value>.ripemd160</value>
@@ -163,8 +163,8 @@
   <data name="dash" xml:space="preserve">
     <value>-</value>
   </data>
-  <data name="fatcow_clipboard_empty_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fatcow_clipboard_empty_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="error" xml:space="preserve">
+    <value>Error</value>
   </data>
   <data name="onlyFileOrTextAreAccepted" xml:space="preserve">
     <value>Only a file or a text are accepted.</value>
@@ -172,7 +172,61 @@
   <data name="sha384FileExt" xml:space="preserve">
     <value>.sha384</value>
   </data>
-  <data name="logo-hasher-96" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo-hasher-96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fatcow_page_save-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fatcow_page_save-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="checksumFileExt" xml:space="preserve">
+    <value>.checksums</value>
+  </data>
+  <data name="colonDelimiter" xml:space="preserve">
+    <value>:</value>
+  </data>
+  <data name="commaDelimiter" xml:space="preserve">
+    <value>,</value>
+  </data>
+  <data name="fatcow_infomation_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fatcow_infomation_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fatcow_page_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fatcow_page_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fatcow_text_effects_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fatcow_text_effects_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="md5" xml:space="preserve">
+    <value>MD5</value>
+  </data>
+  <data name="pipeDelimiter" xml:space="preserve">
+    <value>|</value>
+  </data>
+  <data name="ripemd160" xml:space="preserve">
+    <value>RIPEMD160</value>
+  </data>
+  <data name="saved" xml:space="preserve">
+    <value>Saved.</value>
+  </data>
+  <data name="semicolonDelimiter" xml:space="preserve">
+    <value>;</value>
+  </data>
+  <data name="sha1" xml:space="preserve">
+    <value>SHA1</value>
+  </data>
+  <data name="sha256" xml:space="preserve">
+    <value>SHA256</value>
+  </data>
+  <data name="sha384" xml:space="preserve">
+    <value>SHA384</value>
+  </data>
+  <data name="sha512" xml:space="preserve">
+    <value>SHA512</value>
+  </data>
+  <data name="spaceDelimiter" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="tabDelimiter" xml:space="preserve">
+    <value>\t</value>
   </data>
 </root>
