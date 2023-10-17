@@ -1,12 +1,11 @@
-using System.IO;
 using System.Reflection;
 
 namespace MijoSoftware.AssemblyInformation
 {
-    /// <summary>
-    /// Provide some assembly information
-    /// </summary>
-    public static class AssemblyInfo
+	/// <summary>
+	/// Provide some assembly information
+	/// </summary>
+	public static class AssemblyInfo
     {
         #region Assembly attribute accessors
 

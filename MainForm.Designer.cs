@@ -29,1587 +29,1489 @@ namespace Hasher
 		/// </summary>
 		private void InitializeComponent()
 		{
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.labelFileName = new System.Windows.Forms.Label();
-            this.textBoxFileName = new System.Windows.Forms.TextBox();
-            this.labelMD5StringFromFile = new System.Windows.Forms.Label();
-            this.textBoxMD5StringFromFile = new System.Windows.Forms.TextBox();
-            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.textBoxRIPEMD160StringFromFile = new System.Windows.Forms.TextBox();
-            this.labelRIPEMD160StringFromFile = new System.Windows.Forms.Label();
-            this.textBoxSHA1StringFromFile = new System.Windows.Forms.TextBox();
-            this.labelSHA1StringFromFile = new System.Windows.Forms.Label();
-            this.textBoxSHA256StringFromFile = new System.Windows.Forms.TextBox();
-            this.labelSHA256StringFromFile = new System.Windows.Forms.Label();
-            this.textBoxSHA384StringFromFile = new System.Windows.Forms.TextBox();
-            this.labelSHA384FromFile = new System.Windows.Forms.Label();
-            this.textBoxSHA512StringFromFile = new System.Windows.Forms.TextBox();
-            this.labelSHA512StringFromFile = new System.Windows.Forms.Label();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.buttonSaveSHA512StringToFile = new System.Windows.Forms.Button();
-            this.buttonSaveSHA384StringToFile = new System.Windows.Forms.Button();
-            this.buttonSaveSHA256StringToFile = new System.Windows.Forms.Button();
-            this.buttonSaveSHA1StringToFile = new System.Windows.Forms.Button();
-            this.buttonSaveRIPEMD160StringToFile = new System.Windows.Forms.Button();
-            this.buttonSaveMD5StringToFile = new System.Windows.Forms.Button();
-            this.buttonCopySHA512StringFromFileToClipboard = new System.Windows.Forms.Button();
-            this.buttonCopySHA384StringFromFileToClipboard = new System.Windows.Forms.Button();
-            this.buttonCopySHA256StringFromFileToClipboard = new System.Windows.Forms.Button();
-            this.buttonCopySHA1StringFromFileToClipboard = new System.Windows.Forms.Button();
-            this.buttonCopyRIPEMD160StringFromFileToClipboard = new System.Windows.Forms.Button();
-            this.buttonCopyMD5StringFromFileToClipboard = new System.Windows.Forms.Button();
-            this.buttonOpenAndCalculateHashFromFile = new System.Windows.Forms.Button();
-            this.tabControl = new System.Windows.Forms.TabControl();
-            this.tabPageFile = new System.Windows.Forms.TabPage();
-            this.buttonSaveAllHashValuesInList = new System.Windows.Forms.Button();
-            this.buttonSaveAllHashValuesAutomatically = new System.Windows.Forms.Button();
-            this.tabPageText = new System.Windows.Forms.TabPage();
-            this.buttonSaveAllHashValuesInClipboard = new System.Windows.Forms.Button();
-            this.checkBoxAutoUpdateText = new System.Windows.Forms.CheckBox();
-            this.labelText = new System.Windows.Forms.Label();
-            this.textBoxText = new System.Windows.Forms.TextBox();
-            this.buttonCalculateHashFromText = new System.Windows.Forms.Button();
-            this.labelMD5StringFromText = new System.Windows.Forms.Label();
-            this.textBoxMD5StringFromText = new System.Windows.Forms.TextBox();
-            this.buttonCopyMD5StringFromTextToClipboard = new System.Windows.Forms.Button();
-            this.labelRIPEMD160StringFromText = new System.Windows.Forms.Label();
-            this.textBoxRIPEMD160StringFromText = new System.Windows.Forms.TextBox();
-            this.buttonCopySHA512StringFromTextToClipboard = new System.Windows.Forms.Button();
-            this.buttonCopyRIPEMD160StringFromTextToClipboard = new System.Windows.Forms.Button();
-            this.textBoxSHA512StringFromText = new System.Windows.Forms.TextBox();
-            this.labelSHA1StringFromText = new System.Windows.Forms.Label();
-            this.labelSHA512StringFromText = new System.Windows.Forms.Label();
-            this.textBoxSHA1StringFromText = new System.Windows.Forms.TextBox();
-            this.buttonCopySHA384StringFromTextToClipboard = new System.Windows.Forms.Button();
-            this.buttonCopySHA1StringFromTextToClipboard = new System.Windows.Forms.Button();
-            this.textBoxSHA384StringFromText = new System.Windows.Forms.TextBox();
-            this.labelSHA256StringFromText = new System.Windows.Forms.Label();
-            this.labelSHA384StringFromText = new System.Windows.Forms.Label();
-            this.textBoxSHA256StringFromText = new System.Windows.Forms.TextBox();
-            this.buttonCopySHA256StringFromTextToClipboard = new System.Windows.Forms.Button();
-            this.tabPageInfo = new System.Windows.Forms.TabPage();
-            this.linkLabelUrl = new System.Windows.Forms.LinkLabel();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
-            this.labelCompanyName = new System.Windows.Forms.Label();
-            this.labelCopyright = new System.Windows.Forms.Label();
-            this.labelVersion = new System.Windows.Forms.Label();
-            this.labelProductName = new System.Windows.Forms.Label();
-            this.logoPictureBox = new System.Windows.Forms.PictureBox();
-            this.tabPageLicense = new System.Windows.Forms.TabPage();
-            this.textBoxLicense = new System.Windows.Forms.TextBox();
-            this.imageListTab = new System.Windows.Forms.ImageList(this.components);
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabelInformation = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.toolStripContainer = new System.Windows.Forms.ToolStripContainer();
-            this.tabControl.SuspendLayout();
-            this.tabPageFile.SuspendLayout();
-            this.tabPageText.SuspendLayout();
-            this.tabPageInfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
-            this.tabPageLicense.SuspendLayout();
-            this.statusStrip.SuspendLayout();
-            this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
-            this.toolStripContainer.ContentPanel.SuspendLayout();
-            this.toolStripContainer.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // labelFileName
-            // 
-            this.labelFileName.AccessibleDescription = "file";
-            this.labelFileName.AccessibleName = "file";
-            this.labelFileName.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelFileName.AutoSize = true;
-            this.labelFileName.Location = new System.Drawing.Point(7, 12);
-            this.labelFileName.Name = "labelFileName";
-            this.labelFileName.Size = new System.Drawing.Size(26, 13);
-            this.labelFileName.TabIndex = 0;
-            this.labelFileName.Text = "File:";
-            this.toolTip.SetToolTip(this.labelFileName, "file");
-            this.labelFileName.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelFileName.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelFileName.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelFileName.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // textBoxFileName
-            // 
-            this.textBoxFileName.AccessibleDescription = "Show the path of the file";
-            this.textBoxFileName.AccessibleName = "Path of the file";
-            this.textBoxFileName.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxFileName.Location = new System.Drawing.Point(39, 9);
-            this.textBoxFileName.Name = "textBoxFileName";
-            this.textBoxFileName.ReadOnly = true;
-            this.textBoxFileName.Size = new System.Drawing.Size(335, 20);
-            this.textBoxFileName.TabIndex = 1;
-            this.toolTip.SetToolTip(this.textBoxFileName, "Path of the file");
-            this.textBoxFileName.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxFileName.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxFileName.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxFileName.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelMD5StringFromFile
-            // 
-            this.labelMD5StringFromFile.AccessibleDescription = "MD5";
-            this.labelMD5StringFromFile.AccessibleName = "MD5";
-            this.labelMD5StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelMD5StringFromFile.AutoSize = true;
-            this.labelMD5StringFromFile.Location = new System.Drawing.Point(7, 42);
-            this.labelMD5StringFromFile.Name = "labelMD5StringFromFile";
-            this.labelMD5StringFromFile.Size = new System.Drawing.Size(33, 13);
-            this.labelMD5StringFromFile.TabIndex = 4;
-            this.labelMD5StringFromFile.Text = "MD5:";
-            this.toolTip.SetToolTip(this.labelMD5StringFromFile, "MD5 hash");
-            this.labelMD5StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelMD5StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelMD5StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelMD5StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // textBoxMD5StringFromFile
-            // 
-            this.textBoxMD5StringFromFile.AccessibleDescription = "Show the MD5 hash value";
-            this.textBoxMD5StringFromFile.AccessibleName = "MD5 hash value";
-            this.textBoxMD5StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxMD5StringFromFile.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMD5StringFromFile.Location = new System.Drawing.Point(83, 39);
-            this.textBoxMD5StringFromFile.Name = "textBoxMD5StringFromFile";
-            this.textBoxMD5StringFromFile.ReadOnly = true;
-            this.textBoxMD5StringFromFile.Size = new System.Drawing.Size(358, 20);
-            this.textBoxMD5StringFromFile.TabIndex = 5;
-            this.toolTip.SetToolTip(this.textBoxMD5StringFromFile, "MD5 hash value");
-            this.textBoxMD5StringFromFile.TextChanged += new System.EventHandler(this.TextBoxMD5StringFromFile_TextChanged);
-            this.textBoxMD5StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxMD5StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxMD5StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxMD5StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.SupportMultiDottedExtensions = true;
-            this.openFileDialog.Title = "Load file";
-            // 
-            // textBoxRIPEMD160StringFromFile
-            // 
-            this.textBoxRIPEMD160StringFromFile.AccessibleDescription = "Show the RIPEMD160 hash value";
-            this.textBoxRIPEMD160StringFromFile.AccessibleName = "RIPEMD160 hash value";
-            this.textBoxRIPEMD160StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxRIPEMD160StringFromFile.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRIPEMD160StringFromFile.Location = new System.Drawing.Point(83, 65);
-            this.textBoxRIPEMD160StringFromFile.Name = "textBoxRIPEMD160StringFromFile";
-            this.textBoxRIPEMD160StringFromFile.ReadOnly = true;
-            this.textBoxRIPEMD160StringFromFile.Size = new System.Drawing.Size(358, 20);
-            this.textBoxRIPEMD160StringFromFile.TabIndex = 9;
-            this.toolTip.SetToolTip(this.textBoxRIPEMD160StringFromFile, "RIPEMD160 hash value");
-            this.textBoxRIPEMD160StringFromFile.TextChanged += new System.EventHandler(this.TextBoxRIPEMD160StringFromFile_TextChanged);
-            this.textBoxRIPEMD160StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxRIPEMD160StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxRIPEMD160StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxRIPEMD160StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelRIPEMD160StringFromFile
-            // 
-            this.labelRIPEMD160StringFromFile.AccessibleDescription = "RIPEMD160";
-            this.labelRIPEMD160StringFromFile.AccessibleName = "RIPEMD160";
-            this.labelRIPEMD160StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelRIPEMD160StringFromFile.AutoSize = true;
-            this.labelRIPEMD160StringFromFile.Location = new System.Drawing.Point(7, 68);
-            this.labelRIPEMD160StringFromFile.Name = "labelRIPEMD160StringFromFile";
-            this.labelRIPEMD160StringFromFile.Size = new System.Drawing.Size(70, 13);
-            this.labelRIPEMD160StringFromFile.TabIndex = 8;
-            this.labelRIPEMD160StringFromFile.Text = "RIPEMD160:";
-            this.toolTip.SetToolTip(this.labelRIPEMD160StringFromFile, "RIPEMD160 hash");
-            this.labelRIPEMD160StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelRIPEMD160StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelRIPEMD160StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelRIPEMD160StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // textBoxSHA1StringFromFile
-            // 
-            this.textBoxSHA1StringFromFile.AccessibleDescription = "Show the SHA1 hash value";
-            this.textBoxSHA1StringFromFile.AccessibleName = "SHA1 hash value";
-            this.textBoxSHA1StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxSHA1StringFromFile.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSHA1StringFromFile.Location = new System.Drawing.Point(83, 91);
-            this.textBoxSHA1StringFromFile.Name = "textBoxSHA1StringFromFile";
-            this.textBoxSHA1StringFromFile.ReadOnly = true;
-            this.textBoxSHA1StringFromFile.Size = new System.Drawing.Size(358, 20);
-            this.textBoxSHA1StringFromFile.TabIndex = 13;
-            this.toolTip.SetToolTip(this.textBoxSHA1StringFromFile, "SHA1 hash value");
-            this.textBoxSHA1StringFromFile.TextChanged += new System.EventHandler(this.TextBoxSHA1StringFromFile_TextChanged);
-            this.textBoxSHA1StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA1StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxSHA1StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA1StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelSHA1StringFromFile
-            // 
-            this.labelSHA1StringFromFile.AccessibleDescription = "SHA1";
-            this.labelSHA1StringFromFile.AccessibleName = "SHA1";
-            this.labelSHA1StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelSHA1StringFromFile.AutoSize = true;
-            this.labelSHA1StringFromFile.Location = new System.Drawing.Point(7, 94);
-            this.labelSHA1StringFromFile.Name = "labelSHA1StringFromFile";
-            this.labelSHA1StringFromFile.Size = new System.Drawing.Size(38, 13);
-            this.labelSHA1StringFromFile.TabIndex = 12;
-            this.labelSHA1StringFromFile.Text = "SHA1:";
-            this.toolTip.SetToolTip(this.labelSHA1StringFromFile, "SHA1 hash");
-            this.labelSHA1StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA1StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelSHA1StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA1StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // textBoxSHA256StringFromFile
-            // 
-            this.textBoxSHA256StringFromFile.AccessibleDescription = "Show the SHA256 hash value";
-            this.textBoxSHA256StringFromFile.AccessibleName = "SHA256 hash value";
-            this.textBoxSHA256StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxSHA256StringFromFile.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSHA256StringFromFile.Location = new System.Drawing.Point(83, 117);
-            this.textBoxSHA256StringFromFile.Name = "textBoxSHA256StringFromFile";
-            this.textBoxSHA256StringFromFile.ReadOnly = true;
-            this.textBoxSHA256StringFromFile.Size = new System.Drawing.Size(358, 20);
-            this.textBoxSHA256StringFromFile.TabIndex = 17;
-            this.toolTip.SetToolTip(this.textBoxSHA256StringFromFile, "SHA256 hash value");
-            this.textBoxSHA256StringFromFile.TextChanged += new System.EventHandler(this.TextBoxSHA256StringFromFile_TextChanged);
-            this.textBoxSHA256StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA256StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxSHA256StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA256StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelSHA256StringFromFile
-            // 
-            this.labelSHA256StringFromFile.AccessibleDescription = "SHA256";
-            this.labelSHA256StringFromFile.AccessibleName = "SHA256";
-            this.labelSHA256StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelSHA256StringFromFile.AutoSize = true;
-            this.labelSHA256StringFromFile.Location = new System.Drawing.Point(7, 120);
-            this.labelSHA256StringFromFile.Name = "labelSHA256StringFromFile";
-            this.labelSHA256StringFromFile.Size = new System.Drawing.Size(50, 13);
-            this.labelSHA256StringFromFile.TabIndex = 16;
-            this.labelSHA256StringFromFile.Text = "SHA256:";
-            this.toolTip.SetToolTip(this.labelSHA256StringFromFile, "SHA256 hash");
-            this.labelSHA256StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA256StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelSHA256StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA256StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // textBoxSHA384StringFromFile
-            // 
-            this.textBoxSHA384StringFromFile.AccessibleDescription = "Show the SHA384 hash value";
-            this.textBoxSHA384StringFromFile.AccessibleName = "SHA384 hash value";
-            this.textBoxSHA384StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxSHA384StringFromFile.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSHA384StringFromFile.Location = new System.Drawing.Point(83, 143);
-            this.textBoxSHA384StringFromFile.Name = "textBoxSHA384StringFromFile";
-            this.textBoxSHA384StringFromFile.ReadOnly = true;
-            this.textBoxSHA384StringFromFile.Size = new System.Drawing.Size(358, 20);
-            this.textBoxSHA384StringFromFile.TabIndex = 21;
-            this.toolTip.SetToolTip(this.textBoxSHA384StringFromFile, "SHA384 hash value");
-            this.textBoxSHA384StringFromFile.TextChanged += new System.EventHandler(this.TextBoxSHA384StringFromFile_TextChanged);
-            this.textBoxSHA384StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA384StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxSHA384StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA384StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelSHA384FromFile
-            // 
-            this.labelSHA384FromFile.AccessibleDescription = "SHA384";
-            this.labelSHA384FromFile.AccessibleName = "SHA384";
-            this.labelSHA384FromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelSHA384FromFile.AutoSize = true;
-            this.labelSHA384FromFile.Location = new System.Drawing.Point(7, 146);
-            this.labelSHA384FromFile.Name = "labelSHA384FromFile";
-            this.labelSHA384FromFile.Size = new System.Drawing.Size(50, 13);
-            this.labelSHA384FromFile.TabIndex = 20;
-            this.labelSHA384FromFile.Text = "SHA384:";
-            this.toolTip.SetToolTip(this.labelSHA384FromFile, "SHA384 hash");
-            this.labelSHA384FromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA384FromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelSHA384FromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA384FromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // textBoxSHA512StringFromFile
-            // 
-            this.textBoxSHA512StringFromFile.AccessibleDescription = "Show the SHA512 hash value";
-            this.textBoxSHA512StringFromFile.AccessibleName = "SHA512 hash value";
-            this.textBoxSHA512StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxSHA512StringFromFile.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSHA512StringFromFile.Location = new System.Drawing.Point(83, 169);
-            this.textBoxSHA512StringFromFile.Name = "textBoxSHA512StringFromFile";
-            this.textBoxSHA512StringFromFile.ReadOnly = true;
-            this.textBoxSHA512StringFromFile.Size = new System.Drawing.Size(358, 20);
-            this.textBoxSHA512StringFromFile.TabIndex = 25;
-            this.toolTip.SetToolTip(this.textBoxSHA512StringFromFile, "SHA512 hash value");
-            this.textBoxSHA512StringFromFile.TextChanged += new System.EventHandler(this.TextBoxSHA512StringFromFile_TextChanged);
-            this.textBoxSHA512StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA512StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxSHA512StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA512StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelSHA512StringFromFile
-            // 
-            this.labelSHA512StringFromFile.AccessibleDescription = "SHA512";
-            this.labelSHA512StringFromFile.AccessibleName = "SHA512";
-            this.labelSHA512StringFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelSHA512StringFromFile.AutoSize = true;
-            this.labelSHA512StringFromFile.Location = new System.Drawing.Point(7, 172);
-            this.labelSHA512StringFromFile.Name = "labelSHA512StringFromFile";
-            this.labelSHA512StringFromFile.Size = new System.Drawing.Size(50, 13);
-            this.labelSHA512StringFromFile.TabIndex = 24;
-            this.labelSHA512StringFromFile.Text = "SHA512:";
-            this.toolTip.SetToolTip(this.labelSHA512StringFromFile, "SHA512 hash");
-            this.labelSHA512StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA512StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelSHA512StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA512StringFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // saveFileDialog
-            // 
-            this.saveFileDialog.SupportMultiDottedExtensions = true;
-            this.saveFileDialog.Title = "Save hash value to file";
-            // 
-            // buttonSaveSHA512StringToFile
-            // 
-            this.buttonSaveSHA512StringToFile.AccessibleDescription = "Save the SHA512 hash value in a file";
-            this.buttonSaveSHA512StringToFile.AccessibleName = "Save SHA512 hash to file";
-            this.buttonSaveSHA512StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonSaveSHA512StringToFile.AutoEllipsis = true;
-            this.buttonSaveSHA512StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA512StringToFile.Image")));
-            this.buttonSaveSHA512StringToFile.Location = new System.Drawing.Point(471, 166);
-            this.buttonSaveSHA512StringToFile.Name = "buttonSaveSHA512StringToFile";
-            this.buttonSaveSHA512StringToFile.Size = new System.Drawing.Size(24, 24);
-            this.buttonSaveSHA512StringToFile.TabIndex = 27;
-            this.buttonSaveSHA512StringToFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonSaveSHA512StringToFile, "Save the SHA512 hash value in a file");
-            this.buttonSaveSHA512StringToFile.UseVisualStyleBackColor = true;
-            this.buttonSaveSHA512StringToFile.Click += new System.EventHandler(this.ButtonSaveSHA512StringToFile_Click);
-            this.buttonSaveSHA512StringToFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveSHA512StringToFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonSaveSHA512StringToFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveSHA512StringToFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonSaveSHA384StringToFile
-            // 
-            this.buttonSaveSHA384StringToFile.AccessibleDescription = "Save the SHA384 hash value in a file";
-            this.buttonSaveSHA384StringToFile.AccessibleName = "Save SHA384 hash to file";
-            this.buttonSaveSHA384StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonSaveSHA384StringToFile.AutoEllipsis = true;
-            this.buttonSaveSHA384StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA384StringToFile.Image")));
-            this.buttonSaveSHA384StringToFile.Location = new System.Drawing.Point(471, 140);
-            this.buttonSaveSHA384StringToFile.Name = "buttonSaveSHA384StringToFile";
-            this.buttonSaveSHA384StringToFile.Size = new System.Drawing.Size(24, 24);
-            this.buttonSaveSHA384StringToFile.TabIndex = 23;
-            this.buttonSaveSHA384StringToFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonSaveSHA384StringToFile, "Save the SHA384 hash value in a file");
-            this.buttonSaveSHA384StringToFile.UseVisualStyleBackColor = true;
-            this.buttonSaveSHA384StringToFile.Click += new System.EventHandler(this.ButtonSaveSHA384StringToFile_Click);
-            this.buttonSaveSHA384StringToFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveSHA384StringToFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonSaveSHA384StringToFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveSHA384StringToFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonSaveSHA256StringToFile
-            // 
-            this.buttonSaveSHA256StringToFile.AccessibleDescription = "Save the SHA1 hash value in a file";
-            this.buttonSaveSHA256StringToFile.AccessibleName = "Save SHA1 hash to file";
-            this.buttonSaveSHA256StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonSaveSHA256StringToFile.AutoEllipsis = true;
-            this.buttonSaveSHA256StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA256StringToFile.Image")));
-            this.buttonSaveSHA256StringToFile.Location = new System.Drawing.Point(471, 114);
-            this.buttonSaveSHA256StringToFile.Name = "buttonSaveSHA256StringToFile";
-            this.buttonSaveSHA256StringToFile.Size = new System.Drawing.Size(24, 24);
-            this.buttonSaveSHA256StringToFile.TabIndex = 19;
-            this.buttonSaveSHA256StringToFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonSaveSHA256StringToFile, "Save the SHA256 hash value in a file");
-            this.buttonSaveSHA256StringToFile.UseVisualStyleBackColor = true;
-            this.buttonSaveSHA256StringToFile.Click += new System.EventHandler(this.ButtonSaveSHA256StringToFile_Click);
-            this.buttonSaveSHA256StringToFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveSHA256StringToFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonSaveSHA256StringToFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveSHA256StringToFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonSaveSHA1StringToFile
-            // 
-            this.buttonSaveSHA1StringToFile.AccessibleDescription = "Save the SHA1 hash value in a file";
-            this.buttonSaveSHA1StringToFile.AccessibleName = "Save SHA1 hash to file";
-            this.buttonSaveSHA1StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonSaveSHA1StringToFile.AutoEllipsis = true;
-            this.buttonSaveSHA1StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveSHA1StringToFile.Image")));
-            this.buttonSaveSHA1StringToFile.Location = new System.Drawing.Point(471, 88);
-            this.buttonSaveSHA1StringToFile.Name = "buttonSaveSHA1StringToFile";
-            this.buttonSaveSHA1StringToFile.Size = new System.Drawing.Size(24, 24);
-            this.buttonSaveSHA1StringToFile.TabIndex = 15;
-            this.buttonSaveSHA1StringToFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonSaveSHA1StringToFile, "Save the SHA1 hash value in a file");
-            this.buttonSaveSHA1StringToFile.UseVisualStyleBackColor = true;
-            this.buttonSaveSHA1StringToFile.Click += new System.EventHandler(this.ButtonSaveSHA1StringToFile_Click);
-            this.buttonSaveSHA1StringToFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveSHA1StringToFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonSaveSHA1StringToFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveSHA1StringToFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonSaveRIPEMD160StringToFile
-            // 
-            this.buttonSaveRIPEMD160StringToFile.AccessibleDescription = "Save the RIPEMD160 hash value in a file";
-            this.buttonSaveRIPEMD160StringToFile.AccessibleName = "Save RIPEMD160 hash to file";
-            this.buttonSaveRIPEMD160StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonSaveRIPEMD160StringToFile.AutoEllipsis = true;
-            this.buttonSaveRIPEMD160StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveRIPEMD160StringToFile.Image")));
-            this.buttonSaveRIPEMD160StringToFile.Location = new System.Drawing.Point(471, 62);
-            this.buttonSaveRIPEMD160StringToFile.Name = "buttonSaveRIPEMD160StringToFile";
-            this.buttonSaveRIPEMD160StringToFile.Size = new System.Drawing.Size(24, 24);
-            this.buttonSaveRIPEMD160StringToFile.TabIndex = 11;
-            this.buttonSaveRIPEMD160StringToFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonSaveRIPEMD160StringToFile, "Save the RIPEMD160 hash value in a file");
-            this.buttonSaveRIPEMD160StringToFile.UseVisualStyleBackColor = true;
-            this.buttonSaveRIPEMD160StringToFile.Click += new System.EventHandler(this.ButtonSaveRIPEMD160StringToFile_Click);
-            this.buttonSaveRIPEMD160StringToFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveRIPEMD160StringToFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonSaveRIPEMD160StringToFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveRIPEMD160StringToFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonSaveMD5StringToFile
-            // 
-            this.buttonSaveMD5StringToFile.AccessibleDescription = "Save the MD5 hash value in a file";
-            this.buttonSaveMD5StringToFile.AccessibleName = "Save MD5 hash to file";
-            this.buttonSaveMD5StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonSaveMD5StringToFile.AutoEllipsis = true;
-            this.buttonSaveMD5StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveMD5StringToFile.Image")));
-            this.buttonSaveMD5StringToFile.Location = new System.Drawing.Point(471, 36);
-            this.buttonSaveMD5StringToFile.Name = "buttonSaveMD5StringToFile";
-            this.buttonSaveMD5StringToFile.Size = new System.Drawing.Size(24, 24);
-            this.buttonSaveMD5StringToFile.TabIndex = 7;
-            this.buttonSaveMD5StringToFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonSaveMD5StringToFile, "Save the MD5 hash value in a file");
-            this.buttonSaveMD5StringToFile.UseVisualStyleBackColor = true;
-            this.buttonSaveMD5StringToFile.Click += new System.EventHandler(this.ButtonSaveMD5StringToFile_Click);
-            this.buttonSaveMD5StringToFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveMD5StringToFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonSaveMD5StringToFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveMD5StringToFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonCopySHA512StringFromFileToClipboard
-            // 
-            this.buttonCopySHA512StringFromFileToClipboard.AccessibleDescription = "Copy the SHA512 hash value to the clipboard";
-            this.buttonCopySHA512StringFromFileToClipboard.AccessibleName = "Copy SHA512 hash value to clipboard";
-            this.buttonCopySHA512StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonCopySHA512StringFromFileToClipboard.AutoEllipsis = true;
-            this.buttonCopySHA512StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA512StringFromFileToClipboard.Image")));
-            this.buttonCopySHA512StringFromFileToClipboard.Location = new System.Drawing.Point(447, 166);
-            this.buttonCopySHA512StringFromFileToClipboard.Name = "buttonCopySHA512StringFromFileToClipboard";
-            this.buttonCopySHA512StringFromFileToClipboard.Size = new System.Drawing.Size(24, 24);
-            this.buttonCopySHA512StringFromFileToClipboard.TabIndex = 26;
-            this.buttonCopySHA512StringFromFileToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonCopySHA512StringFromFileToClipboard, "Copy the SHA512 hash value to the clipboard");
-            this.buttonCopySHA512StringFromFileToClipboard.UseVisualStyleBackColor = true;
-            this.buttonCopySHA512StringFromFileToClipboard.Click += new System.EventHandler(this.ButtonCopySHA512StringFromFileToClipboard_Click);
-            this.buttonCopySHA512StringFromFileToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA512StringFromFileToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonCopySHA512StringFromFileToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA512StringFromFileToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonCopySHA384StringFromFileToClipboard
-            // 
-            this.buttonCopySHA384StringFromFileToClipboard.AccessibleDescription = "Copy the SHA384 hash value to the clipboard";
-            this.buttonCopySHA384StringFromFileToClipboard.AccessibleName = "Copy SHA384 hash value to clipboard";
-            this.buttonCopySHA384StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonCopySHA384StringFromFileToClipboard.AutoEllipsis = true;
-            this.buttonCopySHA384StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA384StringFromFileToClipboard.Image")));
-            this.buttonCopySHA384StringFromFileToClipboard.Location = new System.Drawing.Point(447, 140);
-            this.buttonCopySHA384StringFromFileToClipboard.Name = "buttonCopySHA384StringFromFileToClipboard";
-            this.buttonCopySHA384StringFromFileToClipboard.Size = new System.Drawing.Size(24, 24);
-            this.buttonCopySHA384StringFromFileToClipboard.TabIndex = 22;
-            this.buttonCopySHA384StringFromFileToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonCopySHA384StringFromFileToClipboard, "Copy the SHA384 hash value to the clipboard");
-            this.buttonCopySHA384StringFromFileToClipboard.UseVisualStyleBackColor = true;
-            this.buttonCopySHA384StringFromFileToClipboard.Click += new System.EventHandler(this.ButtonCopySHA384StringFromFileToClipboard_Click);
-            this.buttonCopySHA384StringFromFileToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA384StringFromFileToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonCopySHA384StringFromFileToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA384StringFromFileToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonCopySHA256StringFromFileToClipboard
-            // 
-            this.buttonCopySHA256StringFromFileToClipboard.AccessibleDescription = "Copy the SHA256 hash value to the clipboard";
-            this.buttonCopySHA256StringFromFileToClipboard.AccessibleName = "Copy SHA256 hash value to clipboard";
-            this.buttonCopySHA256StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonCopySHA256StringFromFileToClipboard.AutoEllipsis = true;
-            this.buttonCopySHA256StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA256StringFromFileToClipboard.Image")));
-            this.buttonCopySHA256StringFromFileToClipboard.Location = new System.Drawing.Point(447, 114);
-            this.buttonCopySHA256StringFromFileToClipboard.Name = "buttonCopySHA256StringFromFileToClipboard";
-            this.buttonCopySHA256StringFromFileToClipboard.Size = new System.Drawing.Size(24, 24);
-            this.buttonCopySHA256StringFromFileToClipboard.TabIndex = 18;
-            this.buttonCopySHA256StringFromFileToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonCopySHA256StringFromFileToClipboard, "Copy the SHA256 hash value to the clipboard");
-            this.buttonCopySHA256StringFromFileToClipboard.UseVisualStyleBackColor = true;
-            this.buttonCopySHA256StringFromFileToClipboard.Click += new System.EventHandler(this.ButtonCopySHA256StringFromFileToClipboard_Click);
-            this.buttonCopySHA256StringFromFileToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA256StringFromFileToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonCopySHA256StringFromFileToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA256StringFromFileToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonCopySHA1StringFromFileToClipboard
-            // 
-            this.buttonCopySHA1StringFromFileToClipboard.AccessibleDescription = "Copy the SHA1 hash value to the clipboard";
-            this.buttonCopySHA1StringFromFileToClipboard.AccessibleName = "Copy SHA1 hash value to clipboard";
-            this.buttonCopySHA1StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonCopySHA1StringFromFileToClipboard.AutoEllipsis = true;
-            this.buttonCopySHA1StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA1StringFromFileToClipboard.Image")));
-            this.buttonCopySHA1StringFromFileToClipboard.Location = new System.Drawing.Point(447, 88);
-            this.buttonCopySHA1StringFromFileToClipboard.Name = "buttonCopySHA1StringFromFileToClipboard";
-            this.buttonCopySHA1StringFromFileToClipboard.Size = new System.Drawing.Size(24, 24);
-            this.buttonCopySHA1StringFromFileToClipboard.TabIndex = 14;
-            this.buttonCopySHA1StringFromFileToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonCopySHA1StringFromFileToClipboard, "Copy the SHA1 hash value to the clipboard");
-            this.buttonCopySHA1StringFromFileToClipboard.UseVisualStyleBackColor = true;
-            this.buttonCopySHA1StringFromFileToClipboard.Click += new System.EventHandler(this.ButtonCopySHA1StringFromFileToClipboard_Click);
-            this.buttonCopySHA1StringFromFileToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA1StringFromFileToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonCopySHA1StringFromFileToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA1StringFromFileToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonCopyRIPEMD160StringFromFileToClipboard
-            // 
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.AccessibleDescription = "Copy the RIPEMD160 hash value to the clipboard";
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.AccessibleName = "Copy RIPEMD160 hash value to clipboard";
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.AutoEllipsis = true;
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyRIPEMD160StringFromFileToClipboard.Image")));
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.Location = new System.Drawing.Point(447, 62);
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.Name = "buttonCopyRIPEMD160StringFromFileToClipboard";
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.Size = new System.Drawing.Size(24, 24);
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.TabIndex = 10;
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonCopyRIPEMD160StringFromFileToClipboard, "Copy the RIPEMD160 hash value to the clipboard");
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.UseVisualStyleBackColor = true;
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.Click += new System.EventHandler(this.ButtonCopyRIPEMD160StringFromFileToClipboard_Click);
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopyRIPEMD160StringFromFileToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonCopyMD5StringFromFileToClipboard
-            // 
-            this.buttonCopyMD5StringFromFileToClipboard.AccessibleDescription = "Copy the MD5 hash value to the clipboard";
-            this.buttonCopyMD5StringFromFileToClipboard.AccessibleName = "Copy MD5 hash value to clipboard";
-            this.buttonCopyMD5StringFromFileToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonCopyMD5StringFromFileToClipboard.AutoEllipsis = true;
-            this.buttonCopyMD5StringFromFileToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyMD5StringFromFileToClipboard.Image")));
-            this.buttonCopyMD5StringFromFileToClipboard.Location = new System.Drawing.Point(447, 36);
-            this.buttonCopyMD5StringFromFileToClipboard.Name = "buttonCopyMD5StringFromFileToClipboard";
-            this.buttonCopyMD5StringFromFileToClipboard.Size = new System.Drawing.Size(24, 24);
-            this.buttonCopyMD5StringFromFileToClipboard.TabIndex = 6;
-            this.buttonCopyMD5StringFromFileToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonCopyMD5StringFromFileToClipboard, "Copy the MD5 hash value to the clipboard");
-            this.buttonCopyMD5StringFromFileToClipboard.UseVisualStyleBackColor = true;
-            this.buttonCopyMD5StringFromFileToClipboard.Click += new System.EventHandler(this.ButtonCopyMD5StringFromFileToClipboard_Click);
-            this.buttonCopyMD5StringFromFileToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopyMD5StringFromFileToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonCopyMD5StringFromFileToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopyMD5StringFromFileToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonOpenAndCalculateHashFromFile
-            // 
-            this.buttonOpenAndCalculateHashFromFile.AccessibleDescription = "Open a file and calculate the hash values";
-            this.buttonOpenAndCalculateHashFromFile.AccessibleName = "Open and calculate hash values from file";
-            this.buttonOpenAndCalculateHashFromFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonOpenAndCalculateHashFromFile.AutoEllipsis = true;
-            this.buttonOpenAndCalculateHashFromFile.Image = global::Hasher.Properties.Resources.fatcow_document_hash_tag_16;
-            this.buttonOpenAndCalculateHashFromFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonOpenAndCalculateHashFromFile.Location = new System.Drawing.Point(380, 6);
-            this.buttonOpenAndCalculateHashFromFile.Name = "buttonOpenAndCalculateHashFromFile";
-            this.buttonOpenAndCalculateHashFromFile.Size = new System.Drawing.Size(115, 24);
-            this.buttonOpenAndCalculateHashFromFile.TabIndex = 2;
-            this.buttonOpenAndCalculateHashFromFile.Text = "Open && Calculate";
-            this.buttonOpenAndCalculateHashFromFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonOpenAndCalculateHashFromFile, "Open a file and calculate the hash value");
-            this.buttonOpenAndCalculateHashFromFile.UseVisualStyleBackColor = true;
-            this.buttonOpenAndCalculateHashFromFile.Click += new System.EventHandler(this.ButtonOpenAndCalculateFile_Click);
-            this.buttonOpenAndCalculateHashFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonOpenAndCalculateHashFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonOpenAndCalculateHashFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonOpenAndCalculateHashFromFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // tabControl
-            // 
-            this.tabControl.AccessibleDescription = "Just a tab control";
-            this.tabControl.AccessibleName = "tab control";
-            this.tabControl.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
-            this.tabControl.AllowDrop = true;
-            this.tabControl.Controls.Add(this.tabPageFile);
-            this.tabControl.Controls.Add(this.tabPageText);
-            this.tabControl.Controls.Add(this.tabPageInfo);
-            this.tabControl.Controls.Add(this.tabPageLicense);
-            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.HotTrack = true;
-            this.tabControl.ImageList = this.imageListTab;
-            this.tabControl.Location = new System.Drawing.Point(0, 0);
-            this.tabControl.Name = "tabControl";
-            this.tabControl.SelectedIndex = 0;
-            this.tabControl.ShowToolTips = true;
-            this.tabControl.Size = new System.Drawing.Size(511, 256);
-            this.tabControl.TabIndex = 0;
-            this.tabControl.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
-            this.tabControl.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
-            // 
-            // tabPageFile
-            // 
-            this.tabPageFile.AccessibleDescription = "Show the file tab page";
-            this.tabPageFile.AccessibleName = "file tab page";
-            this.tabPageFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
-            this.tabPageFile.Controls.Add(this.buttonSaveAllHashValuesInList);
-            this.tabPageFile.Controls.Add(this.buttonSaveAllHashValuesAutomatically);
-            this.tabPageFile.Controls.Add(this.labelFileName);
-            this.tabPageFile.Controls.Add(this.textBoxFileName);
-            this.tabPageFile.Controls.Add(this.buttonSaveSHA512StringToFile);
-            this.tabPageFile.Controls.Add(this.buttonOpenAndCalculateHashFromFile);
-            this.tabPageFile.Controls.Add(this.buttonSaveSHA384StringToFile);
-            this.tabPageFile.Controls.Add(this.labelMD5StringFromFile);
-            this.tabPageFile.Controls.Add(this.buttonSaveSHA256StringToFile);
-            this.tabPageFile.Controls.Add(this.textBoxMD5StringFromFile);
-            this.tabPageFile.Controls.Add(this.buttonSaveSHA1StringToFile);
-            this.tabPageFile.Controls.Add(this.buttonCopyMD5StringFromFileToClipboard);
-            this.tabPageFile.Controls.Add(this.buttonSaveRIPEMD160StringToFile);
-            this.tabPageFile.Controls.Add(this.labelRIPEMD160StringFromFile);
-            this.tabPageFile.Controls.Add(this.buttonSaveMD5StringToFile);
-            this.tabPageFile.Controls.Add(this.textBoxRIPEMD160StringFromFile);
-            this.tabPageFile.Controls.Add(this.buttonCopySHA512StringFromFileToClipboard);
-            this.tabPageFile.Controls.Add(this.buttonCopyRIPEMD160StringFromFileToClipboard);
-            this.tabPageFile.Controls.Add(this.textBoxSHA512StringFromFile);
-            this.tabPageFile.Controls.Add(this.labelSHA1StringFromFile);
-            this.tabPageFile.Controls.Add(this.labelSHA512StringFromFile);
-            this.tabPageFile.Controls.Add(this.textBoxSHA1StringFromFile);
-            this.tabPageFile.Controls.Add(this.buttonCopySHA384StringFromFileToClipboard);
-            this.tabPageFile.Controls.Add(this.buttonCopySHA1StringFromFileToClipboard);
-            this.tabPageFile.Controls.Add(this.textBoxSHA384StringFromFile);
-            this.tabPageFile.Controls.Add(this.labelSHA256StringFromFile);
-            this.tabPageFile.Controls.Add(this.labelSHA384FromFile);
-            this.tabPageFile.Controls.Add(this.textBoxSHA256StringFromFile);
-            this.tabPageFile.Controls.Add(this.buttonCopySHA256StringFromFileToClipboard);
-            this.tabPageFile.ImageKey = "fatcow_page_16.png";
-            this.tabPageFile.Location = new System.Drawing.Point(4, 23);
-            this.tabPageFile.Name = "tabPageFile";
-            this.tabPageFile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFile.Size = new System.Drawing.Size(503, 229);
-            this.tabPageFile.TabIndex = 0;
-            this.tabPageFile.Text = "File";
-            this.toolTip.SetToolTip(this.tabPageFile, "Hash a file");
-            this.tabPageFile.ToolTipText = "Hash a file";
-            this.tabPageFile.UseVisualStyleBackColor = true;
-            this.tabPageFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.tabPageFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.tabPageFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.tabPageFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonSaveAllHashValuesInList
-            // 
-            this.buttonSaveAllHashValuesInList.AccessibleDescription = "Save all hash values in a list";
-            this.buttonSaveAllHashValuesInList.AccessibleName = "Save all in a list";
-            this.buttonSaveAllHashValuesInList.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonSaveAllHashValuesInList.AutoEllipsis = true;
-            this.buttonSaveAllHashValuesInList.Image = global::Hasher.Properties.Resources.fatcow_page_save_16;
-            this.buttonSaveAllHashValuesInList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSaveAllHashValuesInList.Location = new System.Drawing.Point(391, 195);
-            this.buttonSaveAllHashValuesInList.Name = "buttonSaveAllHashValuesInList";
-            this.buttonSaveAllHashValuesInList.Size = new System.Drawing.Size(104, 23);
-            this.buttonSaveAllHashValuesInList.TabIndex = 29;
-            this.buttonSaveAllHashValuesInList.Text = "Save all in a list";
-            this.buttonSaveAllHashValuesInList.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonSaveAllHashValuesInList, "Save all in a list");
-            this.buttonSaveAllHashValuesInList.UseVisualStyleBackColor = true;
-            this.buttonSaveAllHashValuesInList.Click += new System.EventHandler(this.ButtonSaveAllHashValuesInList_Click);
-            this.buttonSaveAllHashValuesInList.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveAllHashValuesInList.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonSaveAllHashValuesInList.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveAllHashValuesInList.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonSaveAllHashValuesAutomatically
-            // 
-            this.buttonSaveAllHashValuesAutomatically.AccessibleDescription = "Save all hash values automatically in separate files";
-            this.buttonSaveAllHashValuesAutomatically.AccessibleName = "Save all automatically";
-            this.buttonSaveAllHashValuesAutomatically.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonSaveAllHashValuesAutomatically.AutoEllipsis = true;
-            this.buttonSaveAllHashValuesAutomatically.Image = global::Hasher.Properties.Resources.fatcow_diskette_16;
-            this.buttonSaveAllHashValuesAutomatically.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSaveAllHashValuesAutomatically.Location = new System.Drawing.Point(251, 195);
-            this.buttonSaveAllHashValuesAutomatically.Name = "buttonSaveAllHashValuesAutomatically";
-            this.buttonSaveAllHashValuesAutomatically.Size = new System.Drawing.Size(134, 23);
-            this.buttonSaveAllHashValuesAutomatically.TabIndex = 28;
-            this.buttonSaveAllHashValuesAutomatically.Text = "Save all automatically";
-            this.buttonSaveAllHashValuesAutomatically.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonSaveAllHashValuesAutomatically, "Save all automatically");
-            this.buttonSaveAllHashValuesAutomatically.UseVisualStyleBackColor = true;
-            this.buttonSaveAllHashValuesAutomatically.Click += new System.EventHandler(this.ButtonSaveAllHashValuesAutomatically_Click);
-            this.buttonSaveAllHashValuesAutomatically.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveAllHashValuesAutomatically.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonSaveAllHashValuesAutomatically.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveAllHashValuesAutomatically.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // tabPageText
-            // 
-            this.tabPageText.AccessibleDescription = "Show the text tab page";
-            this.tabPageText.AccessibleName = "text tab page";
-            this.tabPageText.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
-            this.tabPageText.Controls.Add(this.buttonSaveAllHashValuesInClipboard);
-            this.tabPageText.Controls.Add(this.checkBoxAutoUpdateText);
-            this.tabPageText.Controls.Add(this.labelText);
-            this.tabPageText.Controls.Add(this.textBoxText);
-            this.tabPageText.Controls.Add(this.buttonCalculateHashFromText);
-            this.tabPageText.Controls.Add(this.labelMD5StringFromText);
-            this.tabPageText.Controls.Add(this.textBoxMD5StringFromText);
-            this.tabPageText.Controls.Add(this.buttonCopyMD5StringFromTextToClipboard);
-            this.tabPageText.Controls.Add(this.labelRIPEMD160StringFromText);
-            this.tabPageText.Controls.Add(this.textBoxRIPEMD160StringFromText);
-            this.tabPageText.Controls.Add(this.buttonCopySHA512StringFromTextToClipboard);
-            this.tabPageText.Controls.Add(this.buttonCopyRIPEMD160StringFromTextToClipboard);
-            this.tabPageText.Controls.Add(this.textBoxSHA512StringFromText);
-            this.tabPageText.Controls.Add(this.labelSHA1StringFromText);
-            this.tabPageText.Controls.Add(this.labelSHA512StringFromText);
-            this.tabPageText.Controls.Add(this.textBoxSHA1StringFromText);
-            this.tabPageText.Controls.Add(this.buttonCopySHA384StringFromTextToClipboard);
-            this.tabPageText.Controls.Add(this.buttonCopySHA1StringFromTextToClipboard);
-            this.tabPageText.Controls.Add(this.textBoxSHA384StringFromText);
-            this.tabPageText.Controls.Add(this.labelSHA256StringFromText);
-            this.tabPageText.Controls.Add(this.labelSHA384StringFromText);
-            this.tabPageText.Controls.Add(this.textBoxSHA256StringFromText);
-            this.tabPageText.Controls.Add(this.buttonCopySHA256StringFromTextToClipboard);
-            this.tabPageText.ImageKey = "fatcow_text_effects_16.png";
-            this.tabPageText.Location = new System.Drawing.Point(4, 23);
-            this.tabPageText.Name = "tabPageText";
-            this.tabPageText.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageText.Size = new System.Drawing.Size(503, 204);
-            this.tabPageText.TabIndex = 1;
-            this.tabPageText.Text = "Text";
-            this.toolTip.SetToolTip(this.tabPageText, "Hash a text");
-            this.tabPageText.ToolTipText = "Hash a text";
-            this.tabPageText.UseVisualStyleBackColor = true;
-            this.tabPageText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.tabPageText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.tabPageText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.tabPageText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonSaveAllHashValuesInClipboard
-            // 
-            this.buttonSaveAllHashValuesInClipboard.AccessibleDescription = "Save all hash values into the clipboard";
-            this.buttonSaveAllHashValuesInClipboard.AccessibleName = "Save all in clipboard";
-            this.buttonSaveAllHashValuesInClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonSaveAllHashValuesInClipboard.AutoEllipsis = true;
-            this.buttonSaveAllHashValuesInClipboard.Image = global::Hasher.Properties.Resources.fatcow_clipboard_empty_16;
-            this.buttonSaveAllHashValuesInClipboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSaveAllHashValuesInClipboard.Location = new System.Drawing.Point(368, 195);
-            this.buttonSaveAllHashValuesInClipboard.Name = "buttonSaveAllHashValuesInClipboard";
-            this.buttonSaveAllHashValuesInClipboard.Size = new System.Drawing.Size(127, 23);
-            this.buttonSaveAllHashValuesInClipboard.TabIndex = 31;
-            this.buttonSaveAllHashValuesInClipboard.Text = "Save all in clipboard";
-            this.buttonSaveAllHashValuesInClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonSaveAllHashValuesInClipboard, "Save all hash values into the clipboard");
-            this.buttonSaveAllHashValuesInClipboard.UseVisualStyleBackColor = true;
-            this.buttonSaveAllHashValuesInClipboard.Click += new System.EventHandler(this.ButtonSaveAllHashValuesInClipboard_Click);
-            this.buttonSaveAllHashValuesInClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveAllHashValuesInClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonSaveAllHashValuesInClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveAllHashValuesInClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // checkBoxAutoUpdateText
-            // 
-            this.checkBoxAutoUpdateText.AccessibleDescription = "Enable/disable the permanent calculation";
-            this.checkBoxAutoUpdateText.AccessibleName = "Permanent calculation";
-            this.checkBoxAutoUpdateText.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.checkBoxAutoUpdateText.Appearance = System.Windows.Forms.Appearance.Button;
-            this.checkBoxAutoUpdateText.AutoSize = true;
-            this.checkBoxAutoUpdateText.Image = global::Hasher.Properties.Resources.fatcow_arrow_refresh_small_16;
-            this.checkBoxAutoUpdateText.Location = new System.Drawing.Point(471, 7);
-            this.checkBoxAutoUpdateText.Name = "checkBoxAutoUpdateText";
-            this.checkBoxAutoUpdateText.Size = new System.Drawing.Size(22, 22);
-            this.checkBoxAutoUpdateText.TabIndex = 3;
-            this.checkBoxAutoUpdateText.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.checkBoxAutoUpdateText, "Enable/disable the permanent calculation");
-            this.checkBoxAutoUpdateText.UseVisualStyleBackColor = true;
-            this.checkBoxAutoUpdateText.CheckedChanged += new System.EventHandler(this.CheckBoxAutoUpdateText_CheckedChanged);
-            this.checkBoxAutoUpdateText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.checkBoxAutoUpdateText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.checkBoxAutoUpdateText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.checkBoxAutoUpdateText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelText
-            // 
-            this.labelText.AccessibleDescription = "text";
-            this.labelText.AccessibleName = "text";
-            this.labelText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelText.AutoEllipsis = true;
-            this.labelText.AutoSize = true;
-            this.labelText.Location = new System.Drawing.Point(7, 12);
-            this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(31, 13);
-            this.labelText.TabIndex = 0;
-            this.labelText.Text = "Text:";
-            this.toolTip.SetToolTip(this.labelText, "text");
-            this.labelText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // textBoxText
-            // 
-            this.textBoxText.AccessibleDescription = "Show the text";
-            this.textBoxText.AccessibleName = "text";
-            this.textBoxText.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxText.Location = new System.Drawing.Point(44, 9);
-            this.textBoxText.Name = "textBoxText";
-            this.textBoxText.Size = new System.Drawing.Size(335, 20);
-            this.textBoxText.TabIndex = 1;
-            this.toolTip.SetToolTip(this.textBoxText, "text to hash");
-            this.textBoxText.TextChanged += new System.EventHandler(this.TextBoxText_TextChanged);
-            this.textBoxText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonCalculateHashFromText
-            // 
-            this.buttonCalculateHashFromText.AccessibleDescription = "Calculate the hash values from a text";
-            this.buttonCalculateHashFromText.AccessibleName = "Calculate hash values from text";
-            this.buttonCalculateHashFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonCalculateHashFromText.AutoEllipsis = true;
-            this.buttonCalculateHashFromText.Image = global::Hasher.Properties.Resources.fatcow_document_hash_tag_16;
-            this.buttonCalculateHashFromText.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCalculateHashFromText.Location = new System.Drawing.Point(385, 6);
-            this.buttonCalculateHashFromText.Name = "buttonCalculateHashFromText";
-            this.buttonCalculateHashFromText.Size = new System.Drawing.Size(80, 24);
-            this.buttonCalculateHashFromText.TabIndex = 2;
-            this.buttonCalculateHashFromText.Text = "Calculate";
-            this.buttonCalculateHashFromText.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonCalculateHashFromText, "Calculate the hash values from a text");
-            this.buttonCalculateHashFromText.UseVisualStyleBackColor = true;
-            this.buttonCalculateHashFromText.Click += new System.EventHandler(this.ButtonCalculateHashFromText_Click);
-            this.buttonCalculateHashFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCalculateHashFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonCalculateHashFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCalculateHashFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelMD5StringFromText
-            // 
-            this.labelMD5StringFromText.AccessibleDescription = "MD5";
-            this.labelMD5StringFromText.AccessibleName = "MD5";
-            this.labelMD5StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelMD5StringFromText.AutoEllipsis = true;
-            this.labelMD5StringFromText.AutoSize = true;
-            this.labelMD5StringFromText.Location = new System.Drawing.Point(7, 42);
-            this.labelMD5StringFromText.Name = "labelMD5StringFromText";
-            this.labelMD5StringFromText.Size = new System.Drawing.Size(33, 13);
-            this.labelMD5StringFromText.TabIndex = 4;
-            this.labelMD5StringFromText.Text = "MD5:";
-            this.toolTip.SetToolTip(this.labelMD5StringFromText, "MD5 hash");
-            this.labelMD5StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelMD5StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelMD5StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelMD5StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // textBoxMD5StringFromText
-            // 
-            this.textBoxMD5StringFromText.AccessibleDescription = "Show the MD5 hash value";
-            this.textBoxMD5StringFromText.AccessibleName = "MD5 hash value";
-            this.textBoxMD5StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxMD5StringFromText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMD5StringFromText.Location = new System.Drawing.Point(83, 39);
-            this.textBoxMD5StringFromText.Name = "textBoxMD5StringFromText";
-            this.textBoxMD5StringFromText.ReadOnly = true;
-            this.textBoxMD5StringFromText.Size = new System.Drawing.Size(382, 20);
-            this.textBoxMD5StringFromText.TabIndex = 5;
-            this.toolTip.SetToolTip(this.textBoxMD5StringFromText, "MD5 hash value");
-            this.textBoxMD5StringFromText.TextChanged += new System.EventHandler(this.TextBoxMD5StringFromText_TextChanged);
-            this.textBoxMD5StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxMD5StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxMD5StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxMD5StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonCopyMD5StringFromTextToClipboard
-            // 
-            this.buttonCopyMD5StringFromTextToClipboard.AccessibleDescription = "Copy the MD5hash value to the clipboard";
-            this.buttonCopyMD5StringFromTextToClipboard.AccessibleName = "Copy MD5 hash value to clipboard";
-            this.buttonCopyMD5StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonCopyMD5StringFromTextToClipboard.AutoEllipsis = true;
-            this.buttonCopyMD5StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyMD5StringFromTextToClipboard.Image")));
-            this.buttonCopyMD5StringFromTextToClipboard.Location = new System.Drawing.Point(471, 36);
-            this.buttonCopyMD5StringFromTextToClipboard.Name = "buttonCopyMD5StringFromTextToClipboard";
-            this.buttonCopyMD5StringFromTextToClipboard.Size = new System.Drawing.Size(24, 24);
-            this.buttonCopyMD5StringFromTextToClipboard.TabIndex = 6;
-            this.buttonCopyMD5StringFromTextToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonCopyMD5StringFromTextToClipboard, "Copy the MD5 hash value to the clipboard");
-            this.buttonCopyMD5StringFromTextToClipboard.UseVisualStyleBackColor = true;
-            this.buttonCopyMD5StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopyMD5StringFromTextToClipboard_Click);
-            this.buttonCopyMD5StringFromTextToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopyMD5StringFromTextToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonCopyMD5StringFromTextToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopyMD5StringFromTextToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelRIPEMD160StringFromText
-            // 
-            this.labelRIPEMD160StringFromText.AccessibleDescription = "RIPEMD160";
-            this.labelRIPEMD160StringFromText.AccessibleName = "RIPEMD160";
-            this.labelRIPEMD160StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelRIPEMD160StringFromText.AutoEllipsis = true;
-            this.labelRIPEMD160StringFromText.AutoSize = true;
-            this.labelRIPEMD160StringFromText.Location = new System.Drawing.Point(7, 68);
-            this.labelRIPEMD160StringFromText.Name = "labelRIPEMD160StringFromText";
-            this.labelRIPEMD160StringFromText.Size = new System.Drawing.Size(70, 13);
-            this.labelRIPEMD160StringFromText.TabIndex = 7;
-            this.labelRIPEMD160StringFromText.Text = "RIPEMD160:";
-            this.toolTip.SetToolTip(this.labelRIPEMD160StringFromText, "RIPEMD160 hash");
-            this.labelRIPEMD160StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelRIPEMD160StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelRIPEMD160StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelRIPEMD160StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // textBoxRIPEMD160StringFromText
-            // 
-            this.textBoxRIPEMD160StringFromText.AccessibleDescription = "Show the RIPEMD160 hash value";
-            this.textBoxRIPEMD160StringFromText.AccessibleName = "RIPEMD160 hash value";
-            this.textBoxRIPEMD160StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxRIPEMD160StringFromText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRIPEMD160StringFromText.Location = new System.Drawing.Point(83, 65);
-            this.textBoxRIPEMD160StringFromText.Name = "textBoxRIPEMD160StringFromText";
-            this.textBoxRIPEMD160StringFromText.ReadOnly = true;
-            this.textBoxRIPEMD160StringFromText.Size = new System.Drawing.Size(382, 20);
-            this.textBoxRIPEMD160StringFromText.TabIndex = 8;
-            this.toolTip.SetToolTip(this.textBoxRIPEMD160StringFromText, "RIPEMD160 hash value");
-            this.textBoxRIPEMD160StringFromText.TextChanged += new System.EventHandler(this.TextBoxRIPEMD160StringFromText_TextChanged);
-            this.textBoxRIPEMD160StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxRIPEMD160StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxRIPEMD160StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxRIPEMD160StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonCopySHA512StringFromTextToClipboard
-            // 
-            this.buttonCopySHA512StringFromTextToClipboard.AccessibleDescription = "Copy the SHA512 hash value to the clipboard";
-            this.buttonCopySHA512StringFromTextToClipboard.AccessibleName = "Copy SHA512 hash value to clipboard";
-            this.buttonCopySHA512StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonCopySHA512StringFromTextToClipboard.AutoEllipsis = true;
-            this.buttonCopySHA512StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA512StringFromTextToClipboard.Image")));
-            this.buttonCopySHA512StringFromTextToClipboard.Location = new System.Drawing.Point(471, 166);
-            this.buttonCopySHA512StringFromTextToClipboard.Name = "buttonCopySHA512StringFromTextToClipboard";
-            this.buttonCopySHA512StringFromTextToClipboard.Size = new System.Drawing.Size(24, 24);
-            this.buttonCopySHA512StringFromTextToClipboard.TabIndex = 21;
-            this.buttonCopySHA512StringFromTextToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonCopySHA512StringFromTextToClipboard, "Copy the SHA512 hash value to the clipboard");
-            this.buttonCopySHA512StringFromTextToClipboard.UseVisualStyleBackColor = true;
-            this.buttonCopySHA512StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopySHA512StringFromTextToClipboard_Click);
-            this.buttonCopySHA512StringFromTextToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA512StringFromTextToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonCopySHA512StringFromTextToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA512StringFromTextToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonCopyRIPEMD160StringFromTextToClipboard
-            // 
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.AccessibleDescription = "Copy the RIPEMD160 hash value to the clipboard";
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.AccessibleName = "Copy RIPEMD160 hash value to clipboard";
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.AutoEllipsis = true;
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopyRIPEMD160StringFromTextToClipboard.Image")));
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.Location = new System.Drawing.Point(471, 62);
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.Name = "buttonCopyRIPEMD160StringFromTextToClipboard";
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.Size = new System.Drawing.Size(24, 24);
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.TabIndex = 9;
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonCopyRIPEMD160StringFromTextToClipboard, "Copy the RIPEMD160 hash value to the clipboard");
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.UseVisualStyleBackColor = true;
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopyRIPEMD160StringFromTextToClipboard_Click);
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopyRIPEMD160StringFromTextToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // textBoxSHA512StringFromText
-            // 
-            this.textBoxSHA512StringFromText.AccessibleDescription = "Show the SHA512 hash value";
-            this.textBoxSHA512StringFromText.AccessibleName = "SHA512 hash value";
-            this.textBoxSHA512StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxSHA512StringFromText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSHA512StringFromText.Location = new System.Drawing.Point(83, 169);
-            this.textBoxSHA512StringFromText.Name = "textBoxSHA512StringFromText";
-            this.textBoxSHA512StringFromText.ReadOnly = true;
-            this.textBoxSHA512StringFromText.Size = new System.Drawing.Size(382, 20);
-            this.textBoxSHA512StringFromText.TabIndex = 20;
-            this.toolTip.SetToolTip(this.textBoxSHA512StringFromText, "SHA512 hash value");
-            this.textBoxSHA512StringFromText.TextChanged += new System.EventHandler(this.TextBoxSHA512StringFromText_TextChanged);
-            this.textBoxSHA512StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA512StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxSHA512StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA512StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelSHA1StringFromText
-            // 
-            this.labelSHA1StringFromText.AccessibleDescription = "SHA1";
-            this.labelSHA1StringFromText.AccessibleName = "SHA1";
-            this.labelSHA1StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelSHA1StringFromText.AutoEllipsis = true;
-            this.labelSHA1StringFromText.AutoSize = true;
-            this.labelSHA1StringFromText.Location = new System.Drawing.Point(7, 94);
-            this.labelSHA1StringFromText.Name = "labelSHA1StringFromText";
-            this.labelSHA1StringFromText.Size = new System.Drawing.Size(38, 13);
-            this.labelSHA1StringFromText.TabIndex = 10;
-            this.labelSHA1StringFromText.Text = "SHA1:";
-            this.toolTip.SetToolTip(this.labelSHA1StringFromText, "SHA1 hash");
-            this.labelSHA1StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA1StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelSHA1StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA1StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelSHA512StringFromText
-            // 
-            this.labelSHA512StringFromText.AccessibleDescription = "SHA512";
-            this.labelSHA512StringFromText.AccessibleName = "SHA512";
-            this.labelSHA512StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelSHA512StringFromText.AutoEllipsis = true;
-            this.labelSHA512StringFromText.AutoSize = true;
-            this.labelSHA512StringFromText.Location = new System.Drawing.Point(7, 172);
-            this.labelSHA512StringFromText.Name = "labelSHA512StringFromText";
-            this.labelSHA512StringFromText.Size = new System.Drawing.Size(50, 13);
-            this.labelSHA512StringFromText.TabIndex = 19;
-            this.labelSHA512StringFromText.Text = "SHA512:";
-            this.toolTip.SetToolTip(this.labelSHA512StringFromText, "SHA512 hash");
-            this.labelSHA512StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA512StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelSHA512StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA512StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // textBoxSHA1StringFromText
-            // 
-            this.textBoxSHA1StringFromText.AccessibleDescription = "Show the SHA1 hash value";
-            this.textBoxSHA1StringFromText.AccessibleName = "SHA1 hash value";
-            this.textBoxSHA1StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxSHA1StringFromText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSHA1StringFromText.Location = new System.Drawing.Point(83, 91);
-            this.textBoxSHA1StringFromText.Name = "textBoxSHA1StringFromText";
-            this.textBoxSHA1StringFromText.ReadOnly = true;
-            this.textBoxSHA1StringFromText.Size = new System.Drawing.Size(382, 20);
-            this.textBoxSHA1StringFromText.TabIndex = 11;
-            this.toolTip.SetToolTip(this.textBoxSHA1StringFromText, "SHA1 hash value");
-            this.textBoxSHA1StringFromText.TextChanged += new System.EventHandler(this.TextBoxSHA1StringFromText_TextChanged);
-            this.textBoxSHA1StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA1StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxSHA1StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA1StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonCopySHA384StringFromTextToClipboard
-            // 
-            this.buttonCopySHA384StringFromTextToClipboard.AccessibleDescription = "Copy the SHA384 hash value to the clipboard";
-            this.buttonCopySHA384StringFromTextToClipboard.AccessibleName = "Copy SHA384 hash value to clipboard";
-            this.buttonCopySHA384StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonCopySHA384StringFromTextToClipboard.AutoEllipsis = true;
-            this.buttonCopySHA384StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA384StringFromTextToClipboard.Image")));
-            this.buttonCopySHA384StringFromTextToClipboard.Location = new System.Drawing.Point(471, 140);
-            this.buttonCopySHA384StringFromTextToClipboard.Name = "buttonCopySHA384StringFromTextToClipboard";
-            this.buttonCopySHA384StringFromTextToClipboard.Size = new System.Drawing.Size(24, 24);
-            this.buttonCopySHA384StringFromTextToClipboard.TabIndex = 18;
-            this.buttonCopySHA384StringFromTextToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonCopySHA384StringFromTextToClipboard, "Copy the SHA384 hash value to the clipboard");
-            this.buttonCopySHA384StringFromTextToClipboard.UseVisualStyleBackColor = true;
-            this.buttonCopySHA384StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopySHA384StringFromTextToClipboard_Click);
-            this.buttonCopySHA384StringFromTextToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA384StringFromTextToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonCopySHA384StringFromTextToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA384StringFromTextToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonCopySHA1StringFromTextToClipboard
-            // 
-            this.buttonCopySHA1StringFromTextToClipboard.AccessibleDescription = "Copy the SHA1 hash value to the clipboard";
-            this.buttonCopySHA1StringFromTextToClipboard.AccessibleName = "Copy SHA1 hash value to clipboard";
-            this.buttonCopySHA1StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonCopySHA1StringFromTextToClipboard.AutoEllipsis = true;
-            this.buttonCopySHA1StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA1StringFromTextToClipboard.Image")));
-            this.buttonCopySHA1StringFromTextToClipboard.Location = new System.Drawing.Point(471, 88);
-            this.buttonCopySHA1StringFromTextToClipboard.Name = "buttonCopySHA1StringFromTextToClipboard";
-            this.buttonCopySHA1StringFromTextToClipboard.Size = new System.Drawing.Size(24, 24);
-            this.buttonCopySHA1StringFromTextToClipboard.TabIndex = 12;
-            this.buttonCopySHA1StringFromTextToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonCopySHA1StringFromTextToClipboard, "Copy the SHA1 hash value to the clipboard");
-            this.buttonCopySHA1StringFromTextToClipboard.UseVisualStyleBackColor = true;
-            this.buttonCopySHA1StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopySHA1StringFromTextToClipboard_Click);
-            this.buttonCopySHA1StringFromTextToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA1StringFromTextToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonCopySHA1StringFromTextToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA1StringFromTextToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // textBoxSHA384StringFromText
-            // 
-            this.textBoxSHA384StringFromText.AccessibleDescription = "Show the SHA384 hash value";
-            this.textBoxSHA384StringFromText.AccessibleName = "SHA384 hash value";
-            this.textBoxSHA384StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxSHA384StringFromText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSHA384StringFromText.Location = new System.Drawing.Point(83, 143);
-            this.textBoxSHA384StringFromText.Name = "textBoxSHA384StringFromText";
-            this.textBoxSHA384StringFromText.ReadOnly = true;
-            this.textBoxSHA384StringFromText.Size = new System.Drawing.Size(382, 20);
-            this.textBoxSHA384StringFromText.TabIndex = 17;
-            this.toolTip.SetToolTip(this.textBoxSHA384StringFromText, "SHA384 hash value");
-            this.textBoxSHA384StringFromText.TextChanged += new System.EventHandler(this.TextBoxSHA384StringFromText_TextChanged);
-            this.textBoxSHA384StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA384StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxSHA384StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA384StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelSHA256StringFromText
-            // 
-            this.labelSHA256StringFromText.AccessibleDescription = "SHA256";
-            this.labelSHA256StringFromText.AccessibleName = "SHA256";
-            this.labelSHA256StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelSHA256StringFromText.AutoEllipsis = true;
-            this.labelSHA256StringFromText.AutoSize = true;
-            this.labelSHA256StringFromText.Location = new System.Drawing.Point(7, 120);
-            this.labelSHA256StringFromText.Name = "labelSHA256StringFromText";
-            this.labelSHA256StringFromText.Size = new System.Drawing.Size(50, 13);
-            this.labelSHA256StringFromText.TabIndex = 13;
-            this.labelSHA256StringFromText.Text = "SHA256:";
-            this.toolTip.SetToolTip(this.labelSHA256StringFromText, "SHA256 hash");
-            this.labelSHA256StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA256StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelSHA256StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA256StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelSHA384StringFromText
-            // 
-            this.labelSHA384StringFromText.AccessibleDescription = "SHA384";
-            this.labelSHA384StringFromText.AccessibleName = "SHA384";
-            this.labelSHA384StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelSHA384StringFromText.AutoEllipsis = true;
-            this.labelSHA384StringFromText.AutoSize = true;
-            this.labelSHA384StringFromText.Location = new System.Drawing.Point(7, 146);
-            this.labelSHA384StringFromText.Name = "labelSHA384StringFromText";
-            this.labelSHA384StringFromText.Size = new System.Drawing.Size(50, 13);
-            this.labelSHA384StringFromText.TabIndex = 16;
-            this.labelSHA384StringFromText.Text = "SHA384:";
-            this.toolTip.SetToolTip(this.labelSHA384StringFromText, "SHA384 hash");
-            this.labelSHA384StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA384StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelSHA384StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelSHA384StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // textBoxSHA256StringFromText
-            // 
-            this.textBoxSHA256StringFromText.AccessibleDescription = "Show the SHA256 hash value";
-            this.textBoxSHA256StringFromText.AccessibleName = "SHA256 hash value";
-            this.textBoxSHA256StringFromText.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxSHA256StringFromText.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSHA256StringFromText.Location = new System.Drawing.Point(83, 117);
-            this.textBoxSHA256StringFromText.Name = "textBoxSHA256StringFromText";
-            this.textBoxSHA256StringFromText.ReadOnly = true;
-            this.textBoxSHA256StringFromText.Size = new System.Drawing.Size(382, 20);
-            this.textBoxSHA256StringFromText.TabIndex = 14;
-            this.toolTip.SetToolTip(this.textBoxSHA256StringFromText, "SHA256 hash value");
-            this.textBoxSHA256StringFromText.TextChanged += new System.EventHandler(this.TextBoxSHA256StringFromText_TextChanged);
-            this.textBoxSHA256StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA256StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxSHA256StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxSHA256StringFromText.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // buttonCopySHA256StringFromTextToClipboard
-            // 
-            this.buttonCopySHA256StringFromTextToClipboard.AccessibleDescription = "Copy the SHA256 hash value to the clipboard";
-            this.buttonCopySHA256StringFromTextToClipboard.AccessibleName = "Copy SHA256 hash value to clipboard";
-            this.buttonCopySHA256StringFromTextToClipboard.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonCopySHA256StringFromTextToClipboard.AutoEllipsis = true;
-            this.buttonCopySHA256StringFromTextToClipboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonCopySHA256StringFromTextToClipboard.Image")));
-            this.buttonCopySHA256StringFromTextToClipboard.Location = new System.Drawing.Point(471, 114);
-            this.buttonCopySHA256StringFromTextToClipboard.Name = "buttonCopySHA256StringFromTextToClipboard";
-            this.buttonCopySHA256StringFromTextToClipboard.Size = new System.Drawing.Size(24, 24);
-            this.buttonCopySHA256StringFromTextToClipboard.TabIndex = 15;
-            this.buttonCopySHA256StringFromTextToClipboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonCopySHA256StringFromTextToClipboard, "Copy the SHA256 hash value to the clipboard");
-            this.buttonCopySHA256StringFromTextToClipboard.UseVisualStyleBackColor = true;
-            this.buttonCopySHA256StringFromTextToClipboard.Click += new System.EventHandler(this.ButtonCopySHA256StringFromTextToClipboard_Click);
-            this.buttonCopySHA256StringFromTextToClipboard.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA256StringFromTextToClipboard.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonCopySHA256StringFromTextToClipboard.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonCopySHA256StringFromTextToClipboard.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // tabPageInfo
-            // 
-            this.tabPageInfo.AccessibleDescription = "Show the info tab page";
-            this.tabPageInfo.AccessibleName = "info tabe page";
-            this.tabPageInfo.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
-            this.tabPageInfo.Controls.Add(this.linkLabelUrl);
-            this.tabPageInfo.Controls.Add(this.textBoxDescription);
-            this.tabPageInfo.Controls.Add(this.labelCompanyName);
-            this.tabPageInfo.Controls.Add(this.labelCopyright);
-            this.tabPageInfo.Controls.Add(this.labelVersion);
-            this.tabPageInfo.Controls.Add(this.labelProductName);
-            this.tabPageInfo.Controls.Add(this.logoPictureBox);
-            this.tabPageInfo.ImageKey = "fatcow_infomation_16.png";
-            this.tabPageInfo.Location = new System.Drawing.Point(4, 23);
-            this.tabPageInfo.Name = "tabPageInfo";
-            this.tabPageInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageInfo.Size = new System.Drawing.Size(503, 204);
-            this.tabPageInfo.TabIndex = 2;
-            this.tabPageInfo.Text = "Info";
-            this.toolTip.SetToolTip(this.tabPageInfo, "Show some info");
-            this.tabPageInfo.ToolTipText = "Show some info";
-            this.tabPageInfo.UseVisualStyleBackColor = true;
-            this.tabPageInfo.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.tabPageInfo.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.tabPageInfo.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.tabPageInfo.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // linkLabelUrl
-            // 
-            this.linkLabelUrl.AccessibleDescription = "Open the Link to Github";
-            this.linkLabelUrl.AccessibleName = "Github link";
-            this.linkLabelUrl.AccessibleRole = System.Windows.Forms.AccessibleRole.Link;
-            this.linkLabelUrl.AutoEllipsis = true;
-            this.linkLabelUrl.AutoSize = true;
-            this.linkLabelUrl.Location = new System.Drawing.Point(112, 74);
-            this.linkLabelUrl.Name = "linkLabelUrl";
-            this.linkLabelUrl.Size = new System.Drawing.Size(208, 13);
-            this.linkLabelUrl.TabIndex = 4;
-            this.linkLabelUrl.TabStop = true;
-            this.linkLabelUrl.Text = "https://github.com/Mijo-Software/Hasher/";
-            this.toolTip.SetToolTip(this.linkLabelUrl, "Open the link to Github");
-            this.linkLabelUrl.Click += new System.EventHandler(this.LinkLabelUrl_Click);
-            this.linkLabelUrl.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.linkLabelUrl.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.linkLabelUrl.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.linkLabelUrl.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // textBoxDescription
-            // 
-            this.textBoxDescription.AccessibleDescription = "Show the description";
-            this.textBoxDescription.AccessibleName = "Description";
-            this.textBoxDescription.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxDescription.Location = new System.Drawing.Point(6, 104);
-            this.textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
-            this.textBoxDescription.Multiline = true;
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.ReadOnly = true;
-            this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDescription.Size = new System.Drawing.Size(489, 88);
-            this.textBoxDescription.TabIndex = 5;
-            this.textBoxDescription.Text = "Description";
-            this.toolTip.SetToolTip(this.textBoxDescription, "Description");
-            this.textBoxDescription.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxDescription.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxDescription.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxDescription.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelCompanyName
-            // 
-            this.labelCompanyName.AccessibleDescription = "Show the company name";
-            this.labelCompanyName.AccessibleName = "Company name";
-            this.labelCompanyName.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelCompanyName.AutoEllipsis = true;
-            this.labelCompanyName.AutoSize = true;
-            this.labelCompanyName.Location = new System.Drawing.Point(112, 57);
-            this.labelCompanyName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
-            this.labelCompanyName.MaximumSize = new System.Drawing.Size(0, 17);
-            this.labelCompanyName.Name = "labelCompanyName";
-            this.labelCompanyName.Size = new System.Drawing.Size(80, 13);
-            this.labelCompanyName.TabIndex = 3;
-            this.labelCompanyName.Text = "Company name";
-            this.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelCompanyName, "Copyright name");
-            this.labelCompanyName.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelCompanyName.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelCompanyName.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelCompanyName.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelCopyright
-            // 
-            this.labelCopyright.AccessibleDescription = "Show the copyright";
-            this.labelCopyright.AccessibleName = "Copyright";
-            this.labelCopyright.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelCopyright.AutoEllipsis = true;
-            this.labelCopyright.AutoSize = true;
-            this.labelCopyright.Location = new System.Drawing.Point(112, 40);
-            this.labelCopyright.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
-            this.labelCopyright.MaximumSize = new System.Drawing.Size(0, 17);
-            this.labelCopyright.Name = "labelCopyright";
-            this.labelCopyright.Size = new System.Drawing.Size(51, 13);
-            this.labelCopyright.TabIndex = 2;
-            this.labelCopyright.Text = "Copyright";
-            this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelCopyright, "Copyright");
-            this.labelCopyright.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelCopyright.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelCopyright.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelCopyright.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelVersion
-            // 
-            this.labelVersion.AccessibleDescription = "Show the version";
-            this.labelVersion.AccessibleName = "Version";
-            this.labelVersion.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelVersion.AutoEllipsis = true;
-            this.labelVersion.AutoSize = true;
-            this.labelVersion.Location = new System.Drawing.Point(112, 23);
-            this.labelVersion.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
-            this.labelVersion.MaximumSize = new System.Drawing.Size(0, 17);
-            this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(42, 13);
-            this.labelVersion.TabIndex = 1;
-            this.labelVersion.Text = "Version";
-            this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelVersion, "Version");
-            this.labelVersion.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelVersion.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelVersion.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelVersion.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // labelProductName
-            // 
-            this.labelProductName.AccessibleDescription = "Show the product name";
-            this.labelProductName.AccessibleName = "Product name";
-            this.labelProductName.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.labelProductName.AutoEllipsis = true;
-            this.labelProductName.AutoSize = true;
-            this.labelProductName.Location = new System.Drawing.Point(112, 6);
-            this.labelProductName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
-            this.labelProductName.MaximumSize = new System.Drawing.Size(0, 17);
-            this.labelProductName.Name = "labelProductName";
-            this.labelProductName.Size = new System.Drawing.Size(73, 13);
-            this.labelProductName.TabIndex = 0;
-            this.labelProductName.Text = "Product name";
-            this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.toolTip.SetToolTip(this.labelProductName, "Product name");
-            this.labelProductName.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelProductName.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.labelProductName.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.labelProductName.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // logoPictureBox
-            // 
-            this.logoPictureBox.AccessibleDescription = "This is the program icon.";
-            this.logoPictureBox.AccessibleName = "program icon";
-            this.logoPictureBox.AccessibleRole = System.Windows.Forms.AccessibleRole.Graphic;
-            this.logoPictureBox.Image = global::Hasher.Properties.Resources.logo_hasher_96;
-            this.logoPictureBox.Location = new System.Drawing.Point(6, 6);
-            this.logoPictureBox.Name = "logoPictureBox";
-            this.logoPictureBox.Size = new System.Drawing.Size(97, 94);
-            this.logoPictureBox.TabIndex = 13;
-            this.logoPictureBox.TabStop = false;
-            this.toolTip.SetToolTip(this.logoPictureBox, "program icon");
-            this.logoPictureBox.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.logoPictureBox.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // tabPageLicense
-            // 
-            this.tabPageLicense.AccessibleDescription = "Show the license tab page";
-            this.tabPageLicense.AccessibleName = "license tab page";
-            this.tabPageLicense.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
-            this.tabPageLicense.Controls.Add(this.textBoxLicense);
-            this.tabPageLicense.ImageKey = "fatcow_script_text_16.png";
-            this.tabPageLicense.Location = new System.Drawing.Point(4, 23);
-            this.tabPageLicense.Name = "tabPageLicense";
-            this.tabPageLicense.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageLicense.Size = new System.Drawing.Size(503, 204);
-            this.tabPageLicense.TabIndex = 3;
-            this.tabPageLicense.Text = "License";
-            this.toolTip.SetToolTip(this.tabPageLicense, "Show the license");
-            this.tabPageLicense.ToolTipText = "Show the license";
-            this.tabPageLicense.UseVisualStyleBackColor = true;
-            this.tabPageLicense.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.tabPageLicense.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.tabPageLicense.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.tabPageLicense.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // textBoxLicense
-            // 
-            this.textBoxLicense.AccessibleDescription = "Show the license";
-            this.textBoxLicense.AccessibleName = "License";
-            this.textBoxLicense.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxLicense.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxLicense.Location = new System.Drawing.Point(3, 3);
-            this.textBoxLicense.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
-            this.textBoxLicense.MaxLength = 9999999;
-            this.textBoxLicense.Multiline = true;
-            this.textBoxLicense.Name = "textBoxLicense";
-            this.textBoxLicense.ReadOnly = true;
-            this.textBoxLicense.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxLicense.Size = new System.Drawing.Size(497, 198);
-            this.textBoxLicense.TabIndex = 5;
-            this.textBoxLicense.Text = resources.GetString("textBoxLicense.Text");
-            this.toolTip.SetToolTip(this.textBoxLicense, "License");
-            this.textBoxLicense.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxLicense.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.textBoxLicense.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.textBoxLicense.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // imageListTab
-            // 
-            this.imageListTab.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListTab.ImageStream")));
-            this.imageListTab.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageListTab.Images.SetKeyName(0, "fatcow_page_16.png");
-            this.imageListTab.Images.SetKeyName(1, "fatcow_text_effects_16.png");
-            this.imageListTab.Images.SetKeyName(2, "fatcow_infomation_16.png");
-            this.imageListTab.Images.SetKeyName(3, "fatcow_script_text_16.png");
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.AccessibleDescription = "Just a status bar";
-            this.statusStrip.AccessibleName = "status bar";
-            this.statusStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.StatusBar;
-            this.statusStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabelInformation});
-            this.statusStrip.Location = new System.Drawing.Point(0, 0);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.ShowItemToolTips = true;
-            this.statusStrip.Size = new System.Drawing.Size(511, 22);
-            this.statusStrip.SizingGrip = false;
-            this.statusStrip.TabIndex = 0;
-            this.statusStrip.TabStop = true;
-            this.statusStrip.Text = "status bar";
-            this.toolTip.SetToolTip(this.statusStrip, "Just a status bar");
-            this.statusStrip.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.statusStrip.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.statusStrip.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.statusStrip.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripStatusLabelInformation
-            // 
-            this.toolStripStatusLabelInformation.AccessibleDescription = "Show some information";
-            this.toolStripStatusLabelInformation.AccessibleName = "information";
-            this.toolStripStatusLabelInformation.AccessibleRole = System.Windows.Forms.AccessibleRole.StaticText;
-            this.toolStripStatusLabelInformation.AutoToolTip = true;
-            this.toolStripStatusLabelInformation.Name = "toolStripStatusLabelInformation";
-            this.toolStripStatusLabelInformation.Size = new System.Drawing.Size(70, 17);
-            this.toolStripStatusLabelInformation.Text = "information";
-            this.toolStripStatusLabelInformation.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.toolStripStatusLabelInformation.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
-            // 
-            // toolStripContainer
-            // 
-            this.toolStripContainer.AccessibleDescription = "Just an container";
-            this.toolStripContainer.AccessibleName = "Container";
-            this.toolStripContainer.AccessibleRole = System.Windows.Forms.AccessibleRole.Pane;
-            // 
-            // toolStripContainer.BottomToolStripPanel
-            // 
-            this.toolStripContainer.BottomToolStripPanel.Controls.Add(this.statusStrip);
-            // 
-            // toolStripContainer.ContentPanel
-            // 
-            this.toolStripContainer.ContentPanel.Controls.Add(this.tabControl);
-            this.toolStripContainer.ContentPanel.Size = new System.Drawing.Size(511, 256);
-            this.toolStripContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.toolStripContainer.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer.Name = "toolStripContainer";
-            this.toolStripContainer.Size = new System.Drawing.Size(511, 278);
-            this.toolStripContainer.TabIndex = 29;
-            this.toolStripContainer.Text = "toolStripContainer";
-            // 
-            // MainForm
-            // 
-            this.AccessibleDescription = "This is the window of the application";
-            this.AccessibleName = "Window of the application";
-            this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
-            this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(511, 278);
-            this.Controls.Add(this.toolStripContainer);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Hasher";
-            this.Load += new System.EventHandler(this.MainForm_Load);
-            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.MainForm_DragDrop);
-            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.MainForm_DragEnter);
-            this.tabControl.ResumeLayout(false);
-            this.tabPageFile.ResumeLayout(false);
-            this.tabPageFile.PerformLayout();
-            this.tabPageText.ResumeLayout(false);
-            this.tabPageText.PerformLayout();
-            this.tabPageInfo.ResumeLayout(false);
-            this.tabPageInfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
-            this.tabPageLicense.ResumeLayout(false);
-            this.tabPageLicense.PerformLayout();
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
-            this.toolStripContainer.BottomToolStripPanel.ResumeLayout(false);
-            this.toolStripContainer.BottomToolStripPanel.PerformLayout();
-            this.toolStripContainer.ContentPanel.ResumeLayout(false);
-            this.toolStripContainer.ResumeLayout(false);
-            this.toolStripContainer.PerformLayout();
-            this.ResumeLayout(false);
-
+			components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+			labelFileName = new Label();
+			textBoxFileName = new TextBox();
+			labelMD5StringFromFile = new Label();
+			textBoxMD5StringFromFile = new TextBox();
+			openFileDialog = new OpenFileDialog();
+			textBoxSHA1StringFromFile = new TextBox();
+			labelSHA1StringFromFile = new Label();
+			textBoxSHA256StringFromFile = new TextBox();
+			labelSHA256StringFromFile = new Label();
+			textBoxSHA384StringFromFile = new TextBox();
+			labelSHA384FromFile = new Label();
+			textBoxSHA512StringFromFile = new TextBox();
+			labelSHA512StringFromFile = new Label();
+			saveFileDialog = new SaveFileDialog();
+			buttonSaveSHA512StringToFile = new Button();
+			buttonSaveSHA384StringToFile = new Button();
+			buttonSaveSHA256StringToFile = new Button();
+			buttonSaveSHA1StringToFile = new Button();
+			buttonSaveMD5StringToFile = new Button();
+			buttonCopySHA512StringFromFileToClipboard = new Button();
+			buttonCopySHA384StringFromFileToClipboard = new Button();
+			buttonCopySHA256StringFromFileToClipboard = new Button();
+			buttonCopySHA1StringFromFileToClipboard = new Button();
+			buttonCopyMD5StringFromFileToClipboard = new Button();
+			buttonOpenAndCalculateHashFromFile = new Button();
+			tabControl = new TabControl();
+			tabPageFile = new TabPage();
+			buttonSaveAllHashValuesInList = new Button();
+			buttonSaveAllHashValuesAutomatically = new Button();
+			tabPageText = new TabPage();
+			buttonSaveAllHashValuesInClipboard = new Button();
+			checkBoxAutoUpdateText = new CheckBox();
+			labelText = new Label();
+			textBoxText = new TextBox();
+			buttonCalculateHashFromText = new Button();
+			labelMD5StringFromText = new Label();
+			textBoxMD5StringFromText = new TextBox();
+			buttonCopyMD5StringFromTextToClipboard = new Button();
+			buttonCopySHA512StringFromTextToClipboard = new Button();
+			textBoxSHA512StringFromText = new TextBox();
+			labelSHA1StringFromText = new Label();
+			labelSHA512StringFromText = new Label();
+			textBoxSHA1StringFromText = new TextBox();
+			buttonCopySHA384StringFromTextToClipboard = new Button();
+			buttonCopySHA1StringFromTextToClipboard = new Button();
+			textBoxSHA384StringFromText = new TextBox();
+			labelSHA256StringFromText = new Label();
+			labelSHA384StringFromText = new Label();
+			textBoxSHA256StringFromText = new TextBox();
+			buttonCopySHA256StringFromTextToClipboard = new Button();
+			tabPageInfo = new TabPage();
+			linkLabelUrl = new LinkLabel();
+			textBoxDescription = new TextBox();
+			labelCompanyName = new Label();
+			labelCopyright = new Label();
+			labelVersion = new Label();
+			labelProductName = new Label();
+			logoPictureBox = new PictureBox();
+			tabPageLicense = new TabPage();
+			textBoxLicense = new TextBox();
+			imageListTab = new ImageList(components);
+			statusStrip = new StatusStrip();
+			toolStripStatusLabelInformation = new ToolStripStatusLabel();
+			toolTip = new ToolTip(components);
+			toolStripContainer = new ToolStripContainer();
+			tabControl.SuspendLayout();
+			tabPageFile.SuspendLayout();
+			tabPageText.SuspendLayout();
+			tabPageInfo.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
+			tabPageLicense.SuspendLayout();
+			statusStrip.SuspendLayout();
+			toolStripContainer.BottomToolStripPanel.SuspendLayout();
+			toolStripContainer.ContentPanel.SuspendLayout();
+			toolStripContainer.SuspendLayout();
+			SuspendLayout();
+			// 
+			// labelFileName
+			// 
+			labelFileName.AccessibleDescription = "file";
+			labelFileName.AccessibleName = "file";
+			labelFileName.AccessibleRole = AccessibleRole.StaticText;
+			labelFileName.AutoSize = true;
+			labelFileName.Location = new Point(8, 14);
+			labelFileName.Margin = new Padding(4, 0, 4, 0);
+			labelFileName.Name = "labelFileName";
+			labelFileName.Size = new Size(28, 15);
+			labelFileName.TabIndex = 0;
+			labelFileName.Text = "File:";
+			toolTip.SetToolTip(labelFileName, "file");
+			labelFileName.Enter += SetStatusbar_Enter;
+			labelFileName.Leave += ClearStatusbar_Leave;
+			labelFileName.MouseEnter += SetStatusbar_Enter;
+			labelFileName.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// textBoxFileName
+			// 
+			textBoxFileName.AccessibleDescription = "Show the path of the file";
+			textBoxFileName.AccessibleName = "Path of the file";
+			textBoxFileName.AccessibleRole = AccessibleRole.Text;
+			textBoxFileName.Location = new Point(46, 10);
+			textBoxFileName.Margin = new Padding(4, 3, 4, 3);
+			textBoxFileName.Name = "textBoxFileName";
+			textBoxFileName.ReadOnly = true;
+			textBoxFileName.Size = new Size(401, 23);
+			textBoxFileName.TabIndex = 1;
+			toolTip.SetToolTip(textBoxFileName, "Path of the file");
+			textBoxFileName.Enter += SetStatusbar_Enter;
+			textBoxFileName.Leave += ClearStatusbar_Leave;
+			textBoxFileName.MouseEnter += SetStatusbar_Enter;
+			textBoxFileName.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// labelMD5StringFromFile
+			// 
+			labelMD5StringFromFile.AccessibleDescription = "MD5";
+			labelMD5StringFromFile.AccessibleName = "MD5";
+			labelMD5StringFromFile.AccessibleRole = AccessibleRole.StaticText;
+			labelMD5StringFromFile.AutoSize = true;
+			labelMD5StringFromFile.Location = new Point(9, 48);
+			labelMD5StringFromFile.Margin = new Padding(4, 0, 4, 0);
+			labelMD5StringFromFile.Name = "labelMD5StringFromFile";
+			labelMD5StringFromFile.Size = new Size(35, 15);
+			labelMD5StringFromFile.TabIndex = 4;
+			labelMD5StringFromFile.Text = "MD5:";
+			toolTip.SetToolTip(labelMD5StringFromFile, "MD5 hash");
+			labelMD5StringFromFile.Enter += SetStatusbar_Enter;
+			labelMD5StringFromFile.Leave += ClearStatusbar_Leave;
+			labelMD5StringFromFile.MouseEnter += SetStatusbar_Enter;
+			labelMD5StringFromFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// textBoxMD5StringFromFile
+			// 
+			textBoxMD5StringFromFile.AccessibleDescription = "Show the MD5 hash value";
+			textBoxMD5StringFromFile.AccessibleName = "MD5 hash value";
+			textBoxMD5StringFromFile.AccessibleRole = AccessibleRole.Text;
+			textBoxMD5StringFromFile.Font = new Font("Courier New", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+			textBoxMD5StringFromFile.Location = new Point(67, 45);
+			textBoxMD5StringFromFile.Margin = new Padding(4, 3, 4, 3);
+			textBoxMD5StringFromFile.Name = "textBoxMD5StringFromFile";
+			textBoxMD5StringFromFile.ReadOnly = true;
+			textBoxMD5StringFromFile.Size = new Size(441, 20);
+			textBoxMD5StringFromFile.TabIndex = 5;
+			toolTip.SetToolTip(textBoxMD5StringFromFile, "MD5 hash value");
+			textBoxMD5StringFromFile.TextChanged += TextBoxMD5StringFromFile_TextChanged;
+			textBoxMD5StringFromFile.Enter += SetStatusbar_Enter;
+			textBoxMD5StringFromFile.Leave += ClearStatusbar_Leave;
+			textBoxMD5StringFromFile.MouseEnter += SetStatusbar_Enter;
+			textBoxMD5StringFromFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// openFileDialog
+			// 
+			openFileDialog.SupportMultiDottedExtensions = true;
+			openFileDialog.Title = "Load file";
+			// 
+			// textBoxSHA1StringFromFile
+			// 
+			textBoxSHA1StringFromFile.AccessibleDescription = "Show the SHA1 hash value";
+			textBoxSHA1StringFromFile.AccessibleName = "SHA1 hash value";
+			textBoxSHA1StringFromFile.AccessibleRole = AccessibleRole.Text;
+			textBoxSHA1StringFromFile.Font = new Font("Courier New", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+			textBoxSHA1StringFromFile.Location = new Point(67, 79);
+			textBoxSHA1StringFromFile.Margin = new Padding(4, 3, 4, 3);
+			textBoxSHA1StringFromFile.Name = "textBoxSHA1StringFromFile";
+			textBoxSHA1StringFromFile.ReadOnly = true;
+			textBoxSHA1StringFromFile.Size = new Size(441, 20);
+			textBoxSHA1StringFromFile.TabIndex = 13;
+			toolTip.SetToolTip(textBoxSHA1StringFromFile, "SHA1 hash value");
+			textBoxSHA1StringFromFile.TextChanged += TextBoxSHA1StringFromFile_TextChanged;
+			textBoxSHA1StringFromFile.Enter += SetStatusbar_Enter;
+			textBoxSHA1StringFromFile.Leave += ClearStatusbar_Leave;
+			textBoxSHA1StringFromFile.MouseEnter += SetStatusbar_Enter;
+			textBoxSHA1StringFromFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// labelSHA1StringFromFile
+			// 
+			labelSHA1StringFromFile.AccessibleDescription = "SHA1";
+			labelSHA1StringFromFile.AccessibleName = "SHA1";
+			labelSHA1StringFromFile.AccessibleRole = AccessibleRole.StaticText;
+			labelSHA1StringFromFile.AutoSize = true;
+			labelSHA1StringFromFile.Location = new Point(9, 82);
+			labelSHA1StringFromFile.Margin = new Padding(4, 0, 4, 0);
+			labelSHA1StringFromFile.Name = "labelSHA1StringFromFile";
+			labelSHA1StringFromFile.Size = new Size(39, 15);
+			labelSHA1StringFromFile.TabIndex = 12;
+			labelSHA1StringFromFile.Text = "SHA1:";
+			toolTip.SetToolTip(labelSHA1StringFromFile, "SHA1 hash");
+			labelSHA1StringFromFile.Enter += SetStatusbar_Enter;
+			labelSHA1StringFromFile.Leave += ClearStatusbar_Leave;
+			labelSHA1StringFromFile.MouseEnter += SetStatusbar_Enter;
+			labelSHA1StringFromFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// textBoxSHA256StringFromFile
+			// 
+			textBoxSHA256StringFromFile.AccessibleDescription = "Show the SHA256 hash value";
+			textBoxSHA256StringFromFile.AccessibleName = "SHA256 hash value";
+			textBoxSHA256StringFromFile.AccessibleRole = AccessibleRole.Text;
+			textBoxSHA256StringFromFile.Font = new Font("Courier New", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+			textBoxSHA256StringFromFile.Location = new Point(67, 113);
+			textBoxSHA256StringFromFile.Margin = new Padding(4, 3, 4, 3);
+			textBoxSHA256StringFromFile.Name = "textBoxSHA256StringFromFile";
+			textBoxSHA256StringFromFile.ReadOnly = true;
+			textBoxSHA256StringFromFile.Size = new Size(442, 20);
+			textBoxSHA256StringFromFile.TabIndex = 17;
+			toolTip.SetToolTip(textBoxSHA256StringFromFile, "SHA256 hash value");
+			textBoxSHA256StringFromFile.TextChanged += TextBoxSHA256StringFromFile_TextChanged;
+			textBoxSHA256StringFromFile.Enter += SetStatusbar_Enter;
+			textBoxSHA256StringFromFile.Leave += ClearStatusbar_Leave;
+			textBoxSHA256StringFromFile.MouseEnter += SetStatusbar_Enter;
+			textBoxSHA256StringFromFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// labelSHA256StringFromFile
+			// 
+			labelSHA256StringFromFile.AccessibleDescription = "SHA256";
+			labelSHA256StringFromFile.AccessibleName = "SHA256";
+			labelSHA256StringFromFile.AccessibleRole = AccessibleRole.StaticText;
+			labelSHA256StringFromFile.AutoSize = true;
+			labelSHA256StringFromFile.Location = new Point(9, 116);
+			labelSHA256StringFromFile.Margin = new Padding(4, 0, 4, 0);
+			labelSHA256StringFromFile.Name = "labelSHA256StringFromFile";
+			labelSHA256StringFromFile.Size = new Size(51, 15);
+			labelSHA256StringFromFile.TabIndex = 16;
+			labelSHA256StringFromFile.Text = "SHA256:";
+			toolTip.SetToolTip(labelSHA256StringFromFile, "SHA256 hash");
+			labelSHA256StringFromFile.Enter += SetStatusbar_Enter;
+			labelSHA256StringFromFile.Leave += ClearStatusbar_Leave;
+			labelSHA256StringFromFile.MouseEnter += SetStatusbar_Enter;
+			labelSHA256StringFromFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// textBoxSHA384StringFromFile
+			// 
+			textBoxSHA384StringFromFile.AccessibleDescription = "Show the SHA384 hash value";
+			textBoxSHA384StringFromFile.AccessibleName = "SHA384 hash value";
+			textBoxSHA384StringFromFile.AccessibleRole = AccessibleRole.Text;
+			textBoxSHA384StringFromFile.Font = new Font("Courier New", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+			textBoxSHA384StringFromFile.Location = new Point(67, 147);
+			textBoxSHA384StringFromFile.Margin = new Padding(4, 3, 4, 3);
+			textBoxSHA384StringFromFile.Name = "textBoxSHA384StringFromFile";
+			textBoxSHA384StringFromFile.ReadOnly = true;
+			textBoxSHA384StringFromFile.Size = new Size(442, 20);
+			textBoxSHA384StringFromFile.TabIndex = 21;
+			toolTip.SetToolTip(textBoxSHA384StringFromFile, "SHA384 hash value");
+			textBoxSHA384StringFromFile.TextChanged += TextBoxSHA384StringFromFile_TextChanged;
+			textBoxSHA384StringFromFile.Enter += SetStatusbar_Enter;
+			textBoxSHA384StringFromFile.Leave += ClearStatusbar_Leave;
+			textBoxSHA384StringFromFile.MouseEnter += SetStatusbar_Enter;
+			textBoxSHA384StringFromFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// labelSHA384FromFile
+			// 
+			labelSHA384FromFile.AccessibleDescription = "SHA384";
+			labelSHA384FromFile.AccessibleName = "SHA384";
+			labelSHA384FromFile.AccessibleRole = AccessibleRole.StaticText;
+			labelSHA384FromFile.AutoSize = true;
+			labelSHA384FromFile.Location = new Point(9, 150);
+			labelSHA384FromFile.Margin = new Padding(4, 0, 4, 0);
+			labelSHA384FromFile.Name = "labelSHA384FromFile";
+			labelSHA384FromFile.Size = new Size(51, 15);
+			labelSHA384FromFile.TabIndex = 20;
+			labelSHA384FromFile.Text = "SHA384:";
+			toolTip.SetToolTip(labelSHA384FromFile, "SHA384 hash");
+			labelSHA384FromFile.Enter += SetStatusbar_Enter;
+			labelSHA384FromFile.Leave += ClearStatusbar_Leave;
+			labelSHA384FromFile.MouseEnter += SetStatusbar_Enter;
+			labelSHA384FromFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// textBoxSHA512StringFromFile
+			// 
+			textBoxSHA512StringFromFile.AccessibleDescription = "Show the SHA512 hash value";
+			textBoxSHA512StringFromFile.AccessibleName = "SHA512 hash value";
+			textBoxSHA512StringFromFile.AccessibleRole = AccessibleRole.Text;
+			textBoxSHA512StringFromFile.Font = new Font("Courier New", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+			textBoxSHA512StringFromFile.Location = new Point(67, 181);
+			textBoxSHA512StringFromFile.Margin = new Padding(4, 3, 4, 3);
+			textBoxSHA512StringFromFile.Name = "textBoxSHA512StringFromFile";
+			textBoxSHA512StringFromFile.ReadOnly = true;
+			textBoxSHA512StringFromFile.Size = new Size(441, 20);
+			textBoxSHA512StringFromFile.TabIndex = 25;
+			toolTip.SetToolTip(textBoxSHA512StringFromFile, "SHA512 hash value");
+			textBoxSHA512StringFromFile.TextChanged += TextBoxSHA512StringFromFile_TextChanged;
+			textBoxSHA512StringFromFile.Enter += SetStatusbar_Enter;
+			textBoxSHA512StringFromFile.Leave += ClearStatusbar_Leave;
+			textBoxSHA512StringFromFile.MouseEnter += SetStatusbar_Enter;
+			textBoxSHA512StringFromFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// labelSHA512StringFromFile
+			// 
+			labelSHA512StringFromFile.AccessibleDescription = "SHA512";
+			labelSHA512StringFromFile.AccessibleName = "SHA512";
+			labelSHA512StringFromFile.AccessibleRole = AccessibleRole.StaticText;
+			labelSHA512StringFromFile.AutoSize = true;
+			labelSHA512StringFromFile.Location = new Point(8, 184);
+			labelSHA512StringFromFile.Margin = new Padding(4, 0, 4, 0);
+			labelSHA512StringFromFile.Name = "labelSHA512StringFromFile";
+			labelSHA512StringFromFile.Size = new Size(51, 15);
+			labelSHA512StringFromFile.TabIndex = 24;
+			labelSHA512StringFromFile.Text = "SHA512:";
+			toolTip.SetToolTip(labelSHA512StringFromFile, "SHA512 hash");
+			labelSHA512StringFromFile.Enter += SetStatusbar_Enter;
+			labelSHA512StringFromFile.Leave += ClearStatusbar_Leave;
+			labelSHA512StringFromFile.MouseEnter += SetStatusbar_Enter;
+			labelSHA512StringFromFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// saveFileDialog
+			// 
+			saveFileDialog.SupportMultiDottedExtensions = true;
+			saveFileDialog.Title = "Save hash value to file";
+			// 
+			// buttonSaveSHA512StringToFile
+			// 
+			buttonSaveSHA512StringToFile.AccessibleDescription = "Save the SHA512 hash value in a file";
+			buttonSaveSHA512StringToFile.AccessibleName = "Save SHA512 hash to file";
+			buttonSaveSHA512StringToFile.AccessibleRole = AccessibleRole.PushButton;
+			buttonSaveSHA512StringToFile.AutoEllipsis = true;
+			buttonSaveSHA512StringToFile.Image = (Image)resources.GetObject("buttonSaveSHA512StringToFile.Image");
+			buttonSaveSHA512StringToFile.Location = new Point(552, 177);
+			buttonSaveSHA512StringToFile.Margin = new Padding(4, 3, 4, 3);
+			buttonSaveSHA512StringToFile.Name = "buttonSaveSHA512StringToFile";
+			buttonSaveSHA512StringToFile.Size = new Size(28, 28);
+			buttonSaveSHA512StringToFile.TabIndex = 27;
+			buttonSaveSHA512StringToFile.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonSaveSHA512StringToFile, "Save the SHA512 hash value in a file");
+			buttonSaveSHA512StringToFile.UseVisualStyleBackColor = true;
+			buttonSaveSHA512StringToFile.Click += ButtonSaveSHA512StringToFile_Click;
+			buttonSaveSHA512StringToFile.Enter += SetStatusbar_Enter;
+			buttonSaveSHA512StringToFile.Leave += ClearStatusbar_Leave;
+			buttonSaveSHA512StringToFile.MouseEnter += SetStatusbar_Enter;
+			buttonSaveSHA512StringToFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonSaveSHA384StringToFile
+			// 
+			buttonSaveSHA384StringToFile.AccessibleDescription = "Save the SHA384 hash value in a file";
+			buttonSaveSHA384StringToFile.AccessibleName = "Save SHA384 hash to file";
+			buttonSaveSHA384StringToFile.AccessibleRole = AccessibleRole.PushButton;
+			buttonSaveSHA384StringToFile.AutoEllipsis = true;
+			buttonSaveSHA384StringToFile.Image = (Image)resources.GetObject("buttonSaveSHA384StringToFile.Image");
+			buttonSaveSHA384StringToFile.Location = new Point(552, 143);
+			buttonSaveSHA384StringToFile.Margin = new Padding(4, 3, 4, 3);
+			buttonSaveSHA384StringToFile.Name = "buttonSaveSHA384StringToFile";
+			buttonSaveSHA384StringToFile.Size = new Size(28, 28);
+			buttonSaveSHA384StringToFile.TabIndex = 23;
+			buttonSaveSHA384StringToFile.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonSaveSHA384StringToFile, "Save the SHA384 hash value in a file");
+			buttonSaveSHA384StringToFile.UseVisualStyleBackColor = true;
+			buttonSaveSHA384StringToFile.Click += ButtonSaveSHA384StringToFile_Click;
+			buttonSaveSHA384StringToFile.Enter += SetStatusbar_Enter;
+			buttonSaveSHA384StringToFile.Leave += ClearStatusbar_Leave;
+			buttonSaveSHA384StringToFile.MouseEnter += SetStatusbar_Enter;
+			buttonSaveSHA384StringToFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonSaveSHA256StringToFile
+			// 
+			buttonSaveSHA256StringToFile.AccessibleDescription = "Save the SHA1 hash value in a file";
+			buttonSaveSHA256StringToFile.AccessibleName = "Save SHA1 hash to file";
+			buttonSaveSHA256StringToFile.AccessibleRole = AccessibleRole.PushButton;
+			buttonSaveSHA256StringToFile.AutoEllipsis = true;
+			buttonSaveSHA256StringToFile.Image = (Image)resources.GetObject("buttonSaveSHA256StringToFile.Image");
+			buttonSaveSHA256StringToFile.Location = new Point(552, 109);
+			buttonSaveSHA256StringToFile.Margin = new Padding(4, 3, 4, 3);
+			buttonSaveSHA256StringToFile.Name = "buttonSaveSHA256StringToFile";
+			buttonSaveSHA256StringToFile.Size = new Size(28, 28);
+			buttonSaveSHA256StringToFile.TabIndex = 19;
+			buttonSaveSHA256StringToFile.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonSaveSHA256StringToFile, "Save the SHA256 hash value in a file");
+			buttonSaveSHA256StringToFile.UseVisualStyleBackColor = true;
+			buttonSaveSHA256StringToFile.Click += ButtonSaveSHA256StringToFile_Click;
+			buttonSaveSHA256StringToFile.Enter += SetStatusbar_Enter;
+			buttonSaveSHA256StringToFile.Leave += ClearStatusbar_Leave;
+			buttonSaveSHA256StringToFile.MouseEnter += SetStatusbar_Enter;
+			buttonSaveSHA256StringToFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonSaveSHA1StringToFile
+			// 
+			buttonSaveSHA1StringToFile.AccessibleDescription = "Save the SHA1 hash value in a file";
+			buttonSaveSHA1StringToFile.AccessibleName = "Save SHA1 hash to file";
+			buttonSaveSHA1StringToFile.AccessibleRole = AccessibleRole.PushButton;
+			buttonSaveSHA1StringToFile.AutoEllipsis = true;
+			buttonSaveSHA1StringToFile.Image = (Image)resources.GetObject("buttonSaveSHA1StringToFile.Image");
+			buttonSaveSHA1StringToFile.Location = new Point(552, 75);
+			buttonSaveSHA1StringToFile.Margin = new Padding(4, 3, 4, 3);
+			buttonSaveSHA1StringToFile.Name = "buttonSaveSHA1StringToFile";
+			buttonSaveSHA1StringToFile.Size = new Size(28, 28);
+			buttonSaveSHA1StringToFile.TabIndex = 15;
+			buttonSaveSHA1StringToFile.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonSaveSHA1StringToFile, "Save the SHA1 hash value in a file");
+			buttonSaveSHA1StringToFile.UseVisualStyleBackColor = true;
+			buttonSaveSHA1StringToFile.Click += ButtonSaveSHA1StringToFile_Click;
+			buttonSaveSHA1StringToFile.Enter += SetStatusbar_Enter;
+			buttonSaveSHA1StringToFile.Leave += ClearStatusbar_Leave;
+			buttonSaveSHA1StringToFile.MouseEnter += SetStatusbar_Enter;
+			buttonSaveSHA1StringToFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonSaveMD5StringToFile
+			// 
+			buttonSaveMD5StringToFile.AccessibleDescription = "Save the MD5 hash value in a file";
+			buttonSaveMD5StringToFile.AccessibleName = "Save MD5 hash to file";
+			buttonSaveMD5StringToFile.AccessibleRole = AccessibleRole.PushButton;
+			buttonSaveMD5StringToFile.AutoEllipsis = true;
+			buttonSaveMD5StringToFile.Image = (Image)resources.GetObject("buttonSaveMD5StringToFile.Image");
+			buttonSaveMD5StringToFile.Location = new Point(552, 41);
+			buttonSaveMD5StringToFile.Margin = new Padding(4, 3, 4, 3);
+			buttonSaveMD5StringToFile.Name = "buttonSaveMD5StringToFile";
+			buttonSaveMD5StringToFile.Size = new Size(28, 28);
+			buttonSaveMD5StringToFile.TabIndex = 7;
+			buttonSaveMD5StringToFile.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonSaveMD5StringToFile, "Save the MD5 hash value in a file");
+			buttonSaveMD5StringToFile.UseVisualStyleBackColor = true;
+			buttonSaveMD5StringToFile.Click += ButtonSaveMD5StringToFile_Click;
+			buttonSaveMD5StringToFile.Enter += SetStatusbar_Enter;
+			buttonSaveMD5StringToFile.Leave += ClearStatusbar_Leave;
+			buttonSaveMD5StringToFile.MouseEnter += SetStatusbar_Enter;
+			buttonSaveMD5StringToFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonCopySHA512StringFromFileToClipboard
+			// 
+			buttonCopySHA512StringFromFileToClipboard.AccessibleDescription = "Copy the SHA512 hash value to the clipboard";
+			buttonCopySHA512StringFromFileToClipboard.AccessibleName = "Copy SHA512 hash value to clipboard";
+			buttonCopySHA512StringFromFileToClipboard.AccessibleRole = AccessibleRole.PushButton;
+			buttonCopySHA512StringFromFileToClipboard.AutoEllipsis = true;
+			buttonCopySHA512StringFromFileToClipboard.Image = (Image)resources.GetObject("buttonCopySHA512StringFromFileToClipboard.Image");
+			buttonCopySHA512StringFromFileToClipboard.Location = new Point(517, 177);
+			buttonCopySHA512StringFromFileToClipboard.Margin = new Padding(4, 3, 4, 3);
+			buttonCopySHA512StringFromFileToClipboard.Name = "buttonCopySHA512StringFromFileToClipboard";
+			buttonCopySHA512StringFromFileToClipboard.Size = new Size(28, 28);
+			buttonCopySHA512StringFromFileToClipboard.TabIndex = 26;
+			buttonCopySHA512StringFromFileToClipboard.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonCopySHA512StringFromFileToClipboard, "Copy the SHA512 hash value to the clipboard");
+			buttonCopySHA512StringFromFileToClipboard.UseVisualStyleBackColor = true;
+			buttonCopySHA512StringFromFileToClipboard.Click += ButtonCopySHA512StringFromFileToClipboard_Click;
+			buttonCopySHA512StringFromFileToClipboard.Enter += SetStatusbar_Enter;
+			buttonCopySHA512StringFromFileToClipboard.Leave += ClearStatusbar_Leave;
+			buttonCopySHA512StringFromFileToClipboard.MouseEnter += SetStatusbar_Enter;
+			buttonCopySHA512StringFromFileToClipboard.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonCopySHA384StringFromFileToClipboard
+			// 
+			buttonCopySHA384StringFromFileToClipboard.AccessibleDescription = "Copy the SHA384 hash value to the clipboard";
+			buttonCopySHA384StringFromFileToClipboard.AccessibleName = "Copy SHA384 hash value to clipboard";
+			buttonCopySHA384StringFromFileToClipboard.AccessibleRole = AccessibleRole.PushButton;
+			buttonCopySHA384StringFromFileToClipboard.AutoEllipsis = true;
+			buttonCopySHA384StringFromFileToClipboard.Image = (Image)resources.GetObject("buttonCopySHA384StringFromFileToClipboard.Image");
+			buttonCopySHA384StringFromFileToClipboard.Location = new Point(517, 143);
+			buttonCopySHA384StringFromFileToClipboard.Margin = new Padding(4, 3, 4, 3);
+			buttonCopySHA384StringFromFileToClipboard.Name = "buttonCopySHA384StringFromFileToClipboard";
+			buttonCopySHA384StringFromFileToClipboard.Size = new Size(28, 28);
+			buttonCopySHA384StringFromFileToClipboard.TabIndex = 22;
+			buttonCopySHA384StringFromFileToClipboard.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonCopySHA384StringFromFileToClipboard, "Copy the SHA384 hash value to the clipboard");
+			buttonCopySHA384StringFromFileToClipboard.UseVisualStyleBackColor = true;
+			buttonCopySHA384StringFromFileToClipboard.Click += ButtonCopySHA384StringFromFileToClipboard_Click;
+			buttonCopySHA384StringFromFileToClipboard.Enter += SetStatusbar_Enter;
+			buttonCopySHA384StringFromFileToClipboard.Leave += ClearStatusbar_Leave;
+			buttonCopySHA384StringFromFileToClipboard.MouseEnter += SetStatusbar_Enter;
+			buttonCopySHA384StringFromFileToClipboard.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonCopySHA256StringFromFileToClipboard
+			// 
+			buttonCopySHA256StringFromFileToClipboard.AccessibleDescription = "Copy the SHA256 hash value to the clipboard";
+			buttonCopySHA256StringFromFileToClipboard.AccessibleName = "Copy SHA256 hash value to clipboard";
+			buttonCopySHA256StringFromFileToClipboard.AccessibleRole = AccessibleRole.PushButton;
+			buttonCopySHA256StringFromFileToClipboard.AutoEllipsis = true;
+			buttonCopySHA256StringFromFileToClipboard.Image = (Image)resources.GetObject("buttonCopySHA256StringFromFileToClipboard.Image");
+			buttonCopySHA256StringFromFileToClipboard.Location = new Point(517, 109);
+			buttonCopySHA256StringFromFileToClipboard.Margin = new Padding(4, 3, 4, 3);
+			buttonCopySHA256StringFromFileToClipboard.Name = "buttonCopySHA256StringFromFileToClipboard";
+			buttonCopySHA256StringFromFileToClipboard.Size = new Size(28, 28);
+			buttonCopySHA256StringFromFileToClipboard.TabIndex = 18;
+			buttonCopySHA256StringFromFileToClipboard.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonCopySHA256StringFromFileToClipboard, "Copy the SHA256 hash value to the clipboard");
+			buttonCopySHA256StringFromFileToClipboard.UseVisualStyleBackColor = true;
+			buttonCopySHA256StringFromFileToClipboard.Click += ButtonCopySHA256StringFromFileToClipboard_Click;
+			buttonCopySHA256StringFromFileToClipboard.Enter += SetStatusbar_Enter;
+			buttonCopySHA256StringFromFileToClipboard.Leave += ClearStatusbar_Leave;
+			buttonCopySHA256StringFromFileToClipboard.MouseEnter += SetStatusbar_Enter;
+			buttonCopySHA256StringFromFileToClipboard.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonCopySHA1StringFromFileToClipboard
+			// 
+			buttonCopySHA1StringFromFileToClipboard.AccessibleDescription = "Copy the SHA1 hash value to the clipboard";
+			buttonCopySHA1StringFromFileToClipboard.AccessibleName = "Copy SHA1 hash value to clipboard";
+			buttonCopySHA1StringFromFileToClipboard.AccessibleRole = AccessibleRole.PushButton;
+			buttonCopySHA1StringFromFileToClipboard.AutoEllipsis = true;
+			buttonCopySHA1StringFromFileToClipboard.Image = (Image)resources.GetObject("buttonCopySHA1StringFromFileToClipboard.Image");
+			buttonCopySHA1StringFromFileToClipboard.Location = new Point(516, 75);
+			buttonCopySHA1StringFromFileToClipboard.Margin = new Padding(4, 3, 4, 3);
+			buttonCopySHA1StringFromFileToClipboard.Name = "buttonCopySHA1StringFromFileToClipboard";
+			buttonCopySHA1StringFromFileToClipboard.Size = new Size(28, 28);
+			buttonCopySHA1StringFromFileToClipboard.TabIndex = 14;
+			buttonCopySHA1StringFromFileToClipboard.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonCopySHA1StringFromFileToClipboard, "Copy the SHA1 hash value to the clipboard");
+			buttonCopySHA1StringFromFileToClipboard.UseVisualStyleBackColor = true;
+			buttonCopySHA1StringFromFileToClipboard.Click += ButtonCopySHA1StringFromFileToClipboard_Click;
+			buttonCopySHA1StringFromFileToClipboard.Enter += SetStatusbar_Enter;
+			buttonCopySHA1StringFromFileToClipboard.Leave += ClearStatusbar_Leave;
+			buttonCopySHA1StringFromFileToClipboard.MouseEnter += SetStatusbar_Enter;
+			buttonCopySHA1StringFromFileToClipboard.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonCopyMD5StringFromFileToClipboard
+			// 
+			buttonCopyMD5StringFromFileToClipboard.AccessibleDescription = "Copy the MD5 hash value to the clipboard";
+			buttonCopyMD5StringFromFileToClipboard.AccessibleName = "Copy MD5 hash value to clipboard";
+			buttonCopyMD5StringFromFileToClipboard.AccessibleRole = AccessibleRole.PushButton;
+			buttonCopyMD5StringFromFileToClipboard.AutoEllipsis = true;
+			buttonCopyMD5StringFromFileToClipboard.Image = (Image)resources.GetObject("buttonCopyMD5StringFromFileToClipboard.Image");
+			buttonCopyMD5StringFromFileToClipboard.Location = new Point(516, 41);
+			buttonCopyMD5StringFromFileToClipboard.Margin = new Padding(4, 3, 4, 3);
+			buttonCopyMD5StringFromFileToClipboard.Name = "buttonCopyMD5StringFromFileToClipboard";
+			buttonCopyMD5StringFromFileToClipboard.Size = new Size(28, 28);
+			buttonCopyMD5StringFromFileToClipboard.TabIndex = 6;
+			buttonCopyMD5StringFromFileToClipboard.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonCopyMD5StringFromFileToClipboard, "Copy the MD5 hash value to the clipboard");
+			buttonCopyMD5StringFromFileToClipboard.UseVisualStyleBackColor = true;
+			buttonCopyMD5StringFromFileToClipboard.Click += ButtonCopyMD5StringFromFileToClipboard_Click;
+			buttonCopyMD5StringFromFileToClipboard.Enter += SetStatusbar_Enter;
+			buttonCopyMD5StringFromFileToClipboard.Leave += ClearStatusbar_Leave;
+			buttonCopyMD5StringFromFileToClipboard.MouseEnter += SetStatusbar_Enter;
+			buttonCopyMD5StringFromFileToClipboard.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonOpenAndCalculateHashFromFile
+			// 
+			buttonOpenAndCalculateHashFromFile.AccessibleDescription = "Open a file and calculate the hash values";
+			buttonOpenAndCalculateHashFromFile.AccessibleName = "Open and calculate hash values from file";
+			buttonOpenAndCalculateHashFromFile.AccessibleRole = AccessibleRole.PushButton;
+			buttonOpenAndCalculateHashFromFile.AutoEllipsis = true;
+			buttonOpenAndCalculateHashFromFile.Image = Properties.Resources.fatcow_document_hash_tag_16;
+			buttonOpenAndCalculateHashFromFile.ImageAlign = ContentAlignment.MiddleLeft;
+			buttonOpenAndCalculateHashFromFile.Location = new Point(455, 7);
+			buttonOpenAndCalculateHashFromFile.Margin = new Padding(4, 3, 4, 3);
+			buttonOpenAndCalculateHashFromFile.Name = "buttonOpenAndCalculateHashFromFile";
+			buttonOpenAndCalculateHashFromFile.Size = new Size(125, 28);
+			buttonOpenAndCalculateHashFromFile.TabIndex = 2;
+			buttonOpenAndCalculateHashFromFile.Text = "Open && Calculate";
+			buttonOpenAndCalculateHashFromFile.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonOpenAndCalculateHashFromFile, "Open a file and calculate the hash value");
+			buttonOpenAndCalculateHashFromFile.UseVisualStyleBackColor = true;
+			buttonOpenAndCalculateHashFromFile.Click += ButtonOpenAndCalculateFile_Click;
+			buttonOpenAndCalculateHashFromFile.Enter += SetStatusbar_Enter;
+			buttonOpenAndCalculateHashFromFile.Leave += ClearStatusbar_Leave;
+			buttonOpenAndCalculateHashFromFile.MouseEnter += SetStatusbar_Enter;
+			buttonOpenAndCalculateHashFromFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// tabControl
+			// 
+			tabControl.AccessibleDescription = "Just a tab control";
+			tabControl.AccessibleName = "tab control";
+			tabControl.AccessibleRole = AccessibleRole.Pane;
+			tabControl.AllowDrop = true;
+			tabControl.Controls.Add(tabPageFile);
+			tabControl.Controls.Add(tabPageText);
+			tabControl.Controls.Add(tabPageInfo);
+			tabControl.Controls.Add(tabPageLicense);
+			tabControl.Dock = DockStyle.Fill;
+			tabControl.HotTrack = true;
+			tabControl.ImageList = imageListTab;
+			tabControl.Location = new Point(0, 0);
+			tabControl.Margin = new Padding(4, 3, 4, 3);
+			tabControl.Name = "tabControl";
+			tabControl.SelectedIndex = 0;
+			tabControl.ShowToolTips = true;
+			tabControl.Size = new Size(596, 276);
+			tabControl.TabIndex = 0;
+			tabControl.DragDrop += MainForm_DragDrop;
+			tabControl.DragEnter += MainForm_DragEnter;
+			// 
+			// tabPageFile
+			// 
+			tabPageFile.AccessibleDescription = "Show the file tab page";
+			tabPageFile.AccessibleName = "file tab page";
+			tabPageFile.AccessibleRole = AccessibleRole.PageTab;
+			tabPageFile.Controls.Add(buttonSaveAllHashValuesInList);
+			tabPageFile.Controls.Add(buttonSaveAllHashValuesAutomatically);
+			tabPageFile.Controls.Add(labelFileName);
+			tabPageFile.Controls.Add(textBoxFileName);
+			tabPageFile.Controls.Add(buttonSaveSHA512StringToFile);
+			tabPageFile.Controls.Add(buttonOpenAndCalculateHashFromFile);
+			tabPageFile.Controls.Add(buttonSaveSHA384StringToFile);
+			tabPageFile.Controls.Add(labelMD5StringFromFile);
+			tabPageFile.Controls.Add(buttonSaveSHA256StringToFile);
+			tabPageFile.Controls.Add(textBoxMD5StringFromFile);
+			tabPageFile.Controls.Add(buttonSaveSHA1StringToFile);
+			tabPageFile.Controls.Add(buttonCopyMD5StringFromFileToClipboard);
+			tabPageFile.Controls.Add(buttonSaveMD5StringToFile);
+			tabPageFile.Controls.Add(buttonCopySHA512StringFromFileToClipboard);
+			tabPageFile.Controls.Add(textBoxSHA512StringFromFile);
+			tabPageFile.Controls.Add(labelSHA1StringFromFile);
+			tabPageFile.Controls.Add(labelSHA512StringFromFile);
+			tabPageFile.Controls.Add(textBoxSHA1StringFromFile);
+			tabPageFile.Controls.Add(buttonCopySHA384StringFromFileToClipboard);
+			tabPageFile.Controls.Add(buttonCopySHA1StringFromFileToClipboard);
+			tabPageFile.Controls.Add(textBoxSHA384StringFromFile);
+			tabPageFile.Controls.Add(labelSHA256StringFromFile);
+			tabPageFile.Controls.Add(labelSHA384FromFile);
+			tabPageFile.Controls.Add(textBoxSHA256StringFromFile);
+			tabPageFile.Controls.Add(buttonCopySHA256StringFromFileToClipboard);
+			tabPageFile.ImageKey = "fatcow_page_16.png";
+			tabPageFile.Location = new Point(4, 24);
+			tabPageFile.Margin = new Padding(4, 3, 4, 3);
+			tabPageFile.Name = "tabPageFile";
+			tabPageFile.Padding = new Padding(4, 3, 4, 3);
+			tabPageFile.Size = new Size(588, 248);
+			tabPageFile.TabIndex = 0;
+			tabPageFile.Text = "File";
+			toolTip.SetToolTip(tabPageFile, "Hash a file");
+			tabPageFile.ToolTipText = "Hash a file";
+			tabPageFile.UseVisualStyleBackColor = true;
+			tabPageFile.Enter += SetStatusbar_Enter;
+			tabPageFile.Leave += ClearStatusbar_Leave;
+			tabPageFile.MouseEnter += SetStatusbar_Enter;
+			tabPageFile.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonSaveAllHashValuesInList
+			// 
+			buttonSaveAllHashValuesInList.AccessibleDescription = "Save all hash values in a list";
+			buttonSaveAllHashValuesInList.AccessibleName = "Save all in a list";
+			buttonSaveAllHashValuesInList.AccessibleRole = AccessibleRole.PushButton;
+			buttonSaveAllHashValuesInList.AutoEllipsis = true;
+			buttonSaveAllHashValuesInList.Image = Properties.Resources.fatcow_page_save_16;
+			buttonSaveAllHashValuesInList.ImageAlign = ContentAlignment.MiddleLeft;
+			buttonSaveAllHashValuesInList.Location = new Point(470, 211);
+			buttonSaveAllHashValuesInList.Margin = new Padding(4, 3, 4, 3);
+			buttonSaveAllHashValuesInList.Name = "buttonSaveAllHashValuesInList";
+			buttonSaveAllHashValuesInList.Size = new Size(110, 27);
+			buttonSaveAllHashValuesInList.TabIndex = 29;
+			buttonSaveAllHashValuesInList.Text = "Save all in a list";
+			buttonSaveAllHashValuesInList.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonSaveAllHashValuesInList, "Save all in a list");
+			buttonSaveAllHashValuesInList.UseVisualStyleBackColor = true;
+			buttonSaveAllHashValuesInList.Click += ButtonSaveAllHashValuesInList_Click;
+			buttonSaveAllHashValuesInList.Enter += SetStatusbar_Enter;
+			buttonSaveAllHashValuesInList.Leave += ClearStatusbar_Leave;
+			buttonSaveAllHashValuesInList.MouseEnter += SetStatusbar_Enter;
+			buttonSaveAllHashValuesInList.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonSaveAllHashValuesAutomatically
+			// 
+			buttonSaveAllHashValuesAutomatically.AccessibleDescription = "Save all hash values automatically in separate files";
+			buttonSaveAllHashValuesAutomatically.AccessibleName = "Save all automatically";
+			buttonSaveAllHashValuesAutomatically.AccessibleRole = AccessibleRole.PushButton;
+			buttonSaveAllHashValuesAutomatically.AutoEllipsis = true;
+			buttonSaveAllHashValuesAutomatically.Image = Properties.Resources.fatcow_diskette_16;
+			buttonSaveAllHashValuesAutomatically.ImageAlign = ContentAlignment.MiddleLeft;
+			buttonSaveAllHashValuesAutomatically.Location = new Point(317, 211);
+			buttonSaveAllHashValuesAutomatically.Margin = new Padding(4, 3, 4, 3);
+			buttonSaveAllHashValuesAutomatically.Name = "buttonSaveAllHashValuesAutomatically";
+			buttonSaveAllHashValuesAutomatically.Size = new Size(145, 27);
+			buttonSaveAllHashValuesAutomatically.TabIndex = 28;
+			buttonSaveAllHashValuesAutomatically.Text = "Save all automatically";
+			buttonSaveAllHashValuesAutomatically.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonSaveAllHashValuesAutomatically, "Save all automatically");
+			buttonSaveAllHashValuesAutomatically.UseVisualStyleBackColor = true;
+			buttonSaveAllHashValuesAutomatically.Click += ButtonSaveAllHashValuesAutomatically_Click;
+			buttonSaveAllHashValuesAutomatically.Enter += SetStatusbar_Enter;
+			buttonSaveAllHashValuesAutomatically.Leave += ClearStatusbar_Leave;
+			buttonSaveAllHashValuesAutomatically.MouseEnter += SetStatusbar_Enter;
+			buttonSaveAllHashValuesAutomatically.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// tabPageText
+			// 
+			tabPageText.AccessibleDescription = "Show the text tab page";
+			tabPageText.AccessibleName = "text tab page";
+			tabPageText.AccessibleRole = AccessibleRole.PageTab;
+			tabPageText.Controls.Add(buttonSaveAllHashValuesInClipboard);
+			tabPageText.Controls.Add(checkBoxAutoUpdateText);
+			tabPageText.Controls.Add(labelText);
+			tabPageText.Controls.Add(textBoxText);
+			tabPageText.Controls.Add(buttonCalculateHashFromText);
+			tabPageText.Controls.Add(labelMD5StringFromText);
+			tabPageText.Controls.Add(textBoxMD5StringFromText);
+			tabPageText.Controls.Add(buttonCopyMD5StringFromTextToClipboard);
+			tabPageText.Controls.Add(buttonCopySHA512StringFromTextToClipboard);
+			tabPageText.Controls.Add(textBoxSHA512StringFromText);
+			tabPageText.Controls.Add(labelSHA1StringFromText);
+			tabPageText.Controls.Add(labelSHA512StringFromText);
+			tabPageText.Controls.Add(textBoxSHA1StringFromText);
+			tabPageText.Controls.Add(buttonCopySHA384StringFromTextToClipboard);
+			tabPageText.Controls.Add(buttonCopySHA1StringFromTextToClipboard);
+			tabPageText.Controls.Add(textBoxSHA384StringFromText);
+			tabPageText.Controls.Add(labelSHA256StringFromText);
+			tabPageText.Controls.Add(labelSHA384StringFromText);
+			tabPageText.Controls.Add(textBoxSHA256StringFromText);
+			tabPageText.Controls.Add(buttonCopySHA256StringFromTextToClipboard);
+			tabPageText.ImageKey = "fatcow_text_effects_16.png";
+			tabPageText.Location = new Point(4, 24);
+			tabPageText.Margin = new Padding(4, 3, 4, 3);
+			tabPageText.Name = "tabPageText";
+			tabPageText.Padding = new Padding(4, 3, 4, 3);
+			tabPageText.Size = new Size(588, 248);
+			tabPageText.TabIndex = 1;
+			tabPageText.Text = "Text";
+			toolTip.SetToolTip(tabPageText, "Hash a text");
+			tabPageText.ToolTipText = "Hash a text";
+			tabPageText.UseVisualStyleBackColor = true;
+			tabPageText.Enter += SetStatusbar_Enter;
+			tabPageText.Leave += ClearStatusbar_Leave;
+			tabPageText.MouseEnter += SetStatusbar_Enter;
+			tabPageText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonSaveAllHashValuesInClipboard
+			// 
+			buttonSaveAllHashValuesInClipboard.AccessibleDescription = "Save all hash values into the clipboard";
+			buttonSaveAllHashValuesInClipboard.AccessibleName = "Save all in clipboard";
+			buttonSaveAllHashValuesInClipboard.AccessibleRole = AccessibleRole.PushButton;
+			buttonSaveAllHashValuesInClipboard.AutoEllipsis = true;
+			buttonSaveAllHashValuesInClipboard.Image = Properties.Resources.fatcow_clipboard_empty_16;
+			buttonSaveAllHashValuesInClipboard.ImageAlign = ContentAlignment.MiddleLeft;
+			buttonSaveAllHashValuesInClipboard.Location = new Point(444, 211);
+			buttonSaveAllHashValuesInClipboard.Margin = new Padding(4, 3, 4, 3);
+			buttonSaveAllHashValuesInClipboard.Name = "buttonSaveAllHashValuesInClipboard";
+			buttonSaveAllHashValuesInClipboard.Size = new Size(136, 27);
+			buttonSaveAllHashValuesInClipboard.TabIndex = 31;
+			buttonSaveAllHashValuesInClipboard.Text = "Save all in clipboard";
+			buttonSaveAllHashValuesInClipboard.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonSaveAllHashValuesInClipboard, "Save all hash values into the clipboard");
+			buttonSaveAllHashValuesInClipboard.UseVisualStyleBackColor = true;
+			buttonSaveAllHashValuesInClipboard.Click += ButtonSaveAllHashValuesInClipboard_Click;
+			buttonSaveAllHashValuesInClipboard.Enter += SetStatusbar_Enter;
+			buttonSaveAllHashValuesInClipboard.Leave += ClearStatusbar_Leave;
+			buttonSaveAllHashValuesInClipboard.MouseEnter += SetStatusbar_Enter;
+			buttonSaveAllHashValuesInClipboard.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// checkBoxAutoUpdateText
+			// 
+			checkBoxAutoUpdateText.AccessibleDescription = "Enable/disable the permanent calculation";
+			checkBoxAutoUpdateText.AccessibleName = "Permanent calculation";
+			checkBoxAutoUpdateText.AccessibleRole = AccessibleRole.PushButton;
+			checkBoxAutoUpdateText.Appearance = Appearance.Button;
+			checkBoxAutoUpdateText.AutoSize = true;
+			checkBoxAutoUpdateText.Image = Properties.Resources.fatcow_arrow_refresh_small_16;
+			checkBoxAutoUpdateText.Location = new Point(552, 10);
+			checkBoxAutoUpdateText.Margin = new Padding(4, 3, 4, 3);
+			checkBoxAutoUpdateText.Name = "checkBoxAutoUpdateText";
+			checkBoxAutoUpdateText.Size = new Size(22, 22);
+			checkBoxAutoUpdateText.TabIndex = 3;
+			checkBoxAutoUpdateText.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(checkBoxAutoUpdateText, "Enable/disable the permanent calculation");
+			checkBoxAutoUpdateText.UseVisualStyleBackColor = true;
+			checkBoxAutoUpdateText.CheckedChanged += CheckBoxAutoUpdateText_CheckedChanged;
+			checkBoxAutoUpdateText.Enter += SetStatusbar_Enter;
+			checkBoxAutoUpdateText.Leave += ClearStatusbar_Leave;
+			checkBoxAutoUpdateText.MouseEnter += SetStatusbar_Enter;
+			checkBoxAutoUpdateText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// labelText
+			// 
+			labelText.AccessibleDescription = "text";
+			labelText.AccessibleName = "text";
+			labelText.AccessibleRole = AccessibleRole.StaticText;
+			labelText.AutoEllipsis = true;
+			labelText.AutoSize = true;
+			labelText.Location = new Point(8, 14);
+			labelText.Margin = new Padding(4, 0, 4, 0);
+			labelText.Name = "labelText";
+			labelText.Size = new Size(31, 15);
+			labelText.TabIndex = 0;
+			labelText.Text = "Text:";
+			toolTip.SetToolTip(labelText, "text");
+			labelText.Enter += SetStatusbar_Enter;
+			labelText.Leave += ClearStatusbar_Leave;
+			labelText.MouseEnter += SetStatusbar_Enter;
+			labelText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// textBoxText
+			// 
+			textBoxText.AccessibleDescription = "Show the text";
+			textBoxText.AccessibleName = "text";
+			textBoxText.AccessibleRole = AccessibleRole.Text;
+			textBoxText.Location = new Point(51, 10);
+			textBoxText.Margin = new Padding(4, 3, 4, 3);
+			textBoxText.Name = "textBoxText";
+			textBoxText.Size = new Size(401, 23);
+			textBoxText.TabIndex = 1;
+			toolTip.SetToolTip(textBoxText, "text to hash");
+			textBoxText.TextChanged += TextBoxText_TextChanged;
+			textBoxText.Enter += SetStatusbar_Enter;
+			textBoxText.Leave += ClearStatusbar_Leave;
+			textBoxText.MouseEnter += SetStatusbar_Enter;
+			textBoxText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonCalculateHashFromText
+			// 
+			buttonCalculateHashFromText.AccessibleDescription = "Calculate the hash values from a text";
+			buttonCalculateHashFromText.AccessibleName = "Calculate hash values from text";
+			buttonCalculateHashFromText.AccessibleRole = AccessibleRole.PushButton;
+			buttonCalculateHashFromText.AutoEllipsis = true;
+			buttonCalculateHashFromText.Image = Properties.Resources.fatcow_document_hash_tag_16;
+			buttonCalculateHashFromText.ImageAlign = ContentAlignment.MiddleLeft;
+			buttonCalculateHashFromText.Location = new Point(460, 7);
+			buttonCalculateHashFromText.Margin = new Padding(4, 3, 4, 3);
+			buttonCalculateHashFromText.Name = "buttonCalculateHashFromText";
+			buttonCalculateHashFromText.Size = new Size(84, 28);
+			buttonCalculateHashFromText.TabIndex = 2;
+			buttonCalculateHashFromText.Text = "Calculate";
+			buttonCalculateHashFromText.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonCalculateHashFromText, "Calculate the hash values from a text");
+			buttonCalculateHashFromText.UseVisualStyleBackColor = true;
+			buttonCalculateHashFromText.Click += ButtonCalculateHashFromText_Click;
+			buttonCalculateHashFromText.Enter += SetStatusbar_Enter;
+			buttonCalculateHashFromText.Leave += ClearStatusbar_Leave;
+			buttonCalculateHashFromText.MouseEnter += SetStatusbar_Enter;
+			buttonCalculateHashFromText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// labelMD5StringFromText
+			// 
+			labelMD5StringFromText.AccessibleDescription = "MD5";
+			labelMD5StringFromText.AccessibleName = "MD5";
+			labelMD5StringFromText.AccessibleRole = AccessibleRole.StaticText;
+			labelMD5StringFromText.AutoEllipsis = true;
+			labelMD5StringFromText.AutoSize = true;
+			labelMD5StringFromText.Location = new Point(9, 48);
+			labelMD5StringFromText.Margin = new Padding(4, 0, 4, 0);
+			labelMD5StringFromText.Name = "labelMD5StringFromText";
+			labelMD5StringFromText.Size = new Size(35, 15);
+			labelMD5StringFromText.TabIndex = 4;
+			labelMD5StringFromText.Text = "MD5:";
+			toolTip.SetToolTip(labelMD5StringFromText, "MD5 hash");
+			labelMD5StringFromText.Enter += SetStatusbar_Enter;
+			labelMD5StringFromText.Leave += ClearStatusbar_Leave;
+			labelMD5StringFromText.MouseEnter += SetStatusbar_Enter;
+			labelMD5StringFromText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// textBoxMD5StringFromText
+			// 
+			textBoxMD5StringFromText.AccessibleDescription = "Show the MD5 hash value";
+			textBoxMD5StringFromText.AccessibleName = "MD5 hash value";
+			textBoxMD5StringFromText.AccessibleRole = AccessibleRole.Text;
+			textBoxMD5StringFromText.Font = new Font("Courier New", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+			textBoxMD5StringFromText.Location = new Point(67, 45);
+			textBoxMD5StringFromText.Margin = new Padding(4, 3, 4, 3);
+			textBoxMD5StringFromText.Name = "textBoxMD5StringFromText";
+			textBoxMD5StringFromText.ReadOnly = true;
+			textBoxMD5StringFromText.Size = new Size(477, 20);
+			textBoxMD5StringFromText.TabIndex = 5;
+			toolTip.SetToolTip(textBoxMD5StringFromText, "MD5 hash value");
+			textBoxMD5StringFromText.TextChanged += TextBoxMD5StringFromText_TextChanged;
+			textBoxMD5StringFromText.Enter += SetStatusbar_Enter;
+			textBoxMD5StringFromText.Leave += ClearStatusbar_Leave;
+			textBoxMD5StringFromText.MouseEnter += SetStatusbar_Enter;
+			textBoxMD5StringFromText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonCopyMD5StringFromTextToClipboard
+			// 
+			buttonCopyMD5StringFromTextToClipboard.AccessibleDescription = "Copy the MD5hash value to the clipboard";
+			buttonCopyMD5StringFromTextToClipboard.AccessibleName = "Copy MD5 hash value to clipboard";
+			buttonCopyMD5StringFromTextToClipboard.AccessibleRole = AccessibleRole.PushButton;
+			buttonCopyMD5StringFromTextToClipboard.AutoEllipsis = true;
+			buttonCopyMD5StringFromTextToClipboard.Image = (Image)resources.GetObject("buttonCopyMD5StringFromTextToClipboard.Image");
+			buttonCopyMD5StringFromTextToClipboard.Location = new Point(552, 41);
+			buttonCopyMD5StringFromTextToClipboard.Margin = new Padding(4, 3, 4, 3);
+			buttonCopyMD5StringFromTextToClipboard.Name = "buttonCopyMD5StringFromTextToClipboard";
+			buttonCopyMD5StringFromTextToClipboard.Size = new Size(28, 28);
+			buttonCopyMD5StringFromTextToClipboard.TabIndex = 6;
+			buttonCopyMD5StringFromTextToClipboard.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonCopyMD5StringFromTextToClipboard, "Copy the MD5 hash value to the clipboard");
+			buttonCopyMD5StringFromTextToClipboard.UseVisualStyleBackColor = true;
+			buttonCopyMD5StringFromTextToClipboard.Click += ButtonCopyMD5StringFromTextToClipboard_Click;
+			buttonCopyMD5StringFromTextToClipboard.Enter += SetStatusbar_Enter;
+			buttonCopyMD5StringFromTextToClipboard.Leave += ClearStatusbar_Leave;
+			buttonCopyMD5StringFromTextToClipboard.MouseEnter += SetStatusbar_Enter;
+			buttonCopyMD5StringFromTextToClipboard.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonCopySHA512StringFromTextToClipboard
+			// 
+			buttonCopySHA512StringFromTextToClipboard.AccessibleDescription = "Copy the SHA512 hash value to the clipboard";
+			buttonCopySHA512StringFromTextToClipboard.AccessibleName = "Copy SHA512 hash value to clipboard";
+			buttonCopySHA512StringFromTextToClipboard.AccessibleRole = AccessibleRole.PushButton;
+			buttonCopySHA512StringFromTextToClipboard.AutoEllipsis = true;
+			buttonCopySHA512StringFromTextToClipboard.Image = (Image)resources.GetObject("buttonCopySHA512StringFromTextToClipboard.Image");
+			buttonCopySHA512StringFromTextToClipboard.Location = new Point(552, 177);
+			buttonCopySHA512StringFromTextToClipboard.Margin = new Padding(4, 3, 4, 3);
+			buttonCopySHA512StringFromTextToClipboard.Name = "buttonCopySHA512StringFromTextToClipboard";
+			buttonCopySHA512StringFromTextToClipboard.Size = new Size(28, 28);
+			buttonCopySHA512StringFromTextToClipboard.TabIndex = 21;
+			buttonCopySHA512StringFromTextToClipboard.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonCopySHA512StringFromTextToClipboard, "Copy the SHA512 hash value to the clipboard");
+			buttonCopySHA512StringFromTextToClipboard.UseVisualStyleBackColor = true;
+			buttonCopySHA512StringFromTextToClipboard.Click += ButtonCopySHA512StringFromTextToClipboard_Click;
+			buttonCopySHA512StringFromTextToClipboard.Enter += SetStatusbar_Enter;
+			buttonCopySHA512StringFromTextToClipboard.Leave += ClearStatusbar_Leave;
+			buttonCopySHA512StringFromTextToClipboard.MouseEnter += SetStatusbar_Enter;
+			buttonCopySHA512StringFromTextToClipboard.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// textBoxSHA512StringFromText
+			// 
+			textBoxSHA512StringFromText.AccessibleDescription = "Show the SHA512 hash value";
+			textBoxSHA512StringFromText.AccessibleName = "SHA512 hash value";
+			textBoxSHA512StringFromText.AccessibleRole = AccessibleRole.Text;
+			textBoxSHA512StringFromText.Font = new Font("Courier New", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+			textBoxSHA512StringFromText.Location = new Point(67, 181);
+			textBoxSHA512StringFromText.Margin = new Padding(4, 3, 4, 3);
+			textBoxSHA512StringFromText.Name = "textBoxSHA512StringFromText";
+			textBoxSHA512StringFromText.ReadOnly = true;
+			textBoxSHA512StringFromText.Size = new Size(476, 20);
+			textBoxSHA512StringFromText.TabIndex = 20;
+			toolTip.SetToolTip(textBoxSHA512StringFromText, "SHA512 hash value");
+			textBoxSHA512StringFromText.TextChanged += TextBoxSHA512StringFromText_TextChanged;
+			textBoxSHA512StringFromText.Enter += SetStatusbar_Enter;
+			textBoxSHA512StringFromText.Leave += ClearStatusbar_Leave;
+			textBoxSHA512StringFromText.MouseEnter += SetStatusbar_Enter;
+			textBoxSHA512StringFromText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// labelSHA1StringFromText
+			// 
+			labelSHA1StringFromText.AccessibleDescription = "SHA1";
+			labelSHA1StringFromText.AccessibleName = "SHA1";
+			labelSHA1StringFromText.AccessibleRole = AccessibleRole.StaticText;
+			labelSHA1StringFromText.AutoEllipsis = true;
+			labelSHA1StringFromText.AutoSize = true;
+			labelSHA1StringFromText.Location = new Point(9, 82);
+			labelSHA1StringFromText.Margin = new Padding(4, 0, 4, 0);
+			labelSHA1StringFromText.Name = "labelSHA1StringFromText";
+			labelSHA1StringFromText.Size = new Size(39, 15);
+			labelSHA1StringFromText.TabIndex = 10;
+			labelSHA1StringFromText.Text = "SHA1:";
+			toolTip.SetToolTip(labelSHA1StringFromText, "SHA1 hash");
+			labelSHA1StringFromText.Enter += SetStatusbar_Enter;
+			labelSHA1StringFromText.Leave += ClearStatusbar_Leave;
+			labelSHA1StringFromText.MouseEnter += SetStatusbar_Enter;
+			labelSHA1StringFromText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// labelSHA512StringFromText
+			// 
+			labelSHA512StringFromText.AccessibleDescription = "SHA512";
+			labelSHA512StringFromText.AccessibleName = "SHA512";
+			labelSHA512StringFromText.AccessibleRole = AccessibleRole.StaticText;
+			labelSHA512StringFromText.AutoEllipsis = true;
+			labelSHA512StringFromText.AutoSize = true;
+			labelSHA512StringFromText.Location = new Point(8, 184);
+			labelSHA512StringFromText.Margin = new Padding(4, 0, 4, 0);
+			labelSHA512StringFromText.Name = "labelSHA512StringFromText";
+			labelSHA512StringFromText.Size = new Size(51, 15);
+			labelSHA512StringFromText.TabIndex = 19;
+			labelSHA512StringFromText.Text = "SHA512:";
+			toolTip.SetToolTip(labelSHA512StringFromText, "SHA512 hash");
+			labelSHA512StringFromText.Enter += SetStatusbar_Enter;
+			labelSHA512StringFromText.Leave += ClearStatusbar_Leave;
+			labelSHA512StringFromText.MouseEnter += SetStatusbar_Enter;
+			labelSHA512StringFromText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// textBoxSHA1StringFromText
+			// 
+			textBoxSHA1StringFromText.AccessibleDescription = "Show the SHA1 hash value";
+			textBoxSHA1StringFromText.AccessibleName = "SHA1 hash value";
+			textBoxSHA1StringFromText.AccessibleRole = AccessibleRole.Text;
+			textBoxSHA1StringFromText.Font = new Font("Courier New", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+			textBoxSHA1StringFromText.Location = new Point(67, 79);
+			textBoxSHA1StringFromText.Margin = new Padding(4, 3, 4, 3);
+			textBoxSHA1StringFromText.Name = "textBoxSHA1StringFromText";
+			textBoxSHA1StringFromText.ReadOnly = true;
+			textBoxSHA1StringFromText.Size = new Size(477, 20);
+			textBoxSHA1StringFromText.TabIndex = 11;
+			toolTip.SetToolTip(textBoxSHA1StringFromText, "SHA1 hash value");
+			textBoxSHA1StringFromText.TextChanged += TextBoxSHA1StringFromText_TextChanged;
+			textBoxSHA1StringFromText.Enter += SetStatusbar_Enter;
+			textBoxSHA1StringFromText.Leave += ClearStatusbar_Leave;
+			textBoxSHA1StringFromText.MouseEnter += SetStatusbar_Enter;
+			textBoxSHA1StringFromText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonCopySHA384StringFromTextToClipboard
+			// 
+			buttonCopySHA384StringFromTextToClipboard.AccessibleDescription = "Copy the SHA384 hash value to the clipboard";
+			buttonCopySHA384StringFromTextToClipboard.AccessibleName = "Copy SHA384 hash value to clipboard";
+			buttonCopySHA384StringFromTextToClipboard.AccessibleRole = AccessibleRole.PushButton;
+			buttonCopySHA384StringFromTextToClipboard.AutoEllipsis = true;
+			buttonCopySHA384StringFromTextToClipboard.Image = (Image)resources.GetObject("buttonCopySHA384StringFromTextToClipboard.Image");
+			buttonCopySHA384StringFromTextToClipboard.Location = new Point(552, 143);
+			buttonCopySHA384StringFromTextToClipboard.Margin = new Padding(4, 3, 4, 3);
+			buttonCopySHA384StringFromTextToClipboard.Name = "buttonCopySHA384StringFromTextToClipboard";
+			buttonCopySHA384StringFromTextToClipboard.Size = new Size(28, 28);
+			buttonCopySHA384StringFromTextToClipboard.TabIndex = 18;
+			buttonCopySHA384StringFromTextToClipboard.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonCopySHA384StringFromTextToClipboard, "Copy the SHA384 hash value to the clipboard");
+			buttonCopySHA384StringFromTextToClipboard.UseVisualStyleBackColor = true;
+			buttonCopySHA384StringFromTextToClipboard.Click += ButtonCopySHA384StringFromTextToClipboard_Click;
+			buttonCopySHA384StringFromTextToClipboard.Enter += SetStatusbar_Enter;
+			buttonCopySHA384StringFromTextToClipboard.Leave += ClearStatusbar_Leave;
+			buttonCopySHA384StringFromTextToClipboard.MouseEnter += SetStatusbar_Enter;
+			buttonCopySHA384StringFromTextToClipboard.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonCopySHA1StringFromTextToClipboard
+			// 
+			buttonCopySHA1StringFromTextToClipboard.AccessibleDescription = "Copy the SHA1 hash value to the clipboard";
+			buttonCopySHA1StringFromTextToClipboard.AccessibleName = "Copy SHA1 hash value to clipboard";
+			buttonCopySHA1StringFromTextToClipboard.AccessibleRole = AccessibleRole.PushButton;
+			buttonCopySHA1StringFromTextToClipboard.AutoEllipsis = true;
+			buttonCopySHA1StringFromTextToClipboard.Image = (Image)resources.GetObject("buttonCopySHA1StringFromTextToClipboard.Image");
+			buttonCopySHA1StringFromTextToClipboard.Location = new Point(552, 75);
+			buttonCopySHA1StringFromTextToClipboard.Margin = new Padding(4, 3, 4, 3);
+			buttonCopySHA1StringFromTextToClipboard.Name = "buttonCopySHA1StringFromTextToClipboard";
+			buttonCopySHA1StringFromTextToClipboard.Size = new Size(28, 28);
+			buttonCopySHA1StringFromTextToClipboard.TabIndex = 12;
+			buttonCopySHA1StringFromTextToClipboard.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonCopySHA1StringFromTextToClipboard, "Copy the SHA1 hash value to the clipboard");
+			buttonCopySHA1StringFromTextToClipboard.UseVisualStyleBackColor = true;
+			buttonCopySHA1StringFromTextToClipboard.Click += ButtonCopySHA1StringFromTextToClipboard_Click;
+			buttonCopySHA1StringFromTextToClipboard.Enter += SetStatusbar_Enter;
+			buttonCopySHA1StringFromTextToClipboard.Leave += ClearStatusbar_Leave;
+			buttonCopySHA1StringFromTextToClipboard.MouseEnter += SetStatusbar_Enter;
+			buttonCopySHA1StringFromTextToClipboard.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// textBoxSHA384StringFromText
+			// 
+			textBoxSHA384StringFromText.AccessibleDescription = "Show the SHA384 hash value";
+			textBoxSHA384StringFromText.AccessibleName = "SHA384 hash value";
+			textBoxSHA384StringFromText.AccessibleRole = AccessibleRole.Text;
+			textBoxSHA384StringFromText.Font = new Font("Courier New", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+			textBoxSHA384StringFromText.Location = new Point(67, 147);
+			textBoxSHA384StringFromText.Margin = new Padding(4, 3, 4, 3);
+			textBoxSHA384StringFromText.Name = "textBoxSHA384StringFromText";
+			textBoxSHA384StringFromText.ReadOnly = true;
+			textBoxSHA384StringFromText.Size = new Size(477, 20);
+			textBoxSHA384StringFromText.TabIndex = 17;
+			toolTip.SetToolTip(textBoxSHA384StringFromText, "SHA384 hash value");
+			textBoxSHA384StringFromText.TextChanged += TextBoxSHA384StringFromText_TextChanged;
+			textBoxSHA384StringFromText.Enter += SetStatusbar_Enter;
+			textBoxSHA384StringFromText.Leave += ClearStatusbar_Leave;
+			textBoxSHA384StringFromText.MouseEnter += SetStatusbar_Enter;
+			textBoxSHA384StringFromText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// labelSHA256StringFromText
+			// 
+			labelSHA256StringFromText.AccessibleDescription = "SHA256";
+			labelSHA256StringFromText.AccessibleName = "SHA256";
+			labelSHA256StringFromText.AccessibleRole = AccessibleRole.StaticText;
+			labelSHA256StringFromText.AutoEllipsis = true;
+			labelSHA256StringFromText.AutoSize = true;
+			labelSHA256StringFromText.Location = new Point(9, 116);
+			labelSHA256StringFromText.Margin = new Padding(4, 0, 4, 0);
+			labelSHA256StringFromText.Name = "labelSHA256StringFromText";
+			labelSHA256StringFromText.Size = new Size(51, 15);
+			labelSHA256StringFromText.TabIndex = 13;
+			labelSHA256StringFromText.Text = "SHA256:";
+			toolTip.SetToolTip(labelSHA256StringFromText, "SHA256 hash");
+			labelSHA256StringFromText.Enter += SetStatusbar_Enter;
+			labelSHA256StringFromText.Leave += ClearStatusbar_Leave;
+			labelSHA256StringFromText.MouseEnter += SetStatusbar_Enter;
+			labelSHA256StringFromText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// labelSHA384StringFromText
+			// 
+			labelSHA384StringFromText.AccessibleDescription = "SHA384";
+			labelSHA384StringFromText.AccessibleName = "SHA384";
+			labelSHA384StringFromText.AccessibleRole = AccessibleRole.StaticText;
+			labelSHA384StringFromText.AutoEllipsis = true;
+			labelSHA384StringFromText.AutoSize = true;
+			labelSHA384StringFromText.Location = new Point(9, 150);
+			labelSHA384StringFromText.Margin = new Padding(4, 0, 4, 0);
+			labelSHA384StringFromText.Name = "labelSHA384StringFromText";
+			labelSHA384StringFromText.Size = new Size(51, 15);
+			labelSHA384StringFromText.TabIndex = 16;
+			labelSHA384StringFromText.Text = "SHA384:";
+			toolTip.SetToolTip(labelSHA384StringFromText, "SHA384 hash");
+			labelSHA384StringFromText.Enter += SetStatusbar_Enter;
+			labelSHA384StringFromText.Leave += ClearStatusbar_Leave;
+			labelSHA384StringFromText.MouseEnter += SetStatusbar_Enter;
+			labelSHA384StringFromText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// textBoxSHA256StringFromText
+			// 
+			textBoxSHA256StringFromText.AccessibleDescription = "Show the SHA256 hash value";
+			textBoxSHA256StringFromText.AccessibleName = "SHA256 hash value";
+			textBoxSHA256StringFromText.AccessibleRole = AccessibleRole.Text;
+			textBoxSHA256StringFromText.Font = new Font("Courier New", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+			textBoxSHA256StringFromText.Location = new Point(67, 113);
+			textBoxSHA256StringFromText.Margin = new Padding(4, 3, 4, 3);
+			textBoxSHA256StringFromText.Name = "textBoxSHA256StringFromText";
+			textBoxSHA256StringFromText.ReadOnly = true;
+			textBoxSHA256StringFromText.Size = new Size(477, 20);
+			textBoxSHA256StringFromText.TabIndex = 14;
+			toolTip.SetToolTip(textBoxSHA256StringFromText, "SHA256 hash value");
+			textBoxSHA256StringFromText.TextChanged += TextBoxSHA256StringFromText_TextChanged;
+			textBoxSHA256StringFromText.Enter += SetStatusbar_Enter;
+			textBoxSHA256StringFromText.Leave += ClearStatusbar_Leave;
+			textBoxSHA256StringFromText.MouseEnter += SetStatusbar_Enter;
+			textBoxSHA256StringFromText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonCopySHA256StringFromTextToClipboard
+			// 
+			buttonCopySHA256StringFromTextToClipboard.AccessibleDescription = "Copy the SHA256 hash value to the clipboard";
+			buttonCopySHA256StringFromTextToClipboard.AccessibleName = "Copy SHA256 hash value to clipboard";
+			buttonCopySHA256StringFromTextToClipboard.AccessibleRole = AccessibleRole.PushButton;
+			buttonCopySHA256StringFromTextToClipboard.AutoEllipsis = true;
+			buttonCopySHA256StringFromTextToClipboard.Image = (Image)resources.GetObject("buttonCopySHA256StringFromTextToClipboard.Image");
+			buttonCopySHA256StringFromTextToClipboard.Location = new Point(552, 109);
+			buttonCopySHA256StringFromTextToClipboard.Margin = new Padding(4, 3, 4, 3);
+			buttonCopySHA256StringFromTextToClipboard.Name = "buttonCopySHA256StringFromTextToClipboard";
+			buttonCopySHA256StringFromTextToClipboard.Size = new Size(28, 28);
+			buttonCopySHA256StringFromTextToClipboard.TabIndex = 15;
+			buttonCopySHA256StringFromTextToClipboard.TextImageRelation = TextImageRelation.ImageBeforeText;
+			toolTip.SetToolTip(buttonCopySHA256StringFromTextToClipboard, "Copy the SHA256 hash value to the clipboard");
+			buttonCopySHA256StringFromTextToClipboard.UseVisualStyleBackColor = true;
+			buttonCopySHA256StringFromTextToClipboard.Click += ButtonCopySHA256StringFromTextToClipboard_Click;
+			buttonCopySHA256StringFromTextToClipboard.Enter += SetStatusbar_Enter;
+			buttonCopySHA256StringFromTextToClipboard.Leave += ClearStatusbar_Leave;
+			buttonCopySHA256StringFromTextToClipboard.MouseEnter += SetStatusbar_Enter;
+			buttonCopySHA256StringFromTextToClipboard.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// tabPageInfo
+			// 
+			tabPageInfo.AccessibleDescription = "Show the info tab page";
+			tabPageInfo.AccessibleName = "info tabe page";
+			tabPageInfo.AccessibleRole = AccessibleRole.PageTab;
+			tabPageInfo.Controls.Add(linkLabelUrl);
+			tabPageInfo.Controls.Add(textBoxDescription);
+			tabPageInfo.Controls.Add(labelCompanyName);
+			tabPageInfo.Controls.Add(labelCopyright);
+			tabPageInfo.Controls.Add(labelVersion);
+			tabPageInfo.Controls.Add(labelProductName);
+			tabPageInfo.Controls.Add(logoPictureBox);
+			tabPageInfo.ImageKey = "fatcow_infomation_16.png";
+			tabPageInfo.Location = new Point(4, 24);
+			tabPageInfo.Margin = new Padding(4, 3, 4, 3);
+			tabPageInfo.Name = "tabPageInfo";
+			tabPageInfo.Padding = new Padding(4, 3, 4, 3);
+			tabPageInfo.Size = new Size(588, 248);
+			tabPageInfo.TabIndex = 2;
+			tabPageInfo.Text = "Info";
+			toolTip.SetToolTip(tabPageInfo, "Show some info");
+			tabPageInfo.ToolTipText = "Show some info";
+			tabPageInfo.UseVisualStyleBackColor = true;
+			tabPageInfo.Enter += SetStatusbar_Enter;
+			tabPageInfo.Leave += ClearStatusbar_Leave;
+			tabPageInfo.MouseEnter += SetStatusbar_Enter;
+			tabPageInfo.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// linkLabelUrl
+			// 
+			linkLabelUrl.AccessibleDescription = "Open the Link to Github";
+			linkLabelUrl.AccessibleName = "Github link";
+			linkLabelUrl.AccessibleRole = AccessibleRole.Link;
+			linkLabelUrl.AutoEllipsis = true;
+			linkLabelUrl.AutoSize = true;
+			linkLabelUrl.Location = new Point(135, 84);
+			linkLabelUrl.Margin = new Padding(4, 0, 4, 0);
+			linkLabelUrl.Name = "linkLabelUrl";
+			linkLabelUrl.Size = new Size(236, 15);
+			linkLabelUrl.TabIndex = 4;
+			linkLabelUrl.TabStop = true;
+			linkLabelUrl.Text = "https://github.com/Mijo-Software/Hasher/";
+			toolTip.SetToolTip(linkLabelUrl, "Open the link to Github");
+			linkLabelUrl.Click += LinkLabelUrl_Click;
+			linkLabelUrl.Enter += SetStatusbar_Enter;
+			linkLabelUrl.Leave += ClearStatusbar_Leave;
+			linkLabelUrl.MouseEnter += SetStatusbar_Enter;
+			linkLabelUrl.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// textBoxDescription
+			// 
+			textBoxDescription.AccessibleDescription = "Show the description";
+			textBoxDescription.AccessibleName = "Description";
+			textBoxDescription.AccessibleRole = AccessibleRole.Text;
+			textBoxDescription.Location = new Point(11, 120);
+			textBoxDescription.Margin = new Padding(7, 3, 4, 3);
+			textBoxDescription.Multiline = true;
+			textBoxDescription.Name = "textBoxDescription";
+			textBoxDescription.ReadOnly = true;
+			textBoxDescription.ScrollBars = ScrollBars.Both;
+			textBoxDescription.Size = new Size(572, 122);
+			textBoxDescription.TabIndex = 5;
+			textBoxDescription.Text = "Description";
+			toolTip.SetToolTip(textBoxDescription, "Description");
+			textBoxDescription.Enter += SetStatusbar_Enter;
+			textBoxDescription.Leave += ClearStatusbar_Leave;
+			textBoxDescription.MouseEnter += SetStatusbar_Enter;
+			textBoxDescription.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// labelCompanyName
+			// 
+			labelCompanyName.AccessibleDescription = "Show the company name";
+			labelCompanyName.AccessibleName = "Company name";
+			labelCompanyName.AccessibleRole = AccessibleRole.StaticText;
+			labelCompanyName.AutoEllipsis = true;
+			labelCompanyName.AutoSize = true;
+			labelCompanyName.Location = new Point(135, 65);
+			labelCompanyName.Margin = new Padding(7, 0, 4, 0);
+			labelCompanyName.MaximumSize = new Size(0, 20);
+			labelCompanyName.Name = "labelCompanyName";
+			labelCompanyName.Size = new Size(92, 15);
+			labelCompanyName.TabIndex = 3;
+			labelCompanyName.Text = "Company name";
+			labelCompanyName.TextAlign = ContentAlignment.MiddleLeft;
+			toolTip.SetToolTip(labelCompanyName, "Copyright name");
+			labelCompanyName.Enter += SetStatusbar_Enter;
+			labelCompanyName.Leave += ClearStatusbar_Leave;
+			labelCompanyName.MouseEnter += SetStatusbar_Enter;
+			labelCompanyName.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// labelCopyright
+			// 
+			labelCopyright.AccessibleDescription = "Show the copyright";
+			labelCopyright.AccessibleName = "Copyright";
+			labelCopyright.AccessibleRole = AccessibleRole.StaticText;
+			labelCopyright.AutoEllipsis = true;
+			labelCopyright.AutoSize = true;
+			labelCopyright.Location = new Point(135, 45);
+			labelCopyright.Margin = new Padding(7, 0, 4, 0);
+			labelCopyright.MaximumSize = new Size(0, 20);
+			labelCopyright.Name = "labelCopyright";
+			labelCopyright.Size = new Size(60, 15);
+			labelCopyright.TabIndex = 2;
+			labelCopyright.Text = "Copyright";
+			labelCopyright.TextAlign = ContentAlignment.MiddleLeft;
+			toolTip.SetToolTip(labelCopyright, "Copyright");
+			labelCopyright.Enter += SetStatusbar_Enter;
+			labelCopyright.Leave += ClearStatusbar_Leave;
+			labelCopyright.MouseEnter += SetStatusbar_Enter;
+			labelCopyright.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// labelVersion
+			// 
+			labelVersion.AccessibleDescription = "Show the version";
+			labelVersion.AccessibleName = "Version";
+			labelVersion.AccessibleRole = AccessibleRole.StaticText;
+			labelVersion.AutoEllipsis = true;
+			labelVersion.AutoSize = true;
+			labelVersion.Location = new Point(135, 26);
+			labelVersion.Margin = new Padding(7, 0, 4, 0);
+			labelVersion.MaximumSize = new Size(0, 20);
+			labelVersion.Name = "labelVersion";
+			labelVersion.Size = new Size(45, 15);
+			labelVersion.TabIndex = 1;
+			labelVersion.Text = "Version";
+			labelVersion.TextAlign = ContentAlignment.MiddleLeft;
+			toolTip.SetToolTip(labelVersion, "Version");
+			labelVersion.Enter += SetStatusbar_Enter;
+			labelVersion.Leave += ClearStatusbar_Leave;
+			labelVersion.MouseEnter += SetStatusbar_Enter;
+			labelVersion.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// labelProductName
+			// 
+			labelProductName.AccessibleDescription = "Show the product name";
+			labelProductName.AccessibleName = "Product name";
+			labelProductName.AccessibleRole = AccessibleRole.StaticText;
+			labelProductName.AutoEllipsis = true;
+			labelProductName.AutoSize = true;
+			labelProductName.Location = new Point(135, 6);
+			labelProductName.Margin = new Padding(7, 0, 4, 0);
+			labelProductName.MaximumSize = new Size(0, 20);
+			labelProductName.Name = "labelProductName";
+			labelProductName.Size = new Size(82, 15);
+			labelProductName.TabIndex = 0;
+			labelProductName.Text = "Product name";
+			labelProductName.TextAlign = ContentAlignment.MiddleLeft;
+			toolTip.SetToolTip(labelProductName, "Product name");
+			labelProductName.Enter += SetStatusbar_Enter;
+			labelProductName.Leave += ClearStatusbar_Leave;
+			labelProductName.MouseEnter += SetStatusbar_Enter;
+			labelProductName.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// logoPictureBox
+			// 
+			logoPictureBox.AccessibleDescription = "This is the program icon.";
+			logoPictureBox.AccessibleName = "program icon";
+			logoPictureBox.AccessibleRole = AccessibleRole.Graphic;
+			logoPictureBox.Image = Properties.Resources.logo_hasher_96;
+			logoPictureBox.Location = new Point(11, 6);
+			logoPictureBox.Margin = new Padding(4, 3, 4, 3);
+			logoPictureBox.Name = "logoPictureBox";
+			logoPictureBox.Size = new Size(113, 108);
+			logoPictureBox.TabIndex = 13;
+			logoPictureBox.TabStop = false;
+			toolTip.SetToolTip(logoPictureBox, "program icon");
+			logoPictureBox.MouseEnter += SetStatusbar_Enter;
+			logoPictureBox.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// tabPageLicense
+			// 
+			tabPageLicense.AccessibleDescription = "Show the license tab page";
+			tabPageLicense.AccessibleName = "license tab page";
+			tabPageLicense.AccessibleRole = AccessibleRole.PageTab;
+			tabPageLicense.Controls.Add(textBoxLicense);
+			tabPageLicense.ImageKey = "fatcow_script_text_16.png";
+			tabPageLicense.Location = new Point(4, 24);
+			tabPageLicense.Margin = new Padding(4, 3, 4, 3);
+			tabPageLicense.Name = "tabPageLicense";
+			tabPageLicense.Padding = new Padding(4, 3, 4, 3);
+			tabPageLicense.Size = new Size(588, 248);
+			tabPageLicense.TabIndex = 3;
+			tabPageLicense.Text = "License";
+			toolTip.SetToolTip(tabPageLicense, "Show the license");
+			tabPageLicense.ToolTipText = "Show the license";
+			tabPageLicense.UseVisualStyleBackColor = true;
+			tabPageLicense.Enter += SetStatusbar_Enter;
+			tabPageLicense.Leave += ClearStatusbar_Leave;
+			tabPageLicense.MouseEnter += SetStatusbar_Enter;
+			tabPageLicense.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// textBoxLicense
+			// 
+			textBoxLicense.AccessibleDescription = "Show the license";
+			textBoxLicense.AccessibleName = "License";
+			textBoxLicense.AccessibleRole = AccessibleRole.Text;
+			textBoxLicense.Dock = DockStyle.Fill;
+			textBoxLicense.Location = new Point(4, 3);
+			textBoxLicense.Margin = new Padding(7, 3, 4, 3);
+			textBoxLicense.MaxLength = 9999999;
+			textBoxLicense.Multiline = true;
+			textBoxLicense.Name = "textBoxLicense";
+			textBoxLicense.ReadOnly = true;
+			textBoxLicense.ScrollBars = ScrollBars.Both;
+			textBoxLicense.Size = new Size(580, 242);
+			textBoxLicense.TabIndex = 5;
+			textBoxLicense.Text = resources.GetString("textBoxLicense.Text");
+			toolTip.SetToolTip(textBoxLicense, "License");
+			textBoxLicense.Enter += SetStatusbar_Enter;
+			textBoxLicense.Leave += ClearStatusbar_Leave;
+			textBoxLicense.MouseEnter += SetStatusbar_Enter;
+			textBoxLicense.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// imageListTab
+			// 
+			imageListTab.ColorDepth = ColorDepth.Depth8Bit;
+			imageListTab.ImageStream = (ImageListStreamer)resources.GetObject("imageListTab.ImageStream");
+			imageListTab.TransparentColor = Color.Transparent;
+			imageListTab.Images.SetKeyName(0, "fatcow_page_16.png");
+			imageListTab.Images.SetKeyName(1, "fatcow_text_effects_16.png");
+			imageListTab.Images.SetKeyName(2, "fatcow_infomation_16.png");
+			imageListTab.Images.SetKeyName(3, "fatcow_script_text_16.png");
+			// 
+			// statusStrip
+			// 
+			statusStrip.AccessibleDescription = "Just a status bar";
+			statusStrip.AccessibleName = "status bar";
+			statusStrip.AccessibleRole = AccessibleRole.StatusBar;
+			statusStrip.Dock = DockStyle.None;
+			statusStrip.Items.AddRange(new ToolStripItem[] { toolStripStatusLabelInformation });
+			statusStrip.Location = new Point(0, 0);
+			statusStrip.Name = "statusStrip";
+			statusStrip.ShowItemToolTips = true;
+			statusStrip.Size = new Size(596, 22);
+			statusStrip.SizingGrip = false;
+			statusStrip.TabIndex = 0;
+			statusStrip.TabStop = true;
+			statusStrip.Text = "status bar";
+			toolTip.SetToolTip(statusStrip, "Just a status bar");
+			statusStrip.Enter += SetStatusbar_Enter;
+			statusStrip.Leave += ClearStatusbar_Leave;
+			statusStrip.MouseEnter += SetStatusbar_Enter;
+			statusStrip.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripStatusLabelInformation
+			// 
+			toolStripStatusLabelInformation.AccessibleDescription = "Show some information";
+			toolStripStatusLabelInformation.AccessibleName = "information";
+			toolStripStatusLabelInformation.AccessibleRole = AccessibleRole.StaticText;
+			toolStripStatusLabelInformation.AutoToolTip = true;
+			toolStripStatusLabelInformation.Name = "toolStripStatusLabelInformation";
+			toolStripStatusLabelInformation.Size = new Size(70, 17);
+			toolStripStatusLabelInformation.Text = "information";
+			toolStripStatusLabelInformation.MouseEnter += SetStatusbar_Enter;
+			toolStripStatusLabelInformation.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// toolStripContainer
+			// 
+			toolStripContainer.AccessibleDescription = "Just an container";
+			toolStripContainer.AccessibleName = "Container";
+			toolStripContainer.AccessibleRole = AccessibleRole.Pane;
+			// 
+			// toolStripContainer.BottomToolStripPanel
+			// 
+			toolStripContainer.BottomToolStripPanel.Controls.Add(statusStrip);
+			// 
+			// toolStripContainer.ContentPanel
+			// 
+			toolStripContainer.ContentPanel.Controls.Add(tabControl);
+			toolStripContainer.ContentPanel.Margin = new Padding(4, 3, 4, 3);
+			toolStripContainer.ContentPanel.Size = new Size(596, 276);
+			toolStripContainer.Dock = DockStyle.Fill;
+			toolStripContainer.Location = new Point(0, 0);
+			toolStripContainer.Margin = new Padding(4, 3, 4, 3);
+			toolStripContainer.Name = "toolStripContainer";
+			toolStripContainer.Size = new Size(596, 298);
+			toolStripContainer.TabIndex = 29;
+			toolStripContainer.Text = "toolStripContainer";
+			// 
+			// MainForm
+			// 
+			AccessibleDescription = "This is the window of the application";
+			AccessibleName = "Window of the application";
+			AccessibleRole = AccessibleRole.Window;
+			AllowDrop = true;
+			AutoScaleDimensions = new SizeF(7F, 15F);
+			AutoScaleMode = AutoScaleMode.Font;
+			ClientSize = new Size(596, 298);
+			Controls.Add(toolStripContainer);
+			FormBorderStyle = FormBorderStyle.FixedSingle;
+			Icon = (Icon)resources.GetObject("$this.Icon");
+			Margin = new Padding(4, 3, 4, 3);
+			MaximizeBox = false;
+			Name = "MainForm";
+			StartPosition = FormStartPosition.CenterScreen;
+			Text = "Hasher";
+			Load += MainForm_Load;
+			DragDrop += MainForm_DragDrop;
+			DragEnter += MainForm_DragEnter;
+			tabControl.ResumeLayout(false);
+			tabPageFile.ResumeLayout(false);
+			tabPageFile.PerformLayout();
+			tabPageText.ResumeLayout(false);
+			tabPageText.PerformLayout();
+			tabPageInfo.ResumeLayout(false);
+			tabPageInfo.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
+			tabPageLicense.ResumeLayout(false);
+			tabPageLicense.PerformLayout();
+			statusStrip.ResumeLayout(false);
+			statusStrip.PerformLayout();
+			toolStripContainer.BottomToolStripPanel.ResumeLayout(false);
+			toolStripContainer.BottomToolStripPanel.PerformLayout();
+			toolStripContainer.ContentPanel.ResumeLayout(false);
+			toolStripContainer.ResumeLayout(false);
+			toolStripContainer.PerformLayout();
+			ResumeLayout(false);
 		}
 
 		#endregion
 
-		private System.Windows.Forms.Label labelFileName;
-		private System.Windows.Forms.TextBox textBoxFileName;
-		private System.Windows.Forms.Button buttonOpenAndCalculateHashFromFile;
-		private System.Windows.Forms.Label labelMD5StringFromFile;
-		private System.Windows.Forms.TextBox textBoxMD5StringFromFile;
-		private System.Windows.Forms.OpenFileDialog openFileDialog;
-		private System.Windows.Forms.Button buttonCopyMD5StringFromFileToClipboard;
-		private System.Windows.Forms.Button buttonCopyRIPEMD160StringFromFileToClipboard;
-		private System.Windows.Forms.TextBox textBoxRIPEMD160StringFromFile;
-		private System.Windows.Forms.Label labelRIPEMD160StringFromFile;
-		private System.Windows.Forms.Button buttonCopySHA1StringFromFileToClipboard;
-		private System.Windows.Forms.TextBox textBoxSHA1StringFromFile;
-		private System.Windows.Forms.Label labelSHA1StringFromFile;
-		private System.Windows.Forms.Button buttonCopySHA256StringFromFileToClipboard;
-		private System.Windows.Forms.TextBox textBoxSHA256StringFromFile;
-		private System.Windows.Forms.Label labelSHA256StringFromFile;
-		private System.Windows.Forms.Button buttonCopySHA384StringFromFileToClipboard;
-		private System.Windows.Forms.TextBox textBoxSHA384StringFromFile;
-		private System.Windows.Forms.Label labelSHA384FromFile;
-		private System.Windows.Forms.Button buttonCopySHA512StringFromFileToClipboard;
-		private System.Windows.Forms.TextBox textBoxSHA512StringFromFile;
-		private System.Windows.Forms.Label labelSHA512StringFromFile;
-		private System.Windows.Forms.Button buttonSaveSHA512StringToFile;
-		private System.Windows.Forms.Button buttonSaveSHA384StringToFile;
-		private System.Windows.Forms.Button buttonSaveSHA256StringToFile;
-		private System.Windows.Forms.Button buttonSaveSHA1StringToFile;
-		private System.Windows.Forms.Button buttonSaveRIPEMD160StringToFile;
-		private System.Windows.Forms.Button buttonSaveMD5StringToFile;
-		private System.Windows.Forms.SaveFileDialog saveFileDialog;
-		private System.Windows.Forms.TabControl tabControl;
-		private System.Windows.Forms.TabPage tabPageFile;
-		private System.Windows.Forms.TabPage tabPageText;
-		private System.Windows.Forms.Label labelText;
-		private System.Windows.Forms.TextBox textBoxText;
-		private System.Windows.Forms.Button buttonCalculateHashFromText;
-		private System.Windows.Forms.Label labelMD5StringFromText;
-		private System.Windows.Forms.TextBox textBoxMD5StringFromText;
-		private System.Windows.Forms.Button buttonCopyMD5StringFromTextToClipboard;
-		private System.Windows.Forms.Label labelRIPEMD160StringFromText;
-		private System.Windows.Forms.TextBox textBoxRIPEMD160StringFromText;
-		private System.Windows.Forms.Button buttonCopySHA512StringFromTextToClipboard;
-		private System.Windows.Forms.Button buttonCopyRIPEMD160StringFromTextToClipboard;
-		private System.Windows.Forms.TextBox textBoxSHA512StringFromText;
-		private System.Windows.Forms.Label labelSHA1StringFromText;
-		private System.Windows.Forms.Label labelSHA512StringFromText;
-		private System.Windows.Forms.TextBox textBoxSHA1StringFromText;
-		private System.Windows.Forms.Button buttonCopySHA384StringFromTextToClipboard;
-		private System.Windows.Forms.Button buttonCopySHA1StringFromTextToClipboard;
-		private System.Windows.Forms.TextBox textBoxSHA384StringFromText;
-		private System.Windows.Forms.Label labelSHA256StringFromText;
-		private System.Windows.Forms.Label labelSHA384StringFromText;
-		private System.Windows.Forms.TextBox textBoxSHA256StringFromText;
-		private System.Windows.Forms.Button buttonCopySHA256StringFromTextToClipboard;
-		private System.Windows.Forms.CheckBox checkBoxAutoUpdateText;
-        private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelInformation;
-        private System.Windows.Forms.ToolStripContainer toolStripContainer;
-        private System.Windows.Forms.ImageList imageListTab;
-        private System.Windows.Forms.TabPage tabPageInfo;
-        private System.Windows.Forms.Label labelVersion;
-        private System.Windows.Forms.Label labelProductName;
-        private System.Windows.Forms.PictureBox logoPictureBox;
-        private System.Windows.Forms.Label labelCopyright;
-        private System.Windows.Forms.Label labelCompanyName;
-        private System.Windows.Forms.TextBox textBoxDescription;
-        private System.Windows.Forms.TabPage tabPageLicense;
-        private System.Windows.Forms.TextBox textBoxLicense;
-        private System.Windows.Forms.LinkLabel linkLabelUrl;
-        private System.Windows.Forms.Button buttonSaveAllHashValuesInList;
-        private System.Windows.Forms.Button buttonSaveAllHashValuesAutomatically;
-        private System.Windows.Forms.Button buttonSaveAllHashValuesInClipboard;
-    }
+		private Label labelFileName;
+		private TextBox textBoxFileName;
+		private Button buttonOpenAndCalculateHashFromFile;
+		private Label labelMD5StringFromFile;
+		private TextBox textBoxMD5StringFromFile;
+		private OpenFileDialog openFileDialog;
+		private Button buttonCopyMD5StringFromFileToClipboard;
+		private Button buttonCopySHA1StringFromFileToClipboard;
+		private TextBox textBoxSHA1StringFromFile;
+		private Label labelSHA1StringFromFile;
+		private Button buttonCopySHA256StringFromFileToClipboard;
+		private TextBox textBoxSHA256StringFromFile;
+		private Label labelSHA256StringFromFile;
+		private Button buttonCopySHA384StringFromFileToClipboard;
+		private TextBox textBoxSHA384StringFromFile;
+		private Label labelSHA384FromFile;
+		private Button buttonCopySHA512StringFromFileToClipboard;
+		private TextBox textBoxSHA512StringFromFile;
+		private Label labelSHA512StringFromFile;
+		private Button buttonSaveSHA512StringToFile;
+		private Button buttonSaveSHA384StringToFile;
+		private Button buttonSaveSHA256StringToFile;
+		private Button buttonSaveSHA1StringToFile;
+		private Button buttonSaveMD5StringToFile;
+		private SaveFileDialog saveFileDialog;
+		private TabControl tabControl;
+		private TabPage tabPageFile;
+		private TabPage tabPageText;
+		private Label labelText;
+		private TextBox textBoxText;
+		private Button buttonCalculateHashFromText;
+		private Label labelMD5StringFromText;
+		private TextBox textBoxMD5StringFromText;
+		private Button buttonCopyMD5StringFromTextToClipboard;
+		private Button buttonCopySHA512StringFromTextToClipboard;
+		private TextBox textBoxSHA512StringFromText;
+		private Label labelSHA1StringFromText;
+		private Label labelSHA512StringFromText;
+		private TextBox textBoxSHA1StringFromText;
+		private Button buttonCopySHA384StringFromTextToClipboard;
+		private Button buttonCopySHA1StringFromTextToClipboard;
+		private TextBox textBoxSHA384StringFromText;
+		private Label labelSHA256StringFromText;
+		private Label labelSHA384StringFromText;
+		private TextBox textBoxSHA256StringFromText;
+		private Button buttonCopySHA256StringFromTextToClipboard;
+		private CheckBox checkBoxAutoUpdateText;
+		private ToolTip toolTip;
+		private StatusStrip statusStrip;
+		private ToolStripStatusLabel toolStripStatusLabelInformation;
+		private ToolStripContainer toolStripContainer;
+		private ImageList imageListTab;
+		private TabPage tabPageInfo;
+		private Label labelVersion;
+		private Label labelProductName;
+		private PictureBox logoPictureBox;
+		private Label labelCopyright;
+		private Label labelCompanyName;
+		private TextBox textBoxDescription;
+		private TabPage tabPageLicense;
+		private TextBox textBoxLicense;
+		private LinkLabel linkLabelUrl;
+		private Button buttonSaveAllHashValuesAutomatically;
+		private Button buttonSaveAllHashValuesInClipboard;
+		private Button buttonSaveAllHashValuesInList;
+	}
 }
 
