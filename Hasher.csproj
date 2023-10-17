@@ -174,10 +174,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="hashtag.ico" />
+    <None Include="Resources\fatcow_text_effects_16.png" />
+    <None Include="Resources\fatcow_page_16.png" />
+    <None Include="Resources\fatcow_infomation_16.png" />
+    <None Include="Resources\fatcow_page_save-16.png" />
     <None Include="Resources\logo-hasher-96.png" />
     <None Include="Resources\fatcow_arrow_refresh_small_16.png" />
-    <None Include="Resources\fatcow_arrow_refresh_16.png" />
-    <None Include="Resources\fatcow_document_info_16.png" />
     <None Include="Resources\fatcow_document_hash_tag_16.png" />
     <None Include="Resources\fatcow_diskette_16.png" />
     <None Include="Resources\fatcow_clipboard_empty_16.png" />

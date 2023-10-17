@@ -61,6 +61,33 @@ namespace Hasher.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die .checksums ähnelt.
+        /// </summary>
+        internal static string checksumFileExt {
+            get {
+                return ResourceManager.GetString("checksumFileExt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die : ähnelt.
+        /// </summary>
+        internal static string colonDelimiter {
+            get {
+                return ResourceManager.GetString("colonDelimiter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die , ähnelt.
+        /// </summary>
+        internal static string commaDelimiter {
+            get {
+                return ResourceManager.GetString("commaDelimiter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die - ähnelt.
         /// </summary>
         internal static string dash {
@@ -130,9 +157,39 @@ namespace Hasher.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap fatcow_document_info_16 {
+        internal static System.Drawing.Bitmap fatcow_infomation_16 {
             get {
-                object obj = ResourceManager.GetObject("fatcow_document_info_16", resourceCulture);
+                object obj = ResourceManager.GetObject("fatcow_infomation_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fatcow_page_16 {
+            get {
+                object obj = ResourceManager.GetObject("fatcow_page_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fatcow_page_save_16 {
+            get {
+                object obj = ResourceManager.GetObject("fatcow_page_save-16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fatcow_text_effects_16 {
+            get {
+                object obj = ResourceManager.GetObject("fatcow_text_effects_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -147,12 +204,30 @@ namespace Hasher.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Information ähnelt.
+        /// </summary>
+        internal static string info {
+            get {
+                return ResourceManager.GetString("info", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap logo_hasher_96 {
             get {
                 object obj = ResourceManager.GetObject("logo-hasher-96", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die MD5 ähnelt.
+        /// </summary>
+        internal static string md5 {
+            get {
+                return ResourceManager.GetString("md5", resourceCulture);
             }
         }
         
@@ -184,11 +259,56 @@ namespace Hasher.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die | ähnelt.
+        /// </summary>
+        internal static string pipeDelimiter {
+            get {
+                return ResourceManager.GetString("pipeDelimiter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die RIPEMD160 ähnelt.
+        /// </summary>
+        internal static string ripemd160 {
+            get {
+                return ResourceManager.GetString("ripemd160", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die .ripemd160 ähnelt.
         /// </summary>
         internal static string ripemd160FileExt {
             get {
                 return ResourceManager.GetString("ripemd160FileExt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Saved. ähnelt.
+        /// </summary>
+        internal static string saved {
+            get {
+                return ResourceManager.GetString("saved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die ; ähnelt.
+        /// </summary>
+        internal static string semicolonDelimiter {
+            get {
+                return ResourceManager.GetString("semicolonDelimiter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die SHA1 ähnelt.
+        /// </summary>
+        internal static string sha1 {
+            get {
+                return ResourceManager.GetString("sha1", resourceCulture);
             }
         }
         
@@ -202,11 +322,29 @@ namespace Hasher.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die SHA256 ähnelt.
+        /// </summary>
+        internal static string sha256 {
+            get {
+                return ResourceManager.GetString("sha256", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die .sha256 ähnelt.
         /// </summary>
         internal static string sha256FileExt {
             get {
                 return ResourceManager.GetString("sha256FileExt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die SHA384 ähnelt.
+        /// </summary>
+        internal static string sha384 {
+            get {
+                return ResourceManager.GetString("sha384", resourceCulture);
             }
         }
         
@@ -220,11 +358,38 @@ namespace Hasher.Properties {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die SHA512 ähnelt.
+        /// </summary>
+        internal static string sha512 {
+            get {
+                return ResourceManager.GetString("sha512", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die .sha512 ähnelt.
         /// </summary>
         internal static string sha512FileExt {
             get {
                 return ResourceManager.GetString("sha512FileExt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die   ähnelt.
+        /// </summary>
+        internal static string spaceDelimiter {
+            get {
+                return ResourceManager.GetString("spaceDelimiter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die \t ähnelt.
+        /// </summary>
+        internal static string tabDelimiter {
+            get {
+                return ResourceManager.GetString("tabDelimiter", resourceCulture);
             }
         }
         
