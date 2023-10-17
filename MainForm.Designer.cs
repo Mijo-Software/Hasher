@@ -174,6 +174,7 @@ namespace Hasher
             this.textBoxMD5StringFromFile.Size = new System.Drawing.Size(358, 20);
             this.textBoxMD5StringFromFile.TabIndex = 5;
             this.toolTip.SetToolTip(this.textBoxMD5StringFromFile, "MD5 hash value");
+            this.textBoxMD5StringFromFile.TextChanged += new System.EventHandler(this.TextBoxMD5StringFromFile_TextChanged);
             this.textBoxMD5StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.textBoxMD5StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.textBoxMD5StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -196,6 +197,7 @@ namespace Hasher
             this.textBoxRIPEMD160StringFromFile.Size = new System.Drawing.Size(358, 20);
             this.textBoxRIPEMD160StringFromFile.TabIndex = 9;
             this.toolTip.SetToolTip(this.textBoxRIPEMD160StringFromFile, "RIPEMD160 hash value");
+            this.textBoxRIPEMD160StringFromFile.TextChanged += new System.EventHandler(this.TextBoxRIPEMD160StringFromFile_TextChanged);
             this.textBoxRIPEMD160StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.textBoxRIPEMD160StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.textBoxRIPEMD160StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -230,6 +232,7 @@ namespace Hasher
             this.textBoxSHA1StringFromFile.Size = new System.Drawing.Size(358, 20);
             this.textBoxSHA1StringFromFile.TabIndex = 13;
             this.toolTip.SetToolTip(this.textBoxSHA1StringFromFile, "SHA1 hash value");
+            this.textBoxSHA1StringFromFile.TextChanged += new System.EventHandler(this.TextBoxSHA1StringFromFile_TextChanged);
             this.textBoxSHA1StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.textBoxSHA1StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.textBoxSHA1StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -264,6 +267,7 @@ namespace Hasher
             this.textBoxSHA256StringFromFile.Size = new System.Drawing.Size(358, 20);
             this.textBoxSHA256StringFromFile.TabIndex = 17;
             this.toolTip.SetToolTip(this.textBoxSHA256StringFromFile, "SHA256 hash value");
+            this.textBoxSHA256StringFromFile.TextChanged += new System.EventHandler(this.TextBoxSHA256StringFromFile_TextChanged);
             this.textBoxSHA256StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.textBoxSHA256StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.textBoxSHA256StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -298,6 +302,7 @@ namespace Hasher
             this.textBoxSHA384StringFromFile.Size = new System.Drawing.Size(358, 20);
             this.textBoxSHA384StringFromFile.TabIndex = 21;
             this.toolTip.SetToolTip(this.textBoxSHA384StringFromFile, "SHA384 hash value");
+            this.textBoxSHA384StringFromFile.TextChanged += new System.EventHandler(this.TextBoxSHA384StringFromFile_TextChanged);
             this.textBoxSHA384StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.textBoxSHA384StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.textBoxSHA384StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -332,6 +337,7 @@ namespace Hasher
             this.textBoxSHA512StringFromFile.Size = new System.Drawing.Size(358, 20);
             this.textBoxSHA512StringFromFile.TabIndex = 25;
             this.toolTip.SetToolTip(this.textBoxSHA512StringFromFile, "SHA512 hash value");
+            this.textBoxSHA512StringFromFile.TextChanged += new System.EventHandler(this.TextBoxSHA512StringFromFile_TextChanged);
             this.textBoxSHA512StringFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.textBoxSHA512StringFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.textBoxSHA512StringFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -666,7 +672,7 @@ namespace Hasher
             this.tabPageFile.Location = new System.Drawing.Point(4, 23);
             this.tabPageFile.Name = "tabPageFile";
             this.tabPageFile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFile.Size = new System.Drawing.Size(503, 173);
+            this.tabPageFile.Size = new System.Drawing.Size(503, 198);
             this.tabPageFile.TabIndex = 0;
             this.tabPageFile.Text = "File";
             this.toolTip.SetToolTip(this.tabPageFile, "Hash a file");
@@ -708,7 +714,7 @@ namespace Hasher
             this.tabPageText.Location = new System.Drawing.Point(4, 23);
             this.tabPageText.Name = "tabPageText";
             this.tabPageText.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageText.Size = new System.Drawing.Size(503, 173);
+            this.tabPageText.Size = new System.Drawing.Size(503, 198);
             this.tabPageText.TabIndex = 1;
             this.tabPageText.Text = "Text";
             this.toolTip.SetToolTip(this.tabPageText, "Hash a text");
@@ -826,6 +832,7 @@ namespace Hasher
             this.textBoxMD5StringFromText.Size = new System.Drawing.Size(382, 20);
             this.textBoxMD5StringFromText.TabIndex = 5;
             this.toolTip.SetToolTip(this.textBoxMD5StringFromText, "MD5 hash value");
+            this.textBoxMD5StringFromText.TextChanged += new System.EventHandler(this.TextBoxMD5StringFromText_TextChanged);
             this.textBoxMD5StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.textBoxMD5StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.textBoxMD5StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -881,6 +888,7 @@ namespace Hasher
             this.textBoxRIPEMD160StringFromText.Size = new System.Drawing.Size(382, 20);
             this.textBoxRIPEMD160StringFromText.TabIndex = 8;
             this.toolTip.SetToolTip(this.textBoxRIPEMD160StringFromText, "RIPEMD160 hash value");
+            this.textBoxRIPEMD160StringFromText.TextChanged += new System.EventHandler(this.TextBoxRIPEMD160StringFromText_TextChanged);
             this.textBoxRIPEMD160StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.textBoxRIPEMD160StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.textBoxRIPEMD160StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -938,6 +946,7 @@ namespace Hasher
             this.textBoxSHA512StringFromText.Size = new System.Drawing.Size(382, 20);
             this.textBoxSHA512StringFromText.TabIndex = 20;
             this.toolTip.SetToolTip(this.textBoxSHA512StringFromText, "SHA512 hash value");
+            this.textBoxSHA512StringFromText.TextChanged += new System.EventHandler(this.TextBoxSHA512StringFromText_TextChanged);
             this.textBoxSHA512StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.textBoxSHA512StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.textBoxSHA512StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -991,6 +1000,7 @@ namespace Hasher
             this.textBoxSHA1StringFromText.Size = new System.Drawing.Size(382, 20);
             this.textBoxSHA1StringFromText.TabIndex = 11;
             this.toolTip.SetToolTip(this.textBoxSHA1StringFromText, "SHA1 hash value");
+            this.textBoxSHA1StringFromText.TextChanged += new System.EventHandler(this.TextBoxSHA1StringFromText_TextChanged);
             this.textBoxSHA1StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.textBoxSHA1StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.textBoxSHA1StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -1048,6 +1058,7 @@ namespace Hasher
             this.textBoxSHA384StringFromText.Size = new System.Drawing.Size(382, 20);
             this.textBoxSHA384StringFromText.TabIndex = 17;
             this.toolTip.SetToolTip(this.textBoxSHA384StringFromText, "SHA384 hash value");
+            this.textBoxSHA384StringFromText.TextChanged += new System.EventHandler(this.TextBoxSHA384StringFromText_TextChanged);
             this.textBoxSHA384StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.textBoxSHA384StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.textBoxSHA384StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -1101,6 +1112,7 @@ namespace Hasher
             this.textBoxSHA256StringFromText.Size = new System.Drawing.Size(382, 20);
             this.textBoxSHA256StringFromText.TabIndex = 14;
             this.toolTip.SetToolTip(this.textBoxSHA256StringFromText, "SHA256 hash value");
+            this.textBoxSHA256StringFromText.TextChanged += new System.EventHandler(this.TextBoxSHA256StringFromText_TextChanged);
             this.textBoxSHA256StringFromText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.textBoxSHA256StringFromText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.textBoxSHA256StringFromText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -1142,7 +1154,7 @@ namespace Hasher
             this.tabPageInfo.Location = new System.Drawing.Point(4, 23);
             this.tabPageInfo.Name = "tabPageInfo";
             this.tabPageInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageInfo.Size = new System.Drawing.Size(503, 198);
+            this.tabPageInfo.Size = new System.Drawing.Size(503, 173);
             this.tabPageInfo.TabIndex = 2;
             this.tabPageInfo.Text = "Info";
             this.toolTip.SetToolTip(this.tabPageInfo, "Show some info");
