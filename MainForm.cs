@@ -26,7 +26,7 @@ namespace Hasher
 
         #endregion
 
-        #region Local methods
+        #region Helpers
 
         /// <summary>
         /// Get Debugger Display
@@ -134,10 +134,10 @@ namespace Hasher
         }
 
         /// <summary>
-        ///
+        /// Calculate the RIPEMD160 hash value from a file
         /// </summary>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
+        /// <param name="fileName">file name</param>
+        /// <returns>RIPEMD160 hash value</returns>
         private static string GetRIPEMD160HashFromFile(string fileName)
         {
             using (FileStream fileStream = File.OpenRead(path: fileName))
@@ -148,10 +148,10 @@ namespace Hasher
         }
 
         /// <summary>
-        ///
+        /// Calculate the RIPEMD160 hash value from a text
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="input">text</param>
+        /// <returns>RIPEMD160 hash value</returns>
         private static string GetRIPEMD160HashFromText(string input)
         {
             byte[] hashBytes = RIPEMD160.Create().ComputeHash(buffer: Encoding.ASCII.GetBytes(s: input));
@@ -164,10 +164,10 @@ namespace Hasher
         }
 
         /// <summary>
-        ///
+        /// Calculate the SHA1 hash value from a file
         /// </summary>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
+        /// <param name="fileName">file name</param>
+        /// <returns>SHA1 hash value</returns>
         private static string GetSHA1HashFromFile(string fileName)
         {
             using (FileStream fileStream = File.OpenRead(path: fileName))
@@ -178,10 +178,10 @@ namespace Hasher
         }
 
         /// <summary>
-        ///
+        /// Calculate the SHA1 hash value from a text
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="input">text</param>
+        /// <returns>SHA1 hash value</returns>
         private static string GetSHA1HashFromText(string input)
         {
             byte[] hashBytes = SHA1.Create().ComputeHash(buffer: Encoding.ASCII.GetBytes(s: input));
@@ -194,10 +194,10 @@ namespace Hasher
         }
 
         /// <summary>
-        ///
+        /// Calculate the SHA256 hash value from a file
         /// </summary>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
+        /// <param name="fileName">file name</param>
+        /// <returns>SHA256 hash value</returns>
         private static string GetSHA256HashFromFile(string fileName)
         {
             using (FileStream fileStream = File.OpenRead(path: fileName))
@@ -208,10 +208,10 @@ namespace Hasher
         }
 
         /// <summary>
-        ///
+        /// Calculate the SHA256 hash value from a text
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="input">text</param>
+        /// <returns>SHA256 hash value</returns>
         private static string GetSHA256HashFromText(string input)
         {
             byte[] hashBytes = SHA256.Create().ComputeHash(buffer: Encoding.ASCII.GetBytes(s: input));
@@ -224,10 +224,10 @@ namespace Hasher
         }
 
         /// <summary>
-        ///
+        /// Calculate the SHA384 hash value from a file
         /// </summary>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
+        /// <param name="fileName">file name</param>
+        /// <returns>SHA384 hash value</returns>
         private static string GetSHA384HashFromFile(string fileName)
         {
             using (FileStream fileStream = File.OpenRead(path: fileName))
@@ -238,10 +238,10 @@ namespace Hasher
         }
 
         /// <summary>
-        ///
+        /// Calculate the SHA384 hash value from a text
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="input">text</param>
+        /// <returns>SHA384 hash value</returns>
         private static string GetSHA384HashFromText(string input)
         {
             byte[] hashBytes = SHA384.Create().ComputeHash(buffer: Encoding.ASCII.GetBytes(s: input));
@@ -254,10 +254,10 @@ namespace Hasher
         }
 
         /// <summary>
-        ///
+        /// Calculate the SHA512 hash value from a file
         /// </summary>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
+        /// <param name="fileName">file name</param>
+        /// <returns>SHA512 hash value</returns>
         private static string GetSHA512HashFromFile(string fileName)
         {
             using (FileStream fileStream = File.OpenRead(path: fileName))
@@ -268,10 +268,10 @@ namespace Hasher
         }
 
         /// <summary>
-        ///
+        /// Calculate the SHA512 hash value from a text
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="input">text</param>
+        /// <returns>SHA512 hash value</returns>
         private static string GetSHA512HashFromText(string input)
         {
             byte[] hashBytes = SHA512.Create().ComputeHash(buffer: Encoding.ASCII.GetBytes(s: input));
@@ -284,10 +284,10 @@ namespace Hasher
         }
 
         /// <summary>
-        ///
+        /// Save a hash value a file
         /// </summary>
-        /// <param name="hashFileExtension"></param>
-        /// <param name="hashValue"></param>
+        /// <param name="hashFileExtension">file extension</param>
+        /// <param name="hashValue">hash value</param>
         private void SaveHashValueToFile(string hashFileExtension, string hashValue)
         {
             saveFileDialog.FileName = $"{textBoxFileName.Text}{hashFileExtension}";
@@ -326,8 +326,24 @@ namespace Hasher
             labelCompanyName.Text = AssemblyInfo.AssemblyCompany;
             labelCopyright.Text = AssemblyInfo.AssemblyCopyright;
             textBoxDescription.Text = AssemblyInfo.AssemblyDescription;
-
+            buttonCopyMD5StringFromFileToClipboard.Enabled = false;
+            buttonCopyRIPEMD160StringFromFileToClipboard.Enabled = false;
+            buttonCopySHA1StringFromFileToClipboard.Enabled = false;
+            buttonCopySHA256StringFromFileToClipboard.Enabled = false;
+            buttonCopySHA384StringFromFileToClipboard.Enabled = false;
+            buttonCopySHA512StringFromFileToClipboard.Enabled = false;
+            buttonSaveMD5StringToFile.Enabled = false;
+            buttonSaveRIPEMD160StringToFile.Enabled = false;
+            buttonSaveSHA1StringToFile.Enabled = false;
+            buttonSaveSHA256StringToFile.Enabled = false;
+            buttonSaveSHA384StringToFile.Enabled = false;
+            buttonSaveSHA512StringToFile.Enabled = false;
             buttonCopyMD5StringFromTextToClipboard.Enabled = false;
+            buttonCopyRIPEMD160StringFromTextToClipboard.Enabled = false;
+            buttonCopySHA1StringFromTextToClipboard.Enabled = false;
+            buttonCopySHA256StringFromTextToClipboard.Enabled = false;
+            buttonCopySHA384StringFromTextToClipboard.Enabled = false;
+            buttonCopySHA512StringFromTextToClipboard.Enabled = false;
         }
 
         #endregion
@@ -674,7 +690,7 @@ namespace Hasher
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void ButtonSaveRIPEMD160ToFile_Click(object sender, EventArgs e) => SaveHashValueToFile(
+        private void ButtonSaveRIPEMD160StringToFile_Click(object sender, EventArgs e) => SaveHashValueToFile(
             hashFileExtension: Resources.ripemd160FileExt,
             hashValue: textBoxRIPEMD160StringFromFile.Text);
 
@@ -723,25 +739,30 @@ namespace Hasher
         #region CheckedChange event handlers
 
         /// <summary>
-        ///
+        /// Enable/disable the calculation button to calculate the hash values from a text if the auto calculation mode is checked/unchecked.
+        /// If unchecked the calculation button is enabled.
+        /// If checked the calculation button is disabled.
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void CheckBoxAutoUpdateText_CheckedChanged(object sender, EventArgs e) => buttonCalculateHashFromText.Enabled =
-            !buttonCalculateHashFromText.Enabled;
+        private void CheckBoxAutoUpdateText_CheckedChanged(object sender, EventArgs e) => buttonCalculateHashFromText.Enabled = !buttonCalculateHashFromText.Enabled;
 
         #endregion
 
         #region DragDrop event handlers
 
         /// <summary>
-        /// 
+        /// Pass the drag and drop events on the tabs
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         private void MainForm_DragDrop(object sender, DragEventArgs e)
         {
+            if (e == null)
+            {
+                throw new ArgumentNullException(paramName: nameof(e), message: $"{nameof(e)} is null.");
+            }
             if (e.Data.GetDataPresent(format: DataFormats.FileDrop))
             {
                 tabControl.SelectedTab = tabPageFile;
@@ -757,37 +778,43 @@ namespace Hasher
                 textBoxFileName.Text = files[0];
                 CalculateHashesFromFile();
             }
-            else if (e.Data.GetDataPresent(format: DataFormats.Text) ||
-              e.Data.GetDataPresent(format: DataFormats.UnicodeText))
-            {
-                tabControl.SelectedTab = tabPageText;
-                if (e.Data.GetDataPresent(format: DataFormats.Text))
-                {
-                    textBoxText.Text = e.Data.GetData(format: DataFormats.Text) as string;
-                }
-                else if (e.Data.GetDataPresent(format: DataFormats.UnicodeText))
-                {
-                    textBoxText.Text = e.Data.GetData(format: DataFormats.UnicodeText) as string;
-                }
-                CalculateHashesFromText();
-            }
             else
             {
-                MessageBox.Show(
-                    text: Resources.onlyFileOrTextAreAccepted,
-                    caption: Resources.warning,
-                    buttons: MessageBoxButtons.OK,
-                    icon: MessageBoxIcon.Warning);
+                if (e.Data.GetDataPresent(format: DataFormats.Text) || e.Data.GetDataPresent(format: DataFormats.UnicodeText))
+                {
+                    tabControl.SelectedTab = tabPageText;
+                    if (e.Data.GetDataPresent(format: DataFormats.Text))
+                    {
+                        textBoxText.Text = e.Data.GetData(format: DataFormats.Text) as string;
+                    }
+                    else if (e.Data.GetDataPresent(format: DataFormats.UnicodeText))
+                    {
+                        textBoxText.Text = e.Data.GetData(format: DataFormats.UnicodeText) as string;
+                    }
+                    CalculateHashesFromText();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        text: Resources.onlyFileOrTextAreAccepted,
+                        caption: Resources.warning,
+                        buttons: MessageBoxButtons.OK,
+                        icon: MessageBoxIcon.Warning);
+                }
             }
         }
 
         /// <summary>
-        ///
+        /// Filters the acceptable drag and drop events
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         private void MainForm_DragEnter(object sender, DragEventArgs e)
         {
+            if (e == null)
+            {
+                throw new ArgumentNullException(paramName: nameof(e), message: $"{nameof(e)} is null.");
+            }
             if (e.Data.GetDataPresent(format: DataFormats.FileDrop) ||
                 e.Data.GetDataPresent(format: DataFormats.Text) ||
                 e.Data.GetDataPresent(format: DataFormats.UnicodeText))
@@ -798,15 +825,15 @@ namespace Hasher
 
         #endregion
 
-        #region KeyPress event handlers
+        #region TextChanged event handlers
 
         /// <summary>
-        /// 
+        /// Calculate the hashes if input text is changed
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void TextBoxText_KeyPress(object sender, EventArgs e)
+        private void TextBoxText_TextChanged(object sender, EventArgs e)
         {
             if (checkBoxAutoUpdateText.Checked)
             {
@@ -814,63 +841,144 @@ namespace Hasher
             }
         }
 
-        #endregion
-
+        /// <summary>
+        /// Enable button to copy the MD5 hash value from a file into the clipboard and save in a file if checked the input isn't empty or null
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void TextBoxMD5StringFromFile_TextChanged(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(value: textBoxMD5StringFromFile.Text))
+            {
+                buttonCopyMD5StringFromFileToClipboard.Enabled = true;
+                buttonSaveMD5StringToFile.Enabled = true;
+            }
         }
 
+        /// <summary>
+        /// Enable button to copy the RIPEMD160 hash value from a file into the clipboard and save in a file if checked the input isn't empty or null
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void TextBoxRIPEMD160StringFromFile_TextChanged(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(value: textBoxRIPEMD160StringFromFile.Text))
+            {
+                buttonCopyRIPEMD160StringFromFileToClipboard.Enabled = true;
+                buttonSaveRIPEMD160StringToFile.Enabled = true;
+            }
         }
 
+        /// <summary>
+        /// Enable button to copy the SHA1 hash value from a file into the clipboard and save in a file if checked the input isn't empty or null
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void TextBoxSHA1StringFromFile_TextChanged(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(value: textBoxSHA1StringFromFile.Text))
+            {
+                buttonCopySHA1StringFromFileToClipboard.Enabled = true;
+                buttonSaveSHA1StringToFile.Enabled = true;
+            }
         }
 
+        /// <summary>
+        /// Enable button to copy the SHA256 hash value from a file into the clipboard and save in a file if checked the input isn't empty or null
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void TextBoxSHA256StringFromFile_TextChanged(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(value: textBoxSHA256StringFromFile.Text))
+            {
+                buttonCopySHA256StringFromFileToClipboard.Enabled = true;
+                buttonSaveSHA256StringToFile.Enabled = true;
+            }
         }
 
+        /// <summary>
+        /// Enable button to copy the SHA384 hash value from a file into the clipboard and save in a file if checked the input isn't empty or null
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void TextBoxSHA384StringFromFile_TextChanged(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(value: textBoxSHA384StringFromFile.Text))
+            {
+                buttonCopySHA384StringFromFileToClipboard.Enabled = true;
+                buttonSaveSHA384StringToFile.Enabled = true;
+            }
         }
 
+        /// <summary>
+        /// Enable button to copy the SHA512 hash value from a file into the clipboard and save in a file if checked the input isn't empty or null
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
         private void TextBoxSHA512StringFromFile_TextChanged(object sender, EventArgs e)
         {
-        }
-
-        private void TextBoxMD5StringFromText_TextChanged(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(value: textBoxMD5StringFromText.Text))
+            if (!string.IsNullOrEmpty(value: textBoxSHA512StringFromFile.Text))
             {
-                buttonCopyMD5StringFromTextToClipboard.Enabled = true;
+                buttonCopySHA512StringFromFileToClipboard.Enabled = true;
+                buttonSaveSHA512StringToFile.Enabled = true;
             }
-            else
-            {
-                buttonCopyMD5StringFromTextToClipboard.Enabled = false;
-            }
-
         }
 
-        private void TextBoxRIPEMD160StringFromText_TextChanged(object sender, EventArgs e)
-        {
-        }
+        /// <summary>
+        /// Enable button to copy the MD5 hash value from a text into the clipboard if checked the input isn't empty or null
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void TextBoxMD5StringFromText_TextChanged(object sender, EventArgs e) => buttonCopyMD5StringFromTextToClipboard.Enabled = !string.IsNullOrEmpty(value: textBoxMD5StringFromText.Text);
 
-        private void TextBoxSHA1StringFromText_TextChanged(object sender, EventArgs e)
-        {
-        }
+        /// <summary>
+        /// Enable button to copy the RIPEMD160 hash value from a text into the clipboard if checked the input isn't empty or null
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void TextBoxRIPEMD160StringFromText_TextChanged(object sender, EventArgs e) => buttonCopyRIPEMD160StringFromTextToClipboard.Enabled = !string.IsNullOrEmpty(value: textBoxRIPEMD160StringFromText.Text);
 
-        private void TextBoxSHA256StringFromText_TextChanged(object sender, EventArgs e)
-        {
-        }
+        /// <summary>
+        /// Enable button to copy the SHA1 hash value from a text into the clipboard if checked the input isn't empty or null
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void TextBoxSHA1StringFromText_TextChanged(object sender, EventArgs e) => buttonCopySHA1StringFromTextToClipboard.Enabled = !string.IsNullOrEmpty(value: textBoxSHA1StringFromText.Text);
 
-        private void TextBoxSHA384StringFromText_TextChanged(object sender, EventArgs e)
-        {
-        }
+        /// <summary>
+        /// Enable button to copy the SHA256 hash value from a text into the clipboard if checked the input isn't empty or null
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void TextBoxSHA256StringFromText_TextChanged(object sender, EventArgs e) => buttonCopySHA256StringFromTextToClipboard.Enabled = !string.IsNullOrEmpty(value: textBoxSHA256StringFromText.Text);
 
-        private void TextBoxSHA512StringFromText_TextChanged(object sender, EventArgs e)
-        {
-        }
+        /// <summary>
+        /// Enable button to copy the SHA384 hash value from a text into the clipboard if checked the input isn't empty or null
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void TextBoxSHA384StringFromText_TextChanged(object sender, EventArgs e) => buttonCopySHA384StringFromTextToClipboard.Enabled = !string.IsNullOrEmpty(value: textBoxSHA384StringFromText.Text);
+
+        /// <summary>
+        /// Enable button to copy the SHA512 hash value from a text into the clipboard if checked the input isn't empty or null
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void TextBoxSHA512StringFromText_TextChanged(object sender, EventArgs e) => buttonCopySHA512StringFromTextToClipboard.Enabled = !string.IsNullOrEmpty(value: textBoxSHA512StringFromText.Text);
     }
+
+    #endregion
 }
