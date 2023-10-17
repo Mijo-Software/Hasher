@@ -82,6 +82,7 @@ namespace Hasher
 			textBoxSHA256StringFromText = new TextBox();
 			buttonCopySHA256StringFromTextToClipboard = new Button();
 			tabPageInfo = new TabPage();
+			buttonSelfTest = new Button();
 			linkLabelUrl = new LinkLabel();
 			textBoxDescription = new TextBox();
 			labelCompanyName = new Label();
@@ -1131,6 +1132,7 @@ namespace Hasher
 			tabPageInfo.AccessibleDescription = "Show the info tab page";
 			tabPageInfo.AccessibleName = "info tabe page";
 			tabPageInfo.AccessibleRole = AccessibleRole.PageTab;
+			tabPageInfo.Controls.Add(buttonSelfTest);
 			tabPageInfo.Controls.Add(linkLabelUrl);
 			tabPageInfo.Controls.Add(textBoxDescription);
 			tabPageInfo.Controls.Add(labelCompanyName);
@@ -1153,6 +1155,27 @@ namespace Hasher
 			tabPageInfo.Leave += ClearStatusbar_Leave;
 			tabPageInfo.MouseEnter += SetStatusbar_Enter;
 			tabPageInfo.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonSelfTest
+			// 
+			buttonSelfTest.AccessibleDescription = "Start a self test";
+			buttonSelfTest.AccessibleName = "Self test";
+			buttonSelfTest.AccessibleRole = AccessibleRole.PushButton;
+			buttonSelfTest.AutoEllipsis = true;
+			buttonSelfTest.Image = Properties.Resources.fatfow_tubes_16;
+			buttonSelfTest.ImageAlign = ContentAlignment.MiddleLeft;
+			buttonSelfTest.Location = new Point(508, 6);
+			buttonSelfTest.Name = "buttonSelfTest";
+			buttonSelfTest.Size = new Size(72, 26);
+			buttonSelfTest.TabIndex = 14;
+			buttonSelfTest.Text = "Self test";
+			buttonSelfTest.TextImageRelation = TextImageRelation.ImageBeforeText;
+			buttonSelfTest.UseVisualStyleBackColor = true;
+			buttonSelfTest.Click += ButtonSelfTest_Click;
+			buttonSelfTest.Enter += SetStatusbar_Enter;
+			buttonSelfTest.Leave += ClearStatusbar_Leave;
+			buttonSelfTest.MouseEnter += SetStatusbar_Enter;
+			buttonSelfTest.MouseLeave += ClearStatusbar_Leave;
 			// 
 			// linkLabelUrl
 			// 
@@ -1512,6 +1535,7 @@ namespace Hasher
 		private Button buttonSaveAllHashValuesAutomatically;
 		private Button buttonSaveAllHashValuesInClipboard;
 		private Button buttonSaveAllHashValuesInList;
+		private Button buttonSelfTest;
 	}
 }
 

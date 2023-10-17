@@ -970,6 +970,13 @@ namespace Hasher
 				buttonSaveAllHashValuesInClipboard.Enabled = true;
 			}
 		}
+
+		private void ButtonSelfTest_Click(object sender, EventArgs e)
+		{
+			tabControl.SelectedTab = tabPageFile;
+			textBoxFileName.Text = System.Reflection.Assembly.GetExecutingAssembly().Location;
+			CalculateHashesFromFile();
+		}
 	}
 
 	#endregion
