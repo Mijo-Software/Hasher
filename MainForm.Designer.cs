@@ -51,7 +51,7 @@ namespace Hasher
             this.buttonSaveSHA384StringToFile = new System.Windows.Forms.Button();
             this.buttonSaveSHA256StringToFile = new System.Windows.Forms.Button();
             this.buttonSaveSHA1StringToFile = new System.Windows.Forms.Button();
-            this.buttonSaveRIPEMD160ToFile = new System.Windows.Forms.Button();
+            this.buttonSaveRIPEMD160StringToFile = new System.Windows.Forms.Button();
             this.buttonSaveMD5StringToFile = new System.Windows.Forms.Button();
             this.buttonCopySHA512StringFromFileToClipboard = new System.Windows.Forms.Button();
             this.buttonCopySHA384StringFromFileToClipboard = new System.Windows.Forms.Button();
@@ -441,24 +441,24 @@ namespace Hasher
             this.buttonSaveSHA1StringToFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.buttonSaveSHA1StringToFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
-            // buttonSaveRIPEMD160ToFile
+            // buttonSaveRIPEMD160StringToFile
             // 
-            this.buttonSaveRIPEMD160ToFile.AccessibleDescription = "Save the RIPEMD160 hash value in a file";
-            this.buttonSaveRIPEMD160ToFile.AccessibleName = "Save RIPEMD160 hash to file";
-            this.buttonSaveRIPEMD160ToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonSaveRIPEMD160ToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveRIPEMD160ToFile.Image")));
-            this.buttonSaveRIPEMD160ToFile.Location = new System.Drawing.Point(471, 62);
-            this.buttonSaveRIPEMD160ToFile.Name = "buttonSaveRIPEMD160ToFile";
-            this.buttonSaveRIPEMD160ToFile.Size = new System.Drawing.Size(24, 24);
-            this.buttonSaveRIPEMD160ToFile.TabIndex = 11;
-            this.buttonSaveRIPEMD160ToFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.toolTip.SetToolTip(this.buttonSaveRIPEMD160ToFile, "Save the RIPEMD160 hash value in a file");
-            this.buttonSaveRIPEMD160ToFile.UseVisualStyleBackColor = true;
-            this.buttonSaveRIPEMD160ToFile.Click += new System.EventHandler(this.ButtonSaveRIPEMD160ToFile_Click);
-            this.buttonSaveRIPEMD160ToFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveRIPEMD160ToFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
-            this.buttonSaveRIPEMD160ToFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
-            this.buttonSaveRIPEMD160ToFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonSaveRIPEMD160StringToFile.AccessibleDescription = "Save the RIPEMD160 hash value in a file";
+            this.buttonSaveRIPEMD160StringToFile.AccessibleName = "Save RIPEMD160 hash to file";
+            this.buttonSaveRIPEMD160StringToFile.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonSaveRIPEMD160StringToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveRIPEMD160StringToFile.Image")));
+            this.buttonSaveRIPEMD160StringToFile.Location = new System.Drawing.Point(471, 62);
+            this.buttonSaveRIPEMD160StringToFile.Name = "buttonSaveRIPEMD160StringToFile";
+            this.buttonSaveRIPEMD160StringToFile.Size = new System.Drawing.Size(24, 24);
+            this.buttonSaveRIPEMD160StringToFile.TabIndex = 11;
+            this.buttonSaveRIPEMD160StringToFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.toolTip.SetToolTip(this.buttonSaveRIPEMD160StringToFile, "Save the RIPEMD160 hash value in a file");
+            this.buttonSaveRIPEMD160StringToFile.UseVisualStyleBackColor = true;
+            this.buttonSaveRIPEMD160StringToFile.Click += new System.EventHandler(this.ButtonSaveRIPEMD160StringToFile_Click);
+            this.buttonSaveRIPEMD160StringToFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveRIPEMD160StringToFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.buttonSaveRIPEMD160StringToFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.buttonSaveRIPEMD160StringToFile.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
             // buttonSaveMD5StringToFile
             // 
@@ -651,7 +651,7 @@ namespace Hasher
             this.tabPageFile.Controls.Add(this.textBoxMD5StringFromFile);
             this.tabPageFile.Controls.Add(this.buttonSaveSHA1StringToFile);
             this.tabPageFile.Controls.Add(this.buttonCopyMD5StringFromFileToClipboard);
-            this.tabPageFile.Controls.Add(this.buttonSaveRIPEMD160ToFile);
+            this.tabPageFile.Controls.Add(this.buttonSaveRIPEMD160StringToFile);
             this.tabPageFile.Controls.Add(this.labelRIPEMD160StringFromFile);
             this.tabPageFile.Controls.Add(this.buttonSaveMD5StringToFile);
             this.tabPageFile.Controls.Add(this.textBoxRIPEMD160StringFromFile);
@@ -672,7 +672,7 @@ namespace Hasher
             this.tabPageFile.Location = new System.Drawing.Point(4, 23);
             this.tabPageFile.Name = "tabPageFile";
             this.tabPageFile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFile.Size = new System.Drawing.Size(503, 198);
+            this.tabPageFile.Size = new System.Drawing.Size(503, 173);
             this.tabPageFile.TabIndex = 0;
             this.tabPageFile.Text = "File";
             this.toolTip.SetToolTip(this.tabPageFile, "Hash a file");
@@ -774,7 +774,7 @@ namespace Hasher
             this.textBoxText.Size = new System.Drawing.Size(335, 20);
             this.textBoxText.TabIndex = 1;
             this.toolTip.SetToolTip(this.textBoxText, "text to hash");
-            this.textBoxText.TextChanged += new System.EventHandler(this.TextBoxText_KeyPress);
+            this.textBoxText.TextChanged += new System.EventHandler(this.TextBoxText_TextChanged);
             this.textBoxText.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.textBoxText.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.textBoxText.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -1478,7 +1478,7 @@ namespace Hasher
 		private System.Windows.Forms.Button buttonSaveSHA384StringToFile;
 		private System.Windows.Forms.Button buttonSaveSHA256StringToFile;
 		private System.Windows.Forms.Button buttonSaveSHA1StringToFile;
-		private System.Windows.Forms.Button buttonSaveRIPEMD160ToFile;
+		private System.Windows.Forms.Button buttonSaveRIPEMD160StringToFile;
 		private System.Windows.Forms.Button buttonSaveMD5StringToFile;
 		private System.Windows.Forms.SaveFileDialog saveFileDialog;
 		private System.Windows.Forms.TabControl tabControl;
