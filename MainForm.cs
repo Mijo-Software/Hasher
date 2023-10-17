@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
@@ -30,8 +31,41 @@ namespace Hasher
         /// <summary>
         /// Get Debugger Display
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Return the debugger display</returns>
         private string GetDebuggerDisplay() => ToString();
+
+        /// <summary>
+        /// Open a url
+        /// </summary>
+        /// <param name="url">web page</param>
+        private void OpenUrl(string url)
+        {
+            try
+            {
+                Process.Start(fileName: url);
+            }
+            catch
+            {
+                // hack because of this: https://github.com/dotnet/corefx/issues/10361
+                if (RuntimeInformation.IsOSPlatform(osPlatform: OSPlatform.Windows))
+                {
+                    url = url.Replace(oldValue: "&", newValue: "^&");
+                    Process.Start(startInfo: new ProcessStartInfo(fileName: url) { UseShellExecute = true });
+                }
+                else if (RuntimeInformation.IsOSPlatform(osPlatform: OSPlatform.Linux))
+                {
+                    Process.Start(fileName: "xdg-open", arguments: url);
+                }
+                else if (RuntimeInformation.IsOSPlatform(osPlatform: OSPlatform.OSX))
+                {
+                    Process.Start(fileName: "open", arguments: url);
+                }
+                else
+                {
+                    throw;
+                }
+            }
+        }
 
         /// <summary>
         /// Set a specific text to the status bar
@@ -70,10 +104,10 @@ namespace Hasher
         }
 
         /// <summary>
-        ///
+        /// Calculate the MD5 hash value from a file
         /// </summary>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
+        /// <param name="fileName">file name</param>
+        /// <returns>MD5 hash value</returns>
         private static string GetMD5HashFromFile(string fileName)
         {
             using (FileStream fileStream = File.OpenRead(path: fileName))
@@ -84,10 +118,10 @@ namespace Hasher
         }
 
         /// <summary>
-        ///
+        /// Calculate the MD5 hash value from a text
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="input">text</param>
+        /// <returns>MD5 hash value</returns>
         private static string GetMD5HashFromText(string input)
         {
             byte[] hashBytes = MD5.Create().ComputeHash(buffer: Encoding.ASCII.GetBytes(s: input));
@@ -96,7 +130,7 @@ namespace Hasher
             {
                 stringBuilder.Append(value: v.ToString(format: "X2", provider: CultureInfo.InvariantCulture));
             }
-            return new StringBuilder().ToString();
+            return stringBuilder.ToString();
         }
 
         /// <summary>
@@ -424,12 +458,20 @@ namespace Hasher
         #region Click event handlers
 
         /// <summary>
-        ///
+        /// Open a url with the default web browser
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void OpenAndCalculateFile_Click(object sender, EventArgs e)
+        private void LinkLabelUrl_Click(object sender, EventArgs e) => OpenUrl(url: linkLabelUrl.Text);
+
+        /// <summary>
+        /// Open a file and calculate all hash values
+        /// </summary>
+        /// <param name="sender">object sender</param>
+        /// <param name="e">event arguments</param>
+        /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+        private void ButtonOpenAndCalculateFile_Click(object sender, EventArgs e)
         {
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -439,7 +481,7 @@ namespace Hasher
         }
 
         /// <summary>
-        ///
+        /// Calculate the hash values from a string
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
@@ -447,115 +489,103 @@ namespace Hasher
         private void ButtonCalculateHashFromText_Click(object sender, EventArgs e) => CalculateHashesFromText();
 
         /// <summary>
-        ///
+        /// Copy the MD5 hash value from a file to the clipboard
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void ButtonCopyMD5StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
-            text: textBoxMD5StringFromFile.Text);
+        private void ButtonCopyMD5StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(text: textBoxMD5StringFromFile.Text);
 
         /// <summary>
-        ///
+        /// Copy the MD5 hash value from a text to the clipboard
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void ButtonCopyMD5StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
-            text: textBoxMD5StringFromText.Text);
+        private void ButtonCopyMD5StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(text: textBoxMD5StringFromText.Text);
 
         /// <summary>
-        ///
+        /// Copy the RIPEMD160 hash value from a file to the clipboard
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void ButtonCopyRIPEMD160StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
-            text: textBoxRIPEMD160StringFromFile.Text);
+        private void ButtonCopyRIPEMD160StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(text: textBoxRIPEMD160StringFromFile.Text);
 
         /// <summary>
-        ///
+        /// Copy the RIPEMD160 hash value from a text to the clipboard
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void ButtonCopyRIPEMD160StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
-            text: textBoxRIPEMD160StringFromText.Text);
+        private void ButtonCopyRIPEMD160StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(text: textBoxRIPEMD160StringFromText.Text);
 
         /// <summary>
-        ///
+        /// Copy the SHA1 hash value from a file to the clipboard
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void ButtonCopySHA1StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
-            text: textBoxSHA1StringFromFile.Text);
+        private void ButtonCopySHA1StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(text: textBoxSHA1StringFromFile.Text);
 
         /// <summary>
-        ///
+        /// Copy the SHA1 hash value from a text to the clipboard
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void ButtonCopySHA1StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
-            text: textBoxSHA1StringFromText.Text);
+        private void ButtonCopySHA1StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(text: textBoxSHA1StringFromText.Text);
 
         /// <summary>
-        ///
+        /// Copy the SHA512 hash value from a file to the clipboard
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void ButtonCopySHA256StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
-            text: textBoxSHA256StringFromFile.Text);
+        private void ButtonCopySHA256StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(text: textBoxSHA256StringFromFile.Text);
 
         /// <summary>
-        ///
+        /// Copy the SHA hash value from a text to the clipboard
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void ButtonCopySHA256StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
-            text: textBoxSHA256StringFromText.Text);
+        private void ButtonCopySHA256StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(text: textBoxSHA256StringFromText.Text);
 
         /// <summary>
-        ///
+        /// Copy the SHA384 hash value from a file to the clipboard
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void ButtonCopySHA384StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
-            text: textBoxSHA384StringFromFile.Text);
+        private void ButtonCopySHA384StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(text: textBoxSHA384StringFromFile.Text);
 
         /// <summary>
-        ///
+        /// Copy the SHA384 hash value from a file to the clipboard
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void ButtonCopySHA384StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
-            text: textBoxSHA384StringFromText.Text);
+        private void ButtonCopySHA384StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(text: textBoxSHA384StringFromText.Text);
 
         /// <summary>
-        ///
+        /// Copy the SHA512 hash value from a file to the clipboard
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void ButtonCopySHA512StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
-            text: textBoxSHA512StringFromFile.Text);
+        private void ButtonCopySHA512StringFromFileToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(text: textBoxSHA512StringFromFile.Text);
 
         /// <summary>
-        ///
+        /// Copy the SHA512 hash value from a text to the clipboard
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
         /// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
-        private void ButtonCopySHA512StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(
-            text: textBoxSHA512StringFromText.Text);
+        private void ButtonCopySHA512StringFromTextToClipboard_Click(object sender, EventArgs e) => Clipboard.SetText(text: textBoxSHA512StringFromText.Text);
 
         /// <summary>
-        ///
+        /// Save the MD5 hash value to a file
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
@@ -565,7 +595,7 @@ namespace Hasher
             hashValue: textBoxMD5StringFromFile.Text);
 
         /// <summary>
-        ///
+        /// Save the RIPEMD160 hash value to a file
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
@@ -575,7 +605,7 @@ namespace Hasher
             hashValue: textBoxRIPEMD160StringFromFile.Text);
 
         /// <summary>
-        ///
+        /// Save the SHA1 hash value to a file
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
@@ -585,7 +615,7 @@ namespace Hasher
             hashValue: textBoxSHA1StringFromFile.Text);
 
         /// <summary>
-        ///
+        /// Save the SHA256 hash value to a file
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
@@ -595,7 +625,7 @@ namespace Hasher
             hashValue: textBoxSHA256StringFromFile.Text);
 
         /// <summary>
-        ///
+        /// Save the SHA384 hash value to a file
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>
@@ -605,7 +635,7 @@ namespace Hasher
             hashValue: textBoxSHA384StringFromFile.Text);
 
         /// <summary>
-        ///
+        /// Save the SHA512 hash value to a file
         /// </summary>
         /// <param name="sender">object sender</param>
         /// <param name="e">event arguments</param>

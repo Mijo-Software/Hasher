@@ -86,12 +86,15 @@ namespace Hasher
             this.textBoxSHA256StringFromText = new System.Windows.Forms.TextBox();
             this.buttonCopySHA256StringFromTextToClipboard = new System.Windows.Forms.Button();
             this.tabPageInfo = new System.Windows.Forms.TabPage();
+            this.linkLabelUrl = new System.Windows.Forms.LinkLabel();
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.labelCompanyName = new System.Windows.Forms.Label();
             this.labelCopyright = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
             this.labelProductName = new System.Windows.Forms.Label();
             this.logoPictureBox = new System.Windows.Forms.PictureBox();
+            this.tabPageLicense = new System.Windows.Forms.TabPage();
+            this.textBoxLicense = new System.Windows.Forms.TextBox();
             this.imageListTab = new System.Windows.Forms.ImageList(this.components);
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabelInformation = new System.Windows.Forms.ToolStripStatusLabel();
@@ -102,6 +105,7 @@ namespace Hasher
             this.tabPageText.SuspendLayout();
             this.tabPageInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).BeginInit();
+            this.tabPageLicense.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStripContainer.BottomToolStripPanel.SuspendLayout();
             this.toolStripContainer.ContentPanel.SuspendLayout();
@@ -598,7 +602,7 @@ namespace Hasher
             this.buttonOpenAndCalculateHashFromFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.toolTip.SetToolTip(this.buttonOpenAndCalculateHashFromFile, "Open a file and calculate the hash value");
             this.buttonOpenAndCalculateHashFromFile.UseVisualStyleBackColor = true;
-            this.buttonOpenAndCalculateHashFromFile.Click += new System.EventHandler(this.OpenAndCalculateFile_Click);
+            this.buttonOpenAndCalculateHashFromFile.Click += new System.EventHandler(this.ButtonOpenAndCalculateFile_Click);
             this.buttonOpenAndCalculateHashFromFile.Enter += new System.EventHandler(this.SetStatusbar_Enter);
             this.buttonOpenAndCalculateHashFromFile.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
             this.buttonOpenAndCalculateHashFromFile.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -613,6 +617,7 @@ namespace Hasher
             this.tabControl.Controls.Add(this.tabPageFile);
             this.tabControl.Controls.Add(this.tabPageText);
             this.tabControl.Controls.Add(this.tabPageInfo);
+            this.tabControl.Controls.Add(this.tabPageLicense);
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.HotTrack = true;
             this.tabControl.ImageList = this.imageListTab;
@@ -1126,6 +1131,7 @@ namespace Hasher
             this.tabPageInfo.AccessibleDescription = "Show the info tab page";
             this.tabPageInfo.AccessibleName = "info tabe page";
             this.tabPageInfo.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
+            this.tabPageInfo.Controls.Add(this.linkLabelUrl);
             this.tabPageInfo.Controls.Add(this.textBoxDescription);
             this.tabPageInfo.Controls.Add(this.labelCompanyName);
             this.tabPageInfo.Controls.Add(this.labelCopyright);
@@ -1147,20 +1153,38 @@ namespace Hasher
             this.tabPageInfo.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.tabPageInfo.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
+            // linkLabelUrl
+            // 
+            this.linkLabelUrl.AccessibleDescription = "Open the Link to Github";
+            this.linkLabelUrl.AccessibleName = "Github link";
+            this.linkLabelUrl.AccessibleRole = System.Windows.Forms.AccessibleRole.Link;
+            this.linkLabelUrl.AutoSize = true;
+            this.linkLabelUrl.Location = new System.Drawing.Point(112, 74);
+            this.linkLabelUrl.Name = "linkLabelUrl";
+            this.linkLabelUrl.Size = new System.Drawing.Size(208, 13);
+            this.linkLabelUrl.TabIndex = 4;
+            this.linkLabelUrl.TabStop = true;
+            this.linkLabelUrl.Text = "https://github.com/Mijo-Software/Hasher/";
+            this.toolTip.SetToolTip(this.linkLabelUrl, "Open the link to Github");
+            this.linkLabelUrl.Click += new System.EventHandler(this.LinkLabelUrl_Click);
+            this.linkLabelUrl.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.linkLabelUrl.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.linkLabelUrl.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.linkLabelUrl.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
             // textBoxDescription
             // 
             this.textBoxDescription.AccessibleDescription = "Show the description";
             this.textBoxDescription.AccessibleName = "Description";
             this.textBoxDescription.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.textBoxDescription.Location = new System.Drawing.Point(115, 77);
+            this.textBoxDescription.Location = new System.Drawing.Point(6, 104);
             this.textBoxDescription.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
             this.textBoxDescription.ReadOnly = true;
             this.textBoxDescription.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxDescription.Size = new System.Drawing.Size(380, 115);
-            this.textBoxDescription.TabIndex = 4;
-            this.textBoxDescription.TabStop = false;
+            this.textBoxDescription.Size = new System.Drawing.Size(489, 88);
+            this.textBoxDescription.TabIndex = 5;
             this.textBoxDescription.Text = "Description";
             this.toolTip.SetToolTip(this.textBoxDescription, "Description");
             this.textBoxDescription.Enter += new System.EventHandler(this.SetStatusbar_Enter);
@@ -1267,6 +1291,49 @@ namespace Hasher
             this.logoPictureBox.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
             this.logoPictureBox.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
             // 
+            // tabPageLicense
+            // 
+            this.tabPageLicense.AccessibleDescription = "Show the license tab page";
+            this.tabPageLicense.AccessibleName = "license tab page";
+            this.tabPageLicense.AccessibleRole = System.Windows.Forms.AccessibleRole.PageTab;
+            this.tabPageLicense.Controls.Add(this.textBoxLicense);
+            this.tabPageLicense.ImageKey = "fatcow_script_text_16.png";
+            this.tabPageLicense.Location = new System.Drawing.Point(4, 23);
+            this.tabPageLicense.Name = "tabPageLicense";
+            this.tabPageLicense.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageLicense.Size = new System.Drawing.Size(503, 173);
+            this.tabPageLicense.TabIndex = 3;
+            this.tabPageLicense.Text = "License";
+            this.toolTip.SetToolTip(this.tabPageLicense, "Show the license");
+            this.tabPageLicense.ToolTipText = "Show the license";
+            this.tabPageLicense.UseVisualStyleBackColor = true;
+            this.tabPageLicense.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.tabPageLicense.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.tabPageLicense.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.tabPageLicense.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
+            // textBoxLicense
+            // 
+            this.textBoxLicense.AccessibleDescription = "Show the license";
+            this.textBoxLicense.AccessibleName = "License";
+            this.textBoxLicense.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
+            this.textBoxLicense.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxLicense.Location = new System.Drawing.Point(3, 3);
+            this.textBoxLicense.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
+            this.textBoxLicense.MaxLength = 9999999;
+            this.textBoxLicense.Multiline = true;
+            this.textBoxLicense.Name = "textBoxLicense";
+            this.textBoxLicense.ReadOnly = true;
+            this.textBoxLicense.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxLicense.Size = new System.Drawing.Size(497, 167);
+            this.textBoxLicense.TabIndex = 5;
+            this.textBoxLicense.Text = resources.GetString("textBoxLicense.Text");
+            this.toolTip.SetToolTip(this.textBoxLicense, "License");
+            this.textBoxLicense.Enter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxLicense.Leave += new System.EventHandler(this.ClearStatusbar_Leave);
+            this.textBoxLicense.MouseEnter += new System.EventHandler(this.SetStatusbar_Enter);
+            this.textBoxLicense.MouseLeave += new System.EventHandler(this.ClearStatusbar_Leave);
+            // 
             // imageListTab
             // 
             this.imageListTab.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListTab.ImageStream")));
@@ -1274,6 +1341,7 @@ namespace Hasher
             this.imageListTab.Images.SetKeyName(0, "fatcow_page_16.png");
             this.imageListTab.Images.SetKeyName(1, "fatcow_text_effects_16.png");
             this.imageListTab.Images.SetKeyName(2, "fatcow_infomation_16.png");
+            this.imageListTab.Images.SetKeyName(3, "fatcow_script_text_16.png");
             // 
             // statusStrip
             // 
@@ -1357,6 +1425,8 @@ namespace Hasher
             this.tabPageInfo.ResumeLayout(false);
             this.tabPageInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoPictureBox)).EndInit();
+            this.tabPageLicense.ResumeLayout(false);
+            this.tabPageLicense.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
             this.toolStripContainer.BottomToolStripPanel.ResumeLayout(false);
@@ -1436,6 +1506,9 @@ namespace Hasher
         private System.Windows.Forms.Label labelCopyright;
         private System.Windows.Forms.Label labelCompanyName;
         private System.Windows.Forms.TextBox textBoxDescription;
+        private System.Windows.Forms.TabPage tabPageLicense;
+        private System.Windows.Forms.TextBox textBoxLicense;
+        private System.Windows.Forms.LinkLabel linkLabelUrl;
     }
 }
 
