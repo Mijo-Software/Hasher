@@ -61,6 +61,7 @@ namespace Hasher
 			buttonSaveAllHashValuesInList = new Button();
 			buttonSaveAllHashValuesAutomatically = new Button();
 			tabPageText = new TabPage();
+			buttonInsertTextFromClipboard = new Button();
 			buttonSaveAllHashValuesInClipboard = new Button();
 			checkBoxAutoUpdateText = new CheckBox();
 			labelText = new Label();
@@ -692,6 +693,7 @@ namespace Hasher
 			tabPageText.AccessibleDescription = "Show the text tab page";
 			tabPageText.AccessibleName = "text tab page";
 			tabPageText.AccessibleRole = AccessibleRole.PageTab;
+			tabPageText.Controls.Add(buttonInsertTextFromClipboard);
 			tabPageText.Controls.Add(buttonSaveAllHashValuesInClipboard);
 			tabPageText.Controls.Add(checkBoxAutoUpdateText);
 			tabPageText.Controls.Add(labelText);
@@ -727,6 +729,26 @@ namespace Hasher
 			tabPageText.Leave += ClearStatusbar_Leave;
 			tabPageText.MouseEnter += SetStatusbar_Enter;
 			tabPageText.MouseLeave += ClearStatusbar_Leave;
+			// 
+			// buttonInsertTextFromClipboard
+			// 
+			buttonInsertTextFromClipboard.AccessibleDescription = "Insert text from clipboard";
+			buttonInsertTextFromClipboard.AccessibleName = "buttonInsert text from clipboard";
+			buttonInsertTextFromClipboard.AccessibleRole = AccessibleRole.PushButton;
+			buttonInsertTextFromClipboard.Image = Properties.Resources.fatcow_paste_plain_16;
+			buttonInsertTextFromClipboard.ImageAlign = ContentAlignment.MiddleLeft;
+			buttonInsertTextFromClipboard.Location = new Point(7, 211);
+			buttonInsertTextFromClipboard.Name = "buttonInsertTextFromClipboard";
+			buttonInsertTextFromClipboard.Size = new Size(166, 27);
+			buttonInsertTextFromClipboard.TabIndex = 32;
+			buttonInsertTextFromClipboard.Text = "Insert text from clipboard";
+			buttonInsertTextFromClipboard.TextImageRelation = TextImageRelation.ImageBeforeText;
+			buttonInsertTextFromClipboard.UseVisualStyleBackColor = true;
+			buttonInsertTextFromClipboard.Click += ButtonInsertTextFromClipboard_Click;
+			buttonInsertTextFromClipboard.Enter += SetStatusbar_Enter;
+			buttonInsertTextFromClipboard.Leave += ClearStatusbar_Leave;
+			buttonInsertTextFromClipboard.MouseEnter += SetStatusbar_Enter;
+			buttonInsertTextFromClipboard.MouseLeave += ClearStatusbar_Leave;
 			// 
 			// buttonSaveAllHashValuesInClipboard
 			// 
@@ -1351,6 +1373,7 @@ namespace Hasher
 			textBoxLicense.MaxLength = 9999999;
 			textBoxLicense.Multiline = true;
 			textBoxLicense.Name = "textBoxLicense";
+			textBoxLicense.PlaceholderText = "license here... 😉";
 			textBoxLicense.ReadOnly = true;
 			textBoxLicense.ScrollBars = ScrollBars.Both;
 			textBoxLicense.Size = new Size(580, 242);
@@ -1536,6 +1559,7 @@ namespace Hasher
 		private Button buttonSaveAllHashValuesInClipboard;
 		private Button buttonSaveAllHashValuesInList;
 		private Button buttonSelfTest;
+		private Button buttonInsertTextFromClipboard;
 	}
 }
 

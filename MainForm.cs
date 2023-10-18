@@ -704,6 +704,35 @@ namespace Hasher
 			Clipboard.SetText(text: listToClipboard);
 		}
 
+		/// <summary>
+		/// Start a self test and calculate his own hash values
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ButtonSelfTest_Click(object sender, EventArgs e)
+		{
+			tabControl.SelectedTab = tabPageFile;
+			textBoxFileName.Text = Application.ExecutablePath;
+			CalculateHashesFromFile();
+		}
+
+		/// <summary>
+		/// Insert text from the clipboard
+		/// </summary>
+		/// <param name="sender">object sender</param>
+		/// <param name="e">event arguments</param>
+		/// <remarks>The parameters <paramref name="e"/> and <paramref name="sender"/> are not needed, but must be indicated.</remarks>
+		private void ButtonInsertTextFromClipboard_Click(object sender, EventArgs e)
+		{
+			if (Clipboard.ContainsText(format: TextDataFormat.Text) || Clipboard.ContainsText(format: TextDataFormat.Text))
+			{
+				textBoxText.Text = Clipboard.GetText(format: TextDataFormat.Text);
+				CalculateHashesFromText();
+			}
+		}
+
+
 		#endregion
 
 		#region CheckedChange event handlers
@@ -969,13 +998,6 @@ namespace Hasher
 				buttonCopySHA512StringFromTextToClipboard.Enabled = true;
 				buttonSaveAllHashValuesInClipboard.Enabled = true;
 			}
-		}
-
-		private void ButtonSelfTest_Click(object sender, EventArgs e)
-		{
-			tabControl.SelectedTab = tabPageFile;
-			textBoxFileName.Text = Application.ExecutablePath;
-			CalculateHashesFromFile();
 		}
 	}
 

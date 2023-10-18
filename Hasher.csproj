@@ -21,10 +21,12 @@
     <NeutralLanguage>en</NeutralLanguage>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-    <AssemblyVersion>1.3.1.21</AssemblyVersion>
-    <FileVersion>1.3.1.21</FileVersion>
+    <AssemblyVersion>1.3.2.23</AssemblyVersion>
+    <FileVersion>1.3.2.23</FileVersion>
     <Company>Mijo Software</Company>
     <PackageTags>hashing;hash;md5;sha1;sha256;hashing-algorithms;ripemd160;sha512;sha384</PackageTags>
+    <Version>$(AssemblyVersion)</Version>
+    <Authors>Michael Johne</Authors>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

@@ -187,6 +187,16 @@ namespace Hasher.Properties {
         /// <summary>
         ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fatcow_paste_plain_16 {
+            get {
+                object obj = ResourceManager.GetObject("fatcow_paste_plain_16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Ressource vom Typ System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fatcow_text_effects_16 {
             get {
                 object obj = ResourceManager.GetObject("fatcow_text_effects_16", resourceCulture);
@@ -219,16 +229,6 @@ namespace Hasher.Properties {
         internal static string info {
             get {
                 return ResourceManager.GetString("info", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Sucht eine lokalisierte Ressource vom Typ System.Byte[].
-        /// </summary>
-        internal static byte[] LICENSE {
-            get {
-                object obj = ResourceManager.GetObject("LICENSE", resourceCulture);
-                return ((byte[])(obj));
             }
         }
         
